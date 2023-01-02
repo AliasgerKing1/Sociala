@@ -13531,7 +13531,7 @@ select.sort {
   }
 }
 .video-js {
-  padding-top: 56.25% !important;
+  /* padding-top: 56.25% !important; */
 }
 .vjs-poster {
   background-size: cover !important;

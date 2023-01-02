@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router-dom'
 
 function MorePages() {
   return (
@@ -9,14 +10,13 @@ function MorePages() {
         </div>
         <ul className="mb-3">
           <li>
-            <a
-              href="default-email-box.html"
+            <Link to='/email'
               className="nav-content-bttn open-font"
             >
               <i className="font-xl text-current feather-inbox me-3"></i>
               <span>Email Box</span>
               <span className="circle-count bg-warning mt-1">584</span>
-            </a>
+            </Link>
           </li>
           <li>
             <a href="default-hotel.html" className="nav-content-bttn open-font">

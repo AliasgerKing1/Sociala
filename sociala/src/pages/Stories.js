@@ -601,7 +601,7 @@ function Stories() {
           {/* <!-- right chat --> */}
 
           <div className="app-footer border-0 shadow-lg bg-primary-gradiant">
-            <Link to="/" className="nav-content-bttn nav-center">
+            <Link to="/home" className="nav-content-bttn nav-center">
               <i className="feather-home"></i>
             </Link>
             <a href="default-video.html" className="nav-content-bttn">
@@ -769,7 +769,6 @@ function Stories() {
           </div>
         </div>
       </div>
-      ;
     </div>
   );
 }
