@@ -1,14 +1,16 @@
-// import logo from './logo.svg';
-import './App.css';
-import Home from './pages/Home';
-import Setting from './pages/Setting';
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Setting from "./pages/Setting";
+import Stories from "./pages/Stories";
 
 function App() {
   return (
-    <div className="App">
-      <Home/>
-      {/* <Setting/> */}
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="stories" element={<Stories />} />
+      <Route path="setting" element={<Setting />} />
+    </Routes>
   );
 }
 
