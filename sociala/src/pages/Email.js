@@ -1,9 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import Header from '../shared/Header';
 import LeftSection from '../shared/left/LeftSection';
 import Contact from '../shared/very_right/Contact';
 import Group from '../shared/very_right/Group';
 import Pages from '../shared/very_right/Pages';
+import FooterBar from '../shared/FooterBar';
+import Notification from '../shared/Notification';
 
 function Email() {
   return (
@@ -24,7 +27,6 @@ function Email() {
 
             <LeftSection/>
 
-
           {/* <!-- navigation left --> */}
         {/* <!-- main content --> */}
         <div className="main-content right-chat-active">
@@ -38,7 +40,7 @@ function Email() {
                             <div className="chat-wrapper p-3 w-100 position-relative scroll-bar bg-white theme-dark-bg">
                                 <ul className="email-message">
                                     <li>
-                                        <a href="default-email-open.html" className="rounded-3 bg-lightblue theme-light-bg">
+                                        <Link to='/email/open' className="rounded-3 bg-lightblue theme-light-bg">
                                             <div className="form-check mt-1">
                                                 <input className="form-check-input" type="checkbox" id="blankCheckbox1" defaultValue="option1" aria-label="" />
                                                 <label className="text-grey-500 font-xssss" htmlFor="blankCheckbox1"></label>
@@ -59,10 +61,10 @@ function Email() {
                                                 <i className="feather-paperclip font-xss btn-round-sm text-grey-500 me-2 p-0"></i>
                                             </span>
                                             <div className="email-time text-grey-500 fw-600">12:48PM</div>
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a href="default-email-open.html" className="rounded-3 bg-transparent">
+                                        <Link to='/email/open' className="rounded-3 bg-transparent">
                                             <div className="form-check mt-1">
                                                 <input className="form-check-input" type="checkbox" id="blankCheckbox2" defaultValue="option1" aria-label="" />
                                                 <label className="text-grey-500 font-xssss" htmlFor="blankCheckbox2"></label>
@@ -83,10 +85,10 @@ function Email() {
                                                 <i className="feather-paperclip font-xss btn-round-sm text-grey-500 me-2 p-0"></i>
                                             </span>
                                             <div className="email-time text-grey-500 fw-600">12:48PM</div>
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a href="default-email-open.html" className="rounded-3 bg-transparent">
+                                        <Link to='/email/open' className="rounded-3 bg-transparent">
                                             <div className="form-check mt-1">
                                                 <input className="form-check-input" type="checkbox" id="blankCheckbox3" defaultValue="option1" aria-label="" />
                                                 <label className="text-grey-500 font-xssss" htmlFor="blankCheckbox3"></label>
@@ -107,10 +109,10 @@ function Email() {
                                                 <i className="feather-paperclip font-xss btn-round-sm text-grey-500 me-2 p-0"></i>
                                             </span>
                                             <div className="email-time text-grey-500 fw-600">12:48PM</div>
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a href="default-email-open.html" className="rounded-3 bg-transparent">
+                                        <Link to='/email/open' className="rounded-3 bg-transparent">
                                             <div className="form-check mt-1">
                                                 <input className="form-check-input" type="checkbox" id="blankCheckbox4" defaultValue="option1" aria-label="" />
                                                 <label className="text-grey-500 font-xssss" htmlFor="blankCheckbox4"></label>
@@ -131,10 +133,10 @@ function Email() {
                                                 
                                             </span>
                                             <div className="email-time text-grey-500 fw-600">12:48PM</div>
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a href="default-email-open.html" className="rounded-3 bg-lightblue theme-light-bg">
+                                        <Link to='/email/open' className="rounded-3 bg-lightblue theme-light-bg">
                                             <div className="form-check mt-1">
                                                 <input className="form-check-input" type="checkbox" id="blankCheckbox5" defaultValue="option1" aria-label="" />
                                                 <label className="text-grey-500 font-xssss" htmlFor="blankCheckbox5"></label>
@@ -155,10 +157,10 @@ function Email() {
                                                 <i className="feather-paperclip font-xss btn-round-sm text-grey-500 me-2 p-0"></i>
                                             </span>
                                             <div className="email-time text-grey-500 fw-600">12:48PM</div>
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a href="default-email-open.html" className="rounded-3 bg-lightblue theme-light-bg">
+                                        <Link to='/email/open' className="rounded-3 bg-lightblue theme-light-bg">
                                             <div className="form-check mt-1">
                                                 <input className="form-check-input" type="checkbox" id="blankCheckbox6" defaultValue="option1" aria-label="" />
                                                 <label className="text-grey-500 font-xssss" htmlFor="blankCheckbox6"></label>
@@ -179,10 +181,10 @@ function Email() {
                                                 
                                             </span>
                                             <div className="email-time text-grey-500 fw-600">12:48PM</div>
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a href="default-email-open.html" className="rounded-3 bg-transparent">
+                                        <Link to='/email/open' className="rounded-3 bg-transparent">
                                             <div className="form-check mt-1">
                                                 <input className="form-check-input" type="checkbox" id="blankCheckbox7" defaultValue="option1" aria-label="" />
                                                 <label className="text-grey-500 font-xssss" htmlFor="blankCheckbox7"></label>
@@ -203,10 +205,10 @@ function Email() {
                                                 <i className="feather-paperclip font-xss btn-round-sm text-grey-500 me-2 p-0"></i>
                                             </span>
                                             <div className="email-time text-grey-500 fw-600">12:48PM</div>
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a href="default-email-open.html" className="rounded-3 bg-transparent">
+                                        <Link to='/email/open' className="rounded-3 bg-transparent">
                                             <div className="form-check mt-1">
                                                 <input className="form-check-input" type="checkbox" id="blankCheckbox8" defaultValue="option1" aria-label="" />
                                                 <label className="text-grey-500 font-xssss" htmlFor="blankCheckbox8"></label>
@@ -227,10 +229,10 @@ function Email() {
                                                 
                                             </span>
                                             <div className="email-time text-grey-500 fw-600">12:48PM</div>
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a href="default-email-open.html" className="rounded-3 bg-transparent">
+                                        <Link to='/email/open' className="rounded-3 bg-transparent">
                                             <div className="form-check mt-1">
                                                 <input className="form-check-input" type="checkbox" id="blankCheckbox9" defaultValue="option1" aria-label="" />
                                                 <label className="text-grey-500 font-xssss" htmlFor="blankCheckbox9"></label>
@@ -251,10 +253,10 @@ function Email() {
                                                 <i className="feather-paperclip font-xss btn-round-sm text-grey-500 me-2 p-0"></i>
                                             </span>
                                             <div className="email-time text-grey-500 fw-600">12:48PM</div>
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a href="default-email-open.html" className="rounded-3 bg-lightblue theme-light-bg">
+                                        <Link to='/email/open' className="rounded-3 bg-lightblue theme-light-bg">
                                             <div className="form-check mt-1">
                                                 <input className="form-check-input" type="checkbox" id="blankCheckbox10" defaultValue="option1" aria-label="" />
                                                 <label className="text-grey-500 font-xssss" htmlFor="blankCheckbox10"></label>
@@ -275,10 +277,10 @@ function Email() {
                                                 
                                             </span>
                                             <div className="email-time text-grey-500 fw-600">12:48PM</div>
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a href="default-email-open.html" className="rounded-3 bg-transparent">
+                                        <Link to='/email/open' className="rounded-3 bg-transparent">
                                             <div className="form-check mt-1">
                                                 <input className="form-check-input" type="checkbox" id="blankCheckbox11" defaultValue="option1" aria-label="" />
                                                 <label className="text-grey-500 font-xssss" htmlFor="blankCheckbox11"></label>
@@ -299,10 +301,10 @@ function Email() {
                                                 <i className="feather-paperclip font-xss btn-round-sm text-grey-500 me-2 p-0"></i>
                                             </span>
                                             <div className="email-time text-grey-500 fw-600">12:48PM</div>
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a href="default-email-open.html" className="rounded-3 bg-transparent">
+                                        <Link to='/email/open' className="rounded-3 bg-transparent">
                                             <div className="form-check mt-1">
                                                 <input className="form-check-input" type="checkbox" id="blankCheckbox12" defaultValue="option1" aria-label="" />
                                                 <label className="text-grey-500 font-xssss" htmlFor="blankCheckbox12"></label>
@@ -323,10 +325,10 @@ function Email() {
                                                 
                                             </span>
                                             <div className="email-time text-grey-500 fw-600">12:48PM</div>
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a href="default-email-open.html" className="rounded-3 bg-transparent">
+                                        <Link to='/email/open' className="rounded-3 bg-transparent">
                                             <div className="form-check mt-1">
                                                 <input className="form-check-input" type="checkbox" id="blankCheckbox13" defaultValue="option1" aria-label="" />
                                                 <label className="text-grey-500 font-xssss" htmlFor="blankCheckbox13"></label>
@@ -347,7 +349,7 @@ function Email() {
                                                 <i className="feather-paperclip font-xss btn-round-sm text-grey-500 me-2 p-0"></i>
                                             </span>
                                             <div className="email-time text-grey-500 fw-600">12:48PM</div>
-                                        </a>
+                                        </Link>
                                     </li>
                                 </ul>                                 
                             </div>
@@ -399,19 +401,14 @@ function Email() {
               
               <Pages/>
 
+\
             </div>
         </div>
 
         
         {/* <!-- right chat --> */}
         
-        <div className="app-footer border-0 shadow-lg bg-primary-gradiant">
-            <a href="default.html" className="nav-content-bttn nav-center"><i className="feather-home"></i></a>
-            <a href="default-video.html" className="nav-content-bttn"><i className="feather-package"></i></a>
-            <a href="default-live-stream.html" className="nav-content-bttn" data-tab="chats"><i className="feather-layout"></i></a>            
-            <a href="shop-2.html" className="nav-content-bttn"><i className="feather-layers"></i></a>
-            <a href="default-settings.html" className="nav-content-bttn"><img src="/assets/images/female-profile.png" alt="user" className="w30 shadow-xss" /></a>
-        </div>
+        <FooterBar/>
 
         <div className="app-header-search">
             <form className="search-form">
@@ -429,28 +426,7 @@ function Email() {
 
     </div> 
 
-    <div className="modal bottom side fade" id="Modalstries" tabIndex="-1" role="dialog" style={{ overflowY: 'auto'}}>
-         <div className="modal-dialog modal-dialog-centered" role="document">
-            <div className="modal-content border-0 bg-transparent">
-                <button type="button" className="close mt-0 position-absolute top--30 right--10" data-dismiss="modal" aria-label="Close"><i className="ti-close text-white font-xssss"></i></button>
-                <div className="modal-body p-0">
-                    <div className="card w-100 border-0 rounded-3 overflow-hidden bg-gradiant-bottom bg-gradiant-top">
-                        <div className="owl-carousel owl-theme dot-style3 story-slider owl-dot-nav nav-none">
-                            <div className="item"><img src="/assets/images/story-5.jpg" alt="image" /></div>
-                            <div className="item"><img src="/assets/images/story-6.jpg" alt="image" /></div>
-                            <div className="item"><img src="/assets/images/story-7.jpg" alt="image" /></div>
-                            <div className="item"><img src="/assets/images/story-8.jpg" alt="image" /></div>
-                            
-                        </div>
-                    </div>
-                    <div className="form-group mt-3 mb-0 p-3 position-absolute bottom-0 z-index-1 w-100">
-                        <input type="text" className="style2-input w-100 bg-transparent border-light-md p-3 pe-5 font-xssss fw-500 text-white" defaultValue="Write Comments" />               
-                        <span className="feather-send text-white font-md text-white position-absolute" style={{bottom: '35px', right: '30px'}}></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <Notification/>
 
     <div className="modal-popup-chat">
         <div className="modal-popup-wrap bg-white p-0 shadow-lg rounded-3">
@@ -480,8 +456,17 @@ function Email() {
     </div> 
 
 </div>
+
     </div>
   )
 }
+
+
+
+
+
+
+
+
 
 export default Email;

@@ -3,7 +3,7 @@ import React from "react";
 function NewsFeed() {
   return (
     <div>
-      <div className="section full pe-3 ps-4 pt-0 pb-4 position-relative feed-body">
+      <div className="section full pe-3 ps-4 pt-0 pb-4 mt-4 position-relative feed-body">
         <h4 className="font-xsssss text-grey-500 text-uppercase fw-700 ls-3">
           Pages
         </h4>

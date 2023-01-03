@@ -4,6 +4,8 @@ import Group from '../shared/very_right/Group';
 import Pages from '../shared/very_right/Pages';
 import Header from '../shared/Header';
 import LeftSection from '../shared/left/LeftSection';
+import FooterBar from '../shared/FooterBar';
+import Notification from '../shared/Notification';
 
 function Groups() {
   return (
@@ -206,13 +208,7 @@ function Groups() {
         
         {/* <!-- right chat --> */}
         
-        <div class="app-footer border-0 shadow-lg bg-primary-gradiant">
-            <a href="default.html" class="nav-content-bttn nav-center"><i class="feather-home"></i></a>
-            <a href="default-video.html" class="nav-content-bttn"><i class="feather-package"></i></a>
-            <a href="default-live-stream.html" class="nav-content-bttn" data-tab="chats"><i class="feather-layout"></i></a>            
-            <a href="shop-2.html" class="nav-content-bttn"><i class="feather-layers"></i></a>
-            <a href="default-settings.html" class="nav-content-bttn"><img src="/assets/images/female-profile.png" alt="user" class="w30 shadow-xss" /></a>
-        </div>
+        <FooterBar/>
 
         <div class="app-header-search">
             <form class="search-form">
@@ -230,28 +226,7 @@ function Groups() {
 
     </div> 
 
-    <div class="modal bottom side fade" id="Modalstries" tabIndex="-1" role="dialog" style={{ overflowY:  'auto'}}>
-         <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content border-0 bg-transparent">
-                <button type="button" class="close mt-0 position-absolute top--30 right--10" data-dismiss="modal" aria-label="Close"><i class="ti-close text-white font-xssss"></i></button>
-                <div class="modal-body p-0">
-                    <div class="card w-100 border-0 rounded-3 overflow-hidden bg-gradiant-bottom bg-gradiant-top">
-                        <div class="owl-carousel owl-theme dot-style3 story-slider owl-dot-nav nav-none">
-                            <div class="item"><img src="/assets/images/story-5.jpg" alt="image" /></div>
-                            <div class="item"><img src="/assets/images/story-6.jpg" alt="image" /></div>
-                            <div class="item"><img src="/assets/images/story-7.jpg" alt="image" /></div>
-                            <div class="item"><img src="/assets/images/story-8.jpg" alt="image" /></div>
-                            
-                        </div>
-                    </div>
-                    <div class="form-group mt-3 mb-0 p-3 position-absolute bottom-0 z-index-1 w-100">
-                        <input type="text" class="style2-input w-100 bg-transparent border-light-md p-3 pe-5 font-xssss fw-500 text-white" defaultValue="Write Comments" />               
-                        <span class="feather-send text-white font-md text-white position-absolute" style={{bottom: '35px' ,right: '30px'}}></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <Notification/>
 
     <div class="modal-popup-chat">
         <div class="modal-popup-wrap bg-white p-0 shadow-lg rounded-3">
