@@ -119,7 +119,7 @@ function Accountinfo() {
                                             <div className="card-body d-flex justify-content-between align-items-end p-0">
                                                 <div className="form-group mb-0 w-100">
                                                     <input type="file" name="file" id="file" className="input-file" />
-                                                    <label for="file" className="rounded-3 text-center bg-white btn-tertiary js-labelFile p-4 w-100 border-dashed">
+                                                    <label htmlFor="file" className="rounded-3 text-center bg-white btn-tertiary js-labelFile p-4 w-100 border-dashed">
                                                     <i className="ti-cloud-down large-icon me-3 d-block"></i>
                                                     <span className="js-fileName">Drag and drop or click to replace</span>
                                                     </label>
@@ -130,7 +130,7 @@ function Accountinfo() {
 
                                     <div className="col-lg-12 mb-3">
                                         <label className="mont-font fw-600 font-xsss">Description</label>
-                                        <textarea className="form-control mb-0 p-3 h100 bg-greylight lh-16" rows="5" placeholder="Write your message..." spellcheck="false"></textarea>
+                                        <textarea className="form-control mb-0 p-3 h100 bg-greylight lh-16" rows="5" placeholder="Write your message..." spellCheck="false"></textarea>
                                     </div>
 
                                     <div className="col-lg-12">

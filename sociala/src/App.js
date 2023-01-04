@@ -18,6 +18,13 @@ import Error from "./pages/Error";
 import Accountinfo from "./pages/Settngs/Accountinfo";
 import Contactinfo from "./pages/Settngs/Contactinfo";
 import Social from "./pages/Settngs/Social";
+import Card from "./pages/Settngs/Card";
+import Password from "./pages/Settngs/Password";
+import Help from "./pages/Settngs/Help";
+import Notifications from "./pages/Settngs/Notifications";
+import Hotel from "./pages/Hotel";
+import Event from "./pages/Event";
+import HotelDetails from "./pages/HotelDetails";
 
 
 function App() {
@@ -39,9 +46,17 @@ function App() {
       <Route path="/analytics" element={<Analytics />} />
       <Route path="/chat" element={<Chat />} />
       <Route path="/error" element={<Error />} />
+      <Route path="/hotel" element={<Hotel />} />
+      <Route path="/hotel/details" element={<HotelDetails />} />
+      <Route path="/events" element={<Event />} />
       <Route path="/setting/account/info" element={<Accountinfo />} />
       <Route path="/setting/saveaddress" element={<Contactinfo />} />
       <Route path="/setting/social" element={<Social />} />
+      <Route path="/setting/card" element={<Card />} />
+      <Route path="/setting/password" element={<Password />} />
+      <Route path="/setting/help" element={<Help />} />
+      <Route path="/setting/notifications" element={<Notifications />} />
+  
       {/* /Sociala */}
     </Routes>
   );

@@ -11,6 +11,7 @@ import Group from '../shared/very_right/Group';
 import Pages from '../shared/very_right/Pages';
 import FooterBar from '../shared/FooterBar';
 import Notification from '../shared/Notification';
+
 function Home() {
   return (
     <div>

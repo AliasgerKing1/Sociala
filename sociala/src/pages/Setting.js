@@ -82,8 +82,8 @@ function Setting() {
                           </div>
                           <ul className="list-inline mb-4">
                             <li className="list-inline-item d-block border-bottom me-0">
-                              <a
-                                href="payment.html"
+                              <Link
+                                to="/setting/card"
                                 className="pt-2 pb-2 d-flex align-items-center"
                               >
                                 <i className="btn-round-md bg-mini-gradiant text-white feather-credit-card font-md me-3"></i>
@@ -91,11 +91,11 @@ function Setting() {
                                   My Cards
                                 </h4>
                                 <i className="ti-angle-right font-xsss text-grey-500 ms-auto mt-3"></i>
-                              </a>
+                              </Link>
                             </li>
                             <li className="list-inline-item d-block  me-0">
-                              <a
-                                href="password.html"
+                              <Link
+                               to="/setting/password"
                                 className="pt-2 pb-2 d-flex align-items-center"
                               >
                                 <i className="btn-round-md bg-blue-gradiant text-white feather-inbox font-md me-3"></i>
@@ -103,7 +103,7 @@ function Setting() {
                                   Password
                                 </h4>
                                 <i className="ti-angle-right font-xsss text-grey-500 ms-auto mt-3"></i>
-                              </a>
+                              </Link>
                             </li>
                           </ul>
 
@@ -112,8 +112,8 @@ function Setting() {
                           </div>
                           <ul className="list-inline">
                             <li className="list-inline-item d-block border-bottom me-0">
-                              <a
-                                href="default-notification.html"
+                              <Link
+                               to="/setting/notifications"
                                 className="pt-2 pb-2 d-flex align-items-center"
                               >
                                 <i className="btn-round-md bg-gold-gradiant text-white feather-bell font-md me-3"></i>
@@ -121,17 +121,17 @@ function Setting() {
                                   Notification
                                 </h4>
                                 <i className="ti-angle-right font-xsss text-grey-500 ms-auto mt-3"></i>
-                              </a>
+                              </Link>
                             </li>
                             <li className="list-inline-item d-block border-bottom me-0">
-                              <a
-                                href="help-box.html"
+                              <Link
+                                to="/setting/help"
                                 className="pt-2 pb-2 d-flex align-items-center"
                               >
                                 <i className="btn-round-md bg-primary-gradiant text-white feather-help-circle font-md me-3"></i>
                                 <h4 className="fw-600 font-xsss mb-0 mt-0">Help</h4>
                                 <i className="ti-angle-right font-xsss text-grey-500 ms-auto mt-3"></i>
-                              </a>
+                              </Link>
                             </li>
                             <li className="list-inline-item d-block me-0">
                               <a

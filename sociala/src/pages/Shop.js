@@ -49,7 +49,7 @@ function Shop() {
                                         <div className="row">
                                             <div className="col-lg-3">
                                                 <div className="form-group mb-0">
-                                                    <label for="Search" className="fw-600 text-grey-900 font-xsss">Categories</label>
+                                                    <label htmlFor="Search" className="fw-600 text-grey-900 font-xsss">Categories</label>
                                                 </div>
                                                 <ul className="recent-post mt-2">
                                                     <li className="mb-0"><a href="#" className="fw-600 font-xssss">Drress</a></li>
@@ -65,60 +65,60 @@ function Shop() {
                                             </div>
                                             <div className="col-lg-3 pe-4">
                                                 <div className="form-group mb-0">
-                                                    <label for="Search" className="fw-600 text-grey-900 font-xsss">Brand</label>
+                                                    <label htmlFor="Search" className="fw-600 text-grey-900 font-xsss">Brand</label>
                                                 </div>
                                                 <div className="form-group mb-2 mt-2">
                                                     <div className="custom-control me-0 custom-radio size-sm custom-control-inline d-block">
                                                         <input type="radio" className="custom-control-input" id="customRadio1" name="Depart" defaultValue="customEx" defaultChecked="" />
-                                                        <label className="custom-control-label small-size fw-600 text-grey-800 font-xssss d-block" for="customRadio1">Addidas<span className="float-right fw-600 text-grey-600 font-xssss mt-1">12</span></label>
+                                                        <label className="custom-control-label small-size fw-600 text-grey-800 font-xssss d-block" htmlFor="customRadio1">Addidas<span className="float-right fw-600 text-grey-600 font-xssss mt-1">12</span></label>
                                                     </div>
                                                 </div>
                                                 <div className="form-group mb-2">
                                                     <div className="custom-control me-0 custom-radio size-sm custom-control-inline d-block">
                                                         <input type="radio" className="custom-control-input" id="customRadio5" name="Depart" defaultValue="customEx" />
-                                                        <label className="custom-control-label small-size fw-600 text-grey-800 font-xssss d-block" for="customRadio5">Levis <span className="float-right fw-600 text-grey-600 font-xssss mt-1">15</span></label>
+                                                        <label className="custom-control-label small-size fw-600 text-grey-800 font-xssss d-block" htmlFor="customRadio5">Levis <span className="float-right fw-600 text-grey-600 font-xssss mt-1">15</span></label>
                                                     </div>
                                                 </div>
                                                 <div className="form-group mb-2">
                                                     <div className="custom-control me-0 custom-radio size-sm custom-control-inline d-block">
                                                         <input type="radio" className="custom-control-input" id="customRadio3" name="Depart" defaultValue="customEx" />
-                                                        <label className="custom-control-label small-size fw-600 text-grey-800 font-xssss d-block" for="customRadio3">Cape Town <span className="float-right fw-600 text-grey-600 font-xssss mt-1">7</span></label>
+                                                        <label className="custom-control-label small-size fw-600 text-grey-800 font-xssss d-block" htmlFor="customRadio3">Cape Town <span className="float-right fw-600 text-grey-600 font-xssss mt-1">7</span></label>
                                                     </div>
                                                 </div>
                                                 <div className="form-group mb-2">
                                                     <div className="custom-control me-0 custom-radio size-sm custom-control-inline d-block">
                                                         <input type="radio" className="custom-control-input" id="customRadio4" name="Depart" defaultValue="customEx" />
-                                                        <label className="custom-control-label small-size fw-600 text-grey-800 font-xssss d-block" for="customRadio4">Nikes <span className="float-right fw-600 text-grey-600 font-xssss mt-1">34</span></label>
+                                                        <label className="custom-control-label small-size fw-600 text-grey-800 font-xssss d-block" htmlFor="customRadio4">Nikes <span className="float-right fw-600 text-grey-600 font-xssss mt-1">34</span></label>
                                                     </div>
                                                 </div>
                                                 <div className="form-group mb-2 mt-2">
                                                     <div className="custom-control me-0 custom-radio size-sm custom-control-inline d-block">
                                                         <input type="radio" className="custom-control-input" id="customRadio1" name="Depart" defaultValue="customEx" defaultChecked="" />
-                                                        <label className="custom-control-label small-size fw-600 text-grey-800 font-xssss d-block" for="customRadio1">Addidas<span className="float-right fw-600 text-grey-600 font-xssss mt-1">12</span></label>
+                                                        <label className="custom-control-label small-size fw-600 text-grey-800 font-xssss d-block" htmlFor="customRadio1">Addidas<span className="float-right fw-600 text-grey-600 font-xssss mt-1">12</span></label>
                                                     </div>
                                                 </div>
                                                 <div className="form-group mb-2">
                                                     <div className="custom-control me-0 custom-radio size-sm custom-control-inline d-block">
                                                         <input type="radio" className="custom-control-input" id="customRadio5" name="Depart" defaultValue="customEx" />
-                                                        <label className="custom-control-label small-size fw-600 text-grey-800 font-xssss d-block" for="customRadio5">Levis <span className="float-right fw-600 text-grey-600 font-xssss mt-1">15</span></label>
+                                                        <label className="custom-control-label small-size fw-600 text-grey-800 font-xssss d-block" htmlFor="customRadio5">Levis <span className="float-right fw-600 text-grey-600 font-xssss mt-1">15</span></label>
                                                     </div>
                                                 </div>
                                                 <div className="form-group mb-2">
                                                     <div className="custom-control me-0 custom-radio size-sm custom-control-inline d-block">
                                                         <input type="radio" className="custom-control-input" id="customRadio3" name="Depart" defaultValue="customEx" />
-                                                        <label className="custom-control-label small-size fw-600 text-grey-800 font-xssss d-block" for="customRadio3">Cape Town <span className="float-right fw-600 text-grey-600 font-xssss mt-1">7</span></label>
+                                                        <label className="custom-control-label small-size fw-600 text-grey-800 font-xssss d-block" htmlFor="customRadio3">Cape Town <span className="float-right fw-600 text-grey-600 font-xssss mt-1">7</span></label>
                                                     </div>
                                                 </div>
                                                 <div className="form-group mb-2">
                                                     <div className="custom-control me-0 custom-radio size-sm custom-control-inline d-block">
                                                         <input type="radio" className="custom-control-input" id="customRadio4" name="Depart" defaultValue="customEx" />
-                                                        <label className="custom-control-label small-size fw-600 text-grey-800 font-xssss d-block" for="customRadio4">Nikes <span className="float-right fw-600 text-grey-600 font-xssss mt-1">34</span></label>
+                                                        <label className="custom-control-label small-size fw-600 text-grey-800 font-xssss d-block" htmlFor="customRadio4">Nikes <span className="float-right fw-600 text-grey-600 font-xssss mt-1">34</span></label>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div className="col-lg-3">
                                                 <div className="form-group mb-0">
-                                                    <label for="Search" className="fw-600 text-grey-900 font-xsss">Size</label>
+                                                    <label htmlFor="Search" className="fw-600 text-grey-900 font-xsss">Size</label>
                                                 </div>
                                                 <ul className="list-inline mt-2">
                                                     <li className="list-inline-item me-0 mb-2"><a href="#" className="btn-round-sm bg-white fw-600 font-xssss text-grey-800 ">XS</a></li>
@@ -136,7 +136,7 @@ function Shop() {
                                                 </ul> 
 
                                                 <div className="form-group mb-0 mt-4">
-                                                    <label for="Search" className="fw-600 text-grey-900 font-xsss">Color</label>
+                                                    <label htmlFor="Search" className="fw-600 text-grey-900 font-xsss">Color</label>
                                                 </div>
                                                 <ul className="list-inline mt-2">
                                                     <li className="list-inline-item me-0"><a href="#" className="btn-round-sm" style={{backgroundColor: '#ff3b30'}}></a></li>
@@ -156,7 +156,7 @@ function Shop() {
                                             </div>
                                             <div className="col-lg-3">
                                                 <div className="form-group mb-0 mt-0">
-                                                    <label for="Search" className="fw-600 text-grey-900 font-xsss">Price</label>
+                                                    <label htmlFor="Search" className="fw-600 text-grey-900 font-xsss">Price</label>
                                                 </div>
                                                 <div className="form-group mt-3 mb-0">
                                                     <div className="row">
@@ -194,7 +194,7 @@ function Shop() {
                                                     </div>
                                                 </div>
                                                 <div className="form-group mb-0 mt-3">
-                                                    <label for="Search" className="fw-600 text-grey-900 font-xsss">Tag</label>
+                                                    <label htmlFor="Search" className="fw-600 text-grey-900 font-xsss">Tag</label>
                                                 </div>
                                                 <ul className="list-inline mt-2">
                                                     <li className="m-0 list-inline-item mb-2">
@@ -450,7 +450,7 @@ function Shop() {
             <div className="modal-popup-body w-100 p-3 h-auto">
                 <div className="message"><div className="message-content font-xssss lh-24 fw-500">Hi, how can I help you?</div></div>
                 <div className="date-break font-xsssss lh-24 fw-500 text-grey-500 mt-2 mb-2">Mon 10:20am</div>
-                <div className="message self text-right mt-2"><div className="message-content font-xssss lh-24 fw-500">I want those files for you. I want you to send 1 PDF and 1 image file.</div></div>
+                <div className="message self text-right mt-2"><div className="message-content font-xssss lh-24 fw-500">I want those files htmlFor you. I want you to send 1 PDF and 1 image file.</div></div>
                 <div className="snippet pt-3 ps-4 pb-2 pe-3 mt-2 bg-grey rounded-xl float-right" data-title=".dot-typing"><div className="stage"><div className="dot-typing"></div></div></div>
                 <div className="clearfix"></div>
             </div>

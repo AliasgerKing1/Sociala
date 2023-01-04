@@ -19,25 +19,25 @@ function MorePages() {
             </Link>
           </li>
           <li>
-            <a href="default-hotel.html" className="nav-content-bttn open-font">
+            <Link to="/hotel" className="nav-content-bttn open-font">
               <i className="font-xl text-current feather-home me-3"></i>
               <span>Near Hotel</span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="default-event.html" className="nav-content-bttn open-font">
+            <Link to="/events" className="nav-content-bttn open-font">
               <i className="font-xl text-current feather-map-pin me-3"></i>
               <span>Latest Event</span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="default-live-stream.html"
+            <Link
+              to="/livestream"
               className="nav-content-bttn open-font"
             >
               <i className="font-xl text-current feather-youtube me-3"></i>
               <span>Live Stream</span>
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
