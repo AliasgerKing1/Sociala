@@ -349,7 +349,7 @@ function Header() {
           </div>
         </div>
 
-        <Link to="/setting" className="p-0 ms-3 menu-icon">
+        <Link to="/user/profile" className="p-0 ms-3 menu-icon">
           <img
             src="/assets/images/profile-4.png"
             alt="user"

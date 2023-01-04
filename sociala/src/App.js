@@ -25,12 +25,12 @@ import Notifications from "./pages/Settngs/Notifications";
 import Hotel from "./pages/Hotel";
 import Event from "./pages/Event";
 import HotelDetails from "./pages/HotelDetails";
-
+import UserProfile from "./pages/UserProfile";
 
 function App() {
   return (
     <Routes>
-    {/* Sociala */}
+      {/* Sociala */}
       <Route path="/home" element={<Home />} />
       <Route path="stories" element={<Stories />} />
       <Route path="setting" element={<Setting />} />
@@ -49,6 +49,7 @@ function App() {
       <Route path="/hotel" element={<Hotel />} />
       <Route path="/hotel/details" element={<HotelDetails />} />
       <Route path="/events" element={<Event />} />
+      <Route path="/user/profile" element={<UserProfile />} />
       <Route path="/setting/account/info" element={<Accountinfo />} />
       <Route path="/setting/saveaddress" element={<Contactinfo />} />
       <Route path="/setting/social" element={<Social />} />
@@ -56,7 +57,7 @@ function App() {
       <Route path="/setting/password" element={<Password />} />
       <Route path="/setting/help" element={<Help />} />
       <Route path="/setting/notifications" element={<Notifications />} />
-  
+
       {/* /Sociala */}
     </Routes>
   );
