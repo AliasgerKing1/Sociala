@@ -19,9 +19,11 @@ import Accountinfo from "./pages/Settngs/Accountinfo";
 import Contactinfo from "./pages/Settngs/Contactinfo";
 import Social from "./pages/Settngs/Social";
 
+
 function App() {
   return (
     <Routes>
+    {/* Sociala */}
       <Route path="/home" element={<Home />} />
       <Route path="stories" element={<Stories />} />
       <Route path="setting" element={<Setting />} />
@@ -40,6 +42,7 @@ function App() {
       <Route path="/setting/account/info" element={<Accountinfo />} />
       <Route path="/setting/saveaddress" element={<Contactinfo />} />
       <Route path="/setting/social" element={<Social />} />
+      {/* /Sociala */}
     </Routes>
   );
 }
