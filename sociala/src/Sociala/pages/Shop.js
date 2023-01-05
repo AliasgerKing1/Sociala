@@ -227,7 +227,7 @@ function Shop() {
                                             <a href="#"><img src="/assets/images/pp-9.png" alt="product-image" className="w-100 mt-0 mb-0 p-5" /></a>
                                         </div>
                                         <div className="card-body w-100 p-0 text-center">
-                                            <h2 className="mt-2 mb-1"><Link to="/shop/single/product" className="text-black fw-700 font-xsss lh-26">Textured Sleeveless Camisole</Link></h2>
+                                            <h2 className="mt-2 mb-1"><a href="single-product.html" className="text-black fw-700 font-xsss lh-26">Textured Sleeveless Camisole</a></h2>
                                             <h6 className="font-xsss fw-600 text-grey-500 ls-2">$449</h6>
                                         </div>                                
                                     </div>
@@ -239,7 +239,7 @@ function Shop() {
                                             <a href="#"><img src="/assets/images/pp-10.png" alt="product-image" className="w-100 mt-0 mb-0 p-5" /></a>
                                         </div>
                                         <div className="card-body w-100 p-0 text-center">
-                                            <h2 className="mt-2 mb-1"><Link to="/shop/single/product" className="text-black fw-700 font-xsss lh-26">Adjustable Shoulder Straps</Link></h2>
+                                            <h2 className="mt-2 mb-1"><a href="single-product.html" className="text-black fw-700 font-xsss lh-26">Adjustable Shoulder Straps</a></h2>
                                             <h6 className="font-xsss fw-600 text-grey-500 ls-2">$449</h6>
                                         </div>                                
                                     </div>
@@ -251,7 +251,7 @@ function Shop() {
                                             <a href="#"><img src="/assets/images/pp-13.png" alt="product-image" className="w-100 mt-0 mb-0 p-5" /></a>
                                         </div>
                                         <div className="card-body w-100 p-0 text-center">
-                                            <h2 className="mt-2 mb-1"><Link to="/shop/single/product" className="text-black fw-700 font-xsss lh-26">Neck Strappy Camisole</Link></h2>
+                                            <h2 className="mt-2 mb-1"><a href="single-product.html" className="text-black fw-700 font-xsss lh-26">Neck Strappy Camisole</a></h2>
                                             <h6 className="font-xsss fw-600 text-grey-500 ls-2">$449</h6>
                                         </div>                                
                                     </div>
@@ -263,7 +263,7 @@ function Shop() {
                                             <a href="#"><img src="/assets/images/pp-14.png" alt="product-image" className="w-100 mt-0 mb-0 p-5" /></a>
                                         </div>
                                         <div className="card-body w-100 p-0 text-center">
-                                            <h2 className="mt-2 mb-1"><Link to="/shop/single/product" className="text-black fw-700 font-xsss lh-26">Scoop-Neck Strappy</Link></h2>
+                                            <h2 className="mt-2 mb-1"><a href="single-product.html" className="text-black fw-700 font-xsss lh-26">Scoop-Neck Strappy</a></h2>
                                             <h6 className="font-xsss fw-600 text-grey-500 ls-2">$449</h6>
                                         </div>                                
                                     </div>
@@ -274,7 +274,7 @@ function Shop() {
                                             <a href="#"><img src="/assets/images/pp-8.png" alt="product-image" className="w-100 mt-0 mb-0 p-5" /></a>
                                         </div>
                                         <div className="card-body w-100 p-0 text-center">
-                                            <h2 className="mt-2 mb-1"><Link to="/shop/single/product" className="text-black fw-700 font-xsss lh-26">Butler Stool Ladder</Link></h2>
+                                            <h2 className="mt-2 mb-1"><a href="single-product.html" className="text-black fw-700 font-xsss lh-26">Butler Stool Ladder</a></h2>
                                             <h6 className="font-xsss fw-600 text-grey-500 ls-2">$449</h6>
                                         </div>                                
                                     </div>
@@ -286,7 +286,7 @@ function Shop() {
                                             <a href="#"><img src="/assets/images/pp-22.png" alt="product-image" className="w-100 mt-0 mb-0 p-5" /></a>
                                         </div>
                                         <div className="card-body w-100 p-0 text-center">
-                                            <h2 className="mt-2 mb-1"><Link to="/shop/single/product" className="text-black fw-700 font-xsss lh-26">Butler Stool Ladder</Link></h2>
+                                            <h2 className="mt-2 mb-1"><a href="single-product.html" className="text-black fw-700 font-xsss lh-26">Butler Stool Ladder</a></h2>
                                             <h6 className="font-xsss fw-600 text-grey-500 ls-2">$449</h6>
                                         </div>                                
                                     </div>
@@ -298,7 +298,7 @@ function Shop() {
                                             <a href="#"><img src="/assets/images/pp-23.png" alt="product-image" className="w-100 mt-0 mb-0 p-5" /></a>
                                         </div>
                                         <div className="card-body w-100 p-0 text-center">
-                                            <h2 className="mt-2 mb-1"><Link to="/shop/single/product" className="text-black fw-700 font-xsss lh-26">Butler Stool Ladder</Link></h2>
+                                            <h2 className="mt-2 mb-1"><a href="single-product.html" className="text-black fw-700 font-xsss lh-26">Butler Stool Ladder</a></h2>
                                             <h6 className="font-xsss fw-600 text-grey-500 ls-2">$449</h6>
                                         </div>                                
                                     </div>
@@ -310,7 +310,7 @@ function Shop() {
                                             <a href="#"><img src="/assets/images/pp-8.png" alt="product-image" className="w-100 mt-0 mb-0 p-5" /></a>
                                         </div>
                                         <div className="card-body w-100 p-0 text-center">
-                                            <h2 className="mt-2 mb-1"><Link to="/shop/single/product" className="text-black fw-700 font-xsss lh-26">Butler Stool Ladder</Link></h2>
+                                            <h2 className="mt-2 mb-1"><a href="single-product.html" className="text-black fw-700 font-xsss lh-26">Butler Stool Ladder</a></h2>
                                             <h6 className="font-xsss fw-600 text-grey-500 ls-2">$449</h6>
                                         </div>                                
                                     </div>
@@ -322,7 +322,7 @@ function Shop() {
                                             <a href="#"><img src="/assets/images/pp-9.png" alt="product-image" className="w-100 mt-0 mb-0 p-5" /></a>
                                         </div>
                                         <div className="card-body w-100 p-0 text-center">
-                                            <h2 className="mt-2 mb-1"><Link to="/shop/single/product" className="text-black fw-700 font-xsss lh-26">Textured Sleeveless Camisole</Link></h2>
+                                            <h2 className="mt-2 mb-1"><a href="single-product.html" className="text-black fw-700 font-xsss lh-26">Textured Sleeveless Camisole</a></h2>
                                             <h6 className="font-xsss fw-600 text-grey-500 ls-2">$449</h6>
                                         </div>                                
                                     </div>
@@ -334,7 +334,7 @@ function Shop() {
                                             <a href="#"><img src="/assets/images/pp-10.png" alt="product-image" className="w-100 mt-0 mb-0 p-5" /></a>
                                         </div>
                                         <div className="card-body w-100 p-0 text-center">
-                                            <h2 className="mt-2 mb-1"><Link to="/shop/single/product" className="text-black fw-700 font-xsss lh-26">Adjustable Shoulder Straps</Link></h2>
+                                            <h2 className="mt-2 mb-1"><a href="single-product.html" className="text-black fw-700 font-xsss lh-26">Adjustable Shoulder Straps</a></h2>
                                             <h6 className="font-xsss fw-600 text-grey-500 ls-2">$449</h6>
                                         </div>                                
                                     </div>
@@ -346,7 +346,7 @@ function Shop() {
                                             <a href="#"><img src="/assets/images/pp-11.png" alt="product-image" className="w-100 mt-0 mb-0 p-5" /></a>
                                         </div>
                                         <div className="card-body w-100 p-0 text-center">
-                                            <h2 className="mt-2 mb-1"><Link to="/shop/single/product" className="text-black fw-700 font-xsss lh-26">Neck Strappy Camisole</Link></h2>
+                                            <h2 className="mt-2 mb-1"><a href="single-product.html" className="text-black fw-700 font-xsss lh-26">Neck Strappy Camisole</a></h2>
                                             <h6 className="font-xsss fw-600 text-grey-500 ls-2">$449</h6>
                                         </div>                                
                                     </div>
@@ -358,7 +358,7 @@ function Shop() {
                                             <a href="#"><img src="/assets/images/pp-4.png" alt="product-image" className="w-100 mt-0 mb-0 p-5 mt-4 mb-4" /></a>
                                         </div>
                                         <div className="card-body w-100 p-0 text-center">
-                                            <h2 className="mt-2 mb-1"><Link to="/shop/single/product" className="text-black fw-700 font-xsss lh-26">Scoop-Neck Strappy</Link></h2>
+                                            <h2 className="mt-2 mb-1"><a href="single-product.html" className="text-black fw-700 font-xsss lh-26">Scoop-Neck Strappy</a></h2>
                                             <h6 className="font-xsss fw-600 text-grey-500 ls-2">$449</h6>
                                         </div>                                
                                     </div>

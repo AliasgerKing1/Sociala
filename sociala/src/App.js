@@ -26,6 +26,9 @@ import Hotel from "./pages/Hotel";
 import Event from "./pages/Event";
 import HotelDetails from "./pages/HotelDetails";
 import UserProfile from "./pages/UserProfile";
+import SinglePageShop from "./pages/SinglePageShop";
+import Job from "./pages/Job";
+import Users from "./pages/Users";
 
 function App() {
   return (
@@ -50,6 +53,9 @@ function App() {
       <Route path="/hotel/details" element={<HotelDetails />} />
       <Route path="/events" element={<Event />} />
       <Route path="/user/profile" element={<UserProfile />} />
+      <Route path="/shop/single/product" element={<SinglePageShop />} />
+      <Route path="/job" element={<Job />} />
+      <Route path="/users" element={<Users />} />
       <Route path="/setting/account/info" element={<Accountinfo />} />
       <Route path="/setting/saveaddress" element={<Contactinfo />} />
       <Route path="/setting/social" element={<Social />} />

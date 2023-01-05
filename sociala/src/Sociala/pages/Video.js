@@ -42,7 +42,7 @@ function Video() {
                                     <a href="#" className="ps-3 pe-2 lh-32 d-flex align-items-center font-xssss fw-600 alert-primary rounded-xxl text-primary ms-auto">See more <i className="font-xsss feather-chevron-right ms-1"></i></a>
                                 </div>
                                 <div className="card-body p-0 d-block mb-4">
-                                    <div className="owl-carousel owl-theme category-card overflow-visible owl-dot-nav nav-none style2 chatlist" style={{display : 'flex'}}>
+                                    <div className="owl-carousel owl-theme category-card overflow-visible owl-dot-nav nav-none style2 chatlist">
                                         <div className="item no-ouline">
                                             <div className="card w-100 border-0 shadow-none bg-transparent bg-transparent-card">
                                                 <a href="#" data-target="#Modalstries" data-toggle="modal" className="w-100 btn-round-lg"><i className="feather-plus text-grey-600 font-md"></i> <span className="d-block fw-600 font-xssss text-grey-600 text-dark mt-0">My story</span></a>
@@ -53,7 +53,7 @@ function Video() {
                                                 <div className="card-image text-center"><a href="#" data-target="#Modalstries" data-toggle="modal"><img src="/assets/images/user-22.png" alt="image" className="d-inline p-0" /> <span className="d-block fw-600 font-xssss text-grey-600 text-dark">Ana</span></a></div>
                                             </div>
                                         </div>
-                                        <div className="s">
+                                        <div className="item online">
                                             <div className="card bg-transparent bg-transparent-card border-0 shadow-none">
                                                 <div className="card-image text-center"><a href="#" data-target="#Modalstries" data-toggle="modal"><img src="/assets/images/user-23.png" alt="image" className="d-inline p-0" /> <span className="d-block fw-600 font-xssss text-grey-600 text-dark">Devid</span></a></div>
                                             </div>

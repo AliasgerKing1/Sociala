@@ -13963,18 +13963,18 @@ select.sort {
 .chatlist .item.dashed img {
   border: 2px var(--theme-color) dashed;
 }
-.chatlist .item.online:after {
+/* .chatlist .item.online:after {
   width: 10px;
   height: 10px;
   background-color: #10d876;
   position: absolute;
   bottom: 3px;
-  right: 3px;
+  right: 5px;
   display: inline-block;
   z-index: 2;
   content: "";
   border-radius: 5px;
-}
+} */
 .chatlist.style2 .item {
   width: 55px;
   border: 2px solid transparent;
@@ -14503,6 +14503,10 @@ select.sort {
 }
 .scroll-bar::-webkit-scrollbar-thumb {
   background-color: #aaa;
+}
+
+.cursor {
+  cursor : pointer !important;
 }
 @media (min-width: 991px) {
   .navbar-collapse {

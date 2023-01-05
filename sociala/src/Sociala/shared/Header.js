@@ -52,7 +52,7 @@ function Header() {
           <i className="feather-video font-lg bg-greylight btn-round-lg theme-dark-bg text-grey-500 "></i>
         </Link>
         <Link
-          to="/users"
+          to="/group"
           className="p-2 text-center ms-0 menu-icon center-menu-icon"
         >
           <i className="feather-user font-lg bg-greylight btn-round-lg theme-dark-bg text-grey-500 "></i>
@@ -62,12 +62,6 @@ function Header() {
           className="p-2 text-center ms-0 menu-icon center-menu-icon"
         >
           <i className="feather-shopping-bag font-lg bg-greylight btn-round-lg theme-dark-bg text-grey-500 "></i>
-        </Link>
-        <Link
-          to="/job"
-          className="p-2 text-center ms-0 menu-icon center-menu-icon"
-        >
-          <i className="feather-inbox font-lg bg-greylight btn-round-lg theme-dark-bg text-grey-500 "></i>
         </Link>
 
         <a
@@ -355,7 +349,7 @@ function Header() {
           </div>
         </div>
 
-        <Link to="/user/profile" className="p-0 ms-3 menu-icon">
+        <Link to="/setting" className="p-0 ms-3 menu-icon">
           <img
             src="/assets/images/profile-4.png"
             alt="user"

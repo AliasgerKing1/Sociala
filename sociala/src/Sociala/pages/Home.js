@@ -65,8 +65,8 @@ function Home() {
                 <div className="row feed-body">
                   <div className="col-xl-8 col-xxl-9 col-lg-8">
                     <div className="card w-100 shadow-none bg-transparent bg-transparent-card border-0 p-0 mb-0">
-                      <div className="owl-carousel category-card owl-theme overflow-hidden nav-none" style={{display: 'flex'}}>
-                        <div className="item px-1">
+                      <div className="owl-carousel category-card owl-theme overflow-hidden nav-none">
+                        <div className="item">
                           <div
                             data-bs-toggle="modal"
                             data-bs-target="#Modalstory"
@@ -85,7 +85,7 @@ function Home() {
                             </div>
                           </div>
                         </div>
-                        <div className="item  px-1">
+                        <div className="item">
                           <div
                             data-bs-toggle="modal"
                             data-bs-target="#Modalstory"
@@ -112,7 +112,7 @@ function Home() {
                             </div>
                           </div>
                         </div>
-                        <div className="item  px-1">
+                        <div className="item">
                           <div
                             data-bs-toggle="modal"
                             data-bs-target="#Modalstory"
@@ -139,7 +139,7 @@ function Home() {
                             </div>
                           </div>
                         </div>
-                        <div className="item  px-1">
+                        <div className="item">
                           <div
                             data-bs-toggle="modal"
                             data-bs-target="#Modalstory"
@@ -168,7 +168,7 @@ function Home() {
                             </div>
                           </div>
                         </div>
-                        <div className="item  px-1">
+                        <div className="item">
                           <div
                             data-bs-toggle="modal"
                             data-bs-target="#Modalstory"
@@ -197,7 +197,7 @@ function Home() {
                             </div>
                           </div>
                         </div>
-                        <div className="item  px-1">
+                        <div className="item">
                           <div
                             data-bs-toggle="modal"
                             data-bs-target="#Modalstory"
@@ -224,7 +224,7 @@ function Home() {
                             </div>
                           </div>
                         </div>
-                        <div className="item  px-1">
+                        <div className="item">
                           <div
                             data-bs-toggle="modal"
                             data-bs-target="#Modalstory"
@@ -317,23 +317,25 @@ function Home() {
                         >
                           <div className="card-body p-0 d-flex">
                             <i className="feather-bookmark text-grey-500 me-3 font-lg"></i>
-                            <h4 className="fw-600 text-grey-900 font-xssss mt-0 me-4 cursor">
+                            <h4 className="fw-600 text-grey-900 font-xssss mt-0 me-4">
                               Save Link
-                              <span className="d-block font-xsssss fw-500 mt-1 lh-3 text-grey-500" >
+                              <span className="d-block font-xsssss fw-500 mt-1 lh-3 text-grey-500">
                                 Add this to your saved items
                               </span>
                             </h4>
                           </div>
                           <div className="card-body p-0 d-flex mt-2">
                             <i className="feather-alert-circle text-grey-500 me-3 font-lg"></i>
-                            <h4 className="fw-600 text-grey-900 font-xssss mt-0 me-4 cursor">
+                            <h4 className="fw-600 text-grey-900 font-xssss mt-0 me-4">
                               Hide Post
-                              <span className="d-block font-xsssss fw-500 mt-1 lh-3 text-grey-500"></span>
+                              <span className="d-block font-xsssss fw-500 mt-1 lh-3 text-grey-500">
+                                Save to your saved items
+                              </span>
                             </h4>
                           </div>
                           <div className="card-body p-0 d-flex mt-2">
                             <i className="feather-alert-octagon text-grey-500 me-3 font-lg"></i>
-                            <h4 className="fw-600 text-grey-900 font-xssss mt-0 me-4 cursor">
+                            <h4 className="fw-600 text-grey-900 font-xssss mt-0 me-4">
                               Hide all from Group
                               <span className="d-block font-xsssss fw-500 mt-1 lh-3 text-grey-500">
                                 Save to your saved items
@@ -383,7 +385,7 @@ function Home() {
                         >
                           <div className="card-body p-0 d-flex">
                             <i className="feather-bookmark text-grey-500 me-3 font-lg"></i>
-                            <h4 className="fw-600 text-grey-900 font-xssss mt-0 me-4 cursor">
+                            <h4 className="fw-600 text-grey-900 font-xssss mt-0 me-4">
                               Save Link
                               <span className="d-block font-xsssss fw-500 mt-1 lh-3 text-grey-500">
                                 Add this to your saved items
@@ -392,7 +394,7 @@ function Home() {
                           </div>
                           <div className="card-body p-0 d-flex mt-2">
                             <i className="feather-alert-circle text-grey-500 me-3 font-lg"></i>
-                            <h4 className="fw-600 text-grey-900 font-xssss mt-0 me-4 cursor">
+                            <h4 className="fw-600 text-grey-900 font-xssss mt-0 me-4">
                               Hide Post
                               <span className="d-block font-xsssss fw-500 mt-1 lh-3 text-grey-500">
                                 Save to your saved items
@@ -401,7 +403,7 @@ function Home() {
                           </div>
                           <div className="card-body p-0 d-flex mt-2">
                             <i className="feather-alert-octagon text-grey-500 me-3 font-lg"></i>
-                            <h4 className="fw-600 text-grey-900 font-xssss mt-0 me-4 cursor">
+                            <h4 className="fw-600 text-grey-900 font-xssss mt-0 me-4">
                               Hide all from Group
                               <span className="d-block font-xsssss fw-500 mt-1 lh-3 text-grey-500">
                                 Save to your saved items
@@ -649,7 +651,7 @@ function Home() {
                         >
                           <div className="card-body p-0 d-flex">
                             <i className="feather-bookmark text-grey-500 me-3 font-lg"></i>
-                            <h4 className="fw-600 text-grey-900 font-xssss mt-0 me-4 cursor">
+                            <h4 className="fw-600 text-grey-900 font-xssss mt-0 me-4">
                               Save Link
                               <span className="d-block font-xsssss fw-500 mt-1 lh-3 text-grey-500">
                                 Add this to your saved items
@@ -658,7 +660,7 @@ function Home() {
                           </div>
                           <div className="card-body p-0 d-flex mt-2">
                             <i className="feather-alert-circle text-grey-500 me-3 font-lg"></i>
-                            <h4 className="fw-600 text-grey-900 font-xssss mt-0 me-4 cursor">
+                            <h4 className="fw-600 text-grey-900 font-xssss mt-0 me-4">
                               Hide Post
                               <span className="d-block font-xsssss fw-500 mt-1 lh-3 text-grey-500">
                                 Save to your saved items
@@ -667,7 +669,7 @@ function Home() {
                           </div>
                           <div className="card-body p-0 d-flex mt-2">
                             <i className="feather-alert-octagon text-grey-500 me-3 font-lg"></i>
-                            <h4 className="fw-600 text-grey-900 font-xssss mt-0 me-4 cursor">
+                            <h4 className="fw-600 text-grey-900 font-xssss mt-0 me-4">
                               Hide all from Group
                               <span className="d-block font-xsssss fw-500 mt-1 lh-3 text-grey-500">
                                 Save to your saved items
@@ -842,8 +844,8 @@ function Home() {
                     </div>
 
                     <div className="card w-100 shadow-none bg-transparent bg-transparent-card border-0 p-0 mb-0">
-                      <div className="owl-carousel category-card owl-theme overflow-hidden nav-none" style={{display : 'flex'}}>
-                        <div className="item  px-1">
+                      <div className="owl-carousel category-card owl-theme overflow-hidden nav-none">
+                        <div className="item">
                           <div className="card w200 d-block border-0 shadow-xss rounded-xxl overflow-hidden mb-3 me-2 mt-3">
                             <div className="card-body position-relative h100 bg-image-cover bg-image-center">
                               {/* style={{backgroundImage: url(assets/images/u-bg.jpg)}} */}
@@ -871,7 +873,7 @@ function Home() {
                           </div>
                         </div>
 
-                        <div className="item  px-1">
+                        <div className="item">
                           <div className="card w200 d-block border-0 shadow-xss rounded-xxl overflow-hidden mb-3 me-2 mt-3">
                             <div className="card-body position-relative h100 bg-image-cover bg-image-center"></div>
                             {/* style={{backgroundImage: 'url(assets/images/s-2.jpg)'}} */}
@@ -898,7 +900,7 @@ function Home() {
                           </div>
                         </div>
 
-                        <div className="item  px-1">
+                        <div className="item">
                           <div className="card w200 d-block border-0 shadow-xss rounded-xxl overflow-hidden mb-3 me-2 mt-3">
                             <div className="card-body position-relative h100 bg-image-cover bg-image-center">
                               {/* style={{backgroundImage: 'url(assets/images/s-6.jpg)'}} */}
@@ -926,7 +928,7 @@ function Home() {
                           </div>
                         </div>
 
-                        <div className="item  px-1">
+                        <div className="item">
                           <div className="card w200 d-block border-0 shadow-xss rounded-xxl overflow-hidden mb-3 me-2 mt-3">
                             <div className="card-body position-relative h100 bg-image-cover bg-image-center">
                               {/* style={{backgroundImage: 'url(assets/images/bb-16.png)'}} */}
@@ -954,7 +956,7 @@ function Home() {
                           </div>
                         </div>
 
-                        <div className="item  px-1">
+                        <div className="item">
                           <div className="card w200 d-block border-0 shadow-xss rounded-xxl overflow-hidden mb-3 me-2 mt-3">
                             <div className="card-body position-relative h100 bg-image-cover bg-image-center">
                               {/* style={{backgroundImage: 'url(assets/images/e-4.jpg)'}} */}
@@ -982,7 +984,7 @@ function Home() {
                           </div>
                         </div>
 
-                        <div className="item  px-1">
+                        <div className="item">
                           <div className="card w200 d-block border-0 shadow-xss rounded-xxl overflow-hidden mb-3 me-2 mt-3">
                             <div className="card-body position-relative h100 bg-image-cover bg-image-center">
                               {/* style={{backgroundImage: 'url(assets/images/coming-soon.png)'}} */}
@@ -1010,7 +1012,7 @@ function Home() {
                           </div>
                         </div>
 
-                        <div className="item  px-1">
+                        <div className="item">
                           <div className="card w200 d-block border-0 shadow-xss rounded-xxl overflow-hidden mb-3 me-2 mt-3">
                             <div
                               className="card-body position-relative h100 bg-image-cover bg-image-center"
@@ -1075,7 +1077,7 @@ function Home() {
                         >
                           <div className="card-body p-0 d-flex">
                             <i className="feather-bookmark text-grey-500 me-3 font-lg"></i>
-                            <h4 className="fw-600 text-grey-900 font-xssss mt-0 me-4  cursor">
+                            <h4 className="fw-600 text-grey-900 font-xssss mt-0 me-4">
                               Save Link
                               <span className="d-block font-xsssss fw-500 mt-1 lh-3 text-grey-500">
                                 Add this to your saved items
@@ -1084,7 +1086,7 @@ function Home() {
                           </div>
                           <div className="card-body p-0 d-flex mt-2">
                             <i className="feather-alert-circle text-grey-500 me-3 font-lg"></i>
-                            <h4 className="fw-600 text-grey-900 font-xssss mt-0 me-4  cursor">
+                            <h4 className="fw-600 text-grey-900 font-xssss mt-0 me-4">
                               Hide Post
                               <span className="d-block font-xsssss fw-500 mt-1 lh-3 text-grey-500">
                                 Save to your saved items
@@ -1093,7 +1095,7 @@ function Home() {
                           </div>
                           <div className="card-body p-0 d-flex mt-2">
                             <i className="feather-alert-octagon text-grey-500 me-3 font-lg"></i>
-                            <h4 className="fw-600 text-grey-900 font-xssss mt-0 me-4 cursor">
+                            <h4 className="fw-600 text-grey-900 font-xssss mt-0 me-4">
                               Hide all from Group
                               <span className="d-block font-xsssss fw-500 mt-1 lh-3 text-grey-500">
                                 Save to your saved items
@@ -1102,7 +1104,7 @@ function Home() {
                           </div>
                           <div className="card-body p-0 d-flex mt-2">
                             <i className="feather-lock text-grey-500 me-3 font-lg"></i>
-                            <h4 className="fw-600 mb-0 text-grey-900 font-xssss mt-0 me-4 cursor">
+                            <h4 className="fw-600 mb-0 text-grey-900 font-xssss mt-0 me-4">
                               Unfollow Group
                               <span className="d-block font-xsssss fw-500 mt-1 lh-3 text-grey-500">
                                 Save to your saved items
@@ -1342,8 +1344,8 @@ function Home() {
                     </div>
 
                     <div className="card w-100 shadow-none bg-transparent bg-transparent-card border-0 p-0 mb-0">
-                      <div className="owl-carousel category-card owl-theme overflow-hidden nav-none" style={{display : 'flex'}}>
-                        <div className="item  px-1">
+                      <div className="owl-carousel category-card owl-theme overflow-hidden nav-none">
+                        <div className="item">
                           <div className="card w150 d-block border-0 shadow-xss rounded-3 overflow-hidden mb-3 me-2 mt-3">
                             <div className="card-body d-block w-100 ps-3 pe-3 pb-4 text-center">
                               <figure className="avatar ms-auto me-auto mb-0 position-relative w65 z-index-1">
@@ -1369,7 +1371,7 @@ function Home() {
                             </div>
                           </div>
                         </div>
-                        <div className="item  px-1">
+                        <div className="item">
                           <div className="card w150 d-block border-0 shadow-xss rounded-3 overflow-hidden mb-3 me-2 mt-3">
                             <div className="card-body d-block w-100 ps-3 pe-3 pb-4 text-center">
                               <figure className="avatar ms-auto me-auto mb-0 position-relative w65 z-index-1">
@@ -1395,7 +1397,7 @@ function Home() {
                             </div>
                           </div>
                         </div>
-                        <div className="item  px-1">
+                        <div className="item">
                           <div className="card w150 d-block border-0 shadow-xss rounded-3 overflow-hidden mb-3 me-2 mt-3">
                             <div className="card-body d-block w-100 ps-3 pe-3 pb-4 text-center">
                               <figure className="avatar ms-auto me-auto mb-0 position-relative w65 z-index-1">
@@ -1421,7 +1423,7 @@ function Home() {
                             </div>
                           </div>
                         </div>
-                        <div className="item  px-1">
+                        <div className="item">
                           <div className="card w150 d-block border-0 shadow-xss rounded-3 overflow-hidden mb-3 me-2 mt-3">
                             <div className="card-body d-block w-100 ps-3 pe-3 pb-4 text-center">
                               <figure className="avatar ms-auto me-auto mb-0 position-relative w65 z-index-1">
@@ -1447,7 +1449,7 @@ function Home() {
                             </div>
                           </div>
                         </div>
-                        <div className="item  px-1">
+                        <div className="item">
                           <div className="card w150 d-block border-0 shadow-xss rounded-3 overflow-hidden mb-3 me-2 mt-3">
                             <div className="card-body d-block w-100 ps-3 pe-3 pb-4 text-center">
                               <figure className="avatar ms-auto me-auto mb-0 position-relative w65 z-index-1">
