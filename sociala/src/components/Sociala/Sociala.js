@@ -30,6 +30,8 @@ import UserProfile from "../../components/Sociala/pages/UserProfile/UserProfile"
 import SinglePageShop from "../../components/Sociala/pages/SinglePageShop/SinglePageShop";
 import Job from "../../components/Sociala/pages/Job/Job";
 import Users from "../../components/Sociala/pages/Users/Users";
+import AddToCart from "./pages/Shop/AddToCart/AddToCart";
+import Checkout from "./pages/Checkout/Checkout";
 
 function Sociala() {
   return (
@@ -57,6 +59,8 @@ function Sociala() {
       <Route path="/shop/single/product" element={<SinglePageShop />} />
       <Route path="/job" element={<Job />} />
       <Route path="/users" element={<Users />} />
+      <Route path="/addtocart" element={<AddToCart />} />
+      <Route path="/shop/checkout" element={<Checkout />} />
       <Route path="/setting/account/info" element={<Accountinfo />} />
       <Route path="/setting/saveaddress" element={<Contactinfo />} />
       <Route path="/setting/social" element={<Social />} />
