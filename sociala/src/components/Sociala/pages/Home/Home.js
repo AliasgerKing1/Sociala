@@ -21,12 +21,12 @@ function Home() {
 
         <div className="main-wrapper">
           {/* <!-- navigation top--> */}
-         <Header/>
+          <Header />
           {/* <!-- navigation top --> */}
 
           {/* <!-- navigation left --> */}
 
-            <LeftSection/>
+          <LeftSection />
 
           {/* <!-- navigation left --> */}
           {/* <!-- main content --> */}
@@ -64,7 +64,10 @@ function Home() {
                 <div className="row feed-body">
                   <div className="col-xl-8 col-xxl-9 col-lg-8">
                     <div className="card w-100 shadow-none bg-transparent bg-transparent-card border-0 p-0 mb-0">
-                      <div className="owl-carousel category-card owl-theme overflow-hidden nav-none" style={{display: 'flex'}}>
+                      <div
+                        className="owl-carousel category-card owl-theme overflow-hidden nav-none"
+                        style={{ display: "flex" }}
+                      >
                         <div className="item px-1">
                           <div
                             data-bs-toggle="modal"
@@ -318,7 +321,7 @@ function Home() {
                             <i className="feather-bookmark text-grey-500 me-3 font-lg"></i>
                             <h4 className="fw-600 text-grey-900 font-xssss mt-0 me-4 cursor">
                               Save Link
-                              <span className="d-block font-xsssss fw-500 mt-1 lh-3 text-grey-500" >
+                              <span className="d-block font-xsssss fw-500 mt-1 lh-3 text-grey-500">
                                 Add this to your saved items
                               </span>
                             </h4>
@@ -841,7 +844,10 @@ function Home() {
                     </div>
 
                     <div className="card w-100 shadow-none bg-transparent bg-transparent-card border-0 p-0 mb-0">
-                      <div className="owl-carousel category-card owl-theme overflow-hidden nav-none" style={{display : 'flex'}}>
+                      <div
+                        className="owl-carousel category-card owl-theme overflow-hidden nav-none"
+                        style={{ display: "flex" }}
+                      >
                         <div className="item  px-1">
                           <div className="card w200 d-block border-0 shadow-xss rounded-xxl overflow-hidden mb-3 me-2 mt-3">
                             <div className="card-body position-relative h100 bg-image-cover bg-image-center">
@@ -1341,7 +1347,10 @@ function Home() {
                     </div>
 
                     <div className="card w-100 shadow-none bg-transparent bg-transparent-card border-0 p-0 mb-0">
-                      <div className="owl-carousel category-card owl-theme overflow-hidden nav-none" style={{display : 'flex'}}>
+                      <div
+                        className="owl-carousel category-card owl-theme overflow-hidden nav-none"
+                        style={{ display: "flex" }}
+                      >
                         <div className="item  px-1">
                           <div className="card w150 d-block border-0 shadow-xss rounded-3 overflow-hidden mb-3 me-2 mt-3">
                             <div className="card-body d-block w-100 ps-3 pe-3 pb-4 text-center">
@@ -1681,16 +1690,15 @@ function Home() {
                     </div>
                   </div>
                   <div className="col-xl-4 col-xxl-3 col-lg-4 ps-lg-0">
-                    
-                    <FriendRequest/>
+                    <FriendRequest />
 
-                    <Friends/>
-                    
-                    <SuggestedGroup/>
+                    <Friends />
 
-                    <SuggestedPeople/>
+                    <SuggestedGroup />
 
-                    <Event/>
+                    <SuggestedPeople />
+
+                    <Event />
                   </div>
                 </div>
               </div>
@@ -1730,17 +1738,17 @@ function Home() {
               </div>
               {/* <!-- loader wrapper --> */}
 
-              <Contact/>
-              
-              <Group/>
-              
-              <Pages/>
+              <Contact />
+
+              <Group />
+
+              <Pages />
             </div>
           </div>
 
           {/* <!-- right chat --> */}
 
-         <FooterBar/>
+          <FooterBar />
 
           <div className="app-header-search">
             <form className="search-form">
@@ -1769,7 +1777,7 @@ function Home() {
           </div>
         </div>
 
-        <Notification/>
+        <Notification />
 
         <div className="modal-popup-chat">
           <div className="modal-popup-wrap bg-white p-0 shadow-lg rounded-3">

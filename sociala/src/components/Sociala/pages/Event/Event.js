@@ -7,16 +7,6 @@ import Pages from '../../shared/very_right/Pages/Pages';
 import FooterBar from '../../shared/FooterBar/FooterBar';
 import Notification from '../../shared/Notification/Notification';
 
-
-
-
-
-
-
-
-
-
-
 function Event() {
   return (
     <div>
