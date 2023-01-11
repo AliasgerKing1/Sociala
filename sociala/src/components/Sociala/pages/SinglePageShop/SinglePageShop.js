@@ -125,6 +125,7 @@ const SinglePageShop = () => {
                             </div> 
                         </div>               
                     </div>
+             
                 </div>
                  
             </div>            

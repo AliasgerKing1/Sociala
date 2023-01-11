@@ -7,17 +7,6 @@ import Pages from '../../shared/very_right/Pages/Pages';
 import FooterBar from '../../shared/FooterBar/FooterBar';
 import Notification from '../../shared/Notification/Notification';
 
-
-
-
-
-
-
-
-
-
-
-
 function Stories() {
   return (
     <div>
@@ -62,7 +51,7 @@ function Stories() {
                     <div className="row ps-2 pe-1">
                       <div className="col-md-3 col-xss-6 pe-2 ps-2">
                         <div
-                          className="card h300 d-block border-0 shadow-xss rounded-3 bg-gradiant-bottom overflow-hidden mb-3 bg-image-cover"
+                          className="card h300 d-block border-0 shadow-xss rounded-3 bg-gradiant-bottom overflow-hidden mb-3 bg-image-cover" data-bs-target="#Modalstries" data-bs-toggle="modal"
                           style={{
                             backgroundImage: "url(/assets/images/s-1.jpg)",
                           }}
@@ -84,7 +73,7 @@ function Stories() {
                       </div>
                       <div className="col-md-3 col-xss-6 pe-2 ps-2">
                         <div
-                          className="card h300 d-block border-0 shadow-xss rounded-3 bg-gradiant-bottom overflow-hidden mb-3 bg-image-cover"
+                          className="card h300 d-block border-0 shadow-xss rounded-3 bg-gradiant-bottom overflow-hidden mb-3 bg-image-cover" data-bs-target="#Modalstries" data-bs-toggle="modal"
                           style={{
                             backgroundImage: "url(/assets/images/s-2.jpg)",
                           }}
@@ -105,7 +94,7 @@ function Stories() {
                         </div>
                       </div>
                       <div className="col-md-3 col-xss-6 pe-2 ps-2">
-                        <div className="card h300 d-block border-0 shadow-xss rounded-3 bg-gradiant-bottom overflow-hidden mb-3">
+                        <div className="card h300 d-block border-0 shadow-xss rounded-3 bg-gradiant-bottom overflow-hidden mb-3" data-bs-target="#Modalstries" data-bs-toggle="modal">
                           <video autoPlay loop className="float-right w-100">
                             <source
                               src="/assets/images/s-4.mp4"
@@ -128,7 +117,7 @@ function Stories() {
                         </div>
                       </div>
                       <div className="col-md-3 col-xss-6 pe-2 ps-2">
-                        <div className="card h300 d-block border-0 shadow-xss rounded-3 bg-gradiant-bottom overflow-hidden mb-3">
+                        <div className="card h300 d-block border-0 shadow-xss rounded-3 bg-gradiant-bottom overflow-hidden mb-3" data-bs-target="#Modalstries" data-bs-toggle="modal">
                           <video autoPlay loop className="float-right w-100">
                             <source
                               src="/assets/images/s-3.mp4"
@@ -153,7 +142,7 @@ function Stories() {
 
                       <div className="col-md-3 col-xss-6 pe-2 ps-2">
                         <div
-                          className="card h300 d-block border-0 shadow-xss rounded-3 bg-gradiant-bottom overflow-hidden mb-3 bg-image-cover"
+                          className="card h300 d-block border-0 shadow-xss rounded-3 bg-gradiant-bottom overflow-hidden mb-3 bg-image-cover" data-bs-target="#Modalstries" data-bs-toggle="modal"
                           style={{
                             backgrounImage: "url(/assets/images/s-5.jpg)",
                           }}
@@ -175,7 +164,7 @@ function Stories() {
                       </div>
                       <div className="col-md-3 col-xss-6 pe-2 ps-2">
                         <div
-                          className="card h300 d-block border-0 shadow-xss rounded-3 bg-gradiant-bottom overflow-hidden mb-3 bg-image-cover"
+                          className="card h300 d-block border-0 shadow-xss rounded-3 bg-gradiant-bottom overflow-hidden mb-3 bg-image-cover" data-bs-target="#Modalstries" data-bs-toggle="modal"
                           style={{
                             backgroundImage: "url(/assets/images/s-6.jpg)",
                           }}
@@ -198,7 +187,7 @@ function Stories() {
 
                       <div className="col-md-3 col-xss-6 pe-2 ps-2">
                         <div
-                          className="card h300 d-block border-0 shadow-xss rounded-3 bg-gradiant-bottom overflow-hidden mb-3 bg-image-cover"
+                          className="card h300 d-block border-0 shadow-xss rounded-3 bg-gradiant-bottom overflow-hidden mb-3 bg-image-cover" data-bs-target="#Modalstries" data-bs-toggle="modal"
                           style={{
                             backgroundImage: "url(/assets/images/s-7.jpg)",
                           }}
@@ -220,7 +209,7 @@ function Stories() {
                       </div>
                       <div className="col-md-3 col-xss-6 pe-2 ps-2">
                         <div
-                          className="card h300 d-block border-0 shadow-xss rounded-3 bg-gradiant-bottom overflow-hidden mb-3 bg-image-cover"
+                          className="card h300 d-block border-0 shadow-xss rounded-3 bg-gradiant-bottom overflow-hidden mb-3 bg-image-cover" data-bs-target="#Modalstries" data-bs-toggle="modal"
                           style={{
                             backgroundImage: "url(/assets/images/s-8.jpg)",
                           }}
@@ -242,7 +231,7 @@ function Stories() {
                       </div>
                       <div className="col-md-3 col-xss-6 pe-2 ps-2">
                         <div
-                          className="card h300 d-block border-0 shadow-xss rounded-3 bg-gradiant-bottom overflow-hidden mb-3 bg-image-cover"
+                          className="card h300 d-block border-0 shadow-xss rounded-3 bg-gradiant-bottom overflow-hidden mb-3 bg-image-cover" data-bs-target="#Modalstries" data-bs-toggle="modal"
                           style={{
                             backgroundImage: "url(/assets/images/s-9.jpg)",
                           }}
@@ -264,7 +253,7 @@ function Stories() {
                       </div>
                       <div className="col-md-3 col-xss-6 pe-2 ps-2">
                         <div
-                          className="card h300 d-block border-0 shadow-xss rounded-3 bg-gradiant-bottom overflow-hidden mb-3 bg-image-cover"
+                          className="card h300 d-block border-0 shadow-xss rounded-3 bg-gradiant-bottom overflow-hidden mb-3 bg-image-cover" data-bs-target="#Modalstries" data-bs-toggle="modal"
                           style={{
                             backgroundImage: "url(/assets/images/s-10.jpg)",
                           }}
@@ -286,7 +275,7 @@ function Stories() {
                       </div>
                       <div className="col-md-3 col-xss-6 pe-2 ps-2">
                         <div
-                          className="card h300 d-block border-0 shadow-xss rounded-3 bg-gradiant-bottom overflow-hidden mb-3 bg-image-cover"
+                          className="card h300 d-block border-0 shadow-xss rounded-3 bg-gradiant-bottom overflow-hidden mb-3 bg-image-cover" data-bs-target="#Modalstries" data-bs-toggle="modal"
                           style={{
                             backgroundImage: "url(/assets/images/s-11.jpg)",
                           }}
@@ -308,7 +297,7 @@ function Stories() {
                       </div>
                       <div className="col-md-3 col-xss-6 pe-2 ps-2">
                         <div
-                          className="card h300 d-block border-0 shadow-xss rounded-3 bg-gradiant-bottom overflow-hidden mb-3 bg-image-cover"
+                          className="card h300 d-block border-0 shadow-xss rounded-3 bg-gradiant-bottom overflow-hidden mb-3 bg-image-cover" data-bs-target="#Modalstries" data-bs-toggle="modal"
                           style={{
                             backgroundImage: "url(/assets/images/s-12.jpg)",
                           }}

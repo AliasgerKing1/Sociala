@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Link} from 'react-router-dom'
 
-function Login() {
+const Login = ()=> {
   return (
     <div>
 <div className="color-theme-blue">

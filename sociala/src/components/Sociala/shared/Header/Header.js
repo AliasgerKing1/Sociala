@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 function Header() {
   return (
     <div>
@@ -7,7 +7,7 @@ function Header() {
         <div className="nav-top">
           <Link to="/home">
             <i className="feather-zap text-success display1-size me-2 ms-0"></i>
-            <span className="d-inline-block fredoka-font ls-3 fw-600 text-current font-xxl logo-text mb-0">
+            <span className="d-inline-block fredoka-font ls-3 fw-600 active font-xxl logo-text mb-0">
               Sociala.
             </span>
           </Link>
@@ -33,42 +33,42 @@ function Header() {
             />
           </div>
         </form>
-        <Link
+        <NavLink
           to="/home"
           className="p-2 text-center ms-3 menu-icon center-menu-icon"
         >
           <i className="feather-home font-lg alert-primary btn-round-lg theme-dark-bg text-current "></i>
-        </Link>
-        <Link
+        </NavLink>
+        <NavLink
           to="/stories"
           className="p-2 text-center ms-0 menu-icon center-menu-icon"
         >
           <i className="feather-zap font-lg bg-greylight btn-round-lg theme-dark-bg text-grey-500 "></i>
-        </Link>
-        <Link
+        </NavLink>
+        <NavLink
           to="/video"
           className="p-2 text-center ms-0 menu-icon center-menu-icon"
         >
           <i className="feather-video font-lg bg-greylight btn-round-lg theme-dark-bg text-grey-500 "></i>
-        </Link>
-        <Link
+        </NavLink>
+        <NavLink
           to="/users"
           className="p-2 text-center ms-0 menu-icon center-menu-icon"
         >
           <i className="feather-user font-lg bg-greylight btn-round-lg theme-dark-bg text-grey-500 "></i>
-        </Link>
-        <Link
+        </NavLink>
+        <NavLink
           to="/shop"
           className="p-2 text-center ms-0 menu-icon center-menu-icon"
         >
           <i className="feather-shopping-bag font-lg bg-greylight btn-round-lg theme-dark-bg text-grey-500 "></i>
-        </Link>
-        <Link
+        </NavLink>
+        <NavLink
           to="/job"
           className="p-2 text-center ms-0 menu-icon center-menu-icon"
         >
           <i className="feather-inbox font-lg bg-greylight btn-round-lg theme-dark-bg text-grey-500 "></i>
-        </Link>
+        </NavLink>
 
         <a
           href="#"

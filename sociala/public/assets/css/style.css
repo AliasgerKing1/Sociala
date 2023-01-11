@@ -188,6 +188,10 @@
 .text-current {
   color: var(--theme-color) !important;
 }
+
+.active {
+  color: var(--theme-color) !important;
+}
 .text-red {
   color: red !important;
 }

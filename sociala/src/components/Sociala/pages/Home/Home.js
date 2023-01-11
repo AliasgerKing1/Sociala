@@ -341,8 +341,8 @@ function Home() {
                           </div>
                           <div className="card-body p-0 d-flex mt-2">
                             <i className="feather-lock text-grey-500 me-3 font-lg"></i>
-                            <h4 className="fw-600 mb-0 text-grey-900 font-xssss mt-0 me-4">
-                              Unfollow Group
+                            <h4 className="fw-600 mb-0 text-grey-900 font-xssss mt-0 me-4 cursor">
+                              Unfollow
                               <span className="d-block font-xsssss fw-500 mt-1 lh-3 text-grey-500">
                                 Save to your saved items
                               </span>
@@ -409,8 +409,8 @@ function Home() {
                           </div>
                           <div className="card-body p-0 d-flex mt-2">
                             <i className="feather-lock text-grey-500 me-3 font-lg"></i>
-                            <h4 className="fw-600 mb-0 text-grey-900 font-xssss mt-0 me-4">
-                              Unfollow Group
+                            <h4 className="fw-600 mb-0 text-grey-900 font-xssss mt-0 me-4 cursor">
+                              Unfollow
                               <span className="d-block font-xsssss fw-500 mt-1 lh-3 text-grey-500">
                                 Save to your saved items
                               </span>
@@ -675,8 +675,8 @@ function Home() {
                           </div>
                           <div className="card-body p-0 d-flex mt-2">
                             <i className="feather-lock text-grey-500 me-3 font-lg"></i>
-                            <h4 className="fw-600 mb-0 text-grey-900 font-xssss mt-0 me-4">
-                              Unfollow Group
+                            <h4 className="fw-600 mb-0 text-grey-900 font-xssss mt-0 me-4 cursor">
+                              Unfollow
                               <span className="d-block font-xsssss fw-500 mt-1 lh-3 text-grey-500">
                                 Save to your saved items
                               </span>
@@ -1102,7 +1102,7 @@ function Home() {
                           <div className="card-body p-0 d-flex mt-2">
                             <i className="feather-lock text-grey-500 me-3 font-lg"></i>
                             <h4 className="fw-600 mb-0 text-grey-900 font-xssss mt-0 me-4 cursor">
-                              Unfollow Group
+                              Unfollow
                               <span className="d-block font-xsssss fw-500 mt-1 lh-3 text-grey-500">
                                 Save to your saved items
                               </span>
@@ -1842,3 +1842,4 @@ function Home() {
 }
 
 export default Home;
+

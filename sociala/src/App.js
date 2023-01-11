@@ -1,9 +1,9 @@
 import "./App.css";
-import Sociala from "./components/Sociala/Sociala";
+import SocialaRoutes from "./routes/SocialaRoutes";
 
 function App() {
   return (
-<Sociala/>
+<SocialaRoutes/>
   );
 }
 
