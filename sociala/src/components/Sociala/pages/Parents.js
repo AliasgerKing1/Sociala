@@ -4,13 +4,12 @@ import axios from "axios";
 
 const Parents = () => {
 
-
+let [arr, setArr] = useState([]);
     let getData = async ()=> {
         let result = await axios.get("https://fakestoreapi.com/products");
         console.log(result.data)
-        return result;
+        setArr(result.data);
     }
-
 
 
 
@@ -20,6 +19,10 @@ let [password, setPassword] = useState("password");
 let [newName, setNewName] = useState("");
 let [newEmail, setNewEmail] = useState("");
 let [newPasword, setNewPassword] = useState("");
+
+
+let [grp, setGrp] = useState("");
+let [newGrp, setNewGrp] = useState("");
 
 
 
@@ -72,6 +75,11 @@ console.log(userForm.password)
 setName(newName)
 setEmail(newEmail)
 setPassword(newPasword)
+    }
+
+
+    let send = () => {
+        setGrp(newGrp);
     }
 
   return (
@@ -138,18 +146,29 @@ Name : <input onChange={(e)=> {
 
 <button onClick={getData}>get Data</button>
 
-{/* {
-    result.data.map((x, n)=> {
-        return(
-            <h3>{x.name}</h3>
-<h5>{}</h5>
-<p>{}</p>
+{
 
+    arr.map((x)=> {
+        return(
+            <div>
+            <h3>{x.title}</h3>
+            </div>
         )
     })
-} */}
+}
+<div className="form-group">
+
+<input type="text" onChange={(e)=> {
+setNewGrp(e.target.value);
+}} className='form-control' />
+</div>
+
+<input type="submit" onClick={send} value="Sub" className='btn btn-success' />
 
 
+
+
+<h3>{grp}</h3>
     </div>
   )
 }

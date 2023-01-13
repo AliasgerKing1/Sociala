@@ -1,10 +1,8 @@
 import "./App.css";
-import SocialaRoutes from "./routes/SocialaRoutes";
+import SocialaRoutes from "./routes/Sociala/SocialaRoutes";
 
 function App() {
-  return (
-<SocialaRoutes/>
-  );
+  return <SocialaRoutes />;
 }
 
 export default App;

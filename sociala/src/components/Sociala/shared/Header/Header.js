@@ -34,37 +34,37 @@ function Header() {
           </div>
         </form>
         <NavLink
-          to="/home"
+         exact to="/home"
           className="p-2 text-center ms-3 menu-icon center-menu-icon"
         >
           <i className="feather-home font-lg alert-primary btn-round-lg theme-dark-bg text-current "></i>
         </NavLink>
         <NavLink
-          to="/stories"
+         exact to="/stories"
           className="p-2 text-center ms-0 menu-icon center-menu-icon"
         >
           <i className="feather-zap font-lg bg-greylight btn-round-lg theme-dark-bg text-grey-500 "></i>
         </NavLink>
         <NavLink
-          to="/video"
+         exact to="/video"
           className="p-2 text-center ms-0 menu-icon center-menu-icon"
         >
           <i className="feather-video font-lg bg-greylight btn-round-lg theme-dark-bg text-grey-500 "></i>
         </NavLink>
         <NavLink
-          to="/users"
+         exact to="/users"
           className="p-2 text-center ms-0 menu-icon center-menu-icon"
         >
           <i className="feather-user font-lg bg-greylight btn-round-lg theme-dark-bg text-grey-500 "></i>
         </NavLink>
         <NavLink
-          to="/shop"
+         exact to="/shop"
           className="p-2 text-center ms-0 menu-icon center-menu-icon"
         >
           <i className="feather-shopping-bag font-lg bg-greylight btn-round-lg theme-dark-bg text-grey-500 "></i>
         </NavLink>
         <NavLink
-          to="/job"
+         exact to="/job"
           className="p-2 text-center ms-0 menu-icon center-menu-icon"
         >
           <i className="feather-inbox font-lg bg-greylight btn-round-lg theme-dark-bg text-grey-500 "></i>
