@@ -5,8 +5,7 @@ import LeftSection from '../../../shared/left/LeftSection/LeftSection';
 import Contact from '../../../shared/very_right/Contact/Contact';
 import Group from '../../../shared/very_right/Group/Group';
 import Pages from '../../../shared/very_right/Pages/Pages';
-import FooterBar from '../../../shared/FooterBar/FooterBar';
-import Notification from '../../../shared/Notification/Notification';
+import FooterBar from "../../../shared/FooterBar/FooterBar";
 
 function Hotel() {
   return (
@@ -293,8 +292,6 @@ function Hotel() {
         </div>
 
     </div> 
-
-    <Notification/>
 
     <div className="modal-popup-chat">
         <div className="modal-popup-wrap bg-white p-0 shadow-lg rounded-3">

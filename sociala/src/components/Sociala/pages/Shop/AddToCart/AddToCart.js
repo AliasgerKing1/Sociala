@@ -5,7 +5,6 @@ import Contact from "../../../shared/very_right/Contact/Contact";
 import Group from "../../../shared/very_right/Group/Group";
 import Pages from "../../../shared/very_right/Pages/Pages";
 import FooterBar from "../../../shared/FooterBar/FooterBar";
-import Notification from "../../../shared/Notification/Notification";
 
 const AddToCart = () => {
   return (
@@ -433,8 +432,6 @@ const AddToCart = () => {
             </form>
           </div>
         </div>
-
-        <Notification />
 
         <div className="modal-popup-chat">
           <div className="modal-popup-wrap bg-white p-0 shadow-lg rounded-3">
