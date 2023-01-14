@@ -11,6 +11,7 @@ import Group from '../../shared/very_right/Group/Group';
 import Pages from '../../shared/very_right/Pages/Pages';
 import FooterBar from "../../shared/FooterBar/FooterBar";
 import Event from '../../shared/right/Event/Event';
+import Story from "../../shared/Story/Story";
 
 function Home() {
   return (
@@ -172,7 +173,7 @@ function Home() {
                         <div className="item  px-1">
                           <div
                             data-bs-toggle="modal"
-                            data-bs-target="#Modalstory"
+                            data-bs-target="#Modalstries"
                             className="card w125 h200 d-block border-0 shadow-xss rounded-xxxl bg-gradiant-bottom overflow-hidden cursor-pointer mb-3 mt-3 me-1"
                           >
                             <video autoPlay loop className="float-right w-100">
