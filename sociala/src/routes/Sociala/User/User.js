@@ -31,19 +31,31 @@ import SinglePageShop from "../../../components/Sociala/pages/SinglePageShop/Sin
 import Job from "../../../components/Sociala/pages/Job/Job";
 import Users from "../../../components/Sociala/pages/Users/Users";
 import ForgetPassword from "../../../components/Sociala/pages/forgetPassword/ForgetPassword";
+
+
 // import Parents from "../components/Sociala/pages/Parents";
 
 function User() {
   return (
     <>
-
+<Helmet>
+<link rel="stylesheet" href="./assets/css/themify-icons.css" />
+    <link rel="stylesheet" href="./assets/css/feather.css" />
+    {/* <!-- Favicon icon --> */}
+    {/* <!-- <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png"> --> */}
+    {/* <!-- Custom Stylesheet --> */}
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/emoji.css" />
+    
+    <link rel="stylesheet" href="./assets/css/lightbox.css" />
+</Helmet>
       <Routes>
         {/* Sociala */}
         <Route path="/home" element={<Home />} />
-        <Route path="stories" element={<Stories />} />
-        <Route path="setting" element={<Setting />} />
-        <Route path="video" element={<Video />} />
-        <Route path="register" element={<Register />} />
+        <Route path="/stories" element={<Stories />} />
+        <Route path="/setting" element={<Setting />} />
+        <Route path="/video" element={<Video />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/" element={<Login />} />
         <Route path="/group" element={<Groups />} />
         <Route path="/shop" element={<Shop />} />

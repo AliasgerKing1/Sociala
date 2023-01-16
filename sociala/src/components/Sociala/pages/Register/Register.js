@@ -45,8 +45,8 @@ setConfPassword(newConfPassword);
               <Link to="/home">
                 <i className="feather-zap text-success display1-size me-2 ms-0"></i>
                 <span className="d-inline-block fredoka-font ls-3 fw-600 text-current font-xxl logo-text mb-0">
-                  Sociala.{" "}
-                </span>{" "}
+                  Sociala.
+                </span>
               </Link>
               <a href="#" className="mob-menu ms-auto me-2 chat-active-btn">
                 <i className="feather-message-circle text-grey-900 font-sm btn-round-md bg-greylight"></i>
@@ -188,7 +188,7 @@ setConfPassword(newConfPassword);
                           </button>
                         </div>
                         <h6 className="text-grey-500 font-xsss fw-500 mt-0 mb-0 lh-32">
-                          Already have account{" "}
+                          Already have account
                           <Link to="/" className="fw-700 ms-1">
                             Login
                           </Link>
@@ -327,7 +327,7 @@ setConfPassword(newConfPassword);
                         </button>
                       </div>
                       <h6 className="text-grey-500 font-xsss fw-500 mt-0 mb-0 lh-32">
-                        Dont have account{" "}
+                        Dont have account
                         <a
                           style={{ cursor: "pointer" }}
                           data-bs-toggle="modal"
@@ -340,7 +340,7 @@ setConfPassword(newConfPassword);
                     </div>
                     <div className="col-sm-12 p-0 text-center mt-3 ">
                       <h6 className="mb-0 d-inline-block bg-white fw-600 font-xsss text-grey-500 mb-4">
-                        Or, Sign in with your social account{" "}
+                        Or, Sign in with your social account
                       </h6>
                       <div className="form-group mb-1">
                         <a
@@ -351,7 +351,7 @@ setConfPassword(newConfPassword);
                             src="/assets/images/icon-1.png"
                             alt="icon"
                             className="ms-2 w40 mb-1 me-5"
-                          />{" "}
+                          />
                           Sign in with Google
                         </a>
                       </div>
@@ -364,7 +364,7 @@ setConfPassword(newConfPassword);
                             src="/assets/images/icon-3.png"
                             alt="icon"
                             className="ms-2 w40 mb-1 me-5"
-                          />{" "}
+                          />
                           Sign in with Facebook
                         </a>
                       </div>
@@ -460,7 +460,7 @@ setConfPassword(newConfPassword);
                             </div> */}
                     <div className="col-sm-12 p-0 text-center mt-3 ">
                       <h6 className="mb-0 d-inline-block bg-white fw-600 font-xsss text-grey-500 mb-4">
-                        Or, Sign up with your social account{" "}
+                        Or, Sign up with your social account
                       </h6>
                       <div className="form-group mb-1">
                         <a
@@ -471,7 +471,7 @@ setConfPassword(newConfPassword);
                             src="/assets/images/icon-1.png"
                             alt="icon"
                             className="ms-2 w40 mb-1 me-5"
-                          />{" "}
+                          />
                           Sign up with Google
                         </a>
                       </div>
@@ -484,7 +484,7 @@ setConfPassword(newConfPassword);
                             src="/assets/images/icon-3.png"
                             alt="icon"
                             className="ms-2 w40 mb-1 me-5"
-                          />{" "}
+                          />
                           Sign up with Facebook
                         </a>
                       </div>

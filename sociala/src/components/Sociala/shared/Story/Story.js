@@ -18,12 +18,6 @@ function Notification() {
                     <div className="card w-100 border-0 rounded-3 overflow-hidden bg-gradiant-bottom bg-gradiant-top">
                         <div className="owl-carousel owl-theme dot-style3 story-slider owl-dot-nav nav-none">
 
-
-
-
-
-
-
                         <div id="carouselExampleFade" className="carousel slide carousel-fade" data-bs-ride="carousel">
   <div className="carousel-inner">
     <div className="carousel-item item active">
