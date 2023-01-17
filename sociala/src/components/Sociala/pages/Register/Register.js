@@ -1,39 +1,30 @@
-import React, {useState} from 'react'
-import { Link } from 'react-router-dom';
-import axios from 'axios';
-import {Formik, Form, Field} from 'formik'
+import React, {useState,} from 'react'
+import { addUser } from '../../../../services/userService/userService';
+import { Link,useNavigate } from 'react-router-dom';
 
 const Register = () => {
-
-    let [name, setName] = useState(null)
-    let [email, setEmail] = useState(null)
-    let [password, setPassword] = useState(null)
-    let [confPassword, setConfPassword] = useState(null)
-
-    let [newName, setNewName] = useState("")
-    let [newEmail, setNewEmail] = useState("")
-    let [newPassword, setNewPassword] = useState("")
-    let [newConfPassword, setNewConfPassword] = useState("")
-
-    let submit = ()=> {
-setName(newName);
-setEmail(newEmail);
-setPassword(newPassword);
-setConfPassword(newConfPassword);
-    }
+  const Navigate = useNavigate();
+let [User, setUser] = useState({
+  name : "",
+  email : "",
+  password : "",
+  confPass : ""
+})
 
 
-    let userForm = {
-        name : name,
-        email : email,
-        password : password,
-        confPass : confPassword
-    }
-    let addUser = async () => {
-        let result =  await axios.post("http://localhost:4000/api/user", userForm)
-        console.log(result)
-}
  
+let setData = (e, property) => {
+  setUser((previousData)=> {
+    return {...previousData, [property] : e.target.value}
+  })
+}
+
+let saveData = () => {
+  addUser(User).then(result=> {
+    Navigate("/home");
+  })
+}
+
   return (
     <div>
       <div className="color-theme-blue">
@@ -90,68 +81,44 @@ setConfPassword(newConfPassword);
                     Create <br />
                     your account
                   </h2>
-                  <Formik
-                    initialValues={{
-                      name: "",
-                      email: "",
-                      password: "",
-                      confPass: "",
-                    }}
-                    onSubmit={(values) => {
-                      console.log(values);
-                    }}
-                  >
-                    <Form>
                       <div className="form-group icon-input mb-3">
                         <i className="font-sm ti-user text-grey-500 pe-0"></i>
-                        <Field
+                <input
                           name="name"
                           placeholder="Your Name"
                           className="style2-input ps-5 form-control text-grey-900 font-xsss fw-600"
                           type="text"
-                        />
-                        {/* <input type="text" className="style2-input ps-5 form-control text-grey-900 font-xsss fw-600" onChange={(e)=> {
-                                    setNewName(e.target.value)
-
-                                }} placeholder="Your Name" />                         */}
+                          onChange={(e)=> setData(e, "name")}
+                        />   
                       </div>
                       <div className="form-group icon-input mb-3">
                         <i className="font-sm ti-email text-grey-500 pe-0"></i>
-                        <Field
+                <input
                           name="email"
                           placeholder="Your Email Address"
                           className="style2-input ps-5 form-control text-grey-900 font-xsss fw-600"
                           type="email"
+                          onChange={(e)=> setData(e, "email")}
                         />
-                        {/* <input type="email" className="style2-input ps-5 form-control text-grey-900 font-xsss fw-600" onChange={(e)=> {
-                                    setNewEmail(e.target.value)
-
-                                }} placeholder="Your Email Address" />                         */}
                       </div>
                       <div className="form-group icon-input mb-3">
-                        <Field
+                <input
                           name="password"
-                          type="Password"
+                          type="password"
                           placeholder="Password"
                           className="style2-input ps-5 form-control text-grey-900 font-xsss fw-600"
+                          onChange={(e)=> setData(e, "password")}
                         />
-                        {/* <input type="Password" className="style2-input ps-5 form-control text-grey-900 font-xss ls-3" onChange={(e)=> {
-                                    setNewPassword(e.target.value)
-
-                                }} placeholder="Password" /> */}
                         <i className="font-sm ti-lock text-grey-500 pe-0"></i>
                       </div>
                       <div className="form-group icon-input mb-1">
-                        <Field
+                <input
                           name="confPass"
-                          type="Password"
+                          type="password"
                           placeholder="Confirm Password"
                           className="style2-input ps-5 form-control text-grey-900 font-xsss fw-600"
+                          onChange={(e)=> setData(e, "confPass")}
                         />
-                        {/* <input type="Password" className="style2-input ps-5 form-control text-grey-900 font-xss ls-3" onChange={(e)=> {
-                                    setNewConfPassword(e.target.value)
-
-                                }} placeholder="Confirm Password" /> */}
                         <i className="font-sm ti-lock text-grey-500 pe-0"></i>
                       </div>
                       <div className="form-check text-left mb-3">
@@ -179,10 +146,7 @@ setConfPassword(newConfPassword);
                           <button
                             type="submit"
                             className="form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0"
-                            onClick={() => {
-                              // submit();
-                              // addUser();
-                            }}
+                            onClick={saveData}
                           >
                             Register
                           </button>
@@ -194,8 +158,6 @@ setConfPassword(newConfPassword);
                           </Link>
                         </h6>
                       </div>
-                    </Form>
-                  </Formik>
                 </div>
               </div>
             </div>

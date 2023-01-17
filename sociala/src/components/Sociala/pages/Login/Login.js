@@ -1,8 +1,40 @@
-import React from 'react'
+import React, {useState} from 'react'
+import { Link, useNavigate} from 'react-router-dom'
+import { DoLogin } from '../../../../services/loginAuthService/loginAuthService'
 
-import { Link} from 'react-router-dom'
+let errMsg="";
 
 const Login = ()=> {
+    let [authUser,setAuthUser] = useState({
+        email : "",
+        password : ""
+    })
+
+    let setData = (e, property) => {
+setAuthUser((previousData)=> {
+    return {...previousData, [property] : e.target.value}
+})
+    }
+
+    const Navigate = useNavigate();
+    let AuthData = () => {
+    DoLogin(authUser).then(result=> {
+        console.log(result.data.success)
+        if (result.data.success) {
+            localStorage.setItem('token', result.data.token);
+           Navigate('/home');
+          } else {
+            if (result.data.errType == 1) {
+             errMsg = 'This email/username is not registered !';
+            }
+            if (result.data.errType == 2) {
+              errMsg = 'This password is incorrect !';
+            }
+          }
+    })
+    }
+
+
   return (
     <div>
 <div className="color-theme-blue">
@@ -37,12 +69,13 @@ const Login = ()=> {
                             
                             <div className="form-group icon-input mb-3">
                                 <i className="font-sm ti-email text-grey-500 pe-0"></i>
-                                <input type="text" className="style2-input ps-5 form-control text-grey-900 font-xsss fw-600" placeholder="Your Email Address" />                        
+                                <input type="email" className="style2-input ps-5 form-control text-grey-900 font-xsss fw-600" placeholder="Your Email Address" onChange={(e)=> setData(e, "email")} />                       
                             </div>
                             <div className="form-group icon-input mb-1">
-                                <input type="Password" className="style2-input ps-5 form-control text-grey-900 font-xss ls-3" placeholder="Password" />
+                                <input type="password" className="style2-input ps-5 form-control text-grey-900 font-xss ls-3" placeholder="Password" onChange={(e)=> setData(e, "password")} />
                                 <i className="font-sm ti-lock text-grey-500 pe-0"></i>
                             </div>
+                                <small className='text-danger'>{errMsg}</small>   
                             <div className="form-check text-left mb-3">
                                 <input type="checkbox" className="form-check-input mt-2" id="exampleCheck5" />
                                 <label className="form-check-label font-xsss text-grey-500" htmlFor="exampleCheck5">Remember me</label>
@@ -51,7 +84,7 @@ const Login = ()=> {
                         </form>
                          
                         <div className="col-sm-12 p-0 text-left">
-                            <div className="form-group mb-1"><button className="form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0 ">Login</button></div>
+                            <div className="form-group mb-1"><button className="form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0" type='submit' onClick={AuthData}>Login</button></div>
                             <h6 className="text-grey-500 font-xsss fw-500 mt-0 mb-0 lh-32">Dont have account <Link to='/register' className="fw-700 ms-1">Register</Link></h6>
                         </div>
                         <div className="col-sm-12 p-0 text-center mt-2">

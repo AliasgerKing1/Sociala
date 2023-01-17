@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+
 import Header from '../../shared/Header/Header';
 import LeftSection from '../../shared/left/LeftSection/LeftSection';
 import Contact from '../../shared/very_right/Contact/Contact';
@@ -7,18 +7,7 @@ import Group from '../../shared/very_right/Group/Group';
 import Pages from '../../shared/very_right/Pages/Pages';
 import FooterBar from "../../shared/FooterBar/FooterBar";
 
-
-
-
-
-
-
-
-
-
-
-
-function UserProfile() {
+let UserProfile =() => {
   return (
     <div>
       <div className="color-theme-blue mont-font">

@@ -4,7 +4,7 @@ const sha1 = require("sha1");
 const jwt = require("jsonwebtoken");
 
 routes.post("/", (req, res)=> {
-delete req.body.confPass;
+    delete req.body.confPass;
     req.body.password = sha1(req.body.password);
     User.create(req.body, (error)=> {
         res.send({success : true});

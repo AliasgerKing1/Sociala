@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import {Logout} from "../../../../services/loginAuthService/loginAuthService";
+
 import Header from '../../shared/Header/Header';
 import LeftSection from '../../shared/left/LeftSection/LeftSection';
 import Contact from '../../shared/very_right/Contact/Contact';
@@ -17,7 +19,7 @@ import FooterBar from "../../shared/FooterBar/FooterBar";
 
 
 
-function Setting() {
+let Setting =()  => {
   return (
     <div>
       <div className="color-theme-blue mont-font">
@@ -146,11 +148,12 @@ function Setting() {
                             </li>
                             <li className="list-inline-item d-block me-0">
                               <a
-                                href="#"
+                                onClick={Logout}
                                 className="pt-2 pb-2 d-flex align-items-center"
+                                style={{cursor : 'pointer'}}
                               >
                                 <i className="btn-round-md bg-red-gradiant text-white feather-lock font-md me-3"></i>
-                                <h4 className="fw-600 font-xsss mb-0 mt-0">
+                                <h4 className="fw-600 font-xsss mb-0 mt-0" >
                                   Logout
                                 </h4>
                                 <i className="ti-angle-right font-xsss text-grey-500 ms-auto mt-3"></i>
