@@ -9,16 +9,6 @@ import Group from '../../shared/very_right/Group/Group';
 import Pages from '../../shared/very_right/Pages/Pages';
 import FooterBar from "../../shared/FooterBar/FooterBar";
 
-
-
-
-
-
-
-
-
-
-
 let Setting =()  => {
   return (
     <div>

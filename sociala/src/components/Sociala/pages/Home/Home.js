@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import {addMsg, getMsg} from "../../../../services/PostService/PostService";
 
 import FriendRequest from '../../shared/right/FriendRequest/FriendRequest';
 import Friends from '../../shared/right/Friends/Friends';
@@ -11,13 +12,38 @@ import Group from '../../shared/very_right/Group/Group';
 import Pages from '../../shared/very_right/Pages/Pages';
 import FooterBar from "../../shared/FooterBar/FooterBar";
 import Event from '../../shared/right/Event/Event';
-import Story from "../../shared/Story/Story";
 
 function Home() {
+
+let [allPost, setAllPost] = useState([])
+  let [msg, setMsg] = useState({
+    message: "",
+    comments : []
+  });
+
+  let setData = (e, property) => {
+    setMsg((previousData)=> {
+      return {...previousData, [property] : e.target.value}
+    })
+  }
+
+  let sendData = () => {
+    addMsg(msg).then(result=> {
+      // if(result.data.success == true) {
+      // msg.message = ""
+      // }
+    })
+  }
+
+  useEffect(()=> {
+    getMsg().then(result=> {
+      setAllPost(result.data)
+    })
+  })
+
   return (
     <div>
       <div className="color-theme-blue mont-font">
-        {/* <div className="preloader"></div> */}
 
         <div className="main-wrapper">
           {/* <!-- navigation top--> */}
@@ -178,7 +204,7 @@ function Home() {
                           >
                             <video autoPlay loop className="float-right w-100">
                               <source
-                                src="/assets/images/s-3.mp4"
+                                src="./assets/images/s-3.mp4"
                                 type="video/mp4"
                               />
                             </video>
@@ -205,10 +231,9 @@ function Home() {
                             data-bs-target="#Modalstory"
                             className="card w125 h200 d-block border-0 shadow-xss rounded-xxxl bg-gradiant-bottom overflow-hidden cursor-pointer mb-3 mt-3"
                             style={{
-                              backgroundImage: "url(assets/images/s-5.jpg)",
+                              backgroundImage: "url(assets/images/s-5.jpg)"
                             }}
                           >
-                            {/* style={{backgroundImage: 'url(assets/images/s-5.jpg)'}} */}
                             <div className="card-body d-block p-3 w-100 position-absolute bottom-0 text-center">
                               <a href="#">
                                 <figure className="avatar ms-auto me-auto mb-0 position-relative w50 z-index-1">
@@ -258,6 +283,8 @@ function Home() {
 
                     <div className="card w-100 shadow-xss rounded-xxl border-0 ps-4 pt-4 pe-4 pb-3 mb-3">
                       <div className="card-body p-0">
+                      <div className="row">
+                        <div className="col-md-3">
                         <a
                           href="#"
                           className=" font-xssss fw-600 text-grey-500 card-body p-0 d-flex align-items-center"
@@ -265,6 +292,18 @@ function Home() {
                           <i className="btn-round-sm font-xs text-primary feather-edit-3 me-2 bg-greylight"></i>
                           Create Post
                         </a>
+                        </div>
+                        <div className="col-md-3 offset-md-6">       
+  <a
+            href="#"
+            className="p-2 lh-20 w100 bg-primary-gradiant me-2 text-white text-center font-xssss fw-600 ls-1 rounded-xl"
+            onClick={sendData}
+          >
+             Send &gt;
+          </a>
+                        </div>
+                      </div>
+
                       </div>
                       <div className="card-body p-0 mt-3 position-relative">
                         <figure className="avatar position-absolute ms-2 mt-1 top-5">
@@ -279,8 +318,8 @@ function Home() {
                           className="h100 bor-0 w-100 rounded-xxl p-2 ps-5 font-xssss text-grey-500 fw-500 border-light-md theme-dark-bg"
                           cols="30"
                           rows="10"
-                          placeholder="What's on your mind?"
-                        ></textarea>
+                          placeholder="What's on your mind?" 
+                          onChange={(e)=> setData(e,"message")}></textarea>
                       </div>
                       <div className="card-body d-flex p-0 mt-0">
                         <a
@@ -1345,6 +1384,112 @@ function Home() {
                         </a>
                       </div>
                     </div>
+                    {
+                      allPost.map((p,i)=> {
+                        return(
+                          <div className="card w-100 shadow-xss rounded-xxl border-0 p-4 mb-0" key={i}>
+                      <div className="card-body p-0 d-flex">
+                        <figure className="avatar me-3">
+                          <img
+                            src="/assets/images/user-8.png"
+                            alt="image"
+                            className="shadow-sm rounded-circle w45"
+                          />
+                        </figure>         
+                        <h3 className="fw-700 text-grey-900 font-xssss mt-1">
+                          Anthony Daugloiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
+                          <span className="d-block font-xssss fw-500 mt-1 lh-3 text-grey-500">
+                            2 hour ago
+                          </span>
+                        </h3>
+                        <a href="#" className="ms-auto">
+                          <i className="ti-more-alt text-grey-900 btn-round-md bg-greylight font-xss"></i>
+                        </a>
+                      </div>
+
+                      <div className="card-body p-0 me-lg-5">
+                        <p className="fw-500 text-grey-500 lh-26 font-xssss w-100">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit. Morbi nulla dolor, ornare at commodo non,
+                          feugiat non nisi. Phasellus faucibus mollis pharetra.
+                          Proin blandit ac massa sed rhoncus
+                          <a href="#" className="fw-600 text-primary ms-2">
+                            See more
+                          </a>
+                        </p>
+                      </div>
+                      <div className="card-body d-block p-0 mb-3">
+                        <div className="row ps-2 pe-2">
+                          <div className="col-xs-6 col-sm-6 p-1">
+                          <h4 className="fw-500 text-grey-500 lh-26 font-xs w-100">
+
+{p.message}
+                        </h4>
+                        
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="card-body d-flex p-0">
+                        <a
+                          href="#"
+                          className="emoji-bttn d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss me-2"
+                        >
+                          <i className="feather-thumbs-up text-white bg-primary-gradiant me-1 btn-round-xs font-xss"></i>
+                          <i className="feather-heart text-white bg-red-gradiant me-2 btn-round-xs font-xss"></i>
+                          2.8K Like
+                        </a>
+                        <div className="emoji-wrap">
+                          <ul className="emojis list-inline mb-0">
+                            <li className="emoji list-inline-item">
+                              <i className="em em---1"></i>
+                            </li>
+                            <li className="emoji list-inline-item">
+                              <i className="em em-angry"></i>
+                            </li>
+                            <li className="emoji list-inline-item">
+                              <i className="em em-anguished"></i>
+                            </li>
+                            <li className="emoji list-inline-item">
+                              <i className="em em-astonished"></i>
+                            </li>
+                            <li className="emoji list-inline-item">
+                              <i className="em em-blush"></i>
+                            </li>
+                            <li className="emoji list-inline-item">
+                              <i className="em em-clap"></i>
+                            </li>
+                            <li className="emoji list-inline-item">
+                              <i className="em em-cry"></i>
+                            </li>
+                            <li className="emoji list-inline-item">
+                              <i className="em em-full_moon_with_face"></i>
+                            </li>
+                          </ul>
+                        </div>
+                        <a
+                          href="#"
+                          className="d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss"
+                        >
+                          <i className="feather-message-circle text-dark text-grey-900 btn-round-sm font-lg"></i>
+                          <span className="d-none-xss">22 Comment</span>
+                        </a>
+                        <a
+                          href="#"
+                          className="ms-auto d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss"
+                        >
+                          <i className="feather-share-2 text-grey-900 text-dark btn-round-sm font-lg"></i>
+                          <span className="d-none-xs">Share</span>
+                        </a>
+                      </div>
+                    </div>
+
+                        )
+                      })
+                    }
+
+
+
 
                     <div className="card w-100 shadow-none bg-transparent bg-transparent-card border-0 p-0 mb-0">
                       <div

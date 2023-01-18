@@ -1,5 +1,6 @@
 
 import axios from 'axios';
+import {HttpHeaders}  from "http-headers"
 
   let GetUserProfile =() => {
     return axios.get('http://localhost:3000/api/userprofile', {
@@ -8,7 +9,7 @@ import axios from 'axios';
   }
   let generateHead =() => {
     let token = localStorage.getItem('token');
-    let head = new axios().set('Authorization', JSON.stringify(token));
+    let head = new HttpHeaders().set('Authorization', JSON.stringify(token));
     return head;
   }
 export {GetUserProfile}

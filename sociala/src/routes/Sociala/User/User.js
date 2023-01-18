@@ -39,15 +39,12 @@ function User() {
   return (
     <>
 <Helmet>
-<link rel="stylesheet" href="./assets/css/themify-icons.css" />
-    <link rel="stylesheet" href="./assets/css/feather.css" />
-    {/* <!-- Favicon icon --> */}
-    {/* <!-- <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png"> --> */}
-    {/* <!-- Custom Stylesheet --> */}
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <link rel="stylesheet" href="./assets/css/emoji.css" />
+<link rel="stylesheet" href="/assets/css/themify-icons.css" />
+    <link rel="stylesheet" href="/assets/css/feather.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/emoji.css" />
     
-    <link rel="stylesheet" href="./assets/css/lightbox.css" />
+    <link rel="stylesheet" href="/assets/css/lightbox.css" />
 </Helmet>
       <Routes>
         {/* Sociala */}
