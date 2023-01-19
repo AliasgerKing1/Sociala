@@ -1,28 +1,38 @@
-import React, {useState,} from 'react'
+import { Link, useNavigate } from 'react-router-dom';
+import {useFormik} from "formik"
+
+import RegisterSchema from '../../../../Schemas/RegisterSchema';
 import { addUser } from '../../../../services/userService/userService';
-import { Link,useNavigate } from 'react-router-dom';
-// import { checkPass } from "../../../../Helpers/coustomValidations/coustom_validations";
+
+import Submit from '../../shared/AllInputTypes/Submit';
+import Password from '../../shared/AllInputTypes/Password';
+import Email from "../../shared/AllInputTypes/Email";
+import Text from "../../shared/AllInputTypes/Text";
+import CheckBox from '../../shared/AllInputTypes/CheckBox';
+import FormErrors from '../../shared/Errors/FormErrors';
+
+
+const initialValues = {
+  name : "",
+  email : "",
+  password : "",
+  confPass : "",
+}
 
 const Register = () => {
   const Navigate = useNavigate();
-  let [User, setUser] = useState({
-    name: "",
-    email: "",
-    password: "",
-    confPass: "",
+ let {values, handleBlur, handleChange, handleSubmit, errors, touched} = useFormik({
+initialValues : initialValues,
+validationSchema : RegisterSchema,
+
+onSubmit : ()=> {
+ addUser(values).then(result=> {
+if(result.data.success == true) {
+  Navigate("/");
+}
+ })
+}
   });
-
-  let setData = (e, property) => {
-    setUser((previousData) => {
-      return { ...previousData, [property]: e.target.value };
-    });
-  };
-
-  let saveData = () => {
-    addUser(User).then((result) => {
-      Navigate("/");
-    });
-  };
 
   return (
     <div>
@@ -80,55 +90,32 @@ const Register = () => {
                     Create <br />
                     your account
                   </h2>
+                  <form onSubmit={handleSubmit}>
                   <div className="form-group icon-input mb-3">
                     <i className="font-sm ti-user text-grey-500 pe-0"></i>
-                    <input
-                      name="name"
-                      placeholder="Your Name"
-                      className="style2-input ps-5 form-control text-grey-900 font-xsss fw-600"
-                      type="text"
-                      onChange={(e) => setData(e, "name")}
-                    />
+<Text name="name" placeholder="Your Name" change={handleChange} blur={handleBlur} classes={"style2-input ps-5 form-control text-grey-900 font-xsss fw-600 " + (errors.name && touched.name ? "is-invalid" : "")}/>
+<FormErrors errMsg={errors.name} touched={touched.name}/>
                   </div>
                   <div className="form-group icon-input mb-3">
                     <i className="font-sm ti-email text-grey-500 pe-0"></i>
-                    <input
-                      name="email"
-                      placeholder="Your Email Address"
-                      className="style2-input ps-5 form-control text-grey-900 font-xsss fw-600"
-                      type="email"
-                      onChange={(e) => setData(e, "email")}
-                    />
+<Email name="email" placeholder="Your Email Address" change={handleChange} blur={handleBlur} classes={"style2-input ps-5 form-control text-grey-900 font-xsss fw-600 " + (errors.email && touched.email ? "is-invalid" : "")}/>
+<FormErrors errMsg={errors.email} touched={touched.email}/>
                   </div>
                   <div className="form-group icon-input mb-3">
-                    <input
-                      name="password"
-                      type="password"
-                      placeholder="Password"
-                      className="style2-input ps-5 form-control text-grey-900 font-xsss fw-600"
-                      onChange={(e) => setData(e, "password")}
-                    />
+                  <Password name="password" placeholder="Password" change={handleChange} blur={handleBlur} classes={"style2-input ps-5 form-control text-grey-900 font-xsss fw-600 " + (errors.password && touched.password ? "is-invalid" : "")} />
+                  <FormErrors errMsg={errors.password} touched={touched.password}/>
                     <i className="font-sm ti-lock text-grey-500 pe-0"></i>
                   </div>
                   <div className="form-group icon-input mb-1">
-                    <input
-                      name="confPass"
-                      type="password"
-                      placeholder="Confirm Password"
-                      className="style2-input ps-5 form-control text-grey-900 font-xsss fw-600"
-                      onChange={(e) => setData(e, "confPass")}
-                    />
+                  <Password name="confPass" placeholder="Confirm Password" change={handleChange} blur={handleBlur} classes={"style2-input ps-5 form-control text-grey-900 font-xsss fw-600 " + (errors.confPass && touched.confPass ? "is-invalid" : "")}/>
+                  <FormErrors errMsg={errors.confPass} touched={touched.confPass}/>
                     <i className="font-sm ti-lock text-grey-500 pe-0"></i>
                   </div>
                   <div className="form-check text-left mb-3">
-                    <input
-                      type="checkbox"
-                      className="form-check-input mt-2"
-                      id="exampleCheck2"
-                    />
+<CheckBox id="terms" classes="form-check-input mt-2" />
                     <label
                       className="form-check-label font-xsss text-grey-500"
-                      htmlFor="exampleCheck2"
+                      htmlFor="terms"
                     >
                       Accept Term and Conditions
                     </label>
@@ -139,16 +126,10 @@ const Register = () => {
                       Forgot your Password?
                     </a>
                   </div>
-
                   <div className="col-sm-12 p-0 text-left">
                     <div className="form-group mb-1">
-                      <button
-                        type="submit"
-                        className="form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0"
-                        onClick={saveData}
-                      >
-                        Register
-                      </button>
+
+                    <Submit value="Register"/>
                     </div>
                     <h6 className="text-grey-500 font-xsss fw-500 mt-0 mb-0 lh-32">
                       Already have account
@@ -157,66 +138,12 @@ const Register = () => {
                       </Link>
                     </h6>
                   </div>
+                  </form>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* <div className="row">
-            <div className="col-xl-5 d-none d-xl-block p-0 vh-100 bg-image-cover bg-no-repeat" style={{backgroundImage: 'url(/assets/images/login-bg-2.jpg)'}}></div>
-            <div className="col-xl-7 vh-100 align-items-center d-flex bg-white rounded-3 overflow-hidden">
-                <div className="card shadow-none border-0 ms-auto me-auto login-card">
-                    <div className="card-body rounded-0 text-left">
-                        <h2 className="fw-700 display1-size display2-md-size mb-4">Create <br />your account</h2>                        
-                        <form>
-                            
-                            <div className="form-group icon-input mb-3">
-                                <i className="font-sm ti-user text-grey-500 pe-0"></i>
-                                <input type="text" className="style2-input ps-5 form-control text-grey-900 font-xsss fw-600" onChange={(e)=> {
-                                    setNewName(e.target.value)
-
-                                }} placeholder="Your Name" />                        
-                            </div>
-                            <div className="form-group icon-input mb-3">
-                                <i className="font-sm ti-email text-grey-500 pe-0"></i>
-                                <input type="text" className="style2-input ps-5 form-control text-grey-900 font-xsss fw-600" onChange={(e)=> {
-                                    setNewEmail(e.target.value)
-
-                                }} placeholder="Your Email Address" />                        
-                            </div>
-                            <div className="form-group icon-input mb-3">
-                                <input type="Password" className="style2-input ps-5 form-control text-grey-900 font-xss ls-3" onChange={(e)=> {
-                                    setNewPassword(e.target.value)
-
-                                }} placeholder="Password" />
-                                <i className="font-sm ti-lock text-grey-500 pe-0"></i>
-                            </div>
-                            <div className="form-group icon-input mb-1">
-                                <input type="Password" className="style2-input ps-5 form-control text-grey-900 font-xss ls-3" onChange={(e)=> {
-                                    setNewConfPassword(e.target.value)
-
-                                }} placeholder="Confirm Password" />
-                                <i className="font-sm ti-lock text-grey-500 pe-0"></i>
-                            </div>
-                            <div className="form-check text-left mb-3">
-                                <input type="checkbox" className="form-check-input mt-2" id="exampleCheck2" />
-                                <label className="form-check-label font-xsss text-grey-500" htmlFor="exampleCheck2">Accept Term and Conditions</label>
-                                <a href="#" className="fw-600 font-xsss text-grey-700 mt-1 float-right">Forgot your Password?</a>
-                            </div>
-                        </form>
-                         
-                        <div className="col-sm-12 p-0 text-left">
-                            <div className="form-group mb-1"><button className="form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0" onClick={()=> {
-                                submit();
-                                addUser();
-                            }}>Register</button></div>
-                            <h6 className="text-grey-500 font-xsss fw-500 mt-0 mb-0 lh-32">Already have account <Link to='/'  className="fw-700 ms-1">Login</Link></h6>
-                        </div>
-                         
-                    </div>
-                </div> 
-            </div>
-        </div> */}
         </div>
 
         {/* <!-- Modal Login --> */}

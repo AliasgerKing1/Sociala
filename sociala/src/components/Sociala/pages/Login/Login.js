@@ -1,38 +1,56 @@
-import React, {useState} from 'react'
 import { Link, useNavigate} from 'react-router-dom'
+import {useFormik} from "formik"
 import { DoLogin } from '../../../../services/loginAuthService/loginAuthService'
 
+import LoginSchema from "../../../../Schemas/LoginSchema";
+import Submit from '../../shared/AllInputTypes/Submit';
+import Password from '../../shared/AllInputTypes/Password';
+import Email from "../../shared/AllInputTypes/Email";
+import FormErrors from '../../shared/Errors/FormErrors';
+
 let errMsg="";
-
+const initialValues = {
+    email : "",
+    password : "",
+}
 const Login = ()=> {
-    let [authUser,setAuthUser] = useState({
-        email : "",
-        password : ""
-    })
-
-    let setData = (e, property) => {
-setAuthUser((previousData)=> {
-    return {...previousData, [property] : e.target.value}
-})
-    }
-
     const Navigate = useNavigate();
-    let AuthData = () => {
-    DoLogin(authUser).then(result=> {
-        console.log(result.data.success)
+    let {values, handleBlur, handleChange, handleSubmit, errors, touched} = useFormik({
+   initialValues : initialValues,
+   validationSchema : LoginSchema,
+    onSubmit : ()=> {
+    DoLogin(values).then(result=> {
         if (result.data.success) {
-            localStorage.setItem('token', result.data.token);
-           Navigate('/home');
-          } else {
-            if (result.data.errType == 1) {
-             errMsg = 'This email/username is not registered !';
-            }
-            if (result.data.errType == 2) {
-              errMsg = 'This password is incorrect !';
-            }
-          }
+                        localStorage.setItem('token', result.data.token);
+                       Navigate('/home');
+                      } else {
+                        if (result.data.errType == 1) {
+                         errMsg = 'This email/username is not registered !';
+                        }
+                        if (result.data.errType == 2) {
+                          errMsg = 'This password is incorrect !';
+                        }
+                      }
     })
-    }
+    } 
+})   
+
+//     let AuthData = () => {
+//     DoLogin(authUser).then(result=> {
+//         console.log(result.data.success)
+//         if (result.data.success) {
+//             localStorage.setItem('token', result.data.token);
+//            Navigate('/home');
+//           } else {
+//             if (result.data.errType == 1) {
+//              errMsg = 'This email/username is not registered !';
+//             }
+//             if (result.data.errType == 2) {
+//               errMsg = 'This password is incorrect !';
+//             }
+//           }
+//     })
+//     }
 
 
   return (
@@ -65,28 +83,30 @@ setAuthUser((previousData)=> {
                 <div className="card shadow-none border-0 ms-auto me-auto login-card">
                     <div className="card-body rounded-0 text-left">
                         <h2 className="fw-700 display1-size display2-md-size mb-3">Login into <br />your account</h2>
-                        <form>
-                            
+                        <form onSubmit={handleSubmit}> 
                             <div className="form-group icon-input mb-3">
                                 <i className="font-sm ti-email text-grey-500 pe-0"></i>
-                                <input type="email" className="style2-input ps-5 form-control text-grey-900 font-xsss fw-600" placeholder="Your Email Address" onChange={(e)=> setData(e, "email")} />                       
+                                <Email name="email" placeholder="Your Email Address" change={handleChange} blur={handleBlur} classes={"style2-input ps-5 form-control text-grey-900 font-xsss fw-600 " + (errors.email && touched.email ? "is-invalid" : "")}/>
+<FormErrors errMsg={errors.email} touched={touched.email}/>                   
                             </div>
                             <div className="form-group icon-input mb-1">
-                                <input type="password" className="style2-input ps-5 form-control text-grey-900 font-xss ls-3" placeholder="Password" onChange={(e)=> setData(e, "password")} />
+                            <Password name="password" placeholder="Password" change={handleChange} blur={handleBlur} classes={"style2-input ps-5 form-control text-grey-900 font-xsss fw-600 " + (errors.password && touched.password ? "is-invalid" : "")} />
+                  <FormErrors errMsg={errors.password} touched={touched.password}/>  
                                 <i className="font-sm ti-lock text-grey-500 pe-0"></i>
-                            </div>
-                                <small className='text-danger'>{errMsg}</small>   
+                            </div>  
                             <div className="form-check text-left mb-3">
                                 <input type="checkbox" className="form-check-input mt-2" id="exampleCheck5" />
                                 <label className="form-check-label font-xsss text-grey-500" htmlFor="exampleCheck5">Remember me</label>
                                 <a href="forgot.html" className="fw-600 font-xsss text-grey-700 mt-1 float-right">Forgot your Password?</a>
                             </div>
-                        </form>
                          
                         <div className="col-sm-12 p-0 text-left">
-                            <div className="form-group mb-1"><button className="form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0" type='submit' onClick={AuthData}>Login</button></div>
+                            <div className="form-group mb-1">
+                             <Submit value="Login"/>
+                             </div>
                             <h6 className="text-grey-500 font-xsss fw-500 mt-0 mb-0 lh-32">Dont have account <Link to='/register' className="fw-700 ms-1">Register</Link></h6>
                         </div>
+                        </form>
                         <div className="col-sm-12 p-0 text-center mt-2">
                             
                             <h6 className="mb-0 d-inline-block bg-white fw-500 font-xsss text-grey-500 mb-3">Or, Sign in with your social account </h6>

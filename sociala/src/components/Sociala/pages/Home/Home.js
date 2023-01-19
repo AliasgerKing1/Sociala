@@ -29,7 +29,7 @@ function Home() {
   let sendData = () => {
     addMsg(msg).then((result) => {
       // if(result.data.success == true) {
-      // msg.message = ""
+      // console.log(msg);
       // }
     });
   };
