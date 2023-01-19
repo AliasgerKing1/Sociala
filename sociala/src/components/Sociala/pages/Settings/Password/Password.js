@@ -8,16 +8,7 @@ import Pages from '../../../shared/very_right/Pages/Pages';
 import FooterBar from '../../../shared/FooterBar/FooterBar';
 
 
-
-
-
-
-
-
-
-
-
-
+const initialValues = {};
 export const Password = () => {
   return (
     <div>

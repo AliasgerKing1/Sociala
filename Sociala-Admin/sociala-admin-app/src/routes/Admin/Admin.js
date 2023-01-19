@@ -19,24 +19,22 @@ import AppLeads from '../../components/pages/Apps/AppCrm/AppLeads/AppLeads';
 const Admin = () => {
   return (
     <Routes>
-        <Route path="/home" element={<Home />} />
-        <Route path="/analytics" element={<Analytics />} />
-        <Route path="/crm" element={<Crm />} />
-        <Route path="/crypto" element={<Crypto />} />
-        <Route path="/nft" element={<Nft />} />
-        <Route path="/job" element={<Job />} />
-        <Route path="/projects" element={<Projects />} />
+      <Route path="/home" element={<Home />} />
+      <Route path="/analytics" element={<Analytics />} />
+      <Route path="/crm" element={<Crm />} />
+      <Route path="/crypto" element={<Crypto />} />
+      <Route path="/nft" element={<Nft />} />
+      <Route path="/job" element={<Job />} />
+      <Route path="/projects" element={<Projects />} />
 
-
-        <Route path="/calender" element={<AppCalender />} />
-        <Route path="/chat" element={<AppChat />} />
-        <Route path="/companies" element={<Companies />} />
-        <Route path="/appcontacts" element={<AppContacts />} />
-        <Route path="/appdeals" element={<AppDeals />} />
-        <Route path="/appleads" element={<AppLeads />} />
-
+      <Route path="/appcalender" element={<AppCalender />} />
+      <Route path="/appchat" element={<AppChat />} />
+      <Route path="/appcompanies" element={<Companies />} />
+      <Route path="/appcontacts" element={<AppContacts />} />
+      <Route path="/appdeals" element={<AppDeals />} />
+      <Route path="/appleads" element={<AppLeads />} />
     </Routes>
-  )
+  );
 }
 
 export default Admin;

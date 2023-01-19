@@ -34,10 +34,16 @@ routes.get("/", (req,res)=> {
     })
 })
 
-routes.get("/:id", (req,res)=> {
-    let id = req.params.id;
-    User.find({_id : id}, (error,result)=> {
-        res.send(result[0]);
-    })
-})
+// routes.get("/:id", (req,res)=> {
+//     let id = req.params.id;
+//     User.find({_id : id}, (error,result)=> {
+//         res.send(result[0]);
+//     })
+// })
+
+routes.get("/total", (req, res) => {
+  User.count((error, result) => {
+    res.send({ total: result });
+  });
+});
 module.exports = routes;
