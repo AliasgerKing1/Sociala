@@ -1,63 +1,51 @@
 import { Link, useNavigate} from 'react-router-dom'
 import {useFormik} from "formik"
-import { DoLogin } from '../../../../services/loginAuthService/loginAuthService'
 
+import { DoLogin } from '../../../../services/loginAuthService/loginAuthService'
 import LoginSchema from "../../../../Schemas/LoginSchema";
+import {AlertDanger} from "../../../../shared/Alerts/Alert"
+
 import Submit from '../../shared/AllInputTypes/Submit';
 import Password from '../../shared/AllInputTypes/Password';
 import Email from "../../shared/AllInputTypes/Email";
 import FormErrors from '../../shared/Errors/FormErrors';
+import { useState } from 'react';
 
-let errMsg="";
 const initialValues = {
     email : "",
     password : "",
 }
 const Login = ()=> {
-    const Navigate = useNavigate();
+    let navigate = useNavigate();
+    let [showAlert, setShowAlert] = useState(false);
+let [msg, setMsg] = useState("");
     let {values, handleBlur, handleChange, handleSubmit, errors, touched} = useFormik({
    initialValues : initialValues,
    validationSchema : LoginSchema,
     onSubmit : ()=> {
     DoLogin(values).then(result=> {
-        if (result.data.success) {
-                        localStorage.setItem('token', result.data.token);
-                       Navigate('/home');
-                      } else {
+        console.log(result.data)
                         if (result.data.errType == 1) {
-                         errMsg = 'This email/username is not registered !';
+                            setMsg("This email/username or password is incorrect !");
+                            setShowAlert(true);
                         }
                         if (result.data.errType == 2) {
-                          errMsg = 'This password is incorrect !';
+                            setMsg("This Password is incorrect !");
+                            setShowAlert(true);
                         }
-                      }
+                        if(result.data.status == 200) {
+                            localStorage.setItem("token", result.data.token);
+                            navigate("/home")
+                        }
+    }).catch(error=> {
+
     })
     } 
 })   
 
-//     let AuthData = () => {
-//     DoLogin(authUser).then(result=> {
-//         console.log(result.data.success)
-//         if (result.data.success) {
-//             localStorage.setItem('token', result.data.token);
-//            Navigate('/home');
-//           } else {
-//             if (result.data.errType == 1) {
-//              errMsg = 'This email/username is not registered !';
-//             }
-//             if (result.data.errType == 2) {
-//               errMsg = 'This password is incorrect !';
-//             }
-//           }
-//     })
-//     }
-
-
   return (
     <div>
 <div className="color-theme-blue">
-
-    {/* <div className="preloader"></div> */}
 
     <div className="main-wrap">
 
@@ -107,12 +95,15 @@ const Login = ()=> {
                             <h6 className="text-grey-500 font-xsss fw-500 mt-0 mb-0 lh-32">Dont have account <Link to='/register' className="fw-700 ms-1">Register</Link></h6>
                         </div>
                         </form>
-                        <div className="col-sm-12 p-0 text-center mt-2">
+                        <div className="col-sm-12 p-0 text-center mt-2 mb-2">
                             
                             <h6 className="mb-0 d-inline-block bg-white fw-500 font-xsss text-grey-500 mb-3">Or, Sign in with your social account </h6>
                             <div className="form-group mb-1"><a href="#" className="form-control text-left style2-input text-white fw-600 bg-facebook border-0 p-0 mb-2"><img src="/assets/images/icon-1.png" alt="icon" className="ms-2 w40 mb-1 me-5" /> Sign in with Google</a></div>
                             <div className="form-group mb-1"><a href="#" className="form-control text-left style2-input text-white fw-600 bg-twiiter border-0 p-0 "><img src="/assets/images/icon-3.png" alt="icon" className="ms-2 w40 mb-1 me-5" /> Sign in with Facebook</a></div>
                         </div>
+                        {
+                  showAlert ? (<AlertDanger msg={msg}/>) : ""
+                }
                     </div>
                 </div> 
             </div>

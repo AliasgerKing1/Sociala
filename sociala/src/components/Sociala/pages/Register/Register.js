@@ -1,6 +1,8 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import {useFormik} from "formik"
+import { useState } from 'react';
 
+import {AlertDanger} from "../../../../shared/Alerts/Alert"
 import RegisterSchema from '../../../../Schemas/RegisterSchema';
 import { addUser } from '../../../../services/userService/userService';
 
@@ -11,6 +13,7 @@ import Text from "../../shared/AllInputTypes/Text";
 import CheckBox from '../../shared/AllInputTypes/CheckBox';
 import FormErrors from '../../shared/Errors/FormErrors';
 
+import "./Register.css"
 
 const initialValues = {
   name : "",
@@ -20,25 +23,31 @@ const initialValues = {
 }
 
 const Register = () => {
-  const Navigate = useNavigate();
+  let [showAlert, setShowAlert] = useState(false);
+  let [showSpinner, setShowSpinner] = useState(false);
  let {values, handleBlur, handleChange, handleSubmit, errors, touched} = useFormik({
 initialValues : initialValues,
 validationSchema : RegisterSchema,
 
 onSubmit : ()=> {
+  setShowSpinner(true);
  addUser(values).then(result=> {
-if(result.data.success == true) {
-  Navigate("/");
+if(result.data.status == 200) {
+  <Navigate to="/" replace={true} />
+}else {
 }
- })
+setShowSpinner(false)
+}).catch(error=> {
+   setShowAlert(true);
+   setShowSpinner(false);
+ }) 
 }
   });
 
   return (
     <div>
       <div className="color-theme-blue">
-        {/* <div className="preloader"></div> */}
-
+        { showSpinner ? (<div className="loading">Loading&#8230;</div>)  : "" }
         <div className="main-wrap">
           <div className="nav-header bg-transparent shadow-none border-0">
             <div className="nav-top w-100">
@@ -93,21 +102,21 @@ if(result.data.success == true) {
                   <form onSubmit={handleSubmit}>
                   <div className="form-group icon-input mb-3">
                     <i className="font-sm ti-user text-grey-500 pe-0"></i>
-<Text name="name" placeholder="Your Name" change={handleChange} blur={handleBlur} classes={"style2-input ps-5 form-control text-grey-900 font-xsss fw-600 " + (errors.name && touched.name ? "is-invalid" : "")}/>
+<Text name="name" autocomplete="off" placeholder="Your Name" change={handleChange} blur={handleBlur} classes={"style2-input ps-5 form-control text-grey-900 font-xsss fw-600 " + (errors.name && touched.name ? "is-invalid" : "")}/>
 <FormErrors errMsg={errors.name} touched={touched.name}/>
                   </div>
                   <div className="form-group icon-input mb-3">
                     <i className="font-sm ti-email text-grey-500 pe-0"></i>
-<Email name="email" placeholder="Your Email Address" change={handleChange} blur={handleBlur} classes={"style2-input ps-5 form-control text-grey-900 font-xsss fw-600 " + (errors.email && touched.email ? "is-invalid" : "")}/>
+<Email name="email" autocomplete="off" placeholder="Your Email Address" change={handleChange} blur={handleBlur} classes={"style2-input ps-5 form-control text-grey-900 font-xsss fw-600 " + (errors.email && touched.email ? "is-invalid" : "")}/>
 <FormErrors errMsg={errors.email} touched={touched.email}/>
                   </div>
                   <div className="form-group icon-input mb-3">
-                  <Password name="password" placeholder="Password" change={handleChange} blur={handleBlur} classes={"style2-input ps-5 form-control text-grey-900 font-xsss fw-600 " + (errors.password && touched.password ? "is-invalid" : "")} />
+                  <Password name="password" autocomplete="off" placeholder="Password" change={handleChange} blur={handleBlur} classes={"style2-input ps-5 form-control text-grey-900 font-xsss fw-600 " + (errors.password && touched.password ? "is-invalid" : "")} />
                   <FormErrors errMsg={errors.password} touched={touched.password}/>
                     <i className="font-sm ti-lock text-grey-500 pe-0"></i>
                   </div>
                   <div className="form-group icon-input mb-1">
-                  <Password name="confPass" placeholder="Confirm Password" change={handleChange} blur={handleBlur} classes={"style2-input ps-5 form-control text-grey-900 font-xsss fw-600 " + (errors.confPass && touched.confPass ? "is-invalid" : "")}/>
+                  <Password name="confPass" autocomplete="off" placeholder="Confirm Password" change={handleChange} blur={handleBlur} classes={"style2-input ps-5 form-control text-grey-900 font-xsss fw-600 " + (errors.confPass && touched.confPass ? "is-invalid" : "")}/>
                   <FormErrors errMsg={errors.confPass} touched={touched.confPass}/>
                     <i className="font-sm ti-lock text-grey-500 pe-0"></i>
                   </div>
@@ -140,6 +149,9 @@ if(result.data.success == true) {
                   </div>
                   </form>
                 </div>
+                {
+                  showAlert ? (<AlertDanger msg="Something went wrong !!"/>) : ""
+                }
               </div>
             </div>
           </div>

@@ -8,4 +8,8 @@ let addUser = (obj) => {
 let getUser = () => {
   return axios.get(apiUrl);
 };
-export { addUser, getUser };
+
+let updateUser = (id, obj) => {
+  return axios.put(apiUrl + "/" + id, obj);
+}
+export { addUser, getUser,updateUser };

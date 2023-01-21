@@ -7,7 +7,7 @@ routes.post("/", (req, res)=> {
     delete req.body.confPass;
     req.body.password = sha1(req.body.password);
     User.create(req.body, (error)=> {
-        res.send({success : true});
+        res.send({success : true, status : 200});
     })
         })
 routes.post("/loginauth", (req, res)=> {
@@ -18,12 +18,12 @@ routes.post("/loginauth", (req, res)=> {
             if(result[0].password == password) {
                 let obj = {id : result[0]._id, email : result[0].email};
                 let token = jwt.sign(obj , "Aliasger web");
-                res.send({success : true, token : token});
+                res.send({success : true, status : 200, token : token});
             }else {
-                res.send({success : false, errType : 2});
+                res.send({success : false,status: 401, errType : 2});
             }
         }else {
-            res.send({success : false, errType : 1});
+            res.send({success : false,status: 401, errType : 1});
         }
     })
 })

@@ -13,6 +13,7 @@ import Pages from "../../shared/very_right/Pages/Pages";
 import FooterBar from "../../shared/FooterBar/FooterBar";
 import Event from "../../shared/right/Event/Event";
 
+
 function Home() {
   let [allPost, setAllPost] = useState([]);
   let [msg, setMsg] = useState({
@@ -39,6 +40,7 @@ function Home() {
       setAllPost(result.data);
     });
   });
+
 
   return (
     <div>
@@ -297,7 +299,7 @@ function Home() {
                               className="p-2 lh-20 w100 bg-primary-gradiant me-2 text-white text-center font-xssss fw-600 ls-1 rounded-xl"
                               onClick={sendData}
                             >
-                              Send &gt;
+                              Send
                             </a>
                           </div>
                         </div>

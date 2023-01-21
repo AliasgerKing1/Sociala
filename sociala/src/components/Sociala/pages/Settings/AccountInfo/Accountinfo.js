@@ -1,5 +1,11 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import {useFormik} from "formik"
+import {updateUser} from "../../../../../services/userService/userService"
+
+import FormErrors from '../../../shared/Errors/FormErrors';
+import AccountInfo from "../../../../../Schemas/AccountInfoSchema";
+
 import Header from '../../../shared/Header/Header';
 import LeftSection from '../../../shared/left/LeftSection/LeftSection';
 import Contact from '../../../shared/very_right/Contact/Contact';
@@ -7,7 +13,39 @@ import Group from '../../../shared/very_right/Group/Group';
 import Pages from '../../../shared/very_right/Pages/Pages';
 import FooterBar from '../../../shared/FooterBar/FooterBar';
 
+import Text from '../../../shared/AllInputTypes/Text';
+import Email from "../../../shared/AllInputTypes/Email"
+import Select from '../../../shared/AllInputTypes/Select';
+import Textarea from '../../../shared/AllInputTypes/Textarea';
+
+
+const initialValues = {
+name : "",
+email : "",
+phone : "",
+intrest : "",
+country : "",
+town : "",
+address : "",
+bio : "",
+}
 export const Accountinfo = () => {
+    let [id, setId] = useState("");
+    let navigate = useNavigate();
+    let {values, handleBlur, handleChange, handleSubmit, errors, touched} = useFormik({
+        initialValues : initialValues,
+        validationSchema : AccountInfo,
+        
+        onSubmit : ()=> {
+         updateUser(id,values).then(result=> {
+        if(result.data.status == 200) {
+          navigate("/")
+        }else {
+        }
+        }).catch(error=> {
+         }) 
+        }
+          });
   return (
     <div>
 
@@ -42,15 +80,15 @@ export const Accountinfo = () => {
                             <div className="card-body p-lg-5 p-4 w-100 border-0 ">
                             <div className="row justify-content-center">
                                 <div className="col-lg-4 text-center">
-                                    <figure className="avatar ms-auto me-auto mb-0 mt-2 w100"><img src="/assets/images/pt-1.jpg" alt="image" className="shadow-sm rounded-3 w-100" /></figure>
+                                    <figure className="avatar ms-auto me-auto mb-0 mt-2 w100"><img src="/assets/images/pt-120.png" alt="image" className="shadow-sm rounded-3 w-100" /></figure>
                                     <h2 className="fw-700 font-sm text-grey-900 mt-3">Surfiya Zakir</h2>
                                     <h4 className="text-grey-500 fw-500 mb-3 font-xsss mb-4">Brooklyn</h4>    
                                     {/* <!-- <a href="#" className="p-3 alert-primary text-primary font-xsss fw-500 mt-2 rounded-3">Upload New Photo</a> --> */}
                                 </div>
                             </div>
 
-                            <form action="#">
-                                <div className="row">
+                            <form onSubmit={handleSubmit}>
+                                {/* <div className="row">
                                     <div className="col-lg-6 mb-3">
                                         <div className="form-group">
                                             <label className="mont-font fw-600 font-xsss">First Name</label>
@@ -58,42 +96,63 @@ export const Accountinfo = () => {
                                         </div>        
                                     </div>
 
-                                    <div className="col-lg-6 mb-3">
+                                    <div className="col-lg-12 mb-3">
                                         <div className="form-group">
                                             <label className="mont-font fw-600 font-xsss">Last Name</label>
                                             <input type="text" className="form-control" />
                                         </div>        
                                     </div>
+                                </div> */}
+                                <div className="row">
+                                    <div className="col-lg-6 mb-3">
+                                        <div className="form-group">
+                                            <label className="mont-font fw-600 font-xsss">FullName</label>
+                                            <Text name="name" autocomplete="off" placeholder="" change={handleChange} blur={handleBlur} classes={"form-control " + (errors.name && touched.name ? "is-invalid" : "")}/>
+                                            <FormErrors errMsg={errors.name} touched={touched.name}/>
+                                        </div>        
+                                    </div>
+
+                                    <div className="col-lg-6 mb-3">
+                                        <div className="form-group">
+                                            <label className="mont-font fw-600 font-xsss">Intrests</label>
+                                           <Select name="intrest" change={handleChange} blur={handleBlur} classes={"form-control " + (errors.intrest && touched.intrest ? "is-invalid" : "")} />
+                                            <FormErrors errMsg={errors.intrest} touched={touched.intrest}/>
+                                        </div>        
+                                    </div>
+
                                 </div>
 
                                 <div className="row">
                                     <div className="col-lg-6 mb-3">
                                         <div className="form-group">
                                             <label className="mont-font fw-600 font-xsss">Email</label>
-                                            <input type="text" className="form-control" />
+                                            <Email name="email" autocomplete="off" change={handleChange} blur={handleBlur} classes={"form-control " + (errors.email && touched.email ? "is-invalid" : "")}/>
+<FormErrors errMsg={errors.email} touched={touched.email}/>
                                         </div>        
                                     </div>
 
                                     <div className="col-lg-6 mb-3">
                                         <div className="form-group">
                                             <label className="mont-font fw-600 font-xsss">Phone</label>
-                                            <input type="text" className="form-control" />
+                                           <Text name="phone" autocomplete="off" placeholder="" change={handleChange} blur={handleBlur} classes={"form-control " + (errors.phone && touched.phone ? "is-invalid" : "")}/>
+                                           <FormErrors errMsg={errors.phone} touched={touched.phone}/>
                                         </div>        
                                     </div>
                                 </div>
 
                                 <div className="row">
-                                    <div className="col-lg-12 mb-3">
+                                    {/* <div className="col-lg-12 mb-3">
                                         <div className="form-group">
                                             <label className="mont-font fw-600 font-xsss">Country</label>
-                                            <input type="text" className="form-control" />
+                                           <Text name="name" autocomplete="off" placeholder="" change={handleChange} blur={handleBlur} classes={"form-control" + (errors.name && touched.name ? "is-invalid" : "")}/>
                                         </div>        
-                                    </div>
+                                    </div> */}
 
                                     <div className="col-lg-12 mb-3">
                                         <div className="form-group">
                                             <label className="mont-font fw-600 font-xsss">Address</label>
-                                            <input type="text" className="form-control" />
+                                            <Text name="address" autocomplete="off" placeholder="" change={handleChange} blur={handleBlur} classes={"form-control " + (errors.address && touched.address ? "is-invalid" : "")}/>
+                                           <FormErrors errMsg={errors.address} touched={touched.address}/>
                                         </div>        
                                     </div>
                                 </div>
@@ -101,22 +160,33 @@ export const Accountinfo = () => {
                                 <div className="row">
                                     <div className="col-lg-6 mb-3">
                                         <div className="form-group">
-                                            <label className="mont-font fw-600 font-xsss">Twon / City</label>
-                                            <input type="text" className="form-control" />
+                                            <label className="mont-font fw-600 font-xsss">Town / City</label>
+                                            <Select name="city" change={handleChange} blur={handleBlur} classes={"form-control " + (errors.city && touched.city ? "is-invalid" : "")} />
+                                           <FormErrors errMsg={errors.city} touched={touched.city}/>
+                                        </div>        
+                                    </div>
+                                    <div className="col-lg-6 mb-3">
+                                        <div className="form-group">
+                                            <label className="mont-font fw-600 font-xsss">Country</label>
+                                            <Select name="country" change={handleChange} blur={handleBlur} classes={"form-control " + (errors.country && touched.country ? "is-invalid" : "")} />
+                                           <FormErrors errMsg={errors.country} touched={touched.country}/>
                                         </div>        
                                     </div>
 
-                                    <div className="col-lg-6 mb-3">
+                                    {/* <div className="col-lg-12 mb-3">
                                         <div className="form-group">
-                                            <label className="mont-font fw-600 font-xsss">Postcode</label>
-                                            <input type="text" className="form-control" />
+                                            <label className="mont-font fw-600 font-xsss">Country</label>
+                                            <Text name="country" autocomplete="off" placeholder="" change={handleChange} blur={handleBlur} classes={"form-control" + (errors.country && touched.country ? "is-invalid" : "")}/>
+                                           <FormErrors errMsg={errors.country} touched={touched.country}/>
                                         </div>        
-                                    </div>
+                                    </div> */}
+
 
                                     <div className="col-lg-12 mb-3">
                                         <div className="card mt-3 border-0">
                                             <div className="card-body d-flex justify-content-between align-items-end p-0">
                                                 <div className="form-group mb-0 w-100">
+                                                <label className="mont-font fw-600 font-xsss">Change Profile Image</label>
                                                     <input type="file" name="file" id="file" className="input-file" />
                                                     <label htmlFor="file" className="rounded-3 text-center bg-white btn-tertiary js-labelFile p-4 w-100 border-dashed">
                                                     <i className="ti-cloud-down large-icon me-3 d-block"></i>
@@ -128,8 +198,9 @@ export const Accountinfo = () => {
                                     </div>
 
                                     <div className="col-lg-12 mb-3">
-                                        <label className="mont-font fw-600 font-xsss">Description</label>
-                                        <textarea className="form-control mb-0 p-3 h100 bg-greylight lh-16" rows="5" placeholder="Write your message..." spellCheck="false"></textarea>
+                                        <label className="mont-font fw-600 font-xsss">Bio</label>
+                                        <Textarea classes={"form-control mb-0 p-3 h100 bg-greylight lh-16 " + (errors.address && touched.address ? "is-invalid" : "")} name='bio' rows="5" change={handleChange} blur={handleBlur} placeholder="Write your message..." />
+                                        <FormErrors errMsg={errors.address} touched={touched.address}/>
                                     </div>
 
                                     <div className="col-lg-12">

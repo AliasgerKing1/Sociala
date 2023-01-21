@@ -31,7 +31,6 @@ import SinglePageShop from "../../../components/Sociala/pages/SinglePageShop/Sin
 import Job from "../../../components/Sociala/pages/Job/Job";
 import Users from "../../../components/Sociala/pages/Users/Users";
 import ForgetPassword from "../../../components/Sociala/pages/forgetPassword/ForgetPassword";
-import { useEffect } from "react";
 
 // import Parents from "../components/Sociala/pages/Parents";
 
