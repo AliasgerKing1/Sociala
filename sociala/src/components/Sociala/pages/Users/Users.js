@@ -11,20 +11,25 @@ import Story from "../../shared/Story/Story";
 
 const Users = () => {
   let [allUsers, setAllUsers] = useState([]);
+  let [navLink4, setNavLink4] = useState(false);
 
   useEffect(() => {
     getUser().then((result) => {
       setAllUsers(result.data);
     });
   });
+  let demo = ()=> {
+    setNavLink4(true);
+      }
+
   return (
-    <div>
+    <div  onLoad={demo}>
       <div className="color-theme-blue mont-font">
         {/* <div className="preloader"></div> */}
 
         <div className="main-wrapper">
           {/* <!-- navigation top--> */}
-          <Header />
+          <Header navLink4={navLink4} />
           {/* <!-- navigation top--> */}
 
           {/* <!-- navigation left --> */}

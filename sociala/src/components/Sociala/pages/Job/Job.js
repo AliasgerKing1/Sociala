@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../../shared/Header/Header';
 import LeftSection from '../../shared/left/LeftSection/LeftSection';
 import Contact from '../../shared/very_right/Contact/Contact';
@@ -8,15 +8,20 @@ import FooterBar from '../../shared/FooterBar/FooterBar';
 
 
 
-const Job = () => {
+let Job = () => {
+  let [navLink6, setNavLink6] = useState(false);
+  let demo = ()=> {
+    setNavLink6(true);
+      }
+
   return (
-    <div>
+    <div  onLoad={demo}>
       <div className="color-theme-blue mont-font">
         {/* <div className="preloader"></div> */}
 
         <div className="main-wrapper">
           {/* <!-- navigation top--> */}
-          <Header />
+          <Header navLink6={navLink6} />
           {/* <!-- navigation top --> */}
 
           {/* <!-- navigation left --> */}

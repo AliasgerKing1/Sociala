@@ -16,6 +16,9 @@ import AppContacts from '../../components/pages/Apps/AppCrm/AppContacts/AppConta
 import AppDeals from '../../components/pages/Apps/AppCrm/AppDeals/AppDeals';
 import AppLeads from '../../components/pages/Apps/AppCrm/AppLeads/AppLeads';
 
+
+import Login from '../../components/pages/Authentication/Login';
+
 const Admin = () => {
   return (
     <Routes>
@@ -27,12 +30,16 @@ const Admin = () => {
       <Route path="/job" element={<Job />} />
       <Route path="/projects" element={<Projects />} />
 
+
       <Route path="/appcalender" element={<AppCalender />} />
       <Route path="/appchat" element={<AppChat />} />
       <Route path="/appcompanies" element={<Companies />} />
       <Route path="/appcontacts" element={<AppContacts />} />
       <Route path="/appdeals" element={<AppDeals />} />
       <Route path="/appleads" element={<AppLeads />} />
+
+
+      <Route path="/" element={<Login />} />
     </Routes>
   );
 }

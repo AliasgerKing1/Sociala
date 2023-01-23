@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import {addMsg, getMsg} from "../../../../services/PostService/PostService";
+import { getUserProfile } from '../../../../services/profileService/profileService';
 
 import FriendRequest from "../../shared/right/FriendRequest/FriendRequest";
 import Friends from "../../shared/right/Friends/Friends";
@@ -16,38 +17,47 @@ import Event from "../../shared/right/Event/Event";
 
 function Home() {
   let [allPost, setAllPost] = useState([]);
+  let [id,setId] = useState("");
+  let [navLink, setNavLink] = useState(false);
   let [msg, setMsg] = useState({
     message: "",
     comments: [],
+    sender : id
   });
-
   let setData = (e, property) => {
     setMsg((previousData) => {
       return { ...previousData, [property]: e.target.value };
+
     });
   };
 
   let sendData = () => {
     addMsg(msg).then((result) => {
-      // if(result.data.success == true) {
-      // console.log(msg);
-      // }
+    
     });
   };
 
   useEffect(() => {
-    getMsg().then((result) => {
-      setAllPost(result.data);
-    });
-  });
+    let token = localStorage.getItem("token")
+    getUserProfile(token).then(result=> {
+        setId(result.data._id)
+    })
+    getMsg().then(result=> {
+      setAllPost(result.data)
+    })
+
+  },[id]);
+  let demo = ()=> {
+    setNavLink(true);
+      }
 
 
   return (
-    <div>
+    <div onLoad={demo}>
       <div className="color-theme-blue mont-font">
         <div className="main-wrapper">
           {/* <!-- navigation top--> */}
-          <Header />
+          <Header navLink={navLink} />
           {/* <!-- navigation top --> */}
 
           {/* <!-- navigation left --> */}
@@ -293,14 +303,10 @@ function Home() {
                               Create Post
                             </a>
                           </div>
-                          <div className="col-md-3 offset-md-6">
-                            <a
-                              href="#"
-                              className="p-2 lh-20 w100 bg-primary-gradiant me-2 text-white text-center font-xssss fw-600 ls-1 rounded-xl"
-                              onClick={sendData}
-                            >
-                              Send
-                            </a>
+                          <div className="col-md-2 offset-md-7">
+                          <a href="#" onClick={sendData}>
+                              <span className="feather-send btn-round-sm mt-1 text-primary font-md feather-edit-3 position-absolute bg-greylight"></span>
+                          </a>
                           </div>
                         </div>
                       </div>
@@ -1404,9 +1410,52 @@ function Home() {
                                 2 hour ago
                               </span>
                             </h3>
-                            <a href="#" className="ms-auto">
+                            <a href="#" className="ms-auto" id="dropdownMenu6"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false">
                               <i className="ti-more-alt text-grey-900 btn-round-md bg-greylight font-xss"></i>
                             </a>
+                            <div
+                          className="dropdown-menu dropdown-menu-end p-4 rounded-xxl border-0 shadow-lg"
+                          aria-labelledby="dropdownMenu2"
+                        >
+                          <div className="card-body p-0 d-flex">
+                            <i className="feather-bookmark text-grey-500 me-3 font-lg"></i>
+                            <h4 className="fw-600 text-grey-900 font-xssss mt-0 me-4 cursor">
+                              Save Link
+                              <span className="d-block font-xsssss fw-500 mt-1 lh-3 text-grey-500">
+                                Add this to your saved items
+                              </span>
+                            </h4>
+                          </div>
+                          <div className="card-body p-0 d-flex mt-2">
+                            <i className="feather-alert-circle text-grey-500 me-3 font-lg"></i>
+                            <h4 className="fw-600 text-grey-900 font-xssss mt-0 me-4 cursor">
+                              Hide Post
+                              <span className="d-block font-xsssss fw-500 mt-1 lh-3 text-grey-500">
+                                Save to your saved items
+                              </span>
+                            </h4>
+                          </div>
+                          <div className="card-body p-0 d-flex mt-2">
+                            <i className="feather-alert-octagon text-grey-500 me-3 font-lg"></i>
+                            <h4 className="fw-600 text-grey-900 font-xssss mt-0 me-4 cursor">
+                              Hide all from Group
+                              <span className="d-block font-xsssss fw-500 mt-1 lh-3 text-grey-500">
+                                Save to your saved items
+                              </span>
+                            </h4>
+                          </div>
+                          <div className="card-body p-0 d-flex mt-2">
+                            <i className="feather-lock text-grey-500 me-3 font-lg"></i>
+                            <h4 className="fw-600 mb-0 text-grey-900 font-xssss mt-0 me-4 cursor">
+                              Unfollow
+                              <span className="d-block font-xsssss fw-500 mt-1 lh-3 text-grey-500">
+                                Save to your saved items
+                              </span>
+                            </h4>
+                          </div>
+                        </div>
                           </div>
 
                           <div className="card-body p-0 me-lg-5"></div>

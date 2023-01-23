@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import {useFormik} from "formik"
-import {updateUser} from "../../../../../services/userService/userService"
+import {updateUser} from "../../../../../services/userService/userService";
+import { getUserProfile,getUserProfileById } from "../../../../../services/profileService/profileService";
+import { getCountry } from '../../../../../services/CountryCityService/CountryCityService';
 
 import FormErrors from '../../../shared/Errors/FormErrors';
 import AccountInfo from "../../../../../Schemas/AccountInfoSchema";
@@ -14,24 +16,35 @@ import Pages from '../../../shared/very_right/Pages/Pages';
 import FooterBar from '../../../shared/FooterBar/FooterBar';
 
 import Text from '../../../shared/AllInputTypes/Text';
-import Email from "../../../shared/AllInputTypes/Email"
-import Select from '../../../shared/AllInputTypes/Select';
 import Textarea from '../../../shared/AllInputTypes/Textarea';
-
+import Submit from '../../../shared/AllInputTypes/Submit';
 
 const initialValues = {
-name : "",
-email : "",
+userName : "",
 phone : "",
 intrest : "",
 country : "",
-town : "",
+city : "",
 address : "",
 bio : "",
 }
 export const Accountinfo = () => {
-    let [id, setId] = useState("");
     let navigate = useNavigate();
+    let [id,setId] = useState("");
+    let [allData,setAllData] = useState("");
+    let [allCountry,setAllCountry] = useState("");
+    useEffect(()=> {
+        let token = localStorage.getItem("token")
+        getUserProfile(token).then(result=> {
+            setId(result.data._id)
+        })
+        getUserProfileById(id).then(result=> {
+            setAllData(result.data);
+        })
+        getCountry().then(result=> {
+        setAllCountry(result.data)
+        })
+}, [id])
     let {values, handleBlur, handleChange, handleSubmit, errors, touched} = useFormik({
         initialValues : initialValues,
         validationSchema : AccountInfo,
@@ -46,6 +59,11 @@ export const Accountinfo = () => {
          }) 
         }
           });
+          let intrestArr = ["watching SociaMate post", "watching SnapShot","Youtube","Coding","Sports","singing","Dancing"];
+
+          const handleFileEvent =  (e) => {
+           
+        }
   return (
     <div>
 
@@ -81,7 +99,7 @@ export const Accountinfo = () => {
                             <div className="row justify-content-center">
                                 <div className="col-lg-4 text-center">
                                     <figure className="avatar ms-auto me-auto mb-0 mt-2 w100"><img src="/assets/images/pt-120.png" alt="image" className="shadow-sm rounded-3 w-100" /></figure>
-                                    <h2 className="fw-700 font-sm text-grey-900 mt-3">Surfiya Zakir</h2>
+                                    <h2 className="fw-700 font-sm text-grey-900 mt-3">{allData.userName}</h2>
                                     <h4 className="text-grey-500 fw-500 mb-3 font-xsss mb-4">Brooklyn</h4>    
                                     {/* <!-- <a href="#" className="p-3 alert-primary text-primary font-xsss fw-500 mt-2 rounded-3">Upload New Photo</a> --> */}
                                 </div>
@@ -107,16 +125,27 @@ export const Accountinfo = () => {
                                     <div className="col-lg-6 mb-3">
                                         <div className="form-group">
                                             <label className="mont-font fw-600 font-xsss">FullName</label>
-                                            <Text name="name" autocomplete="off" placeholder="" change={handleChange} blur={handleBlur} classes={"form-control " + (errors.name && touched.name ? "is-invalid" : "")}/>
-                                            <FormErrors errMsg={errors.name} touched={touched.name}/>
+                                            <Text name="userName" autoComplete="off" placeholder="" value={allData.userName} change={handleChange} blur={handleBlur} classes={"form-control " + (errors.userName && touched.userName ? "is-invalid" : "")}/>
+                                            <FormErrors errMsg={errors.userName} touched={touched.userName}/>
                                         </div>        
                                     </div>
 
                                     <div className="col-lg-6 mb-3">
                                         <div className="form-group">
                                             <label className="mont-font fw-600 font-xsss">Intrests</label>
-                                           <Select name="intrest" change={handleChange} blur={handleBlur} classes={"form-control " + (errors.intrest && touched.intrest ? "is-invalid" : "")} />
+                                            <select name='intrest' onChange={handleChange} onBlur={handleBlur} className={"form-control " + (errors.intrest && touched.intrest ? "is-invalid" : "")}>
+                                                <option>Select</option>
+                                                {
+                                                    intrestArr.map((x,i)=> {
+                                                        return (
+                                                    <option key={i}>{x}</option>
+                                                        )
+                                                    })
+                                                    }
+                                            </select>
                                             <FormErrors errMsg={errors.intrest} touched={touched.intrest}/>
+                                           {/* <Select name="intrest" change={handleChange} value={intrest} blur={handleBlur} classes={"form-control " + (errors.intrest && touched.intrest ? "is-invalid" : "")} /> */}
+                                            {/* <FormErrors errMsg={errors.intrest} touched={touched.intrest}/> */}
                                         </div>        
                                     </div>
 
@@ -126,15 +155,14 @@ export const Accountinfo = () => {
                                     <div className="col-lg-6 mb-3">
                                         <div className="form-group">
                                             <label className="mont-font fw-600 font-xsss">Email</label>
-                                            <Email name="email" autocomplete="off" change={handleChange} blur={handleBlur} classes={"form-control " + (errors.email && touched.email ? "is-invalid" : "")}/>
-<FormErrors errMsg={errors.email} touched={touched.email}/>
+                                            <input type="text" value={allData.email} autoComplete="off" className="form-control" disabled={"" + (allData ? "disabled" : "")}/>
                                         </div>        
                                     </div>
 
                                     <div className="col-lg-6 mb-3">
                                         <div className="form-group">
                                             <label className="mont-font fw-600 font-xsss">Phone</label>
-                                           <Text name="phone" autocomplete="off" placeholder="" change={handleChange} blur={handleBlur} classes={"form-control " + (errors.phone && touched.phone ? "is-invalid" : "")}/>
+                                           <Text name="phone" autoComplete="off" placeholder="" change={handleChange} blur={handleBlur} classes={"form-control " + (errors.phone && touched.phone ? "is-invalid" : "")}/>
                                            <FormErrors errMsg={errors.phone} touched={touched.phone}/>
                                         </div>        
                                     </div>
@@ -144,14 +172,14 @@ export const Accountinfo = () => {
                                     {/* <div className="col-lg-12 mb-3">
                                         <div className="form-group">
                                             <label className="mont-font fw-600 font-xsss">Country</label>
-                                           <Text name="name" autocomplete="off" placeholder="" change={handleChange} blur={handleBlur} classes={"form-control" + (errors.name && touched.name ? "is-invalid" : "")}/>
+                                           <Text name="name" autoComplete="off" placeholder="" change={handleChange} blur={handleBlur} classes={"form-control" + (errors.name && touched.name ? "is-invalid" : "")}/>
                                         </div>        
                                     </div> */}
 
                                     <div className="col-lg-12 mb-3">
                                         <div className="form-group">
                                             <label className="mont-font fw-600 font-xsss">Address</label>
-                                            <Text name="address" autocomplete="off" placeholder="" change={handleChange} blur={handleBlur} classes={"form-control " + (errors.address && touched.address ? "is-invalid" : "")}/>
+                                            <Text name="address" autoComplete="off" placeholder="" change={handleChange} blur={handleBlur} classes={"form-control " + (errors.address && touched.address ? "is-invalid" : "")}/>
                                            <FormErrors errMsg={errors.address} touched={touched.address}/>
                                         </div>        
                                     </div>
@@ -161,22 +189,39 @@ export const Accountinfo = () => {
                                     <div className="col-lg-6 mb-3">
                                         <div className="form-group">
                                             <label className="mont-font fw-600 font-xsss">Town / City</label>
-                                            <Select name="city" change={handleChange} blur={handleBlur} classes={"form-control " + (errors.city && touched.city ? "is-invalid" : "")} />
-                                           <FormErrors errMsg={errors.city} touched={touched.city}/>
+                                            <select name='city' onChange={handleChange} onBlur={handleBlur} className={"form-control " + (errors.city && touched.city ? "is-invalid" : "")}>
+                                                <option>Select</option>
+                                                <option>hiii</option>
+                                            </select>
+                                            <FormErrors errMsg={errors.city} touched={touched.city}/>
+                                            {/* <Select name="city" change={handleChange} blur={handleBlur} classes={"form-control " + (errors.city && touched.city ? "is-invalid" : "")} />
+                                           <FormErrors errMsg={errors.city} touched={touched.city}/> */}
                                         </div>        
                                     </div>
                                     <div className="col-lg-6 mb-3">
                                         <div className="form-group">
                                             <label className="mont-font fw-600 font-xsss">Country</label>
-                                            <Select name="country" change={handleChange} blur={handleBlur} classes={"form-control " + (errors.country && touched.country ? "is-invalid" : "")} />
-                                           <FormErrors errMsg={errors.country} touched={touched.country}/>
+                                            <select name='country' onChange={handleChange} onBlur={handleBlur} className={"form-control " + (errors.country && touched.country ? "is-invalid" : "")}>
+                                                <option>Select</option>
+                                                <option>hell</option>
+                                               {/* {
+                                                allCountry.map((x)=> {
+                                                    return(
+                                                        <option>{x}</option>
+                                                    )
+                                                })
+                                               } */}
+                                            </select>
+                                        <FormErrors errMsg={errors.country} touched={touched.country}/>
+                                            {/* <Select name="country" change={handleChange} blur={handleBlur} classes={"form-control " + (errors.country && touched.country ? "is-invalid" : "")} />
+                                           <FormErrors errMsg={errors.country} touched={touched.country}/> */}
                                         </div>        
                                     </div>
 
                                     {/* <div className="col-lg-12 mb-3">
                                         <div className="form-group">
                                             <label className="mont-font fw-600 font-xsss">Country</label>
-                                            <Text name="country" autocomplete="off" placeholder="" change={handleChange} blur={handleBlur} classes={"form-control" + (errors.country && touched.country ? "is-invalid" : "")}/>
+                                            <Text name="country" autoComplete="off" placeholder="" change={handleChange} blur={handleBlur} classes={"form-control" + (errors.country && touched.country ? "is-invalid" : "")}/>
                                            <FormErrors errMsg={errors.country} touched={touched.country}/>
                                         </div>        
                                     </div> */}
@@ -187,7 +232,8 @@ export const Accountinfo = () => {
                                             <div className="card-body d-flex justify-content-between align-items-end p-0">
                                                 <div className="form-group mb-0 w-100">
                                                 <label className="mont-font fw-600 font-xsss">Change Profile Image</label>
-                                                    <input type="file" name="file" id="file" className="input-file" />
+                                                    <input type="file" name="profilePic" id="file" className="input-file" multiple
+        accept='image/png,image/jpg,image/jpeg,image/svg' onChange={(e)=> {handleFileEvent(e)}} />
                                                     <label htmlFor="file" className="rounded-3 text-center bg-white btn-tertiary js-labelFile p-4 w-100 border-dashed">
                                                     <i className="ti-cloud-down large-icon me-3 d-block"></i>
                                                     <span className="js-fileName">Drag and drop or click to replace</span>
@@ -204,7 +250,7 @@ export const Accountinfo = () => {
                                     </div>
 
                                     <div className="col-lg-12">
-                                        <a href="#" className="bg-current text-center text-white font-xsss fw-600 p-3 w175 rounded-3 d-inline-block">Save</a>
+                                    <Submit value="Save" classes="bg-current text-center text-white font-xsss fw-600 p-3 w175 rounded-3 d-inline-block"/>
                                     </div>
                                 </div>
 

@@ -8,5 +8,4 @@ let getMsg = () => {
 return axios.get(apiUrl);
 }
 
-
-export {addMsg, getMsg}
+export {addMsg,getMsg}

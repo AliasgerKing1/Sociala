@@ -1,4 +1,4 @@
-import { Link, Navigate } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import {useFormik} from "formik"
 import { useState } from 'react';
 
@@ -16,13 +16,20 @@ import FormErrors from '../../shared/Errors/FormErrors';
 import "./Register.css"
 
 const initialValues = {
-  name : "",
+  userName : "",
   email : "",
   password : "",
   confPass : "",
+  phone : "",
+intrest : "",
+country : "",
+city : "",
+address : "",
+bio : "",
 }
 
 const Register = () => {
+  let navigate = useNavigate();
   let [showAlert, setShowAlert] = useState(false);
   let [showSpinner, setShowSpinner] = useState(false);
  let {values, handleBlur, handleChange, handleSubmit, errors, touched} = useFormik({
@@ -33,7 +40,7 @@ onSubmit : ()=> {
   setShowSpinner(true);
  addUser(values).then(result=> {
 if(result.data.status == 200) {
-  <Navigate to="/" replace={true} />
+  navigate("/")
 }else {
 }
 setShowSpinner(false)
@@ -102,21 +109,21 @@ setShowSpinner(false)
                   <form onSubmit={handleSubmit}>
                   <div className="form-group icon-input mb-3">
                     <i className="font-sm ti-user text-grey-500 pe-0"></i>
-<Text name="name" autocomplete="off" placeholder="Your Name" change={handleChange} blur={handleBlur} classes={"style2-input ps-5 form-control text-grey-900 font-xsss fw-600 " + (errors.name && touched.name ? "is-invalid" : "")}/>
+<Text name="userName" autoComplete="off" placeholder="UserName" change={handleChange} blur={handleBlur} classes={"style2-input ps-5 form-control text-grey-900 font-xsss fw-600 " + (errors.name && touched.name ? "is-invalid" : "")}/>
 <FormErrors errMsg={errors.name} touched={touched.name}/>
                   </div>
                   <div className="form-group icon-input mb-3">
                     <i className="font-sm ti-email text-grey-500 pe-0"></i>
-<Email name="email" autocomplete="off" placeholder="Your Email Address" change={handleChange} blur={handleBlur} classes={"style2-input ps-5 form-control text-grey-900 font-xsss fw-600 " + (errors.email && touched.email ? "is-invalid" : "")}/>
+<Email name="email" autoComplete="off" placeholder="Your Email Address" change={handleChange} blur={handleBlur} classes={"style2-input ps-5 form-control text-grey-900 font-xsss fw-600 " + (errors.email && touched.email ? "is-invalid" : "")}/>
 <FormErrors errMsg={errors.email} touched={touched.email}/>
                   </div>
                   <div className="form-group icon-input mb-3">
-                  <Password name="password" autocomplete="off" placeholder="Password" change={handleChange} blur={handleBlur} classes={"style2-input ps-5 form-control text-grey-900 font-xsss fw-600 " + (errors.password && touched.password ? "is-invalid" : "")} />
+                  <Password name="password" autoComplete="off" placeholder="Password" change={handleChange} blur={handleBlur} classes={"style2-input ps-5 form-control text-grey-900 font-xsss fw-600 " + (errors.password && touched.password ? "is-invalid" : "")} />
                   <FormErrors errMsg={errors.password} touched={touched.password}/>
                     <i className="font-sm ti-lock text-grey-500 pe-0"></i>
                   </div>
                   <div className="form-group icon-input mb-1">
-                  <Password name="confPass" autocomplete="off" placeholder="Confirm Password" change={handleChange} blur={handleBlur} classes={"style2-input ps-5 form-control text-grey-900 font-xsss fw-600 " + (errors.confPass && touched.confPass ? "is-invalid" : "")}/>
+                  <Password name="confPass" autoComplete="off" placeholder="Confirm Password" change={handleChange} blur={handleBlur} classes={"style2-input ps-5 form-control text-grey-900 font-xsss fw-600 " + (errors.confPass && touched.confPass ? "is-invalid" : "")}/>
                   <FormErrors errMsg={errors.confPass} touched={touched.confPass}/>
                     <i className="font-sm ti-lock text-grey-500 pe-0"></i>
                   </div>
@@ -138,7 +145,7 @@ setShowSpinner(false)
                   <div className="col-sm-12 p-0 text-left">
                     <div className="form-group mb-1">
 
-                    <Submit value="Register"/>
+                    <Submit value="Register" classes="form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0"/>
                     </div>
                     <h6 className="text-grey-500 font-xsss fw-500 mt-0 mb-0 lh-32">
                       Already have account

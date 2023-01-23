@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {Link} from 'react-router-dom';
 import Header from '../../shared/Header/Header';
 import LeftSection from '../../shared/left/LeftSection/LeftSection';
@@ -7,9 +7,14 @@ import Group from '../../shared/very_right/Group/Group';
 import Pages from '../../shared/very_right/Pages/Pages';
 import FooterBar from "../../shared/FooterBar/FooterBar";
 
-function Shop() {
+let Shop = () => {
+    let [navLink5, setNavLink5] = useState(false);
+    let demo = ()=> {
+        setNavLink5(true);
+          }
+    
   return (
-    <div>
+    <div  onLoad={demo}>
 <div className="color-theme-blue mont-font">
 
     {/* <div className="preloader"></div> */}
@@ -18,7 +23,7 @@ function Shop() {
     <div className="main-wrapper">
 
         {/* <!-- navigation top--> */}
-        <Header/>
+        <Header navLink5={navLink5} />
           {/* <!-- navigation top --> */}
 
           {/* <!-- navigation left --> */}

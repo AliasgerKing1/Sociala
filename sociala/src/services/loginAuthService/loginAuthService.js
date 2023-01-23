@@ -1,9 +1,7 @@
 import axios from "axios";
-import {useNavigate } from 'react-router-dom';
+import {} from 'react-router-dom';
 
 let Logout = () => {
-  // const navigate = useNavigate();
-  //   navigate('/');
   localStorage.removeItem('token');
 }
 let DoLogin = (obj) => {

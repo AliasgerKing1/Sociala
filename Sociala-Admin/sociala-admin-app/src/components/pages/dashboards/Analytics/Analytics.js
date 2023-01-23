@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { totalUser } from "../../../../Services/UserService/UserService";
@@ -11,13 +11,12 @@ import ChooseLayout from "../../../shared/ChooseLayout/ChooseLayout";
 
 
 const Analytics = () => {
-let usersCount
-  useRef(() => {
-    totalUser().then((result) => {
-        usersCount = result.data.total;
-    });
-    console.log(usersCount)
-  });
+let [usersCount, setUsersCount] = useState();
+useEffect(()=> {
+totalUser().then(result=> {
+  setUsersCount(result.data.total);
+})
+})
   return (
     <>
       {/* <!-- Begin page --> */}
@@ -135,7 +134,11 @@ let usersCount
                                   >
                                     {usersCount}
                                   </span>
-                                  k
+                                  {/* <span>K</span>
+                                  <span>M</span>
+                                  <span>B</span>
+                                  <span>T</span> */}
+                                  
                                 </h2>
                                 <p className="mb-0 text-muted">
                                   <span className="badge bg-light text-success mb-0">

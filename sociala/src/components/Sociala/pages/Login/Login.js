@@ -24,7 +24,6 @@ let [msg, setMsg] = useState("");
    validationSchema : LoginSchema,
     onSubmit : ()=> {
     DoLogin(values).then(result=> {
-        console.log(result.data)
                         if (result.data.errType == 1) {
                             setMsg("This email/username or password is incorrect !");
                             setShowAlert(true);
@@ -90,7 +89,7 @@ let [msg, setMsg] = useState("");
                          
                         <div className="col-sm-12 p-0 text-left">
                             <div className="form-group mb-1">
-                             <Submit value="Login"/>
+                             <Submit value="Login" classes="form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0"/>
                              </div>
                             <h6 className="text-grey-500 font-xsss fw-500 mt-0 mb-0 lh-32">Dont have account <Link to='/register' className="fw-700 ms-1">Register</Link></h6>
                         </div>

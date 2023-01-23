@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from '../../shared/Header/Header';
 import LeftSection from '../../shared/left/LeftSection/LeftSection';
 import Contact from '../../shared/very_right/Contact/Contact';
@@ -7,15 +7,20 @@ import Pages from '../../shared/very_right/Pages/Pages';
 import FooterBar from '../../shared/FooterBar/FooterBar';
 import Story from "../../shared/Story/Story";
 
-function Stories() {
+ let Stories =() => {
+  let [navLink2, setNavLink2] = useState(false);
+
+  let demo = ()=> {
+    setNavLink2(true);
+  }
   return (
-    <div>
+    <div onLoad={demo}>
       <div className="color-theme-blue mont-font">
         {/* <div className="preloader"></div> */}
 
         <div className="main-wrapper">
           {/* <!-- navigation top--> */}
-          <Header />
+          <Header navLink2={navLink2} />
           {/* <!-- navigation top--> */}
           {/* <!-- navigation left --> */}
           <LeftSection />

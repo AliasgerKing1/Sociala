@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from '../../shared/Header/Header';
 import LeftSection from '../../shared/left/LeftSection/LeftSection';
 import Contact from '../../shared/very_right/Contact/Contact';
@@ -7,15 +7,20 @@ import Pages from '../../shared/very_right/Pages/Pages';
 import FooterBar from '../../shared/FooterBar/FooterBar';
 import Story from "../../shared/Story/Story";
 
-function Video() {
+let Video = () => {
+  let [navLink3, setNavLink3] = useState(false);
+  let demo = ()=> {
+    setNavLink3(true);
+      }
+
   return (
-    <div>
+    <div  onLoad={demo}>
       <div className="color-theme-blue mont-font">
         {/* <div className="preloader"></div> */}
 
         <div className="main-wrapper">
           {/* <!-- navigation top--> */}
-          <Header />
+          <Header navLink3={navLink3} />
           {/* <!-- navigation top--> */}
 
           {/* <!-- navigation left --> */}

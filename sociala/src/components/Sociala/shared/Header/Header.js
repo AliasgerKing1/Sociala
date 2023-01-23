@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
-function Header() {
+let Header = ({navLink, navLink2, navLink3, navLink4, navLink5, navLink6}) => {
   return (
     <div>
       <div className="nav-header bg-white shadow-xs border-0">
@@ -37,37 +37,37 @@ function Header() {
           to="/home"
           className="p-2 text-center ms-3 menu-icon center-menu-icon"
         >
-          <i className="feather-home font-lg alert-primary btn-round-lg theme-dark-bg text-current "></i>
+          <i className={"feather-home font-lg btn-round-lg theme-dark-bg " + (navLink ? "text-current alert-primary" : "bg-greylight text-grey-500") }></i>
         </NavLink>
         <NavLink
           to="/stories"
           className="p-2 text-center ms-0 menu-icon center-menu-icon"
         >
-          <i className="feather-zap font-lg bg-greylight btn-round-lg theme-dark-bg text-grey-500 "></i>
+          <i className={"feather-zap font-lg  btn-round-lg theme-dark-bg  " + (navLink2 ? "text-current alert-primary" : "bg-greylight text-grey-500") }></i>
         </NavLink>
         <NavLink
           to="/video"
           className="p-2 text-center ms-0 menu-icon center-menu-icon"
         >
-          <i className="feather-video font-lg bg-greylight btn-round-lg theme-dark-bg text-grey-500 "></i>
+          <i className={"feather-video font-lg btn-round-lg theme-dark-bg " + (navLink3 ? "text-current alert-primary" : "bg-greylight text-grey-500") }></i>
         </NavLink>
         <NavLink
           to="/users"
           className="p-2 text-center ms-0 menu-icon center-menu-icon"
         >
-          <i className="feather-user font-lg bg-greylight btn-round-lg theme-dark-bg text-grey-500 "></i>
+          <i className={"feather-user font-lg btn-round-lg theme-dark-bg " + (navLink4 ? "text-current alert-primary" : "bg-greylight text-grey-500") }></i>
         </NavLink>
         <NavLink
           to="/shop"
           className="p-2 text-center ms-0 menu-icon center-menu-icon"
         >
-          <i className="feather-shopping-bag font-lg bg-greylight btn-round-lg theme-dark-bg text-grey-500 "></i>
+          <i className={"feather-shopping-bag font-lg btn-round-lg theme-dark-bg " + (navLink5 ? "text-current alert-primary" : "bg-greylight text-grey-500") }></i>
         </NavLink>
         <NavLink
           to="/job"
           className="p-2 text-center ms-0 menu-icon center-menu-icon"
         >
-          <i className="feather-inbox font-lg bg-greylight btn-round-lg theme-dark-bg text-grey-500 "></i>
+          <i className={"feather-inbox font-lg btn-round-lg theme-dark-bg " + (navLink6 ? "text-current alert-primary" : "bg-greylight text-grey-500") }></i>
         </NavLink>
 
         <a

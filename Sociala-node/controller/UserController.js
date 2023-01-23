@@ -41,6 +41,13 @@ routes.get("/", (req,res)=> {
 //     })
 // })
 
+routes.put("/:id", (req,res)=> {
+    let id = req.params.id;
+    User.updateMany({_id : id}, req.body, (error)=> {
+res.send({success : true, status : 200})
+    })
+})
+
 routes.get("/total", (req, res) => {
   User.count((error, result) => {
     res.send({ total: result });
