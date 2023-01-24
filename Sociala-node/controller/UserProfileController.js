@@ -14,10 +14,11 @@ routes.get("/:token", (req, res)=> {
 })
 
 routes.get("/byid/:id", (req,res)=> {
-let id = req.params.id;
-User.find({_id : id}, (error,result)=> {
-  res.send(result[0]);
-})
+  let id = req.params.id;
+    User.find({_id : id}, (error,result)=> {
+      console.log(result)
+      res.send(result);
+    })
 })
 
 routes.post("/update/password", (req,res)=> {

@@ -1,4 +1,4 @@
-import { Link, useNavigate} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import { useState } from 'react';
 import {useFormik} from "formik";
 
@@ -13,7 +13,7 @@ import { AlertDanger } from '../../../shared/Alerts/Alerts';
 import {DoLogin} from ".././../../Services/loginAuthService/loginAuthService";
 
 let initialValues = {
-userName : "",
+username : "",
 password : ""
 }
 const Login = () => {
@@ -26,17 +26,17 @@ validationSchema : LoginSchema,
 onSubmit : ()=> {
     DoLogin(values).then(result=> {
         console.log(result.data)
-        if (result.data.errType == 1) {
+        if (result.data.errType === 1) {
             setMsg("This email/username or password is incorrect !");
             setShowAlert(true);
         }
-        if (result.data.errType == 2) {
+        if (result.data.errType === 2) {
             setMsg("This Password is incorrect !");
             setShowAlert(true);
         }
-        if(result.data.status == 200) {
+        if(result.data.status === 200) {
             localStorage.setItem("token", result.data.token);
-            navigate("/home")
+            navigate("/admin/analytics")
         }
     })
 }
@@ -104,8 +104,8 @@ onSubmit : ()=> {
 
                                                 <div className="mb-3">
                                                     <label htmlFor="username" className="form-label">Username</label>
-                                                    <Text name="userName" autoComplete="off" placeholder="UserName" change={handleChange} blur={handleBlur} classes={"form-control " + (errors.userName && touched.userName ? "is-invalid" : "")}/>
-<FormErrors errMsg={errors.userName} touched={touched.userName}/>
+                                                    <Text name="username" autoComplete="off" placeholder="Username" change={handleChange} blur={handleBlur} classes={"form-control " + (errors.username && touched.username ? "is-invalid" : "")}/>
+<FormErrors errMsg={errors.username} touched={touched.username}/>
                                                 </div>
 
                                                 <div className="mb-3">

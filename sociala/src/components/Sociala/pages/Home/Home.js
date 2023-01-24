@@ -42,11 +42,12 @@ function Home() {
     getUserProfile(token).then(result=> {
         setId(result.data._id)
     })
+  },[]);
+  useEffect(() => {
     getMsg().then(result=> {
       setAllPost(result.data)
     })
-
-  },[id]);
+  },[]);
   let demo = ()=> {
     setNavLink(true);
       }

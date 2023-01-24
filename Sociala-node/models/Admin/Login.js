@@ -1,8 +1,9 @@
 require("../../config/Database");
 const mongoose = require("mongoose");
 
-const adminLogin = mongoose.Schema({
-  userName: String,
+const admin = mongoose.Schema({
+  name : String,
+  username: String,
   password: String,
 });
-module.exports = mongoose.model("adminLogin", adminLogin);
+module.exports = mongoose.model("admin", admin);

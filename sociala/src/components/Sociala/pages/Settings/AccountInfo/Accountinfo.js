@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState,useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import {useFormik} from "formik"
 import {updateUser} from "../../../../../services/userService/userService";
-import { getUserProfile,getUserProfileById } from "../../../../../services/profileService/profileService";
 import { getCountry } from '../../../../../services/CountryCityService/CountryCityService';
+import AllData from '../../../../../Hooks/ProfileHook';
 
 import FormErrors from '../../../shared/Errors/FormErrors';
 import AccountInfo from "../../../../../Schemas/AccountInfoSchema";
@@ -28,30 +28,25 @@ city : "",
 address : "",
 bio : "",
 }
+
 export const Accountinfo = () => {
+    let obj = useContext(AllData);
     let navigate = useNavigate();
-    let [id,setId] = useState("");
-    let [allData,setAllData] = useState("");
-    let [allCountry,setAllCountry] = useState("");
+    let [country,setCountry] = useState("");
     useEffect(()=> {
-        let token = localStorage.getItem("token")
-        getUserProfile(token).then(result=> {
-            setId(result.data._id)
-        })
-        getUserProfileById(id).then(result=> {
-            setAllData(result.data);
-        })
         getCountry().then(result=> {
-        setAllCountry(result.data)
-        })
-}, [id])
+            setCountry(result.data)
+            })
+}, [])
+let allData = obj.data;
+console.log(allData)
     let {values, handleBlur, handleChange, handleSubmit, errors, touched} = useFormik({
         initialValues : initialValues,
         validationSchema : AccountInfo,
         
         onSubmit : ()=> {
-         updateUser(id,values).then(result=> {
-        if(result.data.status == 200) {
+         updateUser(obj.LoggedInId,values).then(result=> {
+        if(result.data.status === 200) {
           navigate("/")
         }else {
         }
@@ -64,6 +59,7 @@ export const Accountinfo = () => {
           const handleFileEvent =  (e) => {
            
         }
+
   return (
     <div>
 
@@ -124,7 +120,7 @@ export const Accountinfo = () => {
                                 <div className="row">
                                     <div className="col-lg-6 mb-3">
                                         <div className="form-group">
-                                            <label className="mont-font fw-600 font-xsss">FullName</label>
+                                            <label className="mont-font fw-600 font-xsss">UserName</label>
                                             <Text name="userName" autoComplete="off" placeholder="" value={allData.userName} change={handleChange} blur={handleBlur} classes={"form-control " + (errors.userName && touched.userName ? "is-invalid" : "")}/>
                                             <FormErrors errMsg={errors.userName} touched={touched.userName}/>
                                         </div>        
@@ -205,11 +201,7 @@ export const Accountinfo = () => {
                                                 <option>Select</option>
                                                 <option>hell</option>
                                                {/* {
-                                                allCountry.map((x)=> {
-                                                    return(
-                                                        <option>{x}</option>
-                                                    )
-                                                })
+                                                country.map(obj=> (<option key={obj._id} value={obj._id}>{obj.name}</option>))
                                                } */}
                                             </select>
                                         <FormErrors errMsg={errors.country} touched={touched.country}/>

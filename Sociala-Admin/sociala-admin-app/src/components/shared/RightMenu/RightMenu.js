@@ -57,7 +57,7 @@ const RightMenu = () => {
                   <ul className="nav nav-sm flex-column">
                     <li className="nav-item">
                       <Link
-                        to="/analytics"
+                        to="/admin/analytics"
                         className="nav-link"
                         data-key="t-analytics"
                       >
@@ -67,7 +67,7 @@ const RightMenu = () => {
                     </li>
                     <li className="nav-item">
                       <Link
-                        to="/crm"
+                        to="/admin/crm"
                         className="nav-link"
                         data-key="t-crm"
                       >
@@ -77,7 +77,7 @@ const RightMenu = () => {
                     </li>
                     <li className="nav-item">
                       <Link
-                        to="/home"
+                        to="/admin/home"
                         className="nav-link"
                         data-key="t-ecommerce"
                       >
@@ -87,7 +87,7 @@ const RightMenu = () => {
                     </li>
                     <li className="nav-item">
                       <Link
-                        to="/crypto"
+                        to="/admin/crypto"
                         className="nav-link"
                         data-key="t-crypto"
                       >
@@ -97,7 +97,7 @@ const RightMenu = () => {
                     </li>
                     <li className="nav-item">
                       <Link
-                        to="/project"
+                        to="/admin/project"
                         className="nav-link"
                         data-key="t-projects"
                       >
@@ -107,7 +107,7 @@ const RightMenu = () => {
                     </li>
                     <li className="nav-item">
                       <Link
-                        to="/nft"
+                        to="/admin/nft"
                         className="nav-link"
                         data-key="t-nft"
                       >
@@ -116,7 +116,7 @@ const RightMenu = () => {
                       </Link>
                     </li>
                     <li className="nav-item">
-                      <Link to="/job" className="nav-link">
+                      <Link to="/admin/job" className="nav-link">
                         <span data-key="t-job">Job</span>
                         <span
                           className="badge badge-pill bg-success"
@@ -146,7 +146,7 @@ const RightMenu = () => {
                   <ul className="nav nav-sm flex-column">
                     <li className="nav-item">
                       <Link
-                        to="/appcalender"
+                        to="/admin/app/calender"
                         className="nav-link"
                         data-key="t-calendar"
                       >
@@ -156,7 +156,7 @@ const RightMenu = () => {
                     </li>
                     <li className="nav-item">
                       <Link
-                        to="/appchat"
+                        to="/admin/app/chat"
                         className="nav-link"
                         data-key="t-chat"
                       >
@@ -166,7 +166,7 @@ const RightMenu = () => {
                     </li>
                     <li className="nav-item">
                       <Link
-                        to="#sidebarEmail"
+                        to="/admin#sidebarEmail"
                         className="nav-link"
                         data-bs-toggle="collapse"
                         role="button"
@@ -180,7 +180,7 @@ const RightMenu = () => {
                         <ul className="nav nav-sm flex-column">
                           <li className="nav-item">
                             <Link
-                              to="apps-mailbox.html"
+                              to="/adminapps-mailbox.html"
                               className="nav-link"
                               data-key="t-mailbox"
                             >
@@ -190,7 +190,7 @@ const RightMenu = () => {
                           </li>
                           <li className="nav-item">
                             <Link
-                              to="#sidebaremailTemplates"
+                              to="/admin#sidebaremailTemplates"
                               className="nav-link"
                               data-bs-toggle="collapse"
                               role="button"
@@ -207,7 +207,7 @@ const RightMenu = () => {
                               <ul className="nav nav-sm flex-column">
                                 <li className="nav-item">
                                   <Link
-                                    to="apps-email-basic.html"
+                                    to="/adminapps-email-basic.html"
                                     className="nav-link"
                                     data-key="t-basic-action"
                                   >
@@ -217,7 +217,7 @@ const RightMenu = () => {
                                 </li>
                                 <li className="nav-item">
                                   <Link
-                                    to="apps-email-ecommerce.html"
+                                    to="/adminapps-email-ecommerce.html"
                                     className="nav-link"
                                     data-key="t-ecommerce-action"
                                   >
@@ -467,7 +467,7 @@ const RightMenu = () => {
                         <ul className="nav nav-sm flex-column">
                           <li className="nav-item">
                             <a
-                              href="/appcontacts"
+                              href="/app/contacts"
                               className="nav-link"
                               data-key="t-contacts"
                             >
@@ -477,7 +477,7 @@ const RightMenu = () => {
                           </li>
                           <li className="nav-item">
                             <a
-                              href="/appcompanies"
+                              href="/app/companies"
                               className="nav-link"
                               data-key="t-companies"
                             >
@@ -487,7 +487,7 @@ const RightMenu = () => {
                           </li>
                           <li className="nav-item">
                             <a
-                              href="/appdeals"
+                              href="/app/deals"
                               className="nav-link"
                               data-key="t-deals"
                             >
@@ -497,7 +497,7 @@ const RightMenu = () => {
                           </li>
                           <li className="nav-item">
                             <a
-                              href="/appleads"
+                              href="/app/leads"
                               className="nav-link"
                               data-key="t-leads"
                             >

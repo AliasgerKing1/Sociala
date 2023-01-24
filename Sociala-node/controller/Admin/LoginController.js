@@ -4,23 +4,21 @@ const sha1 = require("sha1");
 const jwt = require("jsonwebtoken");
 
 routes.post("/", (req, res)=> {
-    let user = req.body.userName;
+    let user = req.body.username;
     let password = sha1(req.body.password);
-    Admin.find({userName : user}, (error, result)=> {
-        console.log(result)
-        if(result.length == 1) {
-            return
-            if(result[0].password == password) {
-                let obj = {id : result[0]._id, userName : result[0].userName};
-                let token = jwt.sign(obj , "Aliasger web");
-                res.send({success : true, status : 200, token : token});
-            }else {
-                res.send({success : false,status: 401, errType : 2});
-            }
+Admin.find({username : user}, (error,result)=> {
+    if(result.length == 1) {
+        if(result[0].password == password) {
+            let obj = {id : result[0]._id, username : result[0].username};
+            let token = jwt.sign(obj , "Aliasger web");
+            res.send({success : true, status : 200, token : token});
         }else {
-            res.send({success : false,status: 401, errType : 1});
+            res.send({success : false,status: 401, errType : 2});
         }
-    })
+    }else {
+        res.send({success : false,status: 401, errType : 1});
+    }
+})
 })
 
 routes.get("/", (req,res)=> {

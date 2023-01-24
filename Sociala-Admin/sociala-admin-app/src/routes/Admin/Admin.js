@@ -22,21 +22,21 @@ import Login from '../../components/pages/Authentication/Login';
 const Admin = () => {
   return (
     <Routes>
-      <Route path="/home" element={<Home />} />
-      <Route path="/analytics" element={<Analytics />} />
-      <Route path="/crm" element={<Crm />} />
-      <Route path="/crypto" element={<Crypto />} />
-      <Route path="/nft" element={<Nft />} />
-      <Route path="/job" element={<Job />} />
-      <Route path="/projects" element={<Projects />} />
+      <Route path="/admin/home" element={<Home />} />
+      <Route path="/admin/analytics" element={<Analytics />} />
+      <Route path="/admin/crm" element={<Crm />} />
+      <Route path="/admin/crypto" element={<Crypto />} />
+      <Route path="/admin/nft" element={<Nft />} />
+      <Route path="/admin/job" element={<Job />} />
+      <Route path="/admin/projects" element={<Projects />} />
 
 
-      <Route path="/appcalender" element={<AppCalender />} />
-      <Route path="/appchat" element={<AppChat />} />
-      <Route path="/appcompanies" element={<Companies />} />
-      <Route path="/appcontacts" element={<AppContacts />} />
-      <Route path="/appdeals" element={<AppDeals />} />
-      <Route path="/appleads" element={<AppLeads />} />
+      <Route path="/admin/app/calender" element={<AppCalender />} />
+      <Route path="/admin/app/chat" element={<AppChat />} />
+      <Route path="/admin/app/companies" element={<Companies />} />
+      <Route path="/admin/app/contacts" element={<AppContacts />} />
+      <Route path="/admin/app/deals" element={<AppDeals />} />
+      <Route path="/admin/app/leads" element={<AppLeads />} />
 
 
       <Route path="/" element={<Login />} />
