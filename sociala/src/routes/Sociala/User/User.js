@@ -1,12 +1,7 @@
-import { Routes, Route } from "react-router-dom";
-import { Helmet } from "react-helmet";
-
 import Home from "../../../components/Sociala/pages/Home/Home";
 import Setting from "../../../components/Sociala/pages/Setting/Setting";
 import Stories from "../../../components/Sociala/pages/Stories/Stories";
 import Video from "../../../components/Sociala/pages/Video/Video";
-import Register from "../../../components/Sociala/pages/Register/Register";
-import Login from "../../../components/Sociala/pages/Login/Login";
 import Groups from "../../../components/Sociala/pages/Group/Group";
 import Shop from "../../../components/Sociala/pages/Shop/Shop";
 import Email from "../../../components/Sociala/pages/Email/Email/Email";
@@ -15,7 +10,6 @@ import ComingSoon from "../../../components/Sociala/pages/ComingSoon/ComingSoon"
 import LiveStream from "../../../components/Sociala/pages/LiveStream/LiveStream";
 import Analytics from "../../../components/Sociala/pages/Analytics/Analytics";
 import Chat from "../../../components/Sociala/pages/Chat/Chat";
-import Error from "../../../components/Sociala/pages/Error/Error";
 import Accountinfo from "../../../components/Sociala/pages/Settings/AccountInfo/Accountinfo";
 import Contactinfo from "../../../components/Sociala/pages/Settings/ContactInfo/ContactInfo";
 import Social from "../../../components/Sociala/pages/Settings/Social/Social";
@@ -34,56 +28,114 @@ import ForgetPassword from "../../../components/Sociala/pages/forgetPassword/For
 
 // import Parents from "../components/Sociala/pages/Parents";
 
-function User() {
-  return (
-    <>
-      <Helmet>
-        <link rel="stylesheet" href="/assets/css/themify-icons.css" />
-        <link rel="stylesheet" href="/assets/css/feather.css" />
-        <link rel="stylesheet" href="/assets/css/style.css" />
-        <link rel="stylesheet" href="/assets/css/emoji.css" />
-
-        <link rel="stylesheet" href="/assets/css/lightbox.css" />
-      </Helmet>
-
-      <Routes>
-        {/* Sociala */}
-        <Route path="/home" element={<Home />} />
-        <Route path="/stories" element={<Stories />} />
-        <Route path="/setting" element={<Setting />} />
-        <Route path="/video" element={<Video />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/" element={<Login />} />
-        <Route path="/group" element={<Groups />} />
-        <Route path="/shop" element={<Shop />} />
-        <Route path="/email" element={<Email />} />
-        <Route path="/email/open" element={<EmailOpen />} />
-        <Route path="/comingsoon" element={<ComingSoon />} />
-        <Route path="/livestream" element={<LiveStream />} />
-        <Route path="/analytics" element={<Analytics />} />
-        <Route path="/chat" element={<Chat />} />
-        <Route path="/error" element={<Error />} />
-        <Route path="/hotel" element={<Hotel />} />
-        <Route path="/hotel/details" element={<HotelDetails />} />
-        <Route path="/events" element={<Event />} />
-        <Route path="/user/profile" element={<UserProfile />} />
-        <Route path="/shop/single/product" element={<SinglePageShop />} />
-        <Route path="/job" element={<Job />} />
-        <Route path="/users" element={<Users />} />
-        <Route path="/Forget/password" element={<ForgetPassword />} />
-        <Route path="/setting/account/info" element={<Accountinfo />} />
-        <Route path="/setting/saveaddress" element={<Contactinfo />} />
-        <Route path="/setting/social" element={<Social />} />
-        <Route path="/setting/card" element={<Card />} />
-        <Route path="/setting/password" element={<Password />} />
-        <Route path="/setting/help" element={<Help />} />
-        <Route path="/setting/notifications" element={<Notifications />} />
-
-        {/* <Route path="/parent" element={<Parents />} /> */}
-        {/* /Sociala */}
-      </Routes>
-    </>
-  );
-}
-
-export default User;
+let userRoutes = [
+    {
+      path : "home",
+      element: <Home/>
+    },
+    {
+      path : "stories",
+      element: <Stories />
+    },
+    {
+      path : "setting",
+      element: <Setting />
+    },
+    {
+      path : "video",
+      element: <Video />
+    },
+    {
+      path : "group",
+      element: <Groups />
+    },
+    {
+      path : "shop",
+      element: <Shop />
+    },
+    {
+      path : "email",
+      element: <Email />
+    },
+    {
+      path : "email/open",
+      element: <EmailOpen />
+    },
+    {
+      path : "comingsoon",
+      element: <ComingSoon />
+    },
+    {
+      path : "livestream",
+      element: <LiveStream />
+    },
+    {
+      path : "analytics",
+      element: <Analytics />
+    },
+    {
+      path : "chat",
+      element: <Chat />
+    },
+    {
+      path : "hotel",
+      element: <Hotel />
+    },
+    {
+      path : "hotel/details",
+      element: <HotelDetails />
+    },
+    {
+      path : "event",
+      element: <Event />
+    },
+    {
+      path : "user/profile",
+      element: <UserProfile />
+    },
+    {
+      path : "shop/single/product",
+      element: <SinglePageShop />
+    },
+    {
+      path : "job",
+      element: <Job />
+    },
+    {
+      path : "users",
+      element: <Users />
+    },
+    {
+      path : "forget/password",
+      element: <ForgetPassword />
+    },
+    {
+      path : "setting/account/infod",
+      element: <Accountinfo />
+    },
+    {
+      path : "setting/saveaddress",
+      element: <Contactinfo />
+    },
+    {
+      path : "setting/social",
+      element: <Social />
+    },
+    {
+      path : "setting/card",
+      element: <Card />
+    },
+    {
+      path : "setting/password",
+      element: <Password />
+    },
+    {
+      path : "setting/help",
+      element: <Help />
+    },
+    {
+      path : "setting/notifications",
+      element: <Notifications />
+    },
+  ]
+export default userRoutes;

@@ -44,7 +44,7 @@ let Setting =()  => {
                           <ul className="list-inline mb-4">
                             <li className="list-inline-item d-block border-bottom me-0">
                               <Link
-                               to="/setting/account/info"
+                               to="auth/setting/account/info"
                                 className="pt-2 pb-2 d-flex align-items-center"
                               >
                                 <i className="btn-round-md bg-primary-gradiant text-white feather-home font-md me-3"></i>
@@ -56,7 +56,7 @@ let Setting =()  => {
                             </li>
                             <li className="list-inline-item d-block border-bottom me-0">
                               <Link
-                                to="/setting/saveaddress"
+                                to="auth/setting/saveaddress"
                                 className="pt-2 pb-2 d-flex align-items-center"
                               >
                                 <i className="btn-round-md bg-gold-gradiant text-white feather-map-pin font-md me-3"></i>
@@ -68,7 +68,7 @@ let Setting =()  => {
                             </li>
                             <li className="list-inline-item d-block me-0">
                               <Link
-                                to="/setting/social"
+                                to="auth/setting/social"
                                 className="pt-2 pb-2 d-flex align-items-center"
                               >
                                 <i className="btn-round-md bg-red-gradiant text-white feather-twitter font-md me-3"></i>
@@ -86,7 +86,7 @@ let Setting =()  => {
                           <ul className="list-inline mb-4">
                             <li className="list-inline-item d-block border-bottom me-0">
                               <Link
-                                to="/setting/card"
+                                to="auth/setting/card"
                                 className="pt-2 pb-2 d-flex align-items-center"
                               >
                                 <i className="btn-round-md bg-mini-gradiant text-white feather-credit-card font-md me-3"></i>
@@ -98,7 +98,7 @@ let Setting =()  => {
                             </li>
                             <li className="list-inline-item d-block  me-0">
                               <Link
-                               to="/setting/password"
+                               to="auth/setting/password"
                                 className="pt-2 pb-2 d-flex align-items-center"
                               >
                                 <i className="btn-round-md bg-blue-gradiant text-white feather-inbox font-md me-3"></i>
@@ -116,7 +116,7 @@ let Setting =()  => {
                           <ul className="list-inline">
                             <li className="list-inline-item d-block border-bottom me-0">
                               <Link
-                               to="/setting/notifications"
+                               to="auth/setting/notifications"
                                 className="pt-2 pb-2 d-flex align-items-center"
                               >
                                 <i className="btn-round-md bg-gold-gradiant text-white feather-bell font-md me-3"></i>
@@ -128,7 +128,7 @@ let Setting =()  => {
                             </li>
                             <li className="list-inline-item d-block border-bottom me-0">
                               <Link
-                                to="/setting/help"
+                                to="auth/setting/help"
                                 className="pt-2 pb-2 d-flex align-items-center"
                               >
                                 <i className="btn-round-md bg-primary-gradiant text-white feather-help-circle font-md me-3"></i>
