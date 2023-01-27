@@ -1,22 +1,22 @@
 import React from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink} from "react-router-dom";
 let Header = ({navLink, navLink2, navLink3, navLink4, navLink5, navLink6}) => {
   return (
     <div>
       <div className="nav-header bg-white shadow-xs border-0">
         <div className="nav-top">
-          <Link to="auth/home">
+          <NavLink to="/auth/home">
             <i className="feather-zap text-success display1-size me-2 ms-0"></i>
             <span className="d-inline-block fredoka-font ls-3 fw-600 active font-xxl logo-text mb-0">
               Sociala.
             </span>
-          </Link>
+          </NavLink>
           <a href="#" className="mob-menu ms-auto me-2 chat-active-btn">
             <i className="feather-message-circle text-grey-900 font-sm btn-round-md bg-greylight"></i>
           </a>
-          <Link to="auth/video" className="mob-menu me-2">
+          <NavLink to="/auth/video" className="mob-menu me-2">
             <i className="feather-video text-grey-900 font-sm btn-round-md bg-greylight"></i>
-          </Link>
+          </NavLink>
           <a href="#" className="me-2 menu-search-icon mob-menu">
             <i className="feather-search text-grey-900 font-sm btn-round-md bg-greylight"></i>
           </a>
@@ -34,37 +34,37 @@ let Header = ({navLink, navLink2, navLink3, navLink4, navLink5, navLink6}) => {
           </div>
         </form>
         <NavLink
-          to="auth/home"
+          to="/auth/home"
           className="p-2 text-center ms-3 menu-icon center-menu-icon"
         >
           <i className={"feather-home font-lg btn-round-lg theme-dark-bg " + (navLink ? "text-current alert-primary" : "bg-greylight text-grey-500") }></i>
         </NavLink>
         <NavLink
-          to="auth/stories"
+          to="/auth/stories"
           className="p-2 text-center ms-0 menu-icon center-menu-icon"
         >
           <i className={"feather-zap font-lg  btn-round-lg theme-dark-bg  " + (navLink2 ? "text-current alert-primary" : "bg-greylight text-grey-500") }></i>
         </NavLink>
         <NavLink
-          to="auth/video"
+          to="/auth/video"
           className="p-2 text-center ms-0 menu-icon center-menu-icon"
         >
           <i className={"feather-video font-lg btn-round-lg theme-dark-bg " + (navLink3 ? "text-current alert-primary" : "bg-greylight text-grey-500") }></i>
         </NavLink>
         <NavLink
-          to="auth/users"
+          to="/auth/users"
           className="p-2 text-center ms-0 menu-icon center-menu-icon"
         >
           <i className={"feather-user font-lg btn-round-lg theme-dark-bg " + (navLink4 ? "text-current alert-primary" : "bg-greylight text-grey-500") }></i>
         </NavLink>
         <NavLink
-          to="auth/shop"
+          to="/auth/shop"
           className="p-2 text-center ms-0 menu-icon center-menu-icon"
         >
           <i className={"feather-shopping-bag font-lg btn-round-lg theme-dark-bg " + (navLink5 ? "text-current alert-primary" : "bg-greylight text-grey-500") }></i>
         </NavLink>
         <NavLink
-          to="auth/job"
+          to="/auth/job"
           className="p-2 text-center ms-0 menu-icon center-menu-icon"
         >
           <i className={"feather-inbox font-lg btn-round-lg theme-dark-bg " + (navLink6 ? "text-current alert-primary" : "bg-greylight text-grey-500") }></i>
@@ -355,13 +355,13 @@ let Header = ({navLink, navLink2, navLink3, navLink4, navLink5, navLink6}) => {
           </div>
         </div>
 
-        <Link to="auth/user/profile" className="p-0 ms-3 menu-icon">
+        <NavLink to="/auth/user/profile" className="p-0 ms-3 menu-icon">
           <img
             src="/assets/images/profile-4.png"
             alt="user"
             className="w40 mt--1"
           />
-        </Link>
+        </NavLink>
       </div>
     </div>
   );

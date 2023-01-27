@@ -10,7 +10,7 @@ function MorePages() {
         </div>
         <ul className="mb-3">
           <li>
-            <Link to='/email'
+            <Link to="/auth/email"
               className="nav-content-bttn open-font"
             >
               <i className="font-xl text-current feather-inbox me-3"></i>
@@ -19,20 +19,20 @@ function MorePages() {
             </Link>
           </li>
           <li>
-            <Link to="/hotel" className="nav-content-bttn open-font">
+            <Link to="/auth/hotel" className="nav-content-bttn open-font">
               <i className="font-xl text-current feather-home me-3"></i>
               <span>Near Hotel</span>
             </Link>
           </li>
           <li>
-            <Link to="/events" className="nav-content-bttn open-font">
+            <Link to="/auth/events" className="nav-content-bttn open-font">
               <i className="font-xl text-current feather-map-pin me-3"></i>
               <span>Latest Event</span>
             </Link>
           </li>
           <li>
             <Link
-              to="/livestream"
+              to="/auth/livestream"
               className="nav-content-bttn open-font"
             >
               <i className="font-xl text-current feather-youtube me-3"></i>

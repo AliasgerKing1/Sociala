@@ -42,7 +42,7 @@ let Video = () => {
                           href="#"
                           className="ps-3 pe-2 lh-32 d-flex align-items-center font-xssss fw-600 alert-primary rounded-xxl text-primary ms-auto"
                         >
-                          See more{" "}
+                          See more
                           <i className="font-xsss feather-chevron-right ms-1"></i>
                         </a>
                       </div>
@@ -59,7 +59,7 @@ let Video = () => {
                                 data-bs-toggle="modal"
                                 className="w-100 btn-round-lg"
                               >
-                                <i className="feather-plus text-grey-600 font-md"></i>{" "}
+                                <i className="feather-plus text-grey-600 font-md"></i>
                                 <span className="d-block fw-600 font-xssss text-grey-600 text-dark mt-0">
                                   My story
                                 </span>
@@ -78,7 +78,7 @@ let Video = () => {
                                     src="/assets/images/user-22.png"
                                     alt="image"
                                     className="d-inline p-0"
-                                  />{" "}
+                                  />
                                   <span className="d-block fw-600 font-xssss text-grey-600 text-dark">
                                     Ana
                                   </span>
@@ -98,7 +98,7 @@ let Video = () => {
                                     src="/assets/images/user-23.png"
                                     alt="image"
                                     className="d-inline p-0"
-                                  />{" "}
+                                  />
                                   <span className="d-block fw-600 font-xssss text-grey-600 text-dark">
                                     Devid
                                   </span>
@@ -118,7 +118,7 @@ let Video = () => {
                                     src="/assets/images/user-24.png"
                                     alt="image"
                                     className="d-inline p-0"
-                                  />{" "}
+                                  />
                                   <span className="d-block fw-600 font-xssss text-grey-600 text-dark">
                                     Anton
                                   </span>
@@ -138,7 +138,7 @@ let Video = () => {
                                     src="/assets/images/user-21.png"
                                     alt="image"
                                     className="d-inline p-0"
-                                  />{" "}
+                                  />
                                   <span className="d-block fw-600 font-xssss text-grey-600 text-dark">
                                     Jane
                                   </span>
@@ -158,7 +158,7 @@ let Video = () => {
                                     src="/assets/images/user-25.png"
                                     alt="image"
                                     className="d-inline p-0"
-                                  />{" "}
+                                  />
                                   <span className="d-block fw-600 font-xssss text-grey-600 text-dark">
                                     Wade
                                   </span>
@@ -178,7 +178,7 @@ let Video = () => {
                                     src="/assets/images/user-12.png"
                                     alt="image"
                                     className="d-inline shadow p-0"
-                                  />{" "}
+                                  />
                                   <span className="d-block fw-600 font-xssss text-grey-600 text-dark">
                                     Cabe
                                   </span>
@@ -199,7 +199,7 @@ let Video = () => {
                                     src="/assets/images/user-24.png"
                                     alt="image"
                                     className="d-inline p-0"
-                                  />{" "}
+                                  />
                                   <span className="d-block fw-600 font-xssss text-grey-600 text-dark">
                                     Anton
                                   </span>
@@ -219,7 +219,7 @@ let Video = () => {
                                     src="/assets/images/user-21.png"
                                     alt="image"
                                     className="d-inline p-0"
-                                  />{" "}
+                                  />
                                   <span className="d-block fw-600 font-xssss text-grey-600 text-dark">
                                     Jane
                                   </span>
@@ -239,7 +239,7 @@ let Video = () => {
                                     src="/assets/images/user-25.png"
                                     alt="image"
                                     className="d-inline p-0"
-                                  />{" "}
+                                  />
                                   <span className="d-block fw-600 font-xssss text-grey-600 text-dark">
                                     Wade
                                   </span>
@@ -261,7 +261,7 @@ let Video = () => {
                           />
                         </figure>
                         <h4 className="fw-700 text-grey-900 font-xssss mt-1">
-                          Anthony Daugloi{" "}
+                          Anthony Daugloi
                           <span className="d-block font-xssss fw-500 mt-1 lh-3 text-grey-500">
                             2 hour ago
                           </span>
@@ -304,7 +304,7 @@ let Video = () => {
                           Lorem ipsum dolor sit amet, consectetur adipiscing
                           elit. Morbi nulla dolor, ornare at commodo non,
                           feugiat non nisi. Phasellus faucibus mollis pharetra.
-                          Proin blandit ac massa sed rhoncus{" "}
+                          Proin blandit ac massa sed rhoncus
                           <a href="#" className="fw-600 text-primary ms-2">
                             See more
                           </a>
@@ -315,7 +315,7 @@ let Video = () => {
                           href="#"
                           className="d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss me-3"
                         >
-                          <i className="feather-thumbs-up text-white bg-primary-gradiant me-1 btn-round-xs font-xss"></i>{" "}
+                          <i className="feather-thumbs-up text-white bg-primary-gradiant me-1 btn-round-xs font-xss"></i>
                           <i className="feather-heart text-white bg-red-gradiant me-2 btn-round-xs font-xss"></i>
                           2.8K Like
                         </a>
@@ -346,7 +346,7 @@ let Video = () => {
                           />
                         </figure>
                         <h4 className="fw-700 text-grey-900 font-xssss mt-1">
-                          Anthony Daugloi{" "}
+                          Anthony Daugloi
                           <span className="d-block font-xssss fw-500 mt-1 lh-3 text-grey-500">
                             2 hour ago
                           </span>
@@ -388,7 +388,7 @@ let Video = () => {
                           Lorem ipsum dolor sit amet, consectetur adipiscing
                           elit. Morbi nulla dolor, ornare at commodo non,
                           feugiat non nisi. Phasellus faucibus mollis pharetra.
-                          Proin blandit ac massa sed rhoncus{" "}
+                          Proin blandit ac massa sed rhoncus
                           <a href="#" className="fw-600 text-primary ms-2">
                             See more
                           </a>
@@ -399,7 +399,7 @@ let Video = () => {
                           href="#"
                           className="d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss me-3"
                         >
-                          <i className="feather-thumbs-up text-white bg-primary-gradiant me-1 btn-round-xs font-xss"></i>{" "}
+                          <i className="feather-thumbs-up text-white bg-primary-gradiant me-1 btn-round-xs font-xss"></i>
                           <i className="feather-heart text-white bg-red-gradiant me-2 btn-round-xs font-xss"></i>
                           2.8K Like
                         </a>
@@ -430,7 +430,7 @@ let Video = () => {
                           />
                         </figure>
                         <h4 className="fw-700 text-grey-900 font-xssss mt-1">
-                          Anthony Daugloi{" "}
+                          Anthony Daugloi
                           <span className="d-block font-xssss fw-500 mt-1 lh-3 text-grey-500">
                             2 hour ago
                           </span>
@@ -472,7 +472,7 @@ let Video = () => {
                           Lorem ipsum dolor sit amet, consectetur adipiscing
                           elit. Morbi nulla dolor, ornare at commodo non,
                           feugiat non nisi. Phasellus faucibus mollis pharetra.
-                          Proin blandit ac massa sed rhoncus{" "}
+                          Proin blandit ac massa sed rhoncus
                           <a href="#" className="fw-600 text-primary ms-2">
                             See more
                           </a>
@@ -483,7 +483,7 @@ let Video = () => {
                           href="#"
                           className="d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss me-3"
                         >
-                          <i className="feather-thumbs-up text-white bg-primary-gradiant me-1 btn-round-xs font-xss"></i>{" "}
+                          <i className="feather-thumbs-up text-white bg-primary-gradiant me-1 btn-round-xs font-xss"></i>
                           <i className="feather-heart text-white bg-red-gradiant me-2 btn-round-xs font-xss"></i>
                           2.8K Like
                         </a>
@@ -590,7 +590,59 @@ let Video = () => {
             </form>
           </div>
         </div>
-        <Story />
+
+
+
+
+
+
+        
+    
+        <div className="modal bottom side fade" id="Modalstries" tabIndex="-1" role="dialog" style={{ overflowY: 'auto'}}>
+         <div className="modal-dialog modal-dialog-centered" role="document">
+            <div className="modal-content border-0 bg-transparent">
+                <button type="button" className="close mt-0 position-absolute top--30 right--10" data-bs-dismiss="modal" aria-label="Close"><i className="ti-close text-dark font-xssss"></i></button>
+                <div className="modal-body p-0">
+                    <div className="card w-100 border-0 rounded-3 overflow-hidden bg-gradiant-bottom bg-gradiant-top">
+                        <div className="owl-carousel owl-theme dot-style3 story-slider owl-dot-nav nav-none">
+
+                        <div id="carouselExampleFade" className="carousel slide carousel-fade" data-bs-ride="carousel">
+  <div className="carousel-inner">
+    <div className="carousel-item item active">
+      <img src="/assets/images/story-5.jpg" className="d-block w-100" alt="..." />
+    </div>
+    <div className="carousel-item item">
+      <img src="/assets/images/story-6.jpg" className="d-block w-100" alt="..." />
+    </div>
+    <div className="carousel-item item">
+      <img src="/assets/images/story-7.jpg" className="d-block w-100" alt="..." />
+    </div>
+  </div>
+  <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span className="visually-hidden">Previous</span>
+  </button>
+  <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+    <span className="carousel-control-next-icon" aria-hidden="true"></span>
+    <span className="visually-hidden">Next</span>
+  </button>
+</div>                   
+                        </div>
+                    </div>
+                    <div className="form-group mt-3 mb-0 p-3 position-absolute bottom-0 z-index-1 w-100">
+                        <input type="text" className="style2-input w-100 bg-transparent border-light-md p-3 pe-5 font-xssss fw-500 text-white" placeholder="Write Comments" />               
+                        <span className="feather-send text-white font-md text-white position-absolute" style={{bottom: '35px',right : '30px'}}></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
         <div className="modal-popup-chat">
           <div className="modal-popup-wrap bg-white p-0 shadow-lg rounded-3">
             <div className="modal-popup-header w-100 border-bottom">
@@ -606,7 +658,7 @@ let Video = () => {
                   Hendrix Stamp
                 </h5>
                 <h4 className="text-grey-500 font-xsssss mt-0 mb-0">
-                  <span className="d-inline-block bg-success btn-round-xss m-0"></span>{" "}
+                  <span className="d-inline-block bg-success btn-round-xss m-0"></span>
                   Available
                 </h4>
                 <a

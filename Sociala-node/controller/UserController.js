@@ -2,6 +2,8 @@ const routes = require("express").Router();
 const User = require("../models/User");
 const sha1 = require("sha1");
 const jwt = require("jsonwebtoken");
+const randstr = require("random-string");
+const path = require("path");
 
 routes.post("/", (req, res)=> {
     delete req.body.confPass;
@@ -29,24 +31,40 @@ routes.post("/loginauth", (req, res)=> {
 })
 
 routes.get("/", (req,res)=> {
-    User.find({}, (error,result)=> {
-        res.send(result);
+    
+    User.find({}, (error, result)=> {
+        let new_result = result.map((x)=> {
+            x.image = "http://localhost:4000/user_images/" + x.image;
+            return x;
+        })
+        res.send(new_result);
+        })
+})
+routes.delete("/:id", (req,res)=> {
+    let id = req.params.id;
+    User.deleteMany({_id : id}, (error)=> {
+        res.send({success : true, status : 200});
     })
 })
-
-// routes.get("/:id", (req,res)=> {
-//     let id = req.params.id;
-//     User.find({_id : id}, (error,result)=> {
-//         res.send(result[0]);
-//     })
-// })
 
 routes.put("/:id", (req,res)=> {
     let id = req.params.id;
-    User.updateMany({_id : id}, req.body, (error)=> {
-res.send({success : true, status : 200})
+    let body = JSON.parse(req.body.data);
+        let image = req.files.photo;
+    randorm_string = randstr({length : 50 });
+    let original_name = image.name;
+    let arr = original_name.split(".");
+    let ext = arr[arr.length-1];
+    let new_name = randorm_string + "." + ext;
+    body.image = new_name;
+    image.mv(path.resolve() + "/assets/user_images/" + new_name, (error)=> {
+        User.updateMany({_id : id},body, (error)=> {
+            let obj = {image : "http://localhost:4000/user_images/" + new_name, userName : body.userName};
+         res.send(obj);
+     })
     })
 })
+
 
 routes.get("/total", (req, res) => {
   User.count((error, result) => {

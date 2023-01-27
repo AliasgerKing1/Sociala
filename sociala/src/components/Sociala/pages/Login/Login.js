@@ -17,12 +17,14 @@ const initialValues = {
 }
 const Login = ()=> {
     let navigate = useNavigate();
+    let [showSpinner, setShowSpinner] = useState(false);
     let [showAlert, setShowAlert] = useState(false);
 let [msg, setMsg] = useState("");
     let {values, handleBlur, handleChange, handleSubmit, errors, touched} = useFormik({
    initialValues : initialValues,
    validationSchema : LoginSchema,
     onSubmit : ()=> {
+        setShowSpinner(true);
     DoLogin(values).then(result=> {
                         if (result.data.errType == 1) {
                             setMsg("This email/username or password is incorrect !");
@@ -34,10 +36,11 @@ let [msg, setMsg] = useState("");
                         }
                         if(result.data.status == 200) {
                             localStorage.setItem("token", result.data.token);
-                            navigate("/home")
+                            navigate("/auth/home")
                         }
+                        setShowSpinner(false);
     }).catch(error=> {
-
+        setShowSpinner(false);
     })
     } 
 })   
@@ -45,7 +48,7 @@ let [msg, setMsg] = useState("");
   return (
     <div>
 <div className="color-theme-blue">
-
+{ showSpinner ? (<div className="loading">Loading&#8230;</div>)  : "" }
     <div className="main-wrap">
 
         <div className="nav-header bg-transparent shadow-none border-0">

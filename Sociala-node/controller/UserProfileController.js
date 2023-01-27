@@ -3,27 +3,19 @@ const User = require("../models/User");
 const jwt = require("jsonwebtoken");
 const sha1 = require("sha1");
 
-routes.get("/:token", (req, res)=> {
-  let token = req.params.token;
-    if(token) {
-        let obj = jwt.decode(token, "Aliasger web");
-        User.find({ _id: obj.id }, (error, result) => {
-          res.send(result[0]);
-        });
-    }
-})
-
-routes.get("/byid/:id", (req,res)=> {
-  let id = req.params.id;
-    User.find({_id : id}, (error,result)=> {
-      console.log(result)
-      res.send(result);
-    })
+routes.get("/", (req, res)=> {
+ if(req.headers.header) {
+  let token = req.headers.header;
+  let obj = jwt.decode(token, "Aliasger web");
+  User.find({ _id: obj.id }, (error, result) => {
+    res.send(result[0]);
+  });
+}
 })
 
 routes.post("/update/password", (req,res)=> {
-  if(req.headers.authorization) {
-    let token = JSON.parse(req.headers.authorization);
+  if(req.headers.header) {
+    let token = req.headers.header;
     let obj = jwt.decode(token, "Aliasger web");
     User.find({ _id: obj.id }, (error, result) => {
       let user = result[0];

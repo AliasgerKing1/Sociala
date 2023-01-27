@@ -11,7 +11,7 @@ function Account() {
           <li className="logo d-none d-xl-block d-lg-block"></li>
           <li>
             <Link
-              to="/setting"
+              to="/auth/setting"
               className="nav-content-bttn open-font h-auto pt-2 pb-2"
             >
               <i className="font-sm feather-settings me-3 text-grey-500"></i>
@@ -19,7 +19,7 @@ function Account() {
             </Link>
           </li>
           <li>
-            <Link to="/analytics"
+            <Link to="/auth/analytics"
               className="nav-content-bttn open-font h-auto pt-2 pb-2"
             >
               <i className="font-sm feather-pie-chart me-3 text-grey-500"></i>
@@ -28,7 +28,7 @@ function Account() {
           </li>
           <li>
             <Link
-              to="/chat"
+              to="/auth/chat"
               className="nav-content-bttn open-font h-auto pt-2 pb-2"
             >
               <i className="font-sm feather-message-square me-3 text-grey-500"></i>

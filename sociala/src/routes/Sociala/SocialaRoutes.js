@@ -8,9 +8,6 @@ import Login from "../../components/Sociala/pages/Login/Login";
 
 import Error from "../../components/Sociala/pages/Error/Error";
 
-
-// import Parents from "../components/Sociala/pages/Parents";
-
 const SocialaRoutes = () => {
 const router = useRoutes([
 

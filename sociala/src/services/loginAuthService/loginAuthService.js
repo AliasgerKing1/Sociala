@@ -2,7 +2,7 @@ import axios from "axios";
 import {} from 'react-router-dom';
 
 let Logout = () => {
-  localStorage.removeItem('token');
+  localStorage.clear();
 }
 let DoLogin = (obj) => {
   return axios.post(
@@ -11,7 +11,7 @@ let DoLogin = (obj) => {
     );
   }
 
-  let IsLoggedIn = () => {
+  let AuthService = () => {
     if (localStorage.getItem('token')) {
       return true;
     } else {
@@ -20,4 +20,4 @@ let DoLogin = (obj) => {
   }
 
 
-  export {DoLogin,IsLoggedIn,Logout}
+  export {DoLogin,AuthService ,Logout}

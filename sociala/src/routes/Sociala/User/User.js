@@ -110,7 +110,7 @@ let userRoutes = [
       element: <ForgetPassword />
     },
     {
-      path : "setting/account/infod",
+      path : "setting/account/info",
       element: <Accountinfo />
     },
     {

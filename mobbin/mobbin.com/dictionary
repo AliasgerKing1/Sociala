@@ -1,0 +1,99 @@
+<!DOCTYPE html><html>
+<!-- Mirrored from mobbin.com/dictionary by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 22 Jan 2023 04:41:50 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><meta charSet="utf-8"/><title>Dictionary | Mobbin</title><meta name="description" content="Save hours of UI &amp; UX research with our library of 100,000+ fully searchable mobile &amp; web app screenshots."/><meta property="og:title" content="Dictionary | Mobbin - The world’s largest mobile &amp; web app design reference library"/><meta property="og:description" content="Save hours of UI &amp; UX research with our library of 100,000+ fully searchable mobile &amp; web app screenshots."/><meta property="og:image" content="og_imagef195.png?v=2.1"/><meta property="og:url" content="cannot_get_url_for_ssr"/><meta property="og:type" content="website"/><meta property="og:site_name" content="Mobbin"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Dictionary | Mobbin - The world’s largest mobile &amp; web app design reference library"/><meta name="twitter:description" content="Save hours of UI &amp; UX research with our library of 100,000+ fully searchable mobile &amp; web app screenshots."/><meta name="twitter:image" content="og_imagef195.png?v=2.1"/><meta name="twitter:site" content="@MobbinDesign"/><link rel="apple-touch-icon" sizes="180x180" href="apple-touch-iconf195.png?v=2.1"/><link rel="icon" type="image/svg+xml" href="faviconf195.svg?v=2.1"/><link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32f195.png?v=2.1"/><link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16f195.png?v=2.1"/><link rel="manifest" href="sitef195.webmanifest?v=2.1"/><link rel="mask-icon" href="safari-pinned-tabf195.svg?v=2.1" color="#000000"/><meta name="msapplication-TileColor" content="#000000"/><meta name="theme-color" content="#ffffff"/><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/><meta name="next-head-count" content="23"/><script>(function(){
+
+  // Create a queue, but don't obliterate an existing one!
+  var analytics = window.analytics = window.analytics || [];
+
+  // If the real analytics.js is already on the page return.
+  if (analytics.initialize) return;
+
+  // If the snippet was invoked already show an error.
+  if (analytics.invoked) {
+    if (window.console && console.error) {
+      console.error('Segment snippet included twice.');
+    }
+    return;
+  }
+
+  // Invoked flag, to make sure the snippet
+  // is never invoked twice.
+  analytics.invoked = true;
+
+  // A list of the methods in Analytics.js to stub.
+  analytics.methods = [
+    'trackSubmit',
+    'trackClick',
+    'trackLink',
+    'trackForm',
+    'pageview',
+    'identify',
+    'reset',
+    'group',
+    'track',
+    'ready',
+    'alias',
+    'debug',
+    'page',
+    'once',
+    'off',
+    'on',
+    'addSourceMiddleware',
+    'addIntegrationMiddleware',
+    'setAnonymousId',
+    'addDestinationMiddleware'
+  ];
+
+  // Define a factory to create stubs. These are placeholders
+  // for methods in Analytics.js so that you never have to wait
+  // for it to load to actually record data. The `method` is
+  // stored as the first argument, so we can replay the data.
+  analytics.factory = function(method){
+    return function(){
+      var args = Array.prototype.slice.call(arguments);
+      args.unshift(method);
+      analytics.push(args);
+      return analytics;
+    };
+  };
+
+  // For each of our methods, generate a queueing stub.
+  for (var i = 0; i < analytics.methods.length; i++) {
+    var key = analytics.methods[i];
+    analytics[key] = analytics.factory(key);
+  }
+
+  // Define a method to load Analytics.js from our CDN,
+  // and that will be sure to only ever load it once.
+  analytics.load = function(key, options){
+    // Create an async script element based on your key.
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.async = true;
+    script.src = "https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";
+
+    // Insert our script next to the first script element.
+    var first = document.getElementsByTagName('script')[0];
+    first.parentNode.insertBefore(script, first);
+    analytics._loadOptions = options;
+  };
+  analytics._writeKey = 'Oldphf3r2pvyKD5LyQJlkU3EDHGa89HS';
+
+  
+
+  // Add a version to keep track of what's in the wild.
+  analytics.SNIPPET_VERSION = '4.15.3';
+
+  // Load Analytics.js with your key, which will automatically
+  // load the tools you've enabled for your account. Boosh!
+  analytics.load("Oldphf3r2pvyKD5LyQJlkU3EDHGa89HS");
+
+  // Make the first page call to load the integrations. If
+  // you'd like to manually name or tag the page, edit or
+  // move this call however you'd like.
+  
+})();
+</script><link rel="preload" href="_next/static/css/e8b2ad284fb47767.css" as="style"/><link rel="stylesheet" href="_next/static/css/e8b2ad284fb47767.css" data-n-g=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="_next/static/chunks/polyfills-0d1b80a048d4787e.js"></script><script src="_next/static/chunks/webpack-f85509006c776ef0.js" defer=""></script><script src="_next/static/chunks/framework-560765ab0625ba27.js" defer=""></script><script src="_next/static/chunks/main-30b3d843fa844702.js" defer=""></script><script src="_next/static/chunks/pages/_app-600e590d6a5ab983.js" defer=""></script><script src="_next/static/chunks/6449-abaaeec134fce34d.js" defer=""></script><script src="_next/static/chunks/2126-654dbffd0ddfc191.js" defer=""></script><script src="_next/static/chunks/3816-756dd07700e1ad0e.js" defer=""></script><script src="_next/static/chunks/5161-53f48b57fe6446aa.js" defer=""></script><script src="_next/static/chunks/6611-f1aaec5b0b0638f3.js" defer=""></script><script src="_next/static/chunks/pages/dictionary-204929d5921fe02b.js" defer=""></script><script src="_next/static/oM2nRechm0UTgn3oF8S31/_buildManifest.js" defer=""></script><script src="_next/static/oM2nRechm0UTgn3oF8S31/_ssgManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-THBGM4W" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><div class="flex min-h-screen flex-col"><div class="flex flex-col"><nav class="overflow-hidden"><div class="grid w-full grid-cols-[1fr_auto] grid-rows-2 items-center gap-x-12 pl-12 pr-8 min-720:grid-cols-[minmax(250px,1fr)_auto_minmax(min-content,1fr)] min-720:grid-rows-1 min-720:gap-x-16 min-720:px-24 min-840:grid-cols-[minmax(320px,1fr),auto,minmax(min-content,1fr)] border-b-2 border-gray-100"><div class=""><div class="flex flex-row items-center gap-x-12 min-720:gap-x-16"><a class="shrink-0 focus-visible:ring-4 focus-visible:ring-blue-200/50" href="index.html"><svg width="1256" height="183" viewBox="0 0 1256 183" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="hidden h-20 w-[138px] min-840:block"><title>Mobbin</title><path d="M389.833 85.1666H292.5V182.5H389.833V85.1666Z"></path><path d="M0.5 182.499V96.8064L97.3064 0H182.999V85.6931L86.1931 182.499H0.5Z"></path><path d="M146.497 182.5V96.8064L243.303 2.28882e-05H328.997V85.6931L232.19 182.5H146.497Z"></path><g clip-path="url(#clip0_168_31)"><path d="M592.536 128.213L542.732 13.725H502.5V166.493H532.548L532.614 63.5475L578.057 166.493H607.016L652.524 63.5683V166.493H682.573V13.725H642.319L592.536 128.213Z"></path><path d="M755.143 52.0468C705.055 52.0468 694.544 83.3728 694.544 109.633C694.544 149.761 714.562 169.254 755.731 169.254C796.901 169.254 816.526 149.927 816.526 110.173C816.526 70.4189 795.876 52.0261 755.164 52.0261L755.143 52.0468ZM725.77 109.094C725.77 89.0193 730.306 78.8265 755.143 78.8265C778.257 78.8265 785.3 86.2376 785.3 110.588C785.3 134.939 778.344 142.537 755.535 142.537C732.726 142.537 725.77 134.731 725.77 109.114V109.094Z"></path><path d="M895.376 52.2337H894.788C876.754 52.3167 862.668 65.1668 858.961 71.0002V13.725H828.52V166.493H858.961V165.455L859.113 150.882C864.063 158.958 877.299 169.275 894.613 169.275C932.446 169.275 948.604 152.107 948.604 111.875C948.604 71.6437 932.185 52.2544 895.376 52.2544V52.2337ZM917.967 109.633C917.967 140.025 903.946 142.495 887.003 142.495C870.06 142.495 856.431 140.067 856.431 110.36C856.431 87.7737 865.11 78.9718 887.395 78.9718C909.681 78.9718 917.967 86.6942 917.967 109.613V109.633Z"></path><path d="M1027.52 52.2337H1026.93C1008.9 52.3167 994.811 65.1668 991.104 71.0002V13.725H960.663V166.493H991.104V165.455L991.257 150.882C996.207 158.937 1009.44 169.254 1026.76 169.254C1064.59 169.254 1080.75 152.086 1080.75 111.855C1080.75 71.6229 1064.33 52.2337 1027.52 52.2337ZM1050.11 109.633C1050.11 140.025 1036.09 142.495 1019.15 142.495C1002.2 142.495 988.575 140.067 988.575 110.36C988.575 87.7737 997.253 78.9718 1019.54 78.9718C1041.82 78.9718 1050.11 86.6942 1050.11 109.613V109.633Z"></path><path d="M1124.08 54.6418H1093.64V166.493H1124.08V54.6418Z"></path><path d="M1205.65 52.1921C1188.75 52.1921 1175.1 62.8002 1170.72 71.0001V54.6418H1140.28V166.493H1170.72V101.309C1170.72 86.6942 1175.06 79.7191 1199.74 79.7191C1218.43 79.7191 1225.06 85.5525 1225.06 102.035V166.473H1255.5V108.699C1255.5 66.6614 1242.92 52.3997 1205.65 52.1714V52.1921Z"></path><path d="M1124.08 13.725H1093.64V42.7051H1124.08V13.725Z"></path></g></svg><svg width="128" height="60" viewBox="0 0 128 60" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="h-20 w-[43px] min-840:hidden"><title>Mobbin</title><path d="M128 28H96V60H128V28Z"></path><path d="M0 59.9998V31.8268L31.8268 0H59.9998V28.1731L28.1731 59.9998H0Z"></path><path d="M48 59.9998V31.8268L79.8268 0H108V28.1731L76.1731 59.9998H48Z"></path></svg></a><button class="relative h-[36px] w-full cursor-pointer rounded-[18px] bg-gray-100 min-720:max-w-[280px] focus-visible:ring-4 focus-visible:ring-blue-200/50 group min-w-0"><div class="flex h-full flex-row items-center gap-8 px-16"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" class="h-16 w-16 shrink-0 stroke-gray-200"><path d="M7.33333 12.6667C10.2789 12.6667 12.6667 10.2789 12.6667 7.33333C12.6667 4.38781 10.2789 2 7.33333 2C4.38781 2 2 4.38781 2 7.33333C2 10.2789 4.38781 12.6667 7.33333 12.6667Z" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14 14.0001L11.1 11.1001" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg><div class="truncate text-16 text-gray-200 min-720:text-14">Search apps</div></div></button></div></div><div class="-ml-12 -mr-8 scrollbar-none col-span-full row-start-2 flex overflow-auto min-720:mx-0 min-720:col-span-1 min-720:row-start-auto min-720:mx-0 min-720:px-0 -mb-[2px]"><div class="border-b-[2px] border-gray-100 h-52"><div class="px-12"><div class="flex w-min flex-row justify-center h-52 gap-12"><a class="text-16 pt-[14px] pb-12 flex flex-row items-center border-b-[2px] cursor-pointer select-none font-semibold whitespace-nowrap text-gray-200 border-[rgba(0,0,0,0)] group" href="browse/ios/apps.html"><div class="flex items-center gap-8 rounded-8 px-8 py-4 group-hover:bg-gray-100 group-focus-visible:ring-4 group-focus-visible:ring-blue-200/50">iOS &amp; Android</div></a><a class="text-16 pt-[14px] pb-12 flex flex-row items-center border-b-[2px] cursor-pointer select-none font-semibold whitespace-nowrap text-gray-200 border-[rgba(0,0,0,0)] group" href="browse/web/apps.html"><div class="flex items-center gap-8 rounded-8 px-8 py-4 group-hover:bg-gray-100 group-focus-visible:ring-4 group-focus-visible:ring-blue-200/50">Web<span class="flex pl-4"><span class="inline-flex items-center justify-center rounded-[6px] px-8 h-20 text-12 font-semibold uppercase tracking-wider  text-white bg-[#439aff]">Beta</span></span></div></a><a class="text-16 pt-[14px] pb-12 flex flex-row items-center border-b-[2px] cursor-pointer select-none font-semibold whitespace-nowrap text-gray-200 border-[rgba(0,0,0,0)] group" href="collections"><div class="flex items-center gap-8 rounded-8 px-8 py-4 group-hover:bg-gray-100 group-focus-visible:ring-4 group-focus-visible:ring-blue-200/50">Collections</div></a><a class="text-16 pt-[14px] pb-12 flex flex-row items-center border-b-[2px] cursor-pointer select-none font-semibold whitespace-nowrap text-black border-black group" href="dictionary"><div class="flex items-center gap-8 rounded-8 px-8 py-4 group-hover:bg-gray-100 group-focus-visible:ring-4 group-focus-visible:ring-blue-200/50">Dictionary</div></a></div></div></div></div><div class="shrink-0"></div></div></nav></div><div class="flex grow flex-col"><div class="flex flex-col"><header class="flex h-[380px] grow flex-col items-center justify-center gap-48 bg-black"><h1 class="max-w-[350px] px-12 text-center text-[40px] font-bold leading-[60px] tracking-[-0.022em] text-white min-720:max-w-none">Learn UI &amp; UX design patterns</h1><div class="w-full max-w-[650px] px-12"><div class="relative flex flex-col items-stretch"><input class="h-60 rounded-20 py-8 px-12 text-20 text-black placeholder:text-black/30 pl-60 rtl:pr-60 placeholder:select-none" value="" placeholder="Search Dictionary (try Signup)"/><div class="pointer-events-none absolute flex h-full items-center px-24"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" class="h-24 w-24 text-stone-200"><path d="M7.33333 12.6667C10.2789 12.6667 12.6667 10.2789 12.6667 7.33333C12.6667 4.38781 10.2789 2 7.33333 2C4.38781 2 2 4.38781 2 7.33333C2 10.2789 4.38781 12.6667 7.33333 12.6667Z" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14 14.0001L11.1 11.1001" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></div></div></div></header><nav class="flex px-12 min-720:px-24 py-24 scrollbar-none overflow-x-auto"><div class="justify-left flex flex-row gap-8"></div></nav><div class="flex flex-row gap-x-24 px-12 min-720:px-24"><div class="sticky top-0 hidden h-screen border-r-2 border-gray-100 min-840:flex"><div class="scrollbar-none w-[280px] select-none overflow-auto bg-white pr-8 text-14 rtl:pl-8"></div></div><div class="flex grow flex-col gap-24 border-gray-100"></div></div></div></div></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/dictionary","query":{},"buildId":"oM2nRechm0UTgn3oF8S31","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script></body>
+<!-- Mirrored from mobbin.com/dictionary by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 22 Jan 2023 04:41:56 GMT -->
+</html>

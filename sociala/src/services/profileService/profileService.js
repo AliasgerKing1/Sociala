@@ -1,11 +1,11 @@
 
 import axios from 'axios';
+let token = localStorage.getItem("token");
+const header = token;
 
-  let getUserProfile =(token) => {
-    return axios.get('http://localhost:4000/api/userprofile/' + token);
-  }
-  let getUserProfileById =(id) => {
-    return axios.get('http://localhost:4000/api/userprofile/byid/' + id);
+  let getUserProfile =() => {
+    return axios.get('http://localhost:4000/api/userprofile/',{ headers: { header } });
   }
 
-export {getUserProfile,getUserProfileById}
+
+export {getUserProfile}

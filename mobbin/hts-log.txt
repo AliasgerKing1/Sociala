@@ -1,0 +1,18 @@
+HTTrack3.49-2+htsswf+htsjava launched on Sun, 22 Jan 2023 10:11:48 at https://mobbin.com/dictionary +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" https://mobbin.com/dictionary -O1 "C:\My Web Sites\mobbin dicitionary" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+10:14:07	Warning: 	Retry after error -4 (Incorrect length (637007 Bytes, 2446442 expected)) at link https://ujasntkfphywizsdaapi.supabase.co/storage/v1/object/public/content/app_screens/43722fa5-96b3-47b6-ba1d-96d6b98a4dd6.png (from https://mobbin.com/browse/ios/apps)
+10:14:07	Warning: 	Retry after error -4 (No data (connection closed)) at link https://ujasntkfphywizsdaapi.supabase.co/storage/v1/object/public/content/app_screens/0f3505af-dd0c-4510-aab9-cf7b465e31fe.png (from https://mobbin.com/browse/ios/apps)
+10:14:07	Warning: 	Retry after error -4 (Incorrect length (1771580 Bytes, 2626527 expected)) at link https://ujasntkfphywizsdaapi.supabase.co/storage/v1/object/public/content/app_screens/1500cbce-503e-4f2a-a004-13fd3f2c8f80.png (from https://mobbin.com/browse/web/apps)
+10:14:07	Warning: 	Retry after error -4 (Incorrect length (63564 Bytes, 1053659 expected)) at link https://ujasntkfphywizsdaapi.supabase.co/storage/v1/object/public/content/app_screens/05fac848-0ace-41ae-9872-e7a80e955345.png (from https://mobbin.com/browse/android/apps)
+10:14:11	Warning: 	Retry after error -4 (No data (connection closed)) at link https://ujasntkfphywizsdaapi.supabase.co/storage/v1/object/public/content/app_screens/a44d1864-a64b-4aa4-8ede-fac6e5aca0ab.png (from https://mobbin.com/browse/android/apps)
+10:14:14	Warning: 	Retry after error -4 (Incorrect length (362574 Bytes, 732418 expected)) at link https://ujasntkfphywizsdaapi.supabase.co/storage/v1/object/public/content/app_screens/a57d7026-b3ed-4d70-893b-8a96b8466a2c.png (from https://mobbin.com/browse/android/apps)
+10:14:19	Warning: 	Retry after error -4 (No data (connection closed)) at link https://ujasntkfphywizsdaapi.supabase.co/storage/v1/object/public/content/app_screens/7addc1a7-2849-400d-8a86-590ee0d58148.png (from https://mobbin.com/browse/android/apps)
+
+HTTrack Website Copier/3.49-2 mirror complete in 2 minutes 32 seconds : 162 links scanned, 154 files written (108184278 bytes overall) [106797023 bytes received at 702611 bytes/sec], 2145648 bytes transferred using HTTP compression in 46 files, ratio 29%, 8.4 requests per connection
+(No errors, 7 warnings, 0 messages)

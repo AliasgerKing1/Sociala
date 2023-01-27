@@ -17,11 +17,10 @@ const Users = () => {
     getUser().then((result) => {
       setAllUsers(result.data);
     });
-  });
+  },[]);
   let demo = ()=> {
     setNavLink4(true);
       }
-
   return (
     <div  onLoad={demo}>
       <div className="color-theme-blue mont-font">
@@ -73,14 +72,14 @@ const Users = () => {
                               <div className="card-body d-block w-100 p-4 text-center">
                                 <figure className="avatar ms-auto me-auto mb-0 position-relative w90 z-index-1">
                                   <img
-                                    src="/assets/images/user-22.png"
+                                    src={u.image ? (u.image) : "/assets/images/user-25.png"}
                                     alt="image"
                                     className="float-right p-1 bg-white rounded-circle w-100"
                                   />
                                 </figure>
                                 <div className="clearfix"></div>
                                 <h4 className="fw-700 font-xss mt-3 mb-0">
-                                  {u.name}
+                                  {u.userName}
                                 </h4>
                                 <p className="fw-500 font-xssss text-grey-500 mt-0 mb-3">
                                   support@gmail.com

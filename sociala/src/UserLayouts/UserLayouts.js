@@ -5,9 +5,7 @@ const UserLayouts = () => {
   useEffect(()=> {
     if(! localStorage.getItem("token")) {
       navigate("/")
-      }else {
-
-        }
+      }
   })
 
   return (

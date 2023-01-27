@@ -1,28 +1,39 @@
-import React, { useEffect, useState } from 'react'
-import {addMsg, getMsg} from "../../../../services/PostService/PostService";
-import { getUserProfile } from '../../../../services/profileService/profileService';
-
+import React, { useEffect, useState } from 'react';
 import FriendRequest from "../../shared/right/FriendRequest/FriendRequest";
 import Friends from "../../shared/right/Friends/Friends";
 import SuggestedGroup from "../../shared/right/SuggestedGroup/SuggestedGroup";
 import SuggestedPeople from "../../shared/right/SuggestedPeople/SuggestedPeople";
+import Event from "../../shared/right/Event/Event";
+import {addMsg, getMsg} from "../../../../services/PostService/PostService";
+import { getUserProfile } from '../../../../services/profileService/profileService';
+
 import Header from "../../shared/Header/Header";
 import LeftSection from "../../shared/left/LeftSection/LeftSection";
 import Contact from "../../shared/very_right/Contact/Contact";
 import Group from "../../shared/very_right/Group/Group";
 import Pages from "../../shared/very_right/Pages/Pages";
 import FooterBar from "../../shared/FooterBar/FooterBar";
-import Event from "../../shared/right/Event/Event";
 
 
 function Home() {
-  let [allPost, setAllPost] = useState([]);
   let [id,setId] = useState("");
   let [navLink, setNavLink] = useState(false);
+  useEffect(() => {
+    getMsg().then(result=> {
+      setAllPost(result.data)
+    })
+  },[]);
+  useEffect(() => {
+    let token = localStorage.getItem("token")
+    getUserProfile(token).then(result=> {
+        setId(result.data._id)
+    })
+    
+  },[]);
+  let [allPost, setAllPost] = useState([]);
   let [msg, setMsg] = useState({
     message: "",
     comments: [],
-    sender : id
   });
   let setData = (e, property) => {
     setMsg((previousData) => {
@@ -36,18 +47,6 @@ function Home() {
     
     });
   };
-
-  useEffect(() => {
-    let token = localStorage.getItem("token")
-    getUserProfile(token).then(result=> {
-        setId(result.data._id)
-    })
-  },[]);
-  useEffect(() => {
-    getMsg().then(result=> {
-      setAllPost(result.data)
-    })
-  },[]);
   let demo = ()=> {
     setNavLink(true);
       }

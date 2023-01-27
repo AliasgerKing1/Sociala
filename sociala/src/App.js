@@ -1,34 +1,27 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SocialaRoutes from "./routes/Sociala/SocialaRoutes";
 
 import AllData from "./Hooks/ProfileHook"
-import { getUserProfile,getUserProfileById } from "./services/profileService/profileService";
-import { useEffect } from "react";
+import { getUserProfile} from "./services/profileService/profileService";
 
 
 function App() {
-  let [id,setId] = useState("");
   let [allData,setAllData] = useState("");
+  let [id,setId] = useState("");
   useEffect(()=> {
-    let token = localStorage.getItem("token")
-    getUserProfile(token).then(result=> {
-        setId(result.data._id)
-    })
-  }, [])
-  useEffect(()=> {
-    getUserProfileById(id).then(result=> {
-        setAllData(result.data[0]);
-    })
-}, [id])
+    getUserProfile().then(result=> {
+        setId(result.data._id);
+        setAllData(result.data);
+      })
+    }, [])
   let obj = {
-    LoggedInId : id,
     data : allData
   }
 return (
   <>
   <AllData.Provider value={obj}>
-  <SocialaRoutes />;
+  <SocialaRoutes />
   </AllData.Provider>
   </>
 )
