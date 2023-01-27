@@ -268,7 +268,7 @@ const Crm = () => {
                                                 <tr>
                                                     <td>Absternet LLC</td>
                                                     <td>Sep 20, 2021</td>
-                                                    <td><img src="assets/images/users/avatar-1.jpg" alt="" className="avatar-xs rounded-circle me-2" />
+                                                    <td><img src="/assets/images/users/avatar-1.jpg" alt="" className="avatar-xs rounded-circle me-2" />
                                                         <a href="##" className="text-body fw-medium">Donald Risher</a>
                                                     </td>
                                                     <td><span className="badge badge-soft-success p-2">Deal Won</span></td>
@@ -279,7 +279,7 @@ const Crm = () => {
                                                 <tr>
                                                     <td>Raitech Soft</td>
                                                     <td>Sep 23, 2021</td>
-                                                    <td><img src="assets/images/users/avatar-2.jpg" alt="" className="avatar-xs rounded-circle me-2" />
+                                                    <td><img src="/assets/images/users/avatar-2.jpg" alt="" className="avatar-xs rounded-circle me-2" />
                                                         <a href="##" className="text-body fw-medium">Sofia Cunha</a>
                                                     </td>
                                                     <td><span className="badge badge-soft-warning p-2">Intro Call</span></td>
@@ -290,7 +290,7 @@ const Crm = () => {
                                                 <tr>
                                                     <td>William PVT</td>
                                                     <td>Sep 27, 2021</td>
-                                                    <td><img src="assets/images/users/avatar-3.jpg" alt="" className="avatar-xs rounded-circle me-2" />
+                                                    <td><img src="/assets/images/users/avatar-3.jpg" alt="" className="avatar-xs rounded-circle me-2" />
                                                         <a href="##" className="text-body fw-medium">Luis Rocha</a>
                                                     </td>
                                                     <td><span className="badge badge-soft-danger p-2">Stuck</span></td>
@@ -301,7 +301,7 @@ const Crm = () => {
                                                 <tr>
                                                     <td>Loiusee LLP</td>
                                                     <td>Sep 30, 2021</td>
-                                                    <td><img src="assets/images/users/avatar-4.jpg" alt="" className="avatar-xs rounded-circle me-2" />
+                                                    <td><img src="/assets/images/users/avatar-4.jpg" alt="" className="avatar-xs rounded-circle me-2" />
                                                         <a href="##" className="text-body fw-medium">Vitoria Rodrigues</a>
                                                     </td>
                                                     <td><span className="badge badge-soft-success p-2">Deal Won</span></td>
@@ -312,7 +312,7 @@ const Crm = () => {
                                                 <tr>
                                                     <td>Apple Inc.</td>
                                                     <td>Sep 30, 2021</td>
-                                                    <td><img src="assets/images/users/avatar-6.jpg" alt="" className="avatar-xs rounded-circle me-2" />
+                                                    <td><img src="/assets/images/users/avatar-6.jpg" alt="" className="avatar-xs rounded-circle me-2" />
                                                         <a href="##" className="text-body fw-medium">Vitoria Rodrigues</a>
                                                     </td>
                                                     <td><span className="badge badge-soft-info p-2">New Lead</span></td>
@@ -494,17 +494,17 @@ const Crm = () => {
                                                     <div className="avatar-group">
                                                         <div className="avatar-group-item">
                                                             <a href="#" className="d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Stine Nielsen">
-                                                                <img src="assets/images/users/avatar-1.jpg" alt="" className="rounded-circle avatar-xxs" />
+                                                                <img src="/assets/images/users/avatar-1.jpg" alt="" className="rounded-circle avatar-xxs" />
                                                             </a>
                                                         </div>
                                                         <div className="avatar-group-item">
                                                             <a href="#" className="d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Jansh Brown">
-                                                                <img src="assets/images/users/avatar-2.jpg" alt="" className="rounded-circle avatar-xxs" />
+                                                                <img src="/assets/images/users/avatar-2.jpg" alt="" className="rounded-circle avatar-xxs" />
                                                             </a>
                                                         </div>
                                                         <div className="avatar-group-item">
                                                             <a href="#" className="d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Dan Gibson">
-                                                                <img src="assets/images/users/avatar-3.jpg" alt="" className="rounded-circle avatar-xxs" />
+                                                                <img src="/assets/images/users/avatar-3.jpg" alt="" className="rounded-circle avatar-xxs" />
                                                             </a>
                                                         </div>
                                                         <div className="avatar-group-item">
@@ -541,22 +541,22 @@ const Crm = () => {
                                                     <div className="avatar-group">
                                                         <div className="avatar-group-item">
                                                             <a href="#" className="d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Frida Bang">
-                                                                <img src="assets/images/users/avatar-4.jpg" alt="" className="rounded-circle avatar-xxs" />
+                                                                <img src="/assets/images/users/avatar-4.jpg" alt="" className="rounded-circle avatar-xxs" />
                                                             </a>
                                                         </div>
                                                         <div className="avatar-group-item">
                                                             <a href="#" className="d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Malou Silva">
-                                                                <img src="assets/images/users/avatar-5.jpg" alt="" className="rounded-circle avatar-xxs" />
+                                                                <img src="/assets/images/users/avatar-5.jpg" alt="" className="rounded-circle avatar-xxs" />
                                                             </a>
                                                         </div>
                                                         <div className="avatar-group-item">
                                                             <a href="#" className="d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Simon Schmidt">
-                                                                <img src="assets/images/users/avatar-6.jpg" alt="" className="rounded-circle avatar-xxs" />
+                                                                <img src="/assets/images/users/avatar-6.jpg" alt="" className="rounded-circle avatar-xxs" />
                                                             </a>
                                                         </div>
                                                         <div className="avatar-group-item">
                                                             <a href="#" className="d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Tosh Jessen">
-                                                                <img src="assets/images/users/avatar-7.jpg" alt="" className="rounded-circle avatar-xxs" />
+                                                                <img src="/assets/images/users/avatar-7.jpg" alt="" className="rounded-circle avatar-xxs" />
                                                             </a>
                                                         </div>
                                                         <div className="avatar-group-item">
@@ -593,17 +593,17 @@ const Crm = () => {
                                                     <div className="avatar-group">
                                                         <div className="avatar-group-item">
                                                             <a href="#" className="d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Nina Schmidt">
-                                                                <img src="assets/images/users/avatar-8.jpg" alt="" className="rounded-circle avatar-xxs" />
+                                                                <img src="/assets/images/users/avatar-8.jpg" alt="" className="rounded-circle avatar-xxs" />
                                                             </a>
                                                         </div>
                                                         <div className="avatar-group-item">
                                                             <a href="#" className="d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Stine Nielsen">
-                                                                <img src="assets/images/users/avatar-1.jpg" alt="" className="rounded-circle avatar-xxs" />
+                                                                <img src="/assets/images/users/avatar-1.jpg" alt="" className="rounded-circle avatar-xxs" />
                                                             </a>
                                                         </div>
                                                         <div className="avatar-group-item">
                                                             <a href="#" className="d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Jansh Brown">
-                                                                <img src="assets/images/users/avatar-2.jpg" alt="" className="rounded-circle avatar-xxs" />
+                                                                <img src="/assets/images/users/avatar-2.jpg" alt="" className="rounded-circle avatar-xxs" />
                                                             </a>
                                                         </div>
                                                         <div className="avatar-group-item">
@@ -640,17 +640,17 @@ const Crm = () => {
                                                     <div className="avatar-group">
                                                         <div className="avatar-group-item">
                                                             <a href="#" className="d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Stine Nielsen">
-                                                                <img src="assets/images/users/avatar-1.jpg" alt="" className="rounded-circle avatar-xxs" />
+                                                                <img src="/assets/images/users/avatar-1.jpg" alt="" className="rounded-circle avatar-xxs" />
                                                             </a>
                                                         </div>
                                                         <div className="avatar-group-item">
                                                             <a href="#" className="d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Jansh Brown">
-                                                                <img src="assets/images/users/avatar-5.jpg" alt="" className="rounded-circle avatar-xxs" />
+                                                                <img src="/assets/images/users/avatar-5.jpg" alt="" className="rounded-circle avatar-xxs" />
                                                             </a>
                                                         </div>
                                                         <div className="avatar-group-item">
                                                             <a href="#" className="d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Dan Gibson">
-                                                                <img src="assets/images/users/avatar-2.jpg" alt="" className="rounded-circle avatar-xxs" />
+                                                                <img src="/assets/images/users/avatar-2.jpg" alt="" className="rounded-circle avatar-xxs" />
                                                             </a>
                                                         </div>
                                                         <div className="avatar-group-item">
@@ -733,7 +733,7 @@ const Crm = () => {
                                             <tbody>
                                                 <tr>
                                                     <td>Acme Inc Install</td>
-                                                    <td><img src="assets/images/users/avatar-1.jpg" alt="" className="avatar-xs rounded-circle me-2" />
+                                                    <td><img src="/assets/images/users/avatar-1.jpg" alt="" className="avatar-xs rounded-circle me-2" />
                                                         <a href="##" className="text-body fw-medium">Donald Risher</a>
                                                     </td>
                                                     <td>$96k</td>
@@ -741,7 +741,7 @@ const Crm = () => {
                                                 </tr>
                                                 <tr>
                                                     <td>Save lots Stores</td>
-                                                    <td><img src="assets/images/users/avatar-2.jpg" alt="" className="avatar-xs rounded-circle me-2" />
+                                                    <td><img src="/assets/images/users/avatar-2.jpg" alt="" className="avatar-xs rounded-circle me-2" />
                                                         <a href="##" className="text-body fw-medium">Jansh Brown</a>
                                                     </td>
                                                     <td>$55.7k</td>
@@ -749,7 +749,7 @@ const Crm = () => {
                                                 </tr>
                                                 <tr>
                                                     <td>William PVT</td>
-                                                    <td><img src="assets/images/users/avatar-7.jpg" alt="" className="avatar-xs rounded-circle me-2" />
+                                                    <td><img src="/assets/images/users/avatar-7.jpg" alt="" className="avatar-xs rounded-circle me-2" />
                                                         <a href="##" className="text-body fw-medium">Ayaan Hudda</a>
                                                     </td>
                                                     <td>$102k</td>
@@ -757,7 +757,7 @@ const Crm = () => {
                                                 </tr>
                                                 <tr>
                                                     <td>Raitech Soft</td>
-                                                    <td><img src="assets/images/users/avatar-4.jpg" alt="" className="avatar-xs rounded-circle me-2" />
+                                                    <td><img src="/assets/images/users/avatar-4.jpg" alt="" className="avatar-xs rounded-circle me-2" />
                                                         <a href="##" className="text-body fw-medium">Julia William</a>
                                                     </td>
                                                     <td>$89.5k</td>
@@ -765,7 +765,7 @@ const Crm = () => {
                                                 </tr>
                                                 <tr>
                                                     <td>Absternet LLC</td>
-                                                    <td><img src="assets/images/users/avatar-4.jpg" alt="" className="avatar-xs rounded-circle me-2" />
+                                                    <td><img src="/assets/images/users/avatar-4.jpg" alt="" className="avatar-xs rounded-circle me-2" />
                                                         <a href="##" className="text-body fw-medium">Vitoria Rodrigues</a>
                                                     </td>
                                                     <td>$89.5k</td>

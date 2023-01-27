@@ -107,6 +107,16 @@ const RightMenu = () => {
                     </li>
                     <li className="nav-item">
                       <Link
+                        to="/admin/screeno"
+                        className="nav-link"
+                        data-key="t-projects"
+                      >
+                        
+                        Screeno
+                      </Link>
+                    </li>
+                    <li className="nav-item">
+                      <Link
                         to="/admin/nft"
                         className="nav-link"
                         data-key="t-nft"

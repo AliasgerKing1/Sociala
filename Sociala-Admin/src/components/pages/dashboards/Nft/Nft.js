@@ -58,7 +58,7 @@ const Nft = () => {
                                                     <a href="#" className="btn btn-danger">Create Your Own</a>
                                                 </div>
                                             </div>
-                                            <img src="assets/images/bg-d.png" alt="" className="img-fluid" />
+                                            <img src="/assets/images/bg-d.png" alt="" className="img-fluid" />
                                         </div>
                                     </div>
                                 </div>
@@ -288,7 +288,7 @@ const Nft = () => {
                                             <ul className="list-group list-group-flush">
                                                 <li className="list-group-item list-group-item-action">
                                                     <div className="d-flex align-items-center">
-                                                        <img src="assets/images/users/avatar-10.jpg" alt="" className="avatar-xs object-cover rounded-circle" />
+                                                        <img src="/assets/images/users/avatar-10.jpg" alt="" className="avatar-xs object-cover rounded-circle" />
                                                         <div className="ms-3 flex-grow-1">
                                                             <a href="#!" className="stretched-link">
                                                                 <h6 className="fs-14 mb-1">Herbert Stokes</h6>
@@ -302,7 +302,7 @@ const Nft = () => {
                                                 </li>
                                                 <li className="list-group-item list-group-item-action">
                                                     <div className="d-flex align-items-center">
-                                                        <img src="assets/images/nft/img-01.jpg" alt="" className="avatar-xs object-cover rounded-circle" />
+                                                        <img src="/assets/images/nft/img-01.jpg" alt="" className="avatar-xs object-cover rounded-circle" />
                                                         <div className="ms-3 flex-grow-1">
                                                             <a href="#!">
                                                                 <h6 className="fs-14 mb-1">Nancy Martino</h6>
@@ -316,7 +316,7 @@ const Nft = () => {
                                                 </li>
                                                 <li className="list-group-item list-group-item-action">
                                                     <div className="d-flex align-items-center">
-                                                        <img src="assets/images/nft/img-04.jpg" alt="" className="avatar-xs object-cover rounded-circle" />
+                                                        <img src="/assets/images/nft/img-04.jpg" alt="" className="avatar-xs object-cover rounded-circle" />
                                                         <div className="ms-3 flex-grow-1">
                                                             <a href="#!">
                                                                 <h6 className="fs-14 mb-1">Timothy Smith</h6>
@@ -330,7 +330,7 @@ const Nft = () => {
                                                 </li>
                                                 <li className="list-group-item list-group-item-action">
                                                     <div className="d-flex align-items-center">
-                                                        <img src="assets/images/nft/img-06.jpg" alt="" className="avatar-xs object-cover rounded-circle" />
+                                                        <img src="/assets/images/nft/img-06.jpg" alt="" className="avatar-xs object-cover rounded-circle" />
                                                         <div className="ms-3 flex-grow-1">
                                                             <a href="#!">
                                                                 <h6 className="fs-14 mb-1">Glen Matney</h6>
@@ -344,7 +344,7 @@ const Nft = () => {
                                                 </li>
                                                 <li className="list-group-item list-group-item-action">
                                                     <div className="d-flex align-items-center">
-                                                        <img src="assets/images/users/avatar-8.jpg" alt="" className="avatar-xs object-cover rounded-circle" />
+                                                        <img src="/assets/images/users/avatar-8.jpg" alt="" className="avatar-xs object-cover rounded-circle" />
                                                         <div className="ms-3 flex-grow-1">
                                                             <a href="#!">
                                                                 <h6 className="fs-14 mb-1">Michael Morris</h6>
@@ -358,7 +358,7 @@ const Nft = () => {
                                                 </li>
                                                 <li className="list-group-item list-group-item-action">
                                                     <div className="d-flex align-items-center">
-                                                        <img src="assets/images/nft/img-03.jpg" alt="" className="avatar-xs object-cover rounded-circle" />
+                                                        <img src="/assets/images/nft/img-03.jpg" alt="" className="avatar-xs object-cover rounded-circle" />
                                                         <div className="ms-3 flex-grow-1">
                                                             <a href="#!">
                                                                 <h6 className="fs-14 mb-1">Alexis Clarke</h6>
@@ -372,7 +372,7 @@ const Nft = () => {
                                                 </li>
                                                 <li className="list-group-item list-group-item-action">
                                                     <div className="d-flex align-items-center">
-                                                        <img src="assets/images/nft/img-05.jpg" alt="" className="avatar-xs object-cover rounded-circle" />
+                                                        <img src="/assets/images/nft/img-05.jpg" alt="" className="avatar-xs object-cover rounded-circle" />
                                                         <div className="ms-3 flex-grow-1">
                                                             <a href="#!">
                                                                 <h6 className="fs-14 mb-1">Timothy Smith</h6>
@@ -434,7 +434,7 @@ const Nft = () => {
                                         <div className="swiper-slide">
                                         <div className="card explore-box card-animate rounded">
                                             <div className="explore-place-bid-img">
-                                                <img src="assets/images/nft/img-03.jpg" alt="" className="img-fluid card-img-top explore-img" />
+                                                <img src="/assets/images/nft/img-03.jpg" alt="" className="img-fluid card-img-top explore-img" />
                                                 <div className="bg-overlay"></div>
                                                 <div className="place-bid-btn">
                                                     <a href="#!" className="btn btn-success"><i className="ri-auction-fill align-bottom me-1"></i> Place Bid</a>
@@ -535,7 +535,7 @@ const Nft = () => {
                                                     <tr>
                                                         <td>
                                                             <div className="d-flex align-items-center">
-                                                                <img src="assets/images/nft/img-01.jpg" alt="" className="avatar-sm rounded-circle" />
+                                                                <img src="/assets/images/nft/img-01.jpg" alt="" className="avatar-sm rounded-circle" />
                                                                 <div className="ms-3">
                                                                     <a href="#!">
                                                                         <h6 className="fs-15 mb-1">One shop destination on</h6>
@@ -558,7 +558,7 @@ const Nft = () => {
                                                     <tr>
                                                         <td>
                                                             <div className="d-flex align-items-center">
-                                                                <img src="assets/images/nft/img-02.jpg" alt="" className="avatar-sm rounded-circle" />
+                                                                <img src="/assets/images/nft/img-02.jpg" alt="" className="avatar-sm rounded-circle" />
                                                                 <div className="ms-3">
                                                                     <a href="#!">
                                                                         <h6 className="fs-15 mb-1">Coin Journal is dedicated</h6>
@@ -581,7 +581,7 @@ const Nft = () => {
                                                     <tr>
                                                         <td>
                                                             <div className="d-flex align-items-center">
-                                                                <img src="assets/images/nft/img-03.jpg" alt="" className="avatar-sm rounded-circle" />
+                                                                <img src="/assets/images/nft/img-03.jpg" alt="" className="avatar-sm rounded-circle" />
                                                                 <div className="ms-3">
                                                                     <a href="#!">
                                                                         <h6 className="fs-15 mb-1">The Bitcoin-holding U.S.</h6>
@@ -604,7 +604,7 @@ const Nft = () => {
                                                     <tr>
                                                         <td>
                                                             <div className="d-flex align-items-center">
-                                                                <img src="assets/images/nft/img-04.jpg" alt="" className="avatar-sm rounded-circle" />
+                                                                <img src="/assets/images/nft/img-04.jpg" alt="" className="avatar-sm rounded-circle" />
                                                                 <div className="ms-3">
                                                                     <a href="#!">
                                                                         <h6 className="fs-15 mb-1">Cryptocurrency Price Bitcoin</h6>
@@ -627,7 +627,7 @@ const Nft = () => {
                                                     <tr>
                                                         <td>
                                                             <div className="d-flex align-items-center">
-                                                                <img src="assets/images/nft/img-05.jpg" alt="" className="avatar-sm rounded-circle" />
+                                                                <img src="/assets/images/nft/img-05.jpg" alt="" className="avatar-sm rounded-circle" />
                                                                 <div className="ms-3">
                                                                     <a href="#!">
                                                                         <h6 className="fs-15 mb-1">Dash, Ripple and Litecoin</h6>
@@ -650,7 +650,7 @@ const Nft = () => {
                                                     <tr>
                                                         <td>
                                                             <div className="d-flex align-items-center">
-                                                                <img src="assets/images/nft/img-06.jpg" alt="" className="avatar-sm rounded-circle" />
+                                                                <img src="/assets/images/nft/img-06.jpg" alt="" className="avatar-sm rounded-circle" />
                                                                 <div className="ms-3">
                                                                     <a href="#!">
                                                                         <h6 className="fs-15 mb-1">The Cat X Takashi</h6>
@@ -672,7 +672,7 @@ const Nft = () => {
                                                     <tr>
                                                         <td>
                                                             <div className="d-flex align-items-center">
-                                                                <img src="assets/images/nft/img-01.jpg" alt="" className="avatar-sm rounded-circle" />
+                                                                <img src="/assets/images/nft/img-01.jpg" alt="" className="avatar-sm rounded-circle" />
                                                                 <div className="ms-3">
                                                                     <a href="#!">
                                                                         <h6 className="fs-15 mb-1">Long-tailed Macaque</h6>
@@ -761,7 +761,7 @@ const Nft = () => {
                                                     <td>
                                                         <div className="d-flex align-items-center">
                                                             <div className="me-2">
-                                                                <img src="assets/images/nft/img-01.jpg" alt="" className="avatar-xs rounded-circle" />
+                                                                <img src="/assets/images/nft/img-01.jpg" alt="" className="avatar-xs rounded-circle" />
                                                             </div>
                                                             <div className="flex-grow-1">
                                                                 <h6 className="mb-1"><a href="apps-nft-item-details.html" className="link-dark">Abstract Face Painting</a></h6>
@@ -769,7 +769,7 @@ const Nft = () => {
                                                             </div>
                                                         </div>
                                                     </td>
-                                                    <td><img src="assets/images/svg/crypto-icons/btc.svg" className="avatar-xxs me-2" alt="" />48,568.025</td>
+                                                    <td><img src="/assets/images/svg/crypto-icons/btc.svg" className="avatar-xxs me-2" alt="" />48,568.025</td>
                                                     <td>
                                                         <span className="text-success mb-0"><i className="mdi mdi-trending-up align-middle me-1"></i>5.26
                                                         </span>
@@ -791,7 +791,7 @@ const Nft = () => {
                                                             </div>
                                                         </div>
                                                     </td>
-                                                    <td><img src="assets/images/svg/crypto-icons/ltc.svg" className="avatar-xxs me-2" alt="" />87,142.027</td>
+                                                    <td><img src="/assets/images/svg/crypto-icons/ltc.svg" className="avatar-xxs me-2" alt="" />87,142.027</td>
                                                     <td>
                                                         <span className="text-danger mb-0"><i className="mdi mdi-trending-down align-middle me-1"></i>3.07
                                                         </span>
@@ -804,7 +804,7 @@ const Nft = () => {
                                                     <td>
                                                         <div className="d-flex align-items-center">
                                                             <div className="me-2">
-                                                                <img src="assets/images/nft/img-06.jpg" alt="" className="avatar-xs rounded-circle" />
+                                                                <img src="/assets/images/nft/img-06.jpg" alt="" className="avatar-xs rounded-circle" />
                                                             </div>
                                                             <div className="flex-grow-1">
                                                                 <h6 className="mb-1"><a href="apps-nft-item-details.html" className="link-dark">Robotic Body Art</a></h6>
@@ -812,7 +812,7 @@ const Nft = () => {
                                                             </div>
                                                         </div>
                                                     </td>
-                                                    <td><img src="assets/images/svg/crypto-icons/etc.svg" className="avatar-xxs me-2" alt="" />33,847.961</td>
+                                                    <td><img src="/assets/images/svg/crypto-icons/etc.svg" className="avatar-xxs me-2" alt="" />33,847.961</td>
                                                     <td>
                                                         <span className="text-success mb-0"><i className="mdi mdi-trending-up align-middle me-1"></i>7.13
                                                         </span>
@@ -825,7 +825,7 @@ const Nft = () => {
                                                     <td>
                                                         <div className="d-flex align-items-center">
                                                             <div className="me-2">
-                                                                <img src="assets/images/nft/img-04.jpg" alt="" className="avatar-xs rounded-circle" />
+                                                                <img src="/assets/images/nft/img-04.jpg" alt="" className="avatar-xs rounded-circle" />
                                                             </div>
                                                             <div className="flex-grow-1">
                                                                 <h6 className="mb-1"><a href="apps-nft-item-details.html" className="link-dark">Smillevers Crypto</a></h6>
@@ -833,7 +833,7 @@ const Nft = () => {
                                                             </div>
                                                         </div>
                                                     </td>
-                                                    <td><img src="assets/images/svg/crypto-icons/dash.svg" className="avatar-xxs me-2" alt="" />73,654.421</td>
+                                                    <td><img src="/assets/images/svg/crypto-icons/dash.svg" className="avatar-xxs me-2" alt="" />73,654.421</td>
                                                     <td>
                                                         <span className="text-success mb-0"><i className="mdi mdi-trending-up align-middle me-1"></i>0.97
                                                         </span>
@@ -846,7 +846,7 @@ const Nft = () => {
                                                     <td>
                                                         <div className="d-flex align-items-center">
                                                             <div className="me-2">
-                                                                <img src="assets/images/nft/img-03.jpg" alt="" className="avatar-xs rounded-circle" />
+                                                                <img src="/assets/images/nft/img-03.jpg" alt="" className="avatar-xs rounded-circle" />
                                                             </div>
                                                             <div className="flex-grow-1">
                                                                 <h6 className="mb-1"><a href="apps-nft-item-details.html" className="link-dark">Creative Filtered Portrait</a></h6>
@@ -855,7 +855,7 @@ const Nft = () => {
                                                             <div className="flex-grow-1"></div>
                                                         </div>
                                                     </td>
-                                                    <td><img src="assets/images/svg/crypto-icons/bnb.svg" className="avatar-xxs me-2" alt="" />66,742.077</td>
+                                                    <td><img src="/assets/images/svg/crypto-icons/bnb.svg" className="avatar-xxs me-2" alt="" />66,742.077</td>
                                                     <td>
                                                         <span className="text-danger mb-0"><i className="mdi mdi-trending-down align-middle me-1"></i>1.08
                                                         </span>
@@ -868,7 +868,7 @@ const Nft = () => {
                                                     <td>
                                                         <div className="d-flex align-items-center">
                                                             <div className="me-2">
-                                                                <img src="assets/images/nft/img-02.jpg" alt="" className="avatar-xs rounded-circle" />
+                                                                <img src="/assets/images/nft/img-02.jpg" alt="" className="avatar-xs rounded-circle" />
                                                             </div>
                                                             <div className="flex-grow-1">
                                                                 <h6 className="mb-1"><a href="apps-nft-item-details.html" className="link-dark">The Chirstoper</a></h6>
@@ -876,7 +876,7 @@ const Nft = () => {
                                                             </div>
                                                         </div>
                                                     </td>
-                                                    <td><img src="assets/images/svg/crypto-icons/usdt.svg" className="avatar-xxs me-2" alt="" />34,736.209</td>
+                                                    <td><img src="/assets/images/svg/crypto-icons/usdt.svg" className="avatar-xxs me-2" alt="" />34,736.209</td>
                                                     <td>
                                                         <span className="text-success mb-0"><i className="mdi mdi-trending-up align-middle me-1"></i>4.52
                                                         </span>
@@ -915,11 +915,11 @@ const Nft = () => {
                                     <div id="creators-by-locations" data-colors='["--vz-gray-200", "--vz-success", "--vz-primary"]' style={{height: '265px'}} dir="ltr"></div>
 
                                     <div className="mt-1">
-                                        <p className="mb-1"><img src="assets/images/flags/us.svg" alt="" height="15" className="rounded me-2" /> United States <span className="float-end">34%</span></p>
-                                        <p className="mb-1"><img src="assets/images/flags/russia.svg" alt="" height="15" className="rounded me-2" /> Russia <span className="float-end">27%</span></p>
-                                        <p className="mb-1"><img src="assets/images/flags/spain.svg" alt="" height="15" className="rounded me-2" /> Spain <span className="float-end">21%</span></p>
-                                        <p className="mb-1"><img src="assets/images/flags/italy.svg" alt="" height="15" className="rounded me-2" /> Italy <span className="float-end">13%</span></p>
-                                        <p className="mb-0"><img src="assets/images/flags/germany.svg" alt="" height="15" className="rounded me-2" /> Germany <span className="float-end">5%</span></p>
+                                        <p className="mb-1"><img src="/assets/images/flags/us.svg" alt="" height="15" className="rounded me-2" /> United States <span className="float-end">34%</span></p>
+                                        <p className="mb-1"><img src="/assets/images/flags/russia.svg" alt="" height="15" className="rounded me-2" /> Russia <span className="float-end">27%</span></p>
+                                        <p className="mb-1"><img src="/assets/images/flags/spain.svg" alt="" height="15" className="rounded me-2" /> Spain <span className="float-end">21%</span></p>
+                                        <p className="mb-1"><img src="/assets/images/flags/italy.svg" alt="" height="15" className="rounded me-2" /> Italy <span className="float-end">13%</span></p>
+                                        <p className="mb-0"><img src="/assets/images/flags/germany.svg" alt="" height="15" className="rounded me-2" /> Germany <span className="float-end">5%</span></p>
                                     </div>
                                 </div>
                                 {/* <!-- end card body --> */}
@@ -940,7 +940,7 @@ const Nft = () => {
                                         <div className="swiper-wrapper">
                                             <div className="swiper-slide">
                                                 <div className="dash-collection overflow-hidden rounded-top position-relative">
-                                                    <img src="assets/images/nft/img-03.jpg" alt="" height="220" className="object-cover w-100" />
+                                                    <img src="/assets/images/nft/img-03.jpg" alt="" height="220" className="object-cover w-100" />
                                                     <div className="content position-absolute bottom-0 m-2 p-2 start-0 end-0 rounded d-flex align-items-center">
                                                         <div className="flex-grow-1">
                                                             <a href="#!">
@@ -958,7 +958,7 @@ const Nft = () => {
                                             </div>
                                             <div className="swiper-slide">
                                                 <div className="dash-collection overflow-hidden rounded-top position-relative">
-                                                    <img src="assets/images/nft/img-04.jpg" alt="" height="220" className="object-cover w-100" />
+                                                    <img src="/assets/images/nft/img-04.jpg" alt="" height="220" className="object-cover w-100" />
                                                     <div className="content position-absolute bottom-0 m-2 p-2 start-0 end-0 rounded d-flex align-items-center">
                                                         <div className="flex-grow-1">
                                                             <a href="#!">
@@ -994,7 +994,7 @@ const Nft = () => {
                                             </div>
                                             <div className="swiper-slide">
                                                 <div className="dash-collection overflow-hidden rounded-top position-relative">
-                                                    <img src="assets/images/nft/img-06.jpg" alt="" height="220" className="object-cover w-100" />
+                                                    <img src="/assets/images/nft/img-06.jpg" alt="" height="220" className="object-cover w-100" />
                                                     <div className="content position-absolute bottom-0 m-2 p-2 start-0 end-0 rounded d-flex align-items-center">
                                                         <div className="flex-grow-1">
                                                             <a href="#!">
@@ -1028,7 +1028,7 @@ const Nft = () => {
                                             <div className="swiper-slide">
                                                 <div className="d-flex">
                                                     <div className="flex-shink-0">
-                                                        <img src="assets/images/nft/img-02.jpg" alt="" className="avatar-sm object-cover rounded" />
+                                                        <img src="/assets/images/nft/img-02.jpg" alt="" className="avatar-sm object-cover rounded" />
                                                     </div>
                                                     <div className="ms-3 flex-grow-1">
                                                         <a href="pages-profile.html">
@@ -1053,7 +1053,7 @@ const Nft = () => {
                                             <div className="swiper-slide">
                                                 <div className="d-flex">
                                                     <div className="flex-shink-0">
-                                                        <img src="assets/images/nft/img-01.jpg" alt="" className="avatar-sm object-cover rounded" />
+                                                        <img src="/assets/images/nft/img-01.jpg" alt="" className="avatar-sm object-cover rounded" />
                                                     </div>
                                                     <div className="ms-3 flex-grow-1">
                                                         <a href="pages-profile.html">
@@ -1078,7 +1078,7 @@ const Nft = () => {
                                             <div className="swiper-slide">
                                                 <div className="d-flex">
                                                     <div className="flex-shink-0">
-                                                        <img src="assets/images/nft/img-04.jpg" alt="" className="avatar-sm object-cover rounded" />
+                                                        <img src="/assets/images/nft/img-04.jpg" alt="" className="avatar-sm object-cover rounded" />
                                                     </div>
                                                     <div className="ms-3 flex-grow-1">
                                                         <a href="pages-profile.html">
@@ -1103,7 +1103,7 @@ const Nft = () => {
                                             <div className="swiper-slide">
                                                 <div className="d-flex">
                                                     <div className="flex-shink-0">
-                                                        <img src="assets/images/users/avatar-1.jpg" alt="" className="avatar-sm object-cover rounded" />
+                                                        <img src="/assets/images/users/avatar-1.jpg" alt="" className="avatar-sm object-cover rounded" />
                                                     </div>
                                                     <div className="ms-3 flex-grow-1">
                                                         <a href="pages-profile.html">

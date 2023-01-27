@@ -74,7 +74,7 @@ const Crypto = () => {
                                             <div className="d-flex">
                                                 <div className="flex-shrink-0 avatar-xs">
                                                     <span className="avatar-title bg-light p-1 rounded-circle">
-                                                        <img src="assets/images/svg/crypto-icons/btc.svg" className="img-fluid" alt="" />
+                                                        <img src="/assets/images/svg/crypto-icons/btc.svg" className="img-fluid" alt="" />
                                                     </span>
                                                 </div>
                                                 <div className="flex-grow-1 ms-2">
@@ -93,7 +93,7 @@ const Crypto = () => {
                                             <div className="d-flex">
                                                 <div className="flex-shrink-0 avatar-xs">
                                                     <span className="avatar-title bg-light p-1 rounded-circle">
-                                                        <img src="assets/images/svg/crypto-icons/eth.svg" className="img-fluid" alt="" />
+                                                        <img src="/assets/images/svg/crypto-icons/eth.svg" className="img-fluid" alt="" />
                                                     </span>
                                                 </div>
                                                 <div className="flex-grow-1 ms-2">
@@ -112,7 +112,7 @@ const Crypto = () => {
                                             <div className="d-flex">
                                                 <div className="flex-shrink-0 avatar-xs">
                                                     <span className="avatar-title bg-light p-1 rounded-circle">
-                                                        <img src="assets/images/svg/crypto-icons/ltc.svg" className="img-fluid" alt="" />
+                                                        <img src="/assets/images/svg/crypto-icons/ltc.svg" className="img-fluid" alt="" />
                                                     </span>
                                                 </div>
                                                 <div className="flex-grow-1 ms-2">
@@ -131,7 +131,7 @@ const Crypto = () => {
                                             <div className="d-flex">
                                                 <div className="flex-shrink-0 avatar-xs">
                                                     <span className="avatar-title bg-light p-1 rounded-circle">
-                                                        <img src="assets/images/svg/crypto-icons/dash.svg" className="img-fluid" alt="" />
+                                                        <img src="/assets/images/svg/crypto-icons/dash.svg" className="img-fluid" alt="" />
                                                     </span>
                                                 </div>
                                                 <div className="flex-grow-1 ms-2">
@@ -339,7 +339,7 @@ const Crypto = () => {
                                                     </div>
                                                 </div>
                                                 <div className="d-flex align-items-center">
-                                                    <img src="assets/images/svg/crypto-icons/btc.svg" className="bg-light rounded-circle p-1 avatar-xs img-fluid" alt="" />
+                                                    <img src="/assets/images/svg/crypto-icons/btc.svg" className="bg-light rounded-circle p-1 avatar-xs img-fluid" alt="" />
                                                     <h6 className="ms-2 mb-0">Bitcoin</h6>
                                                 </div>
                                                 <div className="row align-items-end g-0">
@@ -376,7 +376,7 @@ const Crypto = () => {
                                                     </div>
                                                 </div>
                                                 <div className="d-flex align-items-center">
-                                                    <img src="assets/images/svg/crypto-icons/ltc.svg" className="bg-light rounded-circle p-1 avatar-xs img-fluid" alt="" />
+                                                    <img src="/assets/images/svg/crypto-icons/ltc.svg" className="bg-light rounded-circle p-1 avatar-xs img-fluid" alt="" />
                                                     <h6 className="ms-2 mb-0">Litecoin</h6>
                                                 </div>
                                                 <div className="row align-items-end g-0">
@@ -413,7 +413,7 @@ const Crypto = () => {
                                                     </div>
                                                 </div>
                                                 <div className="d-flex align-items-center">
-                                                    <img src="assets/images/svg/crypto-icons/etc.svg" className="bg-light rounded-circle p-1 avatar-xs img-fluid" alt="" />
+                                                    <img src="/assets/images/svg/crypto-icons/etc.svg" className="bg-light rounded-circle p-1 avatar-xs img-fluid" alt="" />
                                                     <h6 className="ms-2 mb-0">Eathereum</h6>
                                                 </div>
                                                 <div className="row align-items-end g-0">
@@ -450,7 +450,7 @@ const Crypto = () => {
                                                     </div>
                                                 </div>
                                                 <div className="d-flex align-items-center">
-                                                    <img src="assets/images/svg/crypto-icons/bnb.svg" className="bg-light rounded-circle p-1 avatar-xs img-fluid" alt="" />
+                                                    <img src="/assets/images/svg/crypto-icons/bnb.svg" className="bg-light rounded-circle p-1 avatar-xs img-fluid" alt="" />
                                                     <h6 className="ms-2 mb-0">Binance</h6>
                                                 </div>
                                                 <div className="row align-items-end g-0">
@@ -487,7 +487,7 @@ const Crypto = () => {
                                                     </div>
                                                 </div>
                                                 <div className="d-flex align-items-center">
-                                                    <img src="assets/images/svg/crypto-icons/dash.svg" className="bg-light rounded-circle p-1 avatar-xs img-fluid" alt="" />
+                                                    <img src="/assets/images/svg/crypto-icons/dash.svg" className="bg-light rounded-circle p-1 avatar-xs img-fluid" alt="" />
                                                     <h6 className="ms-2 mb-0">Dash</h6>
                                                 </div>
                                                 <div className="row align-items-end g-0">
@@ -524,7 +524,7 @@ const Crypto = () => {
                                                     </div>
                                                 </div>
                                                 <div className="d-flex align-items-center">
-                                                    <img src="assets/images/svg/crypto-icons/usdt.svg" className="bg-light rounded-circle p-1 avatar-xs img-fluid" alt="" />
+                                                    <img src="/assets/images/svg/crypto-icons/usdt.svg" className="bg-light rounded-circle p-1 avatar-xs img-fluid" alt="" />
                                                     <h6 className="ms-2 mb-0">Tether</h6>
                                                 </div>
                                                 <div className="row align-items-end g-0">
@@ -561,7 +561,7 @@ const Crypto = () => {
                                                     </div>
                                                 </div>
                                                 <div className="d-flex align-items-center">
-                                                    <img src="assets/images/svg/crypto-icons/neo.svg" className="bg-light rounded-circle p-1 avatar-xs img-fluid" alt="" />
+                                                    <img src="/assets/images/svg/crypto-icons/neo.svg" className="bg-light rounded-circle p-1 avatar-xs img-fluid" alt="" />
                                                     <h6 className="ms-2 mb-0">NEO</h6>
                                                 </div>
                                                 <div className="row align-items-end g-0">
@@ -632,7 +632,7 @@ const Crypto = () => {
                                                     <td>
                                                         <div className="d-flex align-items-center">
                                                             <div className="me-2">
-                                                                <img src="assets/images/svg/crypto-icons/btc.svg" alt="" className="avatar-xxs" />
+                                                                <img src="/assets/images/svg/crypto-icons/btc.svg" alt="" className="avatar-xxs" />
                                                             </div>
                                                             <div>
                                                                 <h6 className="mb-0">Bitcoin</h6>
@@ -653,7 +653,7 @@ const Crypto = () => {
                                                     <td>
                                                         <div className="d-flex align-items-center">
                                                             <div className="me-2">
-                                                                <img src="assets/images/svg/crypto-icons/ltc.svg" alt="" className="avatar-xxs" />
+                                                                <img src="/assets/images/svg/crypto-icons/ltc.svg" alt="" className="avatar-xxs" />
                                                             </div>
                                                             <div>
                                                                 <h6 className="mb-0">Litecoin</h6>
@@ -674,7 +674,7 @@ const Crypto = () => {
                                                     <td>
                                                         <div className="d-flex align-items-center">
                                                             <div className="me-2">
-                                                                <img src="assets/images/svg/crypto-icons/eth.svg" alt="" className="avatar-xxs" />
+                                                                <img src="/assets/images/svg/crypto-icons/eth.svg" alt="" className="avatar-xxs" />
                                                             </div>
                                                             <div>
                                                                 <h6 className="mb-0">Eathereum</h6>
@@ -695,7 +695,7 @@ const Crypto = () => {
                                                     <td>
                                                         <div className="d-flex align-items-center">
                                                             <div className="me-2">
-                                                                <img src="assets/images/svg/crypto-icons/bnb.svg" alt="" className="avatar-xxs" />
+                                                                <img src="/assets/images/svg/crypto-icons/bnb.svg" alt="" className="avatar-xxs" />
                                                             </div>
                                                             <div>
                                                                 <h6 className="mb-0">Binance</h6>
@@ -716,7 +716,7 @@ const Crypto = () => {
                                                     <td>
                                                         <div className="d-flex align-items-center">
                                                             <div className="me-2">
-                                                                <img src="assets/images/svg/crypto-icons/usdt.svg" alt="" className="avatar-xxs" />
+                                                                <img src="/assets/images/svg/crypto-icons/usdt.svg" alt="" className="avatar-xxs" />
                                                             </div>
                                                             <div>
                                                                 <h6 className="mb-0">Tether</h6>
@@ -737,7 +737,7 @@ const Crypto = () => {
                                                     <td>
                                                         <div className="d-flex align-items-center">
                                                             <div className="me-2">
-                                                                <img src="assets/images/svg/crypto-icons/dash.svg" alt="" className="avatar-xxs" />
+                                                                <img src="/assets/images/svg/crypto-icons/dash.svg" alt="" className="avatar-xxs" />
                                                             </div>
                                                             <div>
                                                                 <h6 className="mb-0">Dash</h6>
@@ -758,7 +758,7 @@ const Crypto = () => {
                                                     <td>
                                                         <div className="d-flex align-items-center">
                                                             <div className="me-2">
-                                                                <img src="assets/images/svg/crypto-icons/neo.svg" alt="" className="avatar-xxs" />
+                                                                <img src="/assets/images/svg/crypto-icons/neo.svg" alt="" className="avatar-xxs" />
                                                             </div>
                                                             <div>
                                                                 <h6 className="mb-0">Neo</h6>
@@ -779,7 +779,7 @@ const Crypto = () => {
                                                     <td>
                                                         <div className="d-flex align-items-center">
                                                             <div className="me-2">
-                                                                <img src="assets/images/svg/crypto-icons/doge.svg" alt="" className="avatar-xxs" />
+                                                                <img src="/assets/images/svg/crypto-icons/doge.svg" alt="" className="avatar-xxs" />
                                                             </div>
                                                             <div>
                                                                 <h6 className="mb-0">Dogecoin</h6>
@@ -1202,7 +1202,7 @@ const Crypto = () => {
                                     <ul className="list-group list-group-flush border-dashed mb-0">
                                         <li className="list-group-item d-flex align-items-center">
                                             <div className="flex-shrink-0">
-                                                <img src="assets/images/svg/crypto-icons/btc.svg" className="avatar-xs" alt="" />
+                                                <img src="/assets/images/svg/crypto-icons/btc.svg" className="avatar-xs" alt="" />
                                             </div>
                                             <div className="flex-grow-1 ms-3">
                                                 <h6 className="mb-1">Bitcoin</h6>
@@ -1216,7 +1216,7 @@ const Crypto = () => {
                                         {/* <!-- end --> */}
                                         <li className="list-group-item d-flex align-items-center">
                                             <div className="flex-shrink-0">
-                                                <img src="assets/images/svg/crypto-icons/eth.svg" className="avatar-xs" alt="" />
+                                                <img src="/assets/images/svg/crypto-icons/eth.svg" className="avatar-xs" alt="" />
                                             </div>
                                             <div className="flex-grow-1 ms-3">
                                                 <h6 className="mb-1">Eathereum</h6>
@@ -1230,7 +1230,7 @@ const Crypto = () => {
                                         {/* <!-- end --> */}
                                         <li className="list-group-item d-flex align-items-center">
                                             <div className="flex-shrink-0">
-                                                <img src="assets/images/svg/crypto-icons/aave.svg" className="avatar-xs" alt="" />
+                                                <img src="/assets/images/svg/crypto-icons/aave.svg" className="avatar-xs" alt="" />
                                             </div>
                                             <div className="flex-grow-1 ms-3">
                                                 <h6 className="mb-1">Avalanche</h6>
@@ -1244,7 +1244,7 @@ const Crypto = () => {
                                         {/* <!-- end --> */}
                                         <li className="list-group-item d-flex align-items-center">
                                             <div className="flex-shrink-0">
-                                                <img src="assets/images/svg/crypto-icons/doge.svg" className="avatar-xs" alt="" />
+                                                <img src="/assets/images/svg/crypto-icons/doge.svg" className="avatar-xs" alt="" />
                                             </div>
                                             <div className="flex-grow-1 ms-3">
                                                 <h6 className="mb-1">Dogecoin</h6>
@@ -1258,7 +1258,7 @@ const Crypto = () => {
                                         {/* <!-- end --> */}
                                         <li className="list-group-item d-flex align-items-center">
                                             <div className="flex-shrink-0">
-                                                <img src="assets/images/svg/crypto-icons/bnb.svg" className="avatar-xs" alt="" />
+                                                <img src="/assets/images/svg/crypto-icons/bnb.svg" className="avatar-xs" alt="" />
                                             </div>
                                             <div className="flex-grow-1 ms-3">
                                                 <h6 className="mb-1">Binance</h6>
@@ -1272,7 +1272,7 @@ const Crypto = () => {
                                         {/* <!-- end --> */}
                                         <li className="list-group-item d-flex align-items-center">
                                             <div className="flex-shrink-0">
-                                                <img src="assets/images/svg/crypto-icons/ltc.svg" className="avatar-xs" alt="" />
+                                                <img src="/assets/images/svg/crypto-icons/ltc.svg" className="avatar-xs" alt="" />
                                             </div>
                                             <div className="flex-grow-1 ms-3">
                                                 <h6 className="mb-1">Litecoin</h6>
@@ -1308,7 +1308,7 @@ const Crypto = () => {
                                 <div className="card-body">
                                     <div className="d-flex align-middle">
                                         <div className="flex-shrink-0">
-                                            <img src="assets/images/small/img-1.jpg" className="rounded img-fluid" style={{height: '60px'}} alt="" />
+                                            <img src="/assets/images/small/img-1.jpg" className="rounded img-fluid" style={{height: '60px'}} alt="" />
                                         </div>
                                         <div className="flex-grow-1 ms-3">
                                             <h6 className="mb-1 lh-base"><a href="#" className="text-reset">One stop shop
@@ -1319,7 +1319,7 @@ const Crypto = () => {
                                     {/* <!-- end --> */}
                                     <div className="d-flex mt-4">
                                         <div className="flex-shrink-0">
-                                            <img src="assets/images/small/img-2.jpg" className="rounded img-fluid" style={{height: '60px'}} alt="" />
+                                            <img src="/assets/images/small/img-2.jpg" className="rounded img-fluid" style={{height: '60px'}} alt="" />
                                         </div>
                                         <div className="flex-grow-1 ms-3">
                                             <h6 className="mb-1 lh-base"><a href="#" className="text-reset">Coin Journal is
@@ -1330,7 +1330,7 @@ const Crypto = () => {
                                     {/* <!-- end --> */}
                                     <div className="d-flex mt-4">
                                         <div className="flex-shrink-0">
-                                            <img src="assets/images/small/img-3.jpg" className="rounded img-fluid" style={{height: '60px'}} alt="" />
+                                            <img src="/assets/images/small/img-3.jpg" className="rounded img-fluid" style={{height: '60px'}} alt="" />
                                         </div>
                                         <div className="flex-grow-1 ms-3">
                                             <h6 className="mb-1 lh-base"><a href="#" className="text-reset">The bitcoin-holding
@@ -1341,7 +1341,7 @@ const Crypto = () => {
                                     {/* <!-- end --> */}
                                     <div className="d-flex mt-4">
                                         <div className="flex-shrink-0">
-                                            <img src="assets/images/small/img-6.jpg" className="rounded img-fluid" style={{height: '60px'}} alt="" />
+                                            <img src="/assets/images/small/img-6.jpg" className="rounded img-fluid" style={{height: '60px'}} alt="" />
                                         </div>
                                         <div className="flex-grow-1 ms-3">
                                             <h6 className="mb-1 lh-base"><a href="#" className="text-reset">Cryptocurrency price

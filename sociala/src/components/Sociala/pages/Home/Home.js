@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
+import AllData from "../../../../Hooks/ProfileHook"
 import FriendRequest from "../../shared/right/FriendRequest/FriendRequest";
 import Friends from "../../shared/right/Friends/Friends";
 import SuggestedGroup from "../../shared/right/SuggestedGroup/SuggestedGroup";
@@ -18,6 +19,7 @@ import FooterBar from "../../shared/FooterBar/FooterBar";
 function Home() {
   let [id,setId] = useState("");
   let [navLink, setNavLink] = useState(false);
+  let obj = useContext(AllData);
   useEffect(() => {
     getMsg().then(result=> {
       setAllPost(result.data)
@@ -50,7 +52,8 @@ function Home() {
   let demo = ()=> {
     setNavLink(true);
       }
-
+      let allData = obj.data;
+      console.log(allData)
 
   return (
     <div onLoad={demo}>
@@ -1405,7 +1408,7 @@ function Home() {
                               />
                             </figure>
                             <h3 className="fw-700 text-grey-900 font-xssss mt-1">
-                              Anthony Daugloiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
+Aliasger
                               <span className="d-block font-xssss fw-500 mt-1 lh-3 text-grey-500">
                                 2 hour ago
                               </span>

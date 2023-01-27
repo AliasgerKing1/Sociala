@@ -248,7 +248,7 @@ const Job = () => {
                                                             <div className="d-flex align-items-center">
                                                                 <div className="avatar-xs me-2 flex-shrink-0">
                                                                     <div className="avatar-title bg-soft-secondary rounded">
-                                                                        <img src="assets/images/companies/img-1.png" alt="" height="16" />
+                                                                        <img src="/assets/images/companies/img-1.png" alt="" height="16" />
                                                                     </div>
                                                                 </div>
                                                                 <h6 className="mb-0">Force Medicines</h6>
@@ -282,7 +282,7 @@ const Job = () => {
                                                             <div className="d-flex align-items-center">
                                                                 <div className="avatar-xs me-2 flex-shrink-0">
                                                                     <div className="avatar-title bg-soft-warning rounded">
-                                                                        <img src="assets/images/companies/img-3.png" alt="" height="16" />
+                                                                        <img src="/assets/images/companies/img-3.png" alt="" height="16" />
                                                                     </div>
                                                                 </div>
                                                                 <h6 className="mb-0">Syntyce Solutions</h6>
@@ -316,7 +316,7 @@ const Job = () => {
                                                             <div className="d-flex align-items-center">
                                                                 <div className="avatar-xs me-2 flex-shrink-0">
                                                                     <div className="avatar-title bg-soft-primary rounded">
-                                                                        <img src="assets/images/companies/img-2.png" alt="" height="16" />
+                                                                        <img src="/assets/images/companies/img-2.png" alt="" height="16" />
                                                                     </div>
                                                                 </div>
                                                                 <h6 className="mb-0">Moetic Fashion</h6>
@@ -350,7 +350,7 @@ const Job = () => {
                                                             <div className="d-flex align-items-center">
                                                                 <div className="avatar-xs me-2 flex-shrink-0">
                                                                     <div className="avatar-title bg-soft-danger rounded">
-                                                                        <img src="assets/images/companies/img-4.png" alt="" height="16" />
+                                                                        <img src="/assets/images/companies/img-4.png" alt="" height="16" />
                                                                     </div>
                                                                 </div>
                                                                 <h6 className="mb-0">Meta4Systems</h6>
@@ -384,7 +384,7 @@ const Job = () => {
                                                             <div className="d-flex align-items-center">
                                                                 <div className="avatar-xs me-2 flex-shrink-0">
                                                                     <div className="avatar-title bg-soft-danger rounded">
-                                                                        <img src="assets/images/companies/img-5.png" alt="" height="16" />
+                                                                        <img src="/assets/images/companies/img-5.png" alt="" height="16" />
                                                                     </div>
                                                                 </div>
                                                                 <h6 className="mb-0">Themesbrand</h6>
@@ -541,7 +541,7 @@ const Job = () => {
                                                             <a href="#" className="d-flex align-items-center py-2">
                                                                 <div className="flex-shrink-0 me-2">
                                                                     <div className="avatar-xs">
-                                                                        <img src="assets/images/users/avatar-10.jpg" alt="" className="img-fluid rounded-circle candidate-img" />
+                                                                        <img src="/assets/images/users/avatar-10.jpg" alt="" className="img-fluid rounded-circle candidate-img" />
                                                                     </div>
                                                                 </div>
                                                                 <div className="flex-grow-1">
@@ -555,7 +555,7 @@ const Job = () => {
                                                             <a href="#" className="d-flex align-items-center py-2">
                                                                 <div className="flex-shrink-0 me-2">
                                                                     <div className="avatar-xs">
-                                                                        <img src="assets/images/users/avatar-1.jpg" alt="" className="img-fluid rounded-circle candidate-img" />
+                                                                        <img src="/assets/images/users/avatar-1.jpg" alt="" className="img-fluid rounded-circle candidate-img" />
                                                                     </div>
                                                                 </div>
                                                                 <div className="flex-grow-1">
@@ -568,7 +568,7 @@ const Job = () => {
                                                             <a href="#" className="d-flex align-items-center py-2">
                                                                 <div className="flex-shrink-0 me-2">
                                                                     <div className="avatar-xs">
-                                                                        <img src="assets/images/users/avatar-9.jpg" alt="" className="img-fluid rounded-circle candidate-img" />
+                                                                        <img src="/assets/images/users/avatar-9.jpg" alt="" className="img-fluid rounded-circle candidate-img" />
                                                                     </div>
                                                                 </div>
                                                                 <div className="flex-grow-1">
@@ -581,7 +581,7 @@ const Job = () => {
                                                             <a href="#" className="d-flex align-items-center py-2">
                                                                 <div className="flex-shrink-0 me-2">
                                                                     <div className="avatar-xs">
-                                                                        <img src="assets/images/users/avatar-2.jpg" alt="" className="img-fluid rounded-circle candidate-img" />
+                                                                        <img src="/assets/images/users/avatar-2.jpg" alt="" className="img-fluid rounded-circle candidate-img" />
                                                                     </div>
                                                                 </div>
                                                                 <div className="flex-grow-1">
@@ -594,7 +594,7 @@ const Job = () => {
                                                             <a href="#" className="d-flex align-items-center py-2">
                                                                 <div className="flex-shrink-0 me-2">
                                                                     <div className="avatar-xs">
-                                                                        <img src="assets/images/users/avatar-5.jpg" alt="" className="img-fluid rounded-circle candidate-img" />
+                                                                        <img src="/assets/images/users/avatar-5.jpg" alt="" className="img-fluid rounded-circle candidate-img" />
                                                                     </div>
                                                                 </div>
                                                                 <div className="flex-grow-1">
@@ -607,7 +607,7 @@ const Job = () => {
                                                             <a href="#" className="d-flex align-items-center py-2">
                                                                 <div className="flex-shrink-0 me-2">
                                                                     <div className="avatar-xs">
-                                                                        <img src="assets/images/users/avatar-8.jpg" alt="" className="img-fluid rounded-circle candidate-img" />
+                                                                        <img src="/assets/images/users/avatar-8.jpg" alt="" className="img-fluid rounded-circle candidate-img" />
                                                                     </div>
                                                                 </div>
                                                                 <div className="flex-grow-1">
@@ -623,7 +623,7 @@ const Job = () => {
                                         <div className="col-lg-6">
                                             <div className="card-body text-center">
                                                 <div className="avatar-md mb-3 mx-auto">
-                                                    <img src="assets/images/users/avatar-10.jpg" alt="" id="candidate-img" className="img-thumbnail rounded-circle shadow-none" />
+                                                    <img src="/assets/images/users/avatar-10.jpg" alt="" id="candidate-img" className="img-thumbnail rounded-circle shadow-none" />
                                                 </div>
                                 
                                                 <h5 id="candidate-name" className="mb-0">Tonya Noble</h5>
@@ -749,7 +749,7 @@ const Job = () => {
                                                         <td>
                                                             <div className="d-flex align-items-center">
                                                                 <div className="flex-shrink-0 me-2">
-                                                                    <img src="assets/images/users/avatar-1.jpg" alt="" className="avatar-xs rounded-circle" />
+                                                                    <img src="/assets/images/users/avatar-1.jpg" alt="" className="avatar-xs rounded-circle" />
                                                                 </div>
                                                                 <div className="flex-grow-1">Nicholas Ball</div>
                                                             </div>
@@ -774,7 +774,7 @@ const Job = () => {
                                                         <td>
                                                             <div className="d-flex align-items-center">
                                                                 <div className="flex-shrink-0 me-2">
-                                                                    <img src="assets/images/users/avatar-2.jpg" alt="" className="avatar-xs rounded-circle" />
+                                                                    <img src="/assets/images/users/avatar-2.jpg" alt="" className="avatar-xs rounded-circle" />
                                                                 </div>
                                                                 <div className="flex-grow-1">Elizabeth Allen</div>
                                                             </div>
@@ -799,7 +799,7 @@ const Job = () => {
                                                         <td>
                                                             <div className="d-flex align-items-center">
                                                                 <div className="flex-shrink-0 me-2">
-                                                                    <img src="assets/images/users/avatar-3.jpg" alt="" className="avatar-xs rounded-circle" />
+                                                                    <img src="/assets/images/users/avatar-3.jpg" alt="" className="avatar-xs rounded-circle" />
                                                                 </div>
                                                                 <div className="flex-grow-1">Cassian Jenning</div>
                                                             </div>
@@ -824,7 +824,7 @@ const Job = () => {
                                                         <td>
                                                             <div className="d-flex align-items-center">
                                                                 <div className="flex-shrink-0 me-2">
-                                                                    <img src="assets/images/users/avatar-4.jpg" alt="" className="avatar-xs rounded-circle" />
+                                                                    <img src="/assets/images/users/avatar-4.jpg" alt="" className="avatar-xs rounded-circle" />
                                                                 </div>
                                                                 <div className="flex-grow-1">Scott Holt</div>
                                                             </div>
@@ -849,7 +849,7 @@ const Job = () => {
                                                         <td>
                                                             <div className="d-flex align-items-center">
                                                                 <div className="flex-shrink-0 me-2">
-                                                                    <img src="assets/images/users/avatar-6.jpg" alt="" className="avatar-xs rounded-circle" />
+                                                                    <img src="/assets/images/users/avatar-6.jpg" alt="" className="avatar-xs rounded-circle" />
                                                                 </div>
                                                                 <div className="flex-grow-1">Hadley Leonard</div>
                                                             </div>
@@ -874,7 +874,7 @@ const Job = () => {
                                                         <td>
                                                             <div className="d-flex align-items-center">
                                                                 <div className="flex-shrink-0 me-2">
-                                                                    <img src="assets/images/users/avatar-10.jpg" alt="" className="avatar-xs rounded-circle" />
+                                                                    <img src="/assets/images/users/avatar-10.jpg" alt="" className="avatar-xs rounded-circle" />
                                                                 </div>
                                                                 <div className="flex-grow-1">Harley Watkins</div>
                                                             </div>
@@ -899,7 +899,7 @@ const Job = () => {
                                                         <td>
                                                             <div className="d-flex align-items-center">
                                                                 <div className="flex-shrink-0 me-2">
-                                                                    <img src="assets/images/users/avatar-8.jpg" alt="" className="avatar-xs rounded-circle" />
+                                                                    <img src="/assets/images/users/avatar-8.jpg" alt="" className="avatar-xs rounded-circle" />
                                                                 </div>
                                                                 <div className="flex-grow-1">Nadia Harding</div>
                                                             </div>
@@ -924,7 +924,7 @@ const Job = () => {
                                                         <td>
                                                             <div className="d-flex align-items-center">
                                                                 <div className="flex-shrink-0 me-2">
-                                                                    <img src="assets/images/users/avatar-9.jpg" alt="" className="avatar-xs rounded-circle" />
+                                                                    <img src="/assets/images/users/avatar-9.jpg" alt="" className="avatar-xs rounded-circle" />
                                                                 </div>
                                                                 <div className="flex-grow-1">Jenson Carlson</div>
                                                             </div>
