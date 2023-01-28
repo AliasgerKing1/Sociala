@@ -47,9 +47,8 @@ const Profile = () => {
                                     <h3 className="text-white mb-1">Aliasger Barood</h3>
                                     <p className="text-white-75">Owner & Founder</p>
                                     <div className="hstack text-white-50 gap-1">
-                                        <div className="me-2"><i className="ri-map-pin-user-line me-1 text-white-75 fs-16 align-middle"></i>California,
-                                            United States</div>
-                                        <div><i className="ri-building-line me-1 text-white-75 fs-16 align-middle"></i>Themesbrand
+                                        <div className="me-2"><i className="ri-map-pin-user-line me-1 text-white-75 fs-16 align-middle"></i>Indore, Madhya Pradesh, India</div>
+                                        <div><i className="ri-building-line me-1 text-white-75 fs-16 align-middle"></i> S_Studio
                                         </div>
                                     </div>
                                 </div>
@@ -383,8 +382,8 @@ const Profile = () => {
                                                                     </div>
                                                                     <div className="flex-grow-1 overflow-hidden">
                                                                         <p className="mb-1">Designation :</p>
-                                                                        <h6 className="text-truncate mb-0">Lead Designer /
-                                                                            Developer</h6>
+                                                                        <h6 className="text-truncate mb-0">CEO /
+                                                                            Founder</h6>
                                                                     </div>
                                                                 </div>
                                                             </div>

@@ -11,6 +11,11 @@ import ChooseLayout from "../../shared/ChooseLayout/ChooseLayout";
 
 
 const TaskBoard = () => {
+    let [taskBoard, setTaskBoard] = useState("");
+    let[boardNameArr,setBoardNameArr] = useState([]);
+    let handleAdd = ()=> {
+setBoardNameArr([...boardNameArr, taskBoard])
+    }
   return (
     <>
 
@@ -35,12 +40,12 @@ const TaskBoard = () => {
                     <div className="row">
                         <div className="col-12">
                             <div className="page-title-box d-sm-flex align-items-center justify-content-between">
-                                <h4 className="mb-sm-0">Kanban Board</h4>
+                                <h4 className="mb-sm-0">Task Board</h4>
 
                                 <div className="page-title-right">
                                     <ol className="breadcrumb m-0">
                                         <li className="breadcrumb-item"><a href="#">Tasks</a></li>
-                                        <li className="breadcrumb-item active">Kanban Board</li>
+                                        <li className="breadcrumb-item active">Task Board</li>
                                     </ol>
                                 </div>
 
@@ -994,6 +999,42 @@ const TaskBoard = () => {
                             </div>
                         </div>
                         {/* <!--end tasks-list--> */}
+                        {
+                            boardNameArr.map((x,i)=> {
+                                return(
+                                    <div className="tasks-list" key={i}>
+                            <div className="d-flex mb-3">
+                                <div className="flex-grow-1">
+                                    <h6 className="fs-14 text-uppercase fw-semibold mb-0">{x} <small className="badge bg-success align-bottom ms-1 totaltask-badge">1</small></h6>
+                                </div>
+                                <div className="flex-shrink-0">
+                                    <div className="dropdown card-header-dropdown">
+                                        <a className="text-reset dropdown-btn" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <span className="fw-medium text-muted fs-13">Priority<i className="mdi mdi-chevron-down ms-1"></i></span>
+                                        </a>
+                                        <div className="dropdown-menu dropdown-menu-end">
+                                            <a className="dropdown-item" href="#">Priority</a>
+                                            <a className="dropdown-item" href="#">Date Added</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-simplebar className="tasks-wrapper px-3 mx-n3">
+                                <div id="new-task" className="tasks">
+                                    <div className="card tasks-box">
+                                    </div>
+                                    {/* <!--end card--> */}
+                                </div>
+                            </div>
+                            <div className="my-3">
+                                <button className="btn btn-soft-info w-100" data-bs-toggle="modal" data-bs-target="#creatertaskModal">Add More</button>
+                            </div>
+                        </div>
+                                )
+                            })
+                        }
+
+                        {/* <!--end tasks-list--> */}
                     </div>
                     {/* <!--end task-board--> */}
 
@@ -1077,12 +1118,12 @@ const TaskBoard = () => {
                                         <div className="row">
                                             <div className="col-lg-12">
                                                 <label htmlFor="boardName" className="form-label">Board Name</label>
-                                                <input type="text" className="form-control" id="boardName" placeholder="Enter board name" />
+                                                <input type="text" className="form-control" id="boardName" placeholder="Enter board name" name="board_name" onChange={(e)=> setTaskBoard(e.target.value)}/>
                                             </div>
                                             <div className="mt-4">
                                                 <div className="hstack gap-2 justify-content-end">
                                                     <button type="button" className="btn btn-light" data-bs-dismiss="modal">Close</button>
-                                                    <button type="button" className="btn btn-success" id="addNewBoard">Add
+                                                    <button type="button" className="btn btn-success" id="addNewBoard" onClick={handleAdd}>Add
                                                         Board</button>
                                                 </div>
                                             </div>

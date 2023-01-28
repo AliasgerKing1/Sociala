@@ -702,13 +702,13 @@ const Header = () => {
                     <div className="dropdown-menu dropdown-menu-end">
                         {/* <!-- item--> */}
                         <h6 className="dropdown-header">Welcome Aliasger!</h6>
-                        <Link className="dropdown-item" to="/admin/profile"><i className="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Profile</span></Link>
+                        <Link className="dropdown-item" to="/admin/profile"><i className="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span className="align-middle">App Profile</span></Link>
                         <a className="dropdown-item" href="apps-chat.html"><i className="mdi mdi-message-text-outline text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Messages</span></a>
-                        <Link className="dropdown-item" to="/admin/taskboard"><i className="mdi mdi-calendar-check-outline text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Taskboard</span></Link>
+                        <Link className="dropdown-item" to="/admin/taskboard"><span className="badge bg-soft-success text-success mt-1 float-end">+3</span><i className="mdi mdi-calendar-check-outline text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Taskboard</span></Link>
                         <a className="dropdown-item" href="pages-faqs.html"><i className="mdi mdi-lifebuoy text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Help</span></a>
                         <div className="dropdown-divider"></div>
                         <a className="dropdown-item" href="pages-profile.html"><i className="mdi mdi-wallet text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Balance : <b>$5971.67</b></span></a>
-                        <Link className="dropdown-item" to="/admin/setting"><span className="badge bg-soft-success text-success mt-1 float-end">New</span><i className="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Settings</span></Link>
+                        <Link className="dropdown-item" to="/admin/setting"><i className="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Settings</span></Link>
                         <a className="dropdown-item" href="auth-lockscreen-basic.html"><i className="mdi mdi-lock text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Lock screen</span></a>
                         <a className="dropdown-item" onClick={logout} style={{cursor : 'pointer'}}><i className="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span className="align-middle" data-key="t-logout">Logout</span></a>
                     </div>

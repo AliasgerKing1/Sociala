@@ -25,7 +25,6 @@ initialValues : initialValues,
 validationSchema : LoginSchema,
 onSubmit : ()=> {
     DoLogin(values).then(result=> {
-        console.log(result.data)
         if (result.data.errType === 1) {
             setMsg("This email/username or password is incorrect !");
             setShowAlert(true);

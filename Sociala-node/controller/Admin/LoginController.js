@@ -21,6 +21,13 @@ Admin.find({username : user}, (error,result)=> {
 })
 })
 
+
+routes.post("/addadmin", (req,res)=> {
+    req.body[1].password = sha1(req.body[1].password);
+    Admin.create(req.body, (error)=> {
+        res.send({sucess : true, status : 200});
+    })
+})
 routes.get("/", (req,res)=> {
     Admin.find({}, (error,result)=> {
         res.send(result);
