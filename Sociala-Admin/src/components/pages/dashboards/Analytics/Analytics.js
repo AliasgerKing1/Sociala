@@ -1,8 +1,9 @@
 import React, { useEffect, useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import {useSelector} from "react-redux"
 
-import AllData from "../../../../Hooks/ProfileHook";
-import { getUsers,totalUser,deleteUser } from "../../../../Services/AdminService/AdminService";
+import {totalUser,deleteUser } from "../../../../Services/AdminService/AdminService";
+
 import Header from "../../../shared/Header/Header";
 import Footer from "../../../shared/Footer/Footer";
 import NotificationModel from "../../../shared/NotificationModel/NotificationModel";
@@ -11,21 +12,16 @@ import ChooseLayout from "../../../shared/ChooseLayout/ChooseLayout";
 
 
 const Analytics = () => {
+  let state = useSelector(state=>state)
 let [usersCount, setUsersCount] = useState();
 let [users, setUsers] = useState([]);
 let [deleteUserId, setDeleteUserId] = useState([]);
-let obj = useContext(AllData);
 useEffect(()=> {
 totalUser().then(result=> {
   setUsersCount(result.data.total);
 })
 },[])
 
-useEffect(()=>{
-  getUsers().then(result=> {
-    setUsers(result.data);
-  })
-},[])
 let confirmDelete = (user) => {
 setDeleteUserId(user)
 }
@@ -38,7 +34,7 @@ return preData.filter(item => item != deleteUserId);
  })
 } 
   return (
-    <>
+    <div>
       {/* <!-- Begin page --> */}
       <div id="layout-wrapper">
         <Header />
@@ -61,7 +57,7 @@ return preData.filter(item => item != deleteUserId);
                     <div className="page-title-right">
                       <ol className="breadcrumb m-0">
                         <li className="breadcrumb-item">
-                          <Link to="/home">Dashboards</Link>
+                          <Link to="/admin/analytics">Dashboards</Link>
                         </li>
                         <li className="breadcrumb-item active">Analytics</li>
                       </ol>
@@ -417,7 +413,7 @@ return preData.filter(item => item != deleteUserId);
                     <div className="mx-n3">
                         <ul className="list list-group list-group-flush mb-0">
                         {
-                          users.map((u)=> {
+                          state.allUserData.map((u)=> {
                             return(
                               <li key={u._id} className="list-group-item">
                                 <div className="d-flex align-items-center pagi-list">
@@ -1122,7 +1118,7 @@ return preData.filter(item => item != deleteUserId);
     {/* <!-- /.modal-dialog --> */}
 </div>
 {/* <!-- /.modal --> */}
-    </>
+    </div>
   );
 };
 

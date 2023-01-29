@@ -34,7 +34,7 @@ const Screeno = () => {
 
                                 <div className="page-title-right">
                                     <ol className="breadcrumb m-0">
-                                        <li className="breadcrumb-item"><Link to="/admin/home">Dashboards</Link></li>
+                                        <li className="breadcrumb-item"><Link to="/admin/analytics">Dashboards</Link></li>
                                         <li className="breadcrumb-item active">Screeno</li>
                                     </ol>
                                 </div>

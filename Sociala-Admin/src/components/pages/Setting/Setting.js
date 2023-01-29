@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 
-import AllData from "../../../Hooks/ProfileHook";
+import {useSelector} from "react-redux"
+
 import { deleteUser,addAdmin } from "../../../Services/AdminService/AdminService";
-import { addPhoto,getPhoto } from "../../../Services/ProfilePhotoService/ProfilePhotoService";
+import { addPhoto } from "../../../Services/ProfilePhotoService/ProfilePhotoService";
+
 import Header from "../../shared/Header/Header";
 import Footer from "../../shared/Footer/Footer";
 import NotificationModel from "../../shared/NotificationModel/NotificationModel";
@@ -11,6 +13,7 @@ import ChooseLayout from "../../shared/ChooseLayout/ChooseLayout";
 
 
 const Setting = () => {
+    let state = useSelector(state=>state);
     let [admins, setAdmins] = useState({
         name : "",
         type : "",
@@ -22,13 +25,7 @@ const Setting = () => {
     let[adminsArr,setAdminArr] = useState([]);
     let [users, setUsers] = useState([]);
     let [deleteUserId, setDeleteUserId] = useState([]);
-    let [photo, setPhoto] = useState([]);
-
-    useEffect(()=> {
-getPhoto().then(result=> {
-setPhoto(result.data[0].image);
-},[])
-    })
+   
     let confirmDelete = (user) => {
         setDeleteUserId(user)
         }
@@ -56,13 +53,12 @@ let Image = (e) => {
     form.append("photo",e.target.files[0]);
 }
 let obj = {
-    name : "Aliasger",
+    username : state.data.username,
     image : ""
 }
 let addImg = () => {
     form.append("data",JSON.stringify(obj))
     addPhoto(form).then(result=> {
-        console.log(result.data)
     })
 }
   return (
@@ -103,7 +99,7 @@ let addImg = () => {
                                 <div className="card-body p-4">
                                     <div className="text-center">
                                         <div className="profile-user position-relative d-inline-block mx-auto  mb-4">
-                                            <img src={photo} className="rounded-circle avatar-xl img-thumbnail user-profile-image" alt="user-profile-image" />
+                                            <img src={state.image ? (state.image) : ""} className="rounded-circle avatar-xl img-thumbnail user-profile-image" alt="user-profile-image" />
                                             <div className="avatar-xs p-0 rounded-circle profile-photo-edit">
                                                 <input id="profile-img-file-input" type="file" className="profile-img-file-input" onChange={Image} />
                                                 <label htmlFor="profile-img-file-input" className="profile-photo-edit avatar-xs">
@@ -114,7 +110,7 @@ let addImg = () => {
                                             </div>
                                         </div>
                                         <button onClick={addImg} style={{display : "none"}}>hiii</button>
-                                        <h5 className="fs-17 mb-1">Aliasger Barood</h5>
+                                        <h5 className="fs-17 mb-1">{state.data.name}</h5>
                                         <p className="text-muted mb-0">CEO / Founder</p>
                                     </div>
                                 </div>

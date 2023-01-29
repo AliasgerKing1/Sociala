@@ -1,12 +1,19 @@
 import React from 'react';
 import { useNavigate,Link } from 'react-router-dom';
-import { Logout } from '../../../Services/loginAuthService/loginAuthService';
+import { useSelector } from 'react-redux';
 
+import { Logout } from '../../../Services/loginAuthService/loginAuthService';
+import { Lock } from '../../../Services/LockScreenService/LockScreenService';
 const Header = () => {
+    let state = useSelector(state=>state);
     let navigate = useNavigate();
     let logout = () => {
         Logout();
-        navigate("/admin")
+        navigate("/admin/logout")
+      }
+    let lockScreen = () => {
+        Lock();
+        navigate("/admin/lockscreen")
       }
   return (
     <div>
@@ -692,9 +699,10 @@ const Header = () => {
                 <div className="dropdown ms-sm-3 header-item topbar-user">
                     <button type="button" className="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span className="d-flex align-items-center">
-                            <img className="rounded-circle header-profile-user" src="/assets/images/users/avatar-7.jpg" alt="Header Avatar" />
+                        <img className="rounded-circle header-profile-user" src={state.image ? (state.image) : ""} alt="Header Avatar" /> 
+                            {/* <img className="rounded-circle header-profile-user" src={state.image} alt="Header Avatar" /> */}
                             <span className="text-start ms-xl-2">
-                                <span className="d-none d-xl-inline-block ms-1 fw-medium user-name-text">Aliasger Barood</span>
+                                <span className="d-none d-xl-inline-block ms-1 fw-medium user-name-text">{state.data.name}</span>
                                 <span className="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">Founder</span>
                             </span>
                         </span>
@@ -702,14 +710,14 @@ const Header = () => {
                     <div className="dropdown-menu dropdown-menu-end">
                         {/* <!-- item--> */}
                         <h6 className="dropdown-header">Welcome Aliasger!</h6>
-                        <Link className="dropdown-item" to="/admin/profile"><i className="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span className="align-middle">App Profile</span></Link>
+                        <Link className="dropdown-item" to="/admin/setting/auth/profile"><i className="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span className="align-middle">App Profile</span></Link>
                         <a className="dropdown-item" href="apps-chat.html"><i className="mdi mdi-message-text-outline text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Messages</span></a>
                         <Link className="dropdown-item" to="/admin/taskboard"><span className="badge bg-soft-success text-success mt-1 float-end">+3</span><i className="mdi mdi-calendar-check-outline text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Taskboard</span></Link>
                         <a className="dropdown-item" href="pages-faqs.html"><i className="mdi mdi-lifebuoy text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Help</span></a>
                         <div className="dropdown-divider"></div>
                         <a className="dropdown-item" href="pages-profile.html"><i className="mdi mdi-wallet text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Balance : <b>$5971.67</b></span></a>
-                        <Link className="dropdown-item" to="/admin/setting"><i className="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Settings</span></Link>
-                        <a className="dropdown-item" href="auth-lockscreen-basic.html"><i className="mdi mdi-lock text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Lock screen</span></a>
+                        <Link className="dropdown-item" to="/admin/setting/auth/setting"><i className="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Settings</span></Link>
+                        <a className="dropdown-item" onClick={lockScreen} style={{cursor : 'pointer'}}><i className="mdi mdi-lock text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Lock screen</span></a>
                         <a className="dropdown-item" onClick={logout} style={{cursor : 'pointer'}}><i className="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span className="align-middle" data-key="t-logout">Logout</span></a>
                     </div>
                 </div>

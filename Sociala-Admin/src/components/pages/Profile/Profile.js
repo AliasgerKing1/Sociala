@@ -1,8 +1,10 @@
 import React, { useEffect, useContext, useState } from "react";
 import { Link } from "react-router-dom";
 
-import AllData from "../../../Hooks/ProfileHook";
+import { useSelector } from "react-redux";
+
 import { getUsers,getAdminProfile } from "../../../Services/AdminService/AdminService";
+
 import Header from "../../shared/Header/Header";
 import Footer from "../../shared/Footer/Footer";
 import NotificationModel from "../../shared/NotificationModel/NotificationModel";
@@ -11,7 +13,7 @@ import ChooseLayout from "../../shared/ChooseLayout/ChooseLayout";
 
 
 const Profile = () => {
-
+let state = useSelector(state=>state);
   return (
     <>
     {/* <!-- Begin page --> */}
@@ -37,14 +39,14 @@ const Profile = () => {
                         <div className="row g-4">
                             <div className="col-auto">
                                 <div className="avatar-lg">
-                                    <img src="/assets/images/users/avatar-1.jpg" alt="user-img" className="img-thumbnail rounded-circle" />
+                                    <img src={state.image} alt="user-img" className="img-thumbnail rounded-circle" />
                                 </div>
                             </div>
                             {/* <!--end col--> */}
                               
                                         <div className="col" >
                                 <div className="p-2">
-                                    <h3 className="text-white mb-1">Aliasger Barood</h3>
+                                    <h3 className="text-white mb-1">{state.data.name}</h3>
                                     <p className="text-white-75">Owner & Founder</p>
                                     <div className="hstack text-white-50 gap-1">
                                         <div className="me-2"><i className="ri-map-pin-user-line me-1 text-white-75 fs-16 align-middle"></i>Indore, Madhya Pradesh, India</div>

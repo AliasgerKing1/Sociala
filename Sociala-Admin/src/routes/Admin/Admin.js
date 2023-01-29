@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Home from '../..//components/pages/dashboards/Home/Home';
 import Analytics from "../../components/pages/dashboards/Analytics/Analytics"
 import Crm from "../../components/pages/dashboards/Crm/Crm";
@@ -14,10 +15,14 @@ import Companies from '../../components/pages/Apps/AppCrm/Companies/Companies';
 import AppContacts from '../../components/pages/Apps/AppCrm/AppContacts/AppContacts';
 import AppDeals from '../../components/pages/Apps/AppCrm/AppDeals/AppDeals';
 import AppLeads from '../../components/pages/Apps/AppCrm/AppLeads/AppLeads';
-import Setting from '../../components/pages/Setting/Setting';
 import Profile from '../../components/pages/Profile/Profile';
 import TaskBoard from '../../components/pages/TaskBoard/TaskBoard';
 import Screeno from '../../components/pages/dashboards/Screeno/Screeno';
+
+import LockScreen from '../../components/pages/Authentication/LockScreen/LockScreen';
+import SettingLayouts from '../../Layouts/SettingLayouts/SettingLayouts';
+import SettingRoutes from './SettingRoutes/SettingRoutes';
+import { Logout } from '../../Services/loginAuthService/loginAuthService';
 
 
 let adminRoutes = [
@@ -78,16 +83,21 @@ let adminRoutes = [
     element: <AppLeads />
   },
   {
-    path : "setting",
-    element: <Setting />
-  },
-  {
     path : "profile",
     element: <Profile />
   },
   {
     path : "taskboard",
     element: <TaskBoard />
+  },
+  {
+    path : "lockscreen",
+    element: <LockScreen />
+  },
+  {
+    path : "setting/auth",
+    element: <SettingLayouts/>,
+    children : SettingRoutes
   },
 ]
 export default adminRoutes;

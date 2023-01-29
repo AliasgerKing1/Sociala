@@ -1,24 +1,50 @@
 import './App.css';
 import { useState, useEffect } from "react";
-import AllData from "./Hooks/ProfileHook"
+
+import {Provider} from "react-redux";
+import {configureStore} from "@reduxjs/toolkit"
+
 import SocialaAdminRoutes from './routes/SocialaAdminRoutes';
-import { getAdminProfile } from './Services/AdminService/AdminService';
+import { getAdminProfile,getUsers } from './Services/AdminService/AdminService';
+import {getPhoto } from "./Services/ProfilePhotoService/ProfilePhotoService";
+
+
 let App = () => {
   let [allData,setAllData] = useState("");
   let [id,setId] = useState("");
+  let [photo, setPhoto] = useState([]);
+  let [allUserData, setAllUserData] = useState([]);
   useEffect(()=> {
     getAdminProfile().then(result=> {
         setId(result.data._id);
         setAllData(result.data);
       })
     }, [])
-  let obj = {
-    data : allData
-  }
+    useEffect(()=> {
+      getPhoto().then(result=> {
+      setPhoto(result.data[0].image);
+      },[])
+          })
+          useEffect(()=> {
+            getUsers().then(result=> {
+setAllUserData(result.data);
+            })
+          },[])
+          let obj = {
+            data : allData,
+            image : photo,
+            allUserData : allUserData,
+          }
+    let store = configureStore({
+      preloadedState : obj,
+      reducer : (data)=> {
+        return data;
+      }
+    })
   return (
-    <AllData.Provider value={obj}>
+    <Provider store={store}>
  <SocialaAdminRoutes/>
-  </AllData.Provider>
+    </Provider>
   )
 }
 

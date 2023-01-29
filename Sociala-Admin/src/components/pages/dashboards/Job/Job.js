@@ -32,7 +32,7 @@ const Job = () => {
 
                                     <div className="page-title-right">
                                         <ol className="breadcrumb m-0">
-                                            <li className="breadcrumb-item"><Link to="/home">Dashboards</Link></li>
+                                            <li className="breadcrumb-item"><Link to="/admin/analytics">Dashboards</Link></li>
                                             <li className="breadcrumb-item active">Job Dashboard</li>
                                         </ol>
                                     </div>
