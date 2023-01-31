@@ -1,8 +1,8 @@
-import React, { useEffect, useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
-import AllData from "../../../Hooks/ProfileHook";
-import { getUsers,getAdminProfile } from "../../../Services/AdminService/AdminService";
+import { addBoard,getBoard, updateBoard,deleteBoard } from "../../../Services/TaskBoardService/TaskBoardService";
+
 import Header from "../../shared/Header/Header";
 import Footer from "../../shared/Footer/Footer";
 import NotificationModel from "../../shared/NotificationModel/NotificationModel";
@@ -11,14 +11,62 @@ import ChooseLayout from "../../shared/ChooseLayout/ChooseLayout";
 
 
 const TaskBoard = () => {
+    let navigate = useNavigate();
+    let [innerData, setInnerData] = useState({
+        projectname : "",
+        tasktitle : "",
+        taskdescription : "",
+        duedate : "",
+        tags : "",
+        tasksprogress : ""
+    })
+    let [board, setBoard] = useState([])
+    let [Board_id, setBoard_id] = useState("")
     let [taskBoard, setTaskBoard] = useState("");
+    let [project_id, setProject_id] = useState("");
+    let [project_name, setProject_name] = useState("");
     let[boardNameArr,setBoardNameArr] = useState([]);
+
+    useEffect(()=> {
+        getBoard().then(result=> {
+            setBoard(result.data)
+        })
+    },[])
+    let obj =  {
+        name : taskBoard,
+        innerData : innerData
+    }
     let handleAdd = ()=> {
+        addBoard(obj).then(result=> {
+           setBoard(result.data)
+        })
 setBoardNameArr([...boardNameArr, taskBoard])
     }
+let addContent = (id) => {
+    setBoard_id(id);
+} 
+let addInnerData = () => {
+    updateBoard(Board_id, innerData).then(result=> {
+        setBoard(result.data)
+    })
+}
+
+let confDelete = (id, projectname) => {
+    setProject_id(id)
+    setProject_name(projectname)
+}
+let deleteCard = () => {
+deleteBoard(project_id).then(result=> {
+console.log(result.data)
+}).catch((error)=> {
+
+})
+}
+let detailPage = (id) => {
+navigate(`/admin/taskboard/details/${id}`)
+}
   return (
     <>
-
     {/* <!-- Begin page --> */}
     <div id="layout-wrapper">
 
@@ -102,818 +150,16 @@ setBoardNameArr([...boardNameArr, taskBoard])
                         {/* <!--end card-body--> */}
                     </div>
                     {/* <!--end card--> */}
-
+                    
                     <div className="tasks-board mb-3" id="kanbanboard">
-                        <div className="tasks-list">
+                        {
+                            board.map((x,i)=> {
+                                let progress = x.innerData[0].tasksprogress;
+                                return(
+                                    <div className="tasks-list" key={i}>
                             <div className="d-flex mb-3">
                                 <div className="flex-grow-1">
-                                    <h6 className="fs-14 text-uppercase fw-semibold mb-0">Unassigned <small className="badge bg-danger align-bottom ms-1 totaltask-badge">2</small></h6>
-                                </div>
-                                <div className="flex-shrink-0">
-                                    <div className="dropdown card-header-dropdown">
-                                        <a className="text-reset dropdown-btn" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <span className="fw-medium text-muted fs-13">Priority<i className="mdi mdi-chevron-down ms-1"></i></span>
-                                        </a>
-                                        <div className="dropdown-menu dropdown-menu-end">
-                                            <a className="dropdown-item" href="#">Priority</a>
-                                            <a className="dropdown-item" href="#">Date Added</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div data-simplebar className="tasks-wrapper px-3 mx-n3">
-                                <div id="unassigned-task" className="tasks">
-                                    <div className="card tasks-box">
-                                        <div className="card-body">
-                                            <div className="d-flex mb-2">
-                                                <h6 className="fs-16 mb-0 flex-grow-1 text-truncate task-title"><a href="apps-tasks-details.html" className="link-dark d-block">Profile Page
-                                                        Structure</a></h6>
-                                                <div className="dropdown">
-                                                    <a href="#;" className="text-muted" id="dropdownMenuLink1" data-bs-toggle="dropdown" aria-expanded="false"><i className="ri-more-fill"></i></a>
-                                                    <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink1">
-                                                        <li><a className="dropdown-item" href="apps-tasks-details.html"><i className="ri-eye-fill align-bottom me-2 text-muted"></i>
-                                                                View</a></li>
-                                                        <li><a className="dropdown-item" href="#"><i className="ri-edit-2-line align-bottom me-2 text-muted"></i>
-                                                                Edit</a></li>
-                                                        <li><a className="dropdown-item" data-bs-toggle="modal" href="#deleteRecordModal"><i className="ri-delete-bin-5-line align-bottom me-2 text-muted"></i>
-                                                                Delete</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <p className="text-muted">Profile Page means a web page accessible to the public
-                                                or to guests.</p>
-                                            <div className="mb-3">
-                                                <div className="d-flex mb-1">
-                                                    <div className="flex-grow-1">
-                                                        <h6 className="text-muted mb-0"><span className="text-secondary">15%</span> of 100%</h6>
-                                                    </div>
-                                                    <div className="flex-shrink-0">
-                                                        <span className="text-muted">03 Jan, 2022</span>
-                                                    </div>
-                                                </div>
-                                                <div className="progress rounded-3 progress-sm">
-                                                    <div className="progress-bar bg-danger" role="progressbar" style={{width: '15%'}} aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                            </div>
-                                            <div className="d-flex align-items-center">
-                                                <div className="flex-grow-1">
-                                                    <span className="badge badge-soft-primary">Admin</span>
-                                                </div>
-                                                <div className="flex-shrink-0">
-                                                    <div className="avatar-group">
-                                                        <a href="#" className="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Alexis">
-                                                            <img src="/assets/images/users/avatar-6.jpg" alt="" className="rounded-circle avatar-xxs" />
-                                                        </a>
-                                                        <a href="#" className="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Nancy">
-                                                            <img src="/assets/images/users/avatar-5.jpg" alt="" className="rounded-circle avatar-xxs" />
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="card-footer border-top-dashed">
-                                            <div className="d-flex">
-                                                <div className="flex-grow-1">
-                                                    <h6 className="text-muted mb-0">#VL2436</h6>
-                                                </div>
-                                                <div className="flex-shrink-0">
-                                                    <ul className="link-inline mb-0">
-                                                        <li className="list-inline-item">
-                                                            <a href="#" className="text-muted"><i className="ri-eye-line align-bottom"></i> 04</a>
-                                                        </li>
-                                                        <li className="list-inline-item">
-                                                            <a href="#" className="text-muted"><i className="ri-question-answer-line align-bottom"></i>
-                                                                19</a>
-                                                        </li>
-                                                        <li className="list-inline-item">
-                                                            <a href="#" className="text-muted"><i className="ri-attachment-2 align-bottom"></i> 02</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* <!--end card-body--> */}
-                                    </div>
-                                    {/* <!--end card--> */}
-                                    <div className="card tasks-box">
-                                        <div className="card-body">
-                                            <div className="d-flex mb-2">
-                                                <div className="flex-grow-1">
-                                                    <h6 className="fs-16 mb-0 text-truncate task-title"><a href="apps-tasks-details.html" className="link-dark d-block">Velzon -
-                                                            Admin Layout Design</a></h6>
-                                                </div>
-                                                <div className="flex-shrink-0">
-                                                    <a href="#;" className="text-muted" id="dropdownMenuLink12" data-bs-toggle="dropdown" aria-expanded="false"><i className="ri-more-fill"></i></a>
-                                                    <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink12">
-                                                        <li><a className="dropdown-item" href="apps-tasks-details.html"><i className="ri-eye-fill align-bottom me-2 text-muted"></i>
-                                                                View</a></li>
-                                                        <li><a className="dropdown-item" href="#"><i className="ri-edit-2-line align-bottom me-2 text-muted"></i>
-                                                                Edit</a></li>
-                                                        <li><a className="dropdown-item" data-bs-toggle="modal" href="#deleteRecordModal"><i className="ri-delete-bin-5-line align-bottom me-2 text-muted"></i>
-                                                                Delete</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <p className="text-muted">The dashboard is the front page of the Administration
-                                                UI.</p>
-                                            <div className="d-flex align-items-center">
-                                                <div className="flex-grow-1">
-                                                    <span className="badge badge-soft-primary">Layout</span>
-                                                    <span className="badge badge-soft-primary">Admin</span>
-                                                    <span className="badge badge-soft-primary">Dashboard</span>
-                                                </div>
-                                                <div className="flex-shrink-0">
-                                                    <div className="avatar-group">
-                                                        <a href="#" className="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Michael">
-                                                            <img src="/assets/images/users/avatar-7.jpg" alt="" className="rounded-circle avatar-xxs" />
-                                                        </a>
-                                                        <a href="#" className="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Alexis">
-                                                            <img src="/assets/images/users/avatar-6.jpg" alt="" className="rounded-circle avatar-xxs" />
-                                                        </a>
-                                                        <a href="#" className="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Anna">
-                                                            <img src="/assets/images/users/avatar-1.jpg" alt="" className="rounded-circle avatar-xxs" />
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* <!--end card-body--> */}
-                                        <div className="card-footer border-top-dashed">
-                                            <div className="d-flex">
-                                                <div className="flex-grow-1">
-                                                    <span className="text-muted"><i className="ri-time-line align-bottom"></i>
-                                                        07 Jan, 2022</span>
-                                                </div>
-                                                <div className="flex-shrink-0">
-                                                    <ul className="link-inline mb-0">
-                                                        <li className="list-inline-item">
-                                                            <a href="#" className="text-muted"><i className="ri-eye-line align-bottom"></i> 14</a>
-                                                        </li>
-                                                        <li className="list-inline-item">
-                                                            <a href="#" className="text-muted"><i className="ri-question-answer-line align-bottom"></i>
-                                                                32</a>
-                                                        </li>
-                                                        <li className="list-inline-item">
-                                                            <a href="#" className="text-muted"><i className="ri-attachment-2 align-bottom"></i> 05</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {/* <!--end card--> */}
-                                </div>
-                                {/* <!--end tasks--> */}
-                            </div>
-                            <div className="my-3">
-                                <button className="btn btn-soft-info w-100" data-bs-toggle="modal" data-bs-target="#creatertaskModal">Add More</button>
-                            </div>
-                        </div>
-                        {/* <!--end tasks-list--> */}
-                        <div className="tasks-list">
-                            <div className="d-flex mb-3">
-                                <div className="flex-grow-1">
-                                    <h6 className="fs-14 text-uppercase fw-semibold mb-0">To Do <small className="badge bg-secondary align-bottom ms-1 totaltask-badge">2</small></h6>
-                                </div>
-                                <div className="flex-shrink-0">
-                                    <div className="dropdown card-header-dropdown">
-                                        <a className="text-reset dropdown-btn" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <span className="fw-medium text-muted fs-13">Priority<i className="mdi mdi-chevron-down ms-1"></i></span>
-                                        </a>
-                                        <div className="dropdown-menu dropdown-menu-end">
-                                            <a className="dropdown-item" href="#">Priority</a>
-                                            <a className="dropdown-item" href="#">Date Added</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div data-simplebar className="tasks-wrapper px-3 mx-n3">
-                                <div id="todo-task" className="tasks">
-                                    <div className="card tasks-box">
-                                        <div className="card-body">
-                                            <div className="d-flex mb-2">
-                                                <div className="flex-grow-1">
-                                                    <h6 className="fs-16 mb-0 text-truncate task-title"><a href="apps-tasks-details.html" className="link-dark d-block">Admin
-                                                            Layout Design</a></h6>
-                                                </div>
-                                                <div className="flex-shrink-0">
-                                                    <a href="#;" className="text-muted" id="dropdownMenuLink3" data-bs-toggle="dropdown" aria-expanded="false"><i className="ri-more-fill"></i></a>
-                                                    <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink3">
-                                                        <li><a className="dropdown-item" href="apps-tasks-details.html"><i className="ri-eye-fill align-bottom me-2 text-muted"></i>
-                                                                View</a></li>
-                                                        <li><a className="dropdown-item" href="#"><i className="ri-edit-2-line align-bottom me-2 text-muted"></i>
-                                                                Edit</a></li>
-                                                        <li><a className="dropdown-item" data-bs-toggle="modal" href="#deleteRecordModal"><i className="ri-delete-bin-5-line align-bottom me-2 text-muted"></i>
-                                                                Delete</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <p className="text-muted">Landing page template with clean, minimal and modern
-                                                design.</p>
-                                            <div className="d-flex align-items-center">
-                                                <div className="flex-grow-1">
-                                                    <span className="badge badge-soft-primary">Design</span>
-                                                    <span className="badge badge-soft-primary">Website</span>
-                                                </div>
-                                                <div className="flex-shrink-0">
-                                                    <div className="avatar-group">
-                                                        <a href="#" className="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Tonya">
-                                                            <img src="/assets/images/users/avatar-10.jpg" alt="" className="rounded-circle avatar-xxs" />
-                                                        </a>
-                                                        <a href="#" className="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Frank">
-                                                            <img src="/assets/images/users/avatar-3.jpg" alt="" className="rounded-circle avatar-xxs" />
-                                                        </a>
-                                                        <a href="#" className="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Herbert">
-                                                            <img src="/assets/images/users/avatar-2.jpg" alt="" className="rounded-circle avatar-xxs" />
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* <!--end card-body--> */}
-                                        <div className="card-footer border-top-dashed">
-                                            <div className="d-flex">
-                                                <div className="flex-grow-1">
-                                                    <span className="text-muted"><i className="ri-time-line align-bottom"></i>
-                                                        07 Jan, 2022</span>
-                                                </div>
-                                                <div className="flex-shrink-0">
-                                                    <ul className="link-inline mb-0">
-                                                        <li className="list-inline-item">
-                                                            <a href="#" className="text-muted"><i className="ri-eye-line align-bottom"></i> 13</a>
-                                                        </li>
-                                                        <li className="list-inline-item">
-                                                            <a href="#" className="text-muted"><i className="ri-question-answer-line align-bottom"></i>
-                                                                52</a>
-                                                        </li>
-                                                        <li className="list-inline-item">
-                                                            <a href="#" className="text-muted"><i className="ri-attachment-2 align-bottom"></i> 17</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {/* <!--end card--> */}
-                                    <div className="card tasks-box">
-                                        <div className="card-body">
-                                            <div className="d-flex mb-2">
-                                                <div className="flex-grow-1">
-                                                    <h6 className="fs-16 mb-0 text-truncate task-title"><a href="apps-tasks-details.html" className="link-dark d-block">Marketing &
-                                                            Sales</a></h6>
-                                                </div>
-                                                <div className="flex-shrink-0">
-                                                    <a href="#;" className="text-muted" id="dropdownMenuLink4" data-bs-toggle="dropdown" aria-expanded="false"><i className="ri-more-fill"></i></a>
-                                                    <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink4">
-                                                        <li><a className="dropdown-item" href="apps-tasks-details.html"><i className="ri-eye-fill align-bottom me-2 text-muted"></i>
-                                                                View</a></li>
-                                                        <li><a className="dropdown-item" href="#"><i className="ri-edit-2-line align-bottom me-2 text-muted"></i>
-                                                                Edit</a></li>
-                                                        <li><a className="dropdown-item" data-bs-toggle="modal" href="#deleteRecordModal"><i className="ri-delete-bin-5-line align-bottom me-2 text-muted"></i>
-                                                                Delete</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <p className="text-muted">Sales and marketing are two business functions within
-                                                an organization.</p>
-                                            <div className="d-flex align-items-center">
-                                                <div className="flex-grow-1">
-                                                    <span className="badge badge-soft-primary">Marketing</span>
-                                                    <span className="badge badge-soft-primary">Business</span>
-                                                </div>
-                                                <div className="flex-shrink-0">
-                                                    <div className="avatar-group">
-                                                        <a href="#" className="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Donald">
-                                                            <img src="/assets/images/users/avatar-9.jpg" alt="" className="rounded-circle avatar-xxs" />
-                                                        </a>
-                                                        <a href="#" className="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Thomas">
-                                                            <img src="/assets/images/users/avatar-8.jpg" alt="" className="rounded-circle avatar-xxs" />
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* <!--end card-body--> */}
-                                        <div className="card-footer border-top-dashed">
-                                            <div className="d-flex">
-                                                <div className="flex-grow-1">
-                                                    <span className="text-muted"><i className="ri-time-line align-bottom"></i>
-                                                        27 Dec, 2021</span>
-                                                </div>
-                                                <div className="flex-shrink-0">
-                                                    <ul className="link-inline mb-0">
-                                                        <li className="list-inline-item">
-                                                            <a href="#" className="text-muted"><i className="ri-eye-line align-bottom"></i> 24</a>
-                                                        </li>
-                                                        <li className="list-inline-item">
-                                                            <a href="#" className="text-muted"><i className="ri-question-answer-line align-bottom"></i>
-                                                                10</a>
-                                                        </li>
-                                                        <li className="list-inline-item">
-                                                            <a href="#" className="text-muted"><i className="ri-attachment-2 align-bottom"></i> 10</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {/* <!--end card--> */}
-                                </div>
-                            </div>
-                            <div className="my-3">
-                                <button className="btn btn-soft-info w-100" data-bs-toggle="modal" data-bs-target="#creatertaskModal">Add More</button>
-                            </div>
-                        </div>
-                        {/* <!--end tasks-list--> */}
-                        <div className="tasks-list">
-                            <div className="d-flex mb-3">
-                                <div className="flex-grow-1">
-                                    <h6 className="fs-14 text-uppercase fw-semibold mb-0">Inprogress <small className="badge bg-warning align-bottom ms-1 totaltask-badge">2</small></h6>
-                                </div>
-                                <div className="flex-shrink-0">
-                                    <div className="dropdown card-header-dropdown">
-                                        <a className="text-reset dropdown-btn" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <span className="fw-medium text-muted fs-13">Priority<i className="mdi mdi-chevron-down ms-1"></i></span>
-                                        </a>
-                                        <div className="dropdown-menu dropdown-menu-end">
-                                            <a className="dropdown-item" href="#">Priority</a>
-                                            <a className="dropdown-item" href="#">Date Added</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div data-simplebar className="tasks-wrapper px-3 mx-n3">
-                                <div id="inprogress-task" className="tasks">
-                                    <div className="card tasks-box">
-                                        <div className="card-body">
-                                            <div className="d-flex mb-2">
-                                                <a href="#" className="text-muted fw-medium fs-14 flex-grow-1">#VL2457</a>
-                                                <div className="dropdown">
-                                                    <a href="#;" className="text-muted" id="dropdownMenuLink5" data-bs-toggle="dropdown" aria-expanded="false"><i className="ri-more-fill"></i></a>
-                                                    <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink5">
-                                                        <li><a className="dropdown-item" href="apps-tasks-details.html"><i className="ri-eye-fill align-bottom me-2 text-muted"></i>
-                                                                View</a></li>
-                                                        <li><a className="dropdown-item" href="#"><i className="ri-edit-2-line align-bottom me-2 text-muted"></i>
-                                                                Edit</a></li>
-                                                        <li><a className="dropdown-item" data-bs-toggle="modal" href="#deleteRecordModal"><i className="ri-delete-bin-5-line align-bottom me-2 text-muted"></i>
-                                                                Delete</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <h6 className="fs-16 text-truncate task-title"><a href="apps-tasks-details.html" className="link-dark d-block">Brand Logo Design</a></h6>
-                                            <p className="text-muted">BrandCrowd's brand logo maker allows you to generate
-                                                and customize stand-out brand logos in minutes.</p>
-                                            <div className="d-flex align-items-center">
-                                                <div className="flex-grow-1">
-                                                    <span className="badge badge-soft-primary">Logo</span>
-                                                    <span className="badge badge-soft-primary">Design</span>
-                                                    <span className="badge badge-soft-primary">UI/UX</span>
-                                                </div>
-                                                <div className="flex-shrink-0">
-                                                    <div className="avatar-group">
-                                                        <a href="#" className="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Nancy">
-                                                            <img src="/assets/images/users/avatar-5.jpg" alt="" className="rounded-circle avatar-xxs" />
-                                                        </a>
-                                                        <a href="#" className="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Michael">
-                                                            <img src="/assets/images/users/avatar-7.jpg" alt="" className="rounded-circle avatar-xxs" />
-                                                        </a>
-                                                        <a href="#" className="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Alexis">
-                                                            <img src="/assets/images/users/avatar-6.jpg" alt="" className="rounded-circle avatar-xxs" />
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="card-footer border-top-dashed">
-                                            <div className="d-flex">
-                                                <div className="flex-grow-1">
-                                                    <span className="text-muted"><i className="ri-time-line align-bottom"></i>
-                                                        22 Dec, 2021</span>
-                                                </div>
-                                                <div className="flex-shrink-0">
-                                                    <ul className="link-inline mb-0">
-                                                        <li className="list-inline-item">
-                                                            <a href="#" className="text-muted"><i className="ri-eye-line align-bottom"></i> 24</a>
-                                                        </li>
-                                                        <li className="list-inline-item">
-                                                            <a href="#" className="text-muted"><i className="ri-question-answer-line align-bottom"></i>
-                                                                10</a>
-                                                        </li>
-                                                        <li className="list-inline-item">
-                                                            <a href="#" className="text-muted"><i className="ri-attachment-2 align-bottom"></i> 10</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* <!--end card-body--> */}
-                                        <div className="progress progress-sm">
-                                            <div className="progress-bar bg-warning" role="progressbar" style={{width: '55%'}} aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                    </div>
-                                    {/* <!--end card--> */}
-                                    <div className="card tasks-box">
-                                        <div className="card-body">
-                                            <div className="d-flex mb-2">
-                                                <a href="#" className="text-muted fw-medium fs-14 flex-grow-1">#VL2743</a>
-                                                <div className="dropdown">
-                                                    <a href="#;" className="text-muted" id="dropdownMenuLink6" data-bs-toggle="dropdown" aria-expanded="false"><i className="ri-more-fill"></i></a>
-                                                    <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink6">
-                                                        <li><a className="dropdown-item" href="apps-tasks-details.html"><i className="ri-eye-fill align-bottom me-2 text-muted"></i>
-                                                                View</a></li>
-                                                        <li><a className="dropdown-item" href="#"><i className="ri-edit-2-line align-bottom me-2 text-muted"></i>
-                                                                Edit</a></li>
-                                                        <li><a className="dropdown-item" data-bs-toggle="modal" href="#deleteRecordModal"><i className="ri-delete-bin-5-line align-bottom me-2 text-muted"></i>
-                                                                Delete</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <h6 className="fs-16 text-truncate task-title"><a href="apps-tasks-details.html" className="link-dark d-block">Change Old App Icon</a></h6>
-                                            <p className="text-muted">Change app icons on Android: How do you change the
-                                                look of your apps.</p>
-                                            <div className="d-flex align-items-center">
-                                                <div className="flex-grow-1">
-                                                    <span className="badge badge-soft-primary">Design</span>
-                                                    <span className="badge badge-soft-primary">Website</span>
-                                                </div>
-                                                <div className="flex-shrink-0">
-                                                    <div className="avatar-group">
-                                                        <a href="#" className="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Tonya">
-                                                            <img src="/assets/images/users/avatar-10.jpg" alt="" className="rounded-circle avatar-xxs" />
-                                                        </a>
-                                                        <a href="#" className="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Donald">
-                                                            <img src="/assets/images/users/avatar-9.jpg" alt="" className="rounded-circle avatar-xxs" />
-                                                        </a>
-                                                        <a href="#" className="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Nancy">
-                                                            <img src="/assets/images/users/avatar-5.jpg" alt="" className="rounded-circle avatar-xxs" />
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="card-footer border-top-dashed">
-                                            <div className="d-flex">
-                                                <div className="flex-grow-1">
-                                                    <span className="text-muted"><i className="ri-time-line align-bottom"></i>
-                                                        24 Oct, 2021</span>
-                                                </div>
-                                                <div className="flex-shrink-0">
-                                                    <ul className="link-inline mb-0">
-                                                        <li className="list-inline-item">
-                                                            <a href="#" className="text-muted"><i className="ri-eye-line align-bottom"></i> 64</a>
-                                                        </li>
-                                                        <li className="list-inline-item">
-                                                            <a href="#" className="text-muted"><i className="ri-question-answer-line align-bottom"></i>
-                                                                35</a>
-                                                        </li>
-                                                        <li className="list-inline-item">
-                                                            <a href="#" className="text-muted"><i className="ri-attachment-2 align-bottom"></i> 23</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* <!--end card-body--> */}
-                                        <div className="progress progress-sm">
-                                            <div className="progress-bar bg-primary" role="progressbar" style={{width: '0%'}}aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                    </div>
-                                    {/* <!--end card--> */}
-                                </div>
-                            </div>
-                            <div className="my-3">
-                                <button className="btn btn-soft-info w-100" data-bs-toggle="modal" data-bs-target="#creatertaskModal">Add More</button>
-                            </div>
-                        </div>
-                        {/* <!--end tasks-list--> */}
-                        <div className="tasks-list">
-                            <div className="d-flex mb-3">
-                                <div className="flex-grow-1">
-                                    <h6 className="fs-14 text-uppercase fw-semibold mb-0">In Reviews <small className="badge bg-info align-bottom ms-1 totaltask-badge">3</small></h6>
-                                </div>
-                                <div className="flex-shrink-0">
-                                    <div className="dropdown card-header-dropdown">
-                                        <a className="text-reset dropdown-btn" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <span className="fw-medium text-muted fs-13">Priority<i className="mdi mdi-chevron-down ms-1"></i></span>
-                                        </a>
-                                        <div className="dropdown-menu dropdown-menu-end">
-                                            <a className="dropdown-item" href="#">Priority</a>
-                                            <a className="dropdown-item" href="#">Date Added</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div data-simplebar className="tasks-wrapper px-3 mx-n3">
-                                <div id="reviews-task" className="tasks">
-                                    <div className="card tasks-box">
-                                        <div className="card-body">
-                                            <div className="d-flex mb-2">
-                                                <a href="#" className="text-muted fw-medium fs-14 flex-grow-1">#VL2453</a>
-                                                <div className="dropdown">
-                                                    <a href="#;" className="text-muted" id="dropdownMenuLink7" data-bs-toggle="dropdown" aria-expanded="false"><i className="ri-more-fill"></i></a>
-                                                    <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink7">
-                                                        <li><a className="dropdown-item" href="apps-tasks-details.html"><i className="ri-eye-fill align-bottom me-2 text-muted"></i>
-                                                                View</a></li>
-                                                        <li><a className="dropdown-item" href="#"><i className="ri-edit-2-line align-bottom me-2 text-muted"></i>
-                                                                Edit</a></li>
-                                                        <li><a className="dropdown-item" data-bs-toggle="modal" href="#deleteRecordModal"><i className="ri-delete-bin-5-line align-bottom me-2 text-muted"></i>
-                                                                Delete</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <h6 className="fs-16 text-truncate task-title"><a href="apps-tasks-details.html" className="link-dark d-block">Create Product Animations</a></h6>
-                                            <div className="tasks-img rounded" style={{backgroundImage: 'url(/assets/images/small/img-7.jpg)'}}></div>
-                                            <div className="d-flex align-items-center">
-                                                <div className="flex-grow-1">
-                                                    <span className="badge badge-soft-primary">Ecommerce</span>
-                                                </div>
-                                                <div className="flex-shrink-0">
-                                                    <div className="avatar-group">
-                                                        <a href="#" className="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Anna">
-                                                            <img src="/assets/images/users/avatar-1.jpg" alt="" className="rounded-circle avatar-xxs" />
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="card-footer border-top-dashed">
-                                            <div className="d-flex">
-                                                <div className="flex-grow-1">
-                                                    <span className="text-muted"><i className="ri-time-line align-bottom"></i>
-                                                        16 Nov, 2021</span>
-                                                </div>
-                                                <div className="flex-shrink-0">
-                                                    <ul className="link-inline mb-0">
-                                                        <li className="list-inline-item">
-                                                            <a href="#" className="text-muted"><i className="ri-eye-line align-bottom"></i> 08</a>
-                                                        </li>
-                                                        <li className="list-inline-item">
-                                                            <a href="#" className="text-muted"><i className="ri-question-answer-line align-bottom"></i>
-                                                                54</a>
-                                                        </li>
-                                                        <li className="list-inline-item">
-                                                            <a href="#" className="text-muted"><i className="ri-attachment-2 align-bottom"></i> 28</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* <!--end card-body--> */}
-                                        <div className="progress progress-sm">
-                                            <div className="progress-bar bg-success" role="progressbar" style={{width: '100%'}} aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                    </div>
-                                    {/* <!--end card--> */}
-                                    <div className="card tasks-box">
-                                        <div className="card-body">
-                                            <div className="d-flex mb-2">
-                                                <a href="#" className="text-muted fw-medium fs-14 flex-grow-1">#VL2340</a>
-                                                <div className="dropdown">
-                                                    <a href="#;" className="text-muted" id="dropdownMenuLink8" data-bs-toggle="dropdown" aria-expanded="false"><i className="ri-more-fill"></i></a>
-                                                    <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink8">
-                                                        <li><a className="dropdown-item" href="apps-tasks-details.html"><i className="ri-eye-fill align-bottom me-2 text-muted"></i>
-                                                                View</a></li>
-                                                        <li><a className="dropdown-item" href="#"><i className="ri-edit-2-line align-bottom me-2 text-muted"></i>
-                                                                Edit</a></li>
-                                                        <li><a className="dropdown-item" data-bs-toggle="modal" href="#deleteRecordModal"><i className="ri-delete-bin-5-line align-bottom me-2 text-muted"></i>
-                                                                Delete</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <h6 className="fs-16 text-truncate task-title"><a href="apps-tasks-details.html" className="link-dark d-block">Product Features Analysis</a></h6>
-                                            <p className="text-muted">An essential part of strategic planning is running a
-                                                product feature analysis.</p>
-                                            <div className="d-flex align-items-center">
-                                                <div className="flex-grow-1">
-                                                    <span className="badge badge-soft-primary">Product</span>
-                                                    <span className="badge badge-soft-primary">Analysis</span>
-                                                </div>
-                                                <div className="flex-shrink-0">
-                                                    <div className="avatar-group">
-                                                        <a href="#" className="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Nancy">
-                                                            <img src="/assets/images/users/avatar-5.jpg" alt="" className="rounded-circle avatar-xxs" />
-                                                        </a>
-                                                        <a href="#" className="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Alexis">
-                                                            <img src="/assets/images/users/avatar-6.jpg" alt="" className="rounded-circle avatar-xxs" />
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* <!--end card-body--> */}
-                                        <div className="card-footer border-top-dashed">
-                                            <div className="d-flex">
-                                                <div className="flex-grow-1">
-                                                    <span className="text-muted"><i className="ri-time-line align-bottom"></i>
-                                                        05 Jan, 2022</span>
-                                                </div>
-                                                <div className="flex-shrink-0">
-                                                    <ul className="link-inline mb-0">
-                                                        <li className="list-inline-item">
-                                                            <a href="#" className="text-muted"><i className="ri-eye-line align-bottom"></i> 14</a>
-                                                        </li>
-                                                        <li className="list-inline-item">
-                                                            <a href="#" className="text-muted"><i className="ri-question-answer-line align-bottom"></i>
-                                                                31</a>
-                                                        </li>
-                                                        <li className="list-inline-item">
-                                                            <a href="#" className="text-muted"><i className="ri-attachment-2 align-bottom"></i> 07</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* <!--end card-body--> */}
-                                        <div className="progress progress-sm">
-                                            <div className="progress-bar bg-warning" role="progressbar" style={{width: '67%'}} aria-valuenow="67" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                    </div>
-                                    {/* <!--end card--> */}
-                                    <div className="card tasks-box">
-                                        <div className="card-body">
-                                            <div className="d-flex mb-2">
-                                                <a href="#" className="text-muted fw-medium fs-14 flex-grow-1">#VL2462</a>
-                                                <div className="dropdown">
-                                                    <a href="#;" className="text-muted" id="dropdownMenuLink9" data-bs-toggle="dropdown" aria-expanded="false"><i className="ri-more-fill"></i></a>
-                                                    <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink9">
-                                                        <li><a className="dropdown-item" href="apps-tasks-details.html"><i className="ri-eye-fill align-bottom me-2 text-muted"></i>
-                                                                View</a></li>
-                                                        <li><a className="dropdown-item" href="#"><i className="ri-edit-2-line align-bottom me-2 text-muted"></i>
-                                                                Edit</a></li>
-                                                        <li><a className="dropdown-item" data-bs-toggle="modal" href="#deleteRecordModal"><i className="ri-delete-bin-5-line align-bottom me-2 text-muted"></i>
-                                                                Delete</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <h6 className="fs-16 text-truncate task-title"><a href="apps-tasks-details.html" className="link-dark d-block">Create a Graph of Sketch</a></h6>
-                                            <p className="text-muted">To make a pie chart with equal slices create a perfect
-                                                circle by selecting an Oval Tool.</p>
-                                            <div className="d-flex align-items-center">
-                                                <div className="flex-grow-1">
-                                                    <span className="badge badge-soft-primary">Sketch</span>
-                                                    <span className="badge badge-soft-primary">Marketing</span>
-                                                    <span className="badge badge-soft-primary">Design</span>
-                                                </div>
-                                                <div className="flex-shrink-0">
-                                                    <div className="avatar-group">
-                                                        <a href="#" className="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Alexis">
-                                                            <img src="/assets/images/users/avatar-4.jpg" alt="" className="rounded-circle avatar-xxs" />
-                                                        </a>
-                                                        <a href="#" className="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Thomas">
-                                                            <img src="/assets/images/users/avatar-8.jpg" alt="" className="rounded-circle avatar-xxs" />
-                                                        </a>
-                                                        <a href="#" className="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Herbert">
-                                                            <img src="/assets/images/users/avatar-2.jpg" alt="" className="rounded-circle avatar-xxs" />
-                                                        </a>
-                                                        <a href="#" className="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Anna">
-                                                            <img src="/assets/images/users/avatar-1.jpg" alt="" className="rounded-circle avatar-xxs" />
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="card-footer border-top-dashed">
-                                            <div className="d-flex">
-                                                <div className="flex-grow-1">
-                                                    <span className="text-muted"><i className="ri-time-line align-bottom"></i>
-                                                        05 Nov, 2021</span>
-                                                </div>
-                                                <div className="flex-shrink-0">
-                                                    <ul className="link-inline mb-0">
-                                                        <li className="list-inline-item">
-                                                            <a href="#" className="text-muted"><i className="ri-eye-line align-bottom"></i> 12</a>
-                                                        </li>
-                                                        <li className="list-inline-item">
-                                                            <a href="#" className="text-muted"><i className="ri-question-answer-line align-bottom"></i>
-                                                                74</a>
-                                                        </li>
-                                                        <li className="list-inline-item">
-                                                            <a href="#" className="text-muted"><i className="ri-attachment-2 align-bottom"></i> 37</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* <!--end card-body--> */}
-                                        <div className="progress progress-sm">
-                                            <div className="progress-bar bg-primary" role="progressbar" style={{width: '0%'}}aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                    </div>
-                                    {/* <!--end card--> */}
-                                </div>
-                            </div>
-                            <div className="my-3">
-                                <button className="btn btn-soft-info w-100" data-bs-toggle="modal" data-bs-target="#creatertaskModal">Add More</button>
-                            </div>
-                        </div>
-                        {/* <!--end tasks-list--> */}
-                        <div className="tasks-list">
-                            <div className="d-flex mb-3">
-                                <div className="flex-grow-1">
-                                    <h6 className="fs-14 text-uppercase fw-semibold mb-0">Completed <small className="badge bg-success align-bottom ms-1 totaltask-badge">1</small></h6>
-                                </div>
-                                <div className="flex-shrink-0">
-                                    <div className="dropdown card-header-dropdown">
-                                        <a className="text-reset dropdown-btn" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <span className="fw-medium text-muted fs-13">Priority<i className="mdi mdi-chevron-down ms-1"></i></span>
-                                        </a>
-                                        <div className="dropdown-menu dropdown-menu-end">
-                                            <a className="dropdown-item" href="#">Priority</a>
-                                            <a className="dropdown-item" href="#">Date Added</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div data-simplebar className="tasks-wrapper px-3 mx-n3">
-                                <div id="completed-task" className="tasks">
-                                    <div className="card tasks-box">
-                                        <div className="card-body">
-                                            <div className="d-flex mb-2">
-                                                <h6 className="fs-16 mb-0 flex-grow-1 text-truncate task-title"><a href="apps-tasks-details.html" className="link-dark d-block">Create a Blog
-                                                        Template UI</a></h6>
-                                                <div className="dropdown">
-                                                    <a href="#;" className="text-muted" id="dropdownMenuLink10" data-bs-toggle="dropdown" aria-expanded="false"><i className="ri-more-fill"></i></a>
-                                                    <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink10">
-                                                        <li><a className="dropdown-item" href="apps-tasks-details.html"><i className="ri-eye-fill align-bottom me-2 text-muted"></i>
-                                                                View</a></li>
-                                                        <li><a className="dropdown-item" href="#"><i className="ri-edit-2-line align-bottom me-2 text-muted"></i>
-                                                                Edit</a></li>
-                                                        <li><a className="dropdown-item" data-bs-toggle="modal" href="#deleteRecordModal"><i className="ri-delete-bin-5-line align-bottom me-2 text-muted"></i>
-                                                                Delete</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <p className="text-muted">Landing page template with clean, minimal and modern
-                                                design.</p>
-                                            <div className="mb-3">
-                                                <div className="d-flex mb-1">
-                                                    <div className="flex-grow-1">
-                                                        <h6 className="text-muted mb-0"><span className="text-info">35%</span>
-                                                            of 100%</h6>
-                                                    </div>
-                                                    <div className="flex-shrink-0">
-                                                        <span className="text-muted fw-medium">3 Day</span>
-                                                    </div>
-                                                </div>
-                                                <div className="progress rounded-3 progress-sm">
-                                                    <div className="progress-bar bg-danger" role="progressbar" style={{width: '35%'}} aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                            </div>
-                                            <div className="d-flex align-items-center">
-                                                <div className="flex-grow-1">
-                                                    <span className="badge badge-soft-primary">Design</span>
-                                                    <span className="badge badge-soft-primary">Website</span>
-                                                </div>
-                                                <div className="flex-shrink-0">
-                                                    <div className="avatar-group">
-                                                        <a href="#" className="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Nancy">
-                                                            <img src="/assets/images/users/avatar-8.jpg" alt="" className="rounded-circle avatar-xxs" />
-                                                        </a>
-                                                        <a href="#" className="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Frank">
-                                                            <img src="/assets/images/users/avatar-7.jpg" alt="" className="rounded-circle avatar-xxs" />
-                                                        </a>
-                                                        <a href="#" className="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Tonya">
-                                                            <img src="/assets/images/users/avatar-6.jpg" alt="" className="rounded-circle avatar-xxs" />
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="card-footer border-top-dashed">
-                                            <div className="d-flex">
-                                                <div className="flex-grow-1">
-                                                    <h6 className="text-muted mb-0">#VL2451</h6>
-                                                </div>
-                                                <div className="flex-shrink-0">
-                                                    <ul className="link-inline mb-0">
-                                                        <li className="list-inline-item">
-                                                            <a href="#" className="text-muted"><i className="ri-eye-line align-bottom"></i> 24</a>
-                                                        </li>
-                                                        <li className="list-inline-item">
-                                                            <a href="#" className="text-muted"><i className="ri-question-answer-line align-bottom"></i>
-                                                                10</a>
-                                                        </li>
-                                                        <li className="list-inline-item">
-                                                            <a href="#" className="text-muted"><i className="ri-attachment-2 align-bottom"></i> 10</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* <!--end card-body--> */}
-                                    </div>
-                                    {/* <!--end card--> */}
-                                </div>
-                            </div>
-                            <div className="my-3">
-                                <button className="btn btn-soft-info w-100" data-bs-toggle="modal" data-bs-target="#creatertaskModal">Add More</button>
-                            </div>
-                        </div>
-                        {/* <!--end tasks-list--> */}
-                        <div className="tasks-list">
-                            <div className="d-flex mb-3">
-                                <div className="flex-grow-1">
-                                    <h6 className="fs-14 text-uppercase fw-semibold mb-0">new <small className="badge bg-success align-bottom ms-1 totaltask-badge">1</small></h6>
+                                    <h6 className="fs-14 text-uppercase fw-semibold mb-0"> {x.name} <small className="badge bg-success align-bottom ms-1 totaltask-badge">1</small></h6>
                                 </div>
                                 <div className="flex-shrink-0">
                                     <div className="dropdown card-header-dropdown">
@@ -936,21 +182,21 @@ setBoardNameArr([...boardNameArr, taskBoard])
                                                 <div className="dropdown">
                                                     <a href="#;" className="text-muted" id="dropdownMenuLink2" data-bs-toggle="dropdown" aria-expanded="false"><i className="ri-more-fill"></i></a>
                                                     <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink2">
-                                                        <li><a className="dropdown-item" href="apps-tasks-details.html"><i className="ri-eye-fill align-bottom me-2 text-muted"></i>
+                                                        <li><a className="dropdown-item" to="/admin/taskboard/details" onClick={()=>detailPage(x._id)}><i className="ri-eye-fill align-bottom me-2 text-muted"></i>
                                                                 View</a></li>
                                                         <li><a className="dropdown-item" href="#"><i className="ri-edit-2-line align-bottom me-2 text-muted"></i>
                                                                 Edit</a></li>
-                                                        <li><a className="dropdown-item" data-bs-toggle="modal" href="#deleteRecordModal"><i className="ri-delete-bin-5-line align-bottom me-2 text-muted"></i>
+                                                        <li><a className="dropdown-item" data-bs-toggle="modal" href="#deleteRecordModal" onClick={()=> confDelete(x._id,x.name)}><i className="ri-delete-bin-5-line align-bottom me-2 text-muted"></i>
                                                                 Delete</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
-                                            <h6 className="fs-16 text-truncate task-title"><a href="apps-tasks-details.html" className="link-dark d-block">Banner Design for FB & Twitter</a></h6>
+                                            <h6 className="fs-16 text-truncate task-title"><a href="apps-tasks-details.html" className="link-dark d-block">{x.innerData[0].tasktitle}</a></h6>
+                                            <p className="text-muted">{x.innerData[0].taskdescription}</p>
                                             <div className="tasks-img rounded" style={{backgroundImage: 'url(/assets/images/small/img-4.jpg)'}}></div>
                                             <div className="d-flex align-items-center">
                                                 <div className="flex-grow-1">
-                                                    <span className="badge badge-soft-primary">UI/UX</span>
-                                                    <span className="badge badge-soft-primary">Graphic</span>
+                                                    <span className="badge badge-soft-primary">{x.innerData[0].tags}</span>
                                                 </div>
                                                 <div className="flex-shrink-0">
                                                     <div className="avatar-group">
@@ -967,8 +213,8 @@ setBoardNameArr([...boardNameArr, taskBoard])
                                         <div className="card-footer border-top-dashed">
                                             <div className="d-flex">
                                                 <div className="flex-grow-1">
-                                                    <span className="text-muted"><i className="ri-time-line align-bottom"></i>
-                                                        07 Jan, 2022</span>
+                                                    <span className="text-muted"><i className="ri-time-line align-bottom me-1"></i>
+                                                    {x.innerData[0].duedate}</span>
                                                 </div>
                                                 <div className="flex-shrink-0">
                                                     <ul className="link-inline mb-0">
@@ -988,52 +234,19 @@ setBoardNameArr([...boardNameArr, taskBoard])
                                         </div>
                                         {/* <!--end card-body--> */}
                                         <div className="progress progress-sm">
-                                            <div className="progress-bar bg-warning" role="progressbar" style={{width: '55%'}} aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                                            <div className="progress-bar bg-success" style={{width: progress + "%" }} aria-valuenow="3" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                     </div>
                                     {/* <!--end card--> */}
                                 </div>
                             </div>
                             <div className="my-3">
-                                <button className="btn btn-soft-info w-100" data-bs-toggle="modal" data-bs-target="#creatertaskModal">Add More</button>
-                            </div>
-                        </div>
-                        {/* <!--end tasks-list--> */}
-                        {
-                            boardNameArr.map((x,i)=> {
-                                return(
-                                    <div className="tasks-list" key={i}>
-                            <div className="d-flex mb-3">
-                                <div className="flex-grow-1">
-                                    <h6 className="fs-14 text-uppercase fw-semibold mb-0">{x} <small className="badge bg-success align-bottom ms-1 totaltask-badge">1</small></h6>
-                                </div>
-                                <div className="flex-shrink-0">
-                                    <div className="dropdown card-header-dropdown">
-                                        <a className="text-reset dropdown-btn" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <span className="fw-medium text-muted fs-13">Priority<i className="mdi mdi-chevron-down ms-1"></i></span>
-                                        </a>
-                                        <div className="dropdown-menu dropdown-menu-end">
-                                            <a className="dropdown-item" href="#">Priority</a>
-                                            <a className="dropdown-item" href="#">Date Added</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div data-simplebar className="tasks-wrapper px-3 mx-n3">
-                                <div id="new-task" className="tasks">
-                                    <div className="card tasks-box">
-                                    </div>
-                                    {/* <!--end card--> */}
-                                </div>
-                            </div>
-                            <div className="my-3">
-                                <button className="btn btn-soft-info w-100" data-bs-toggle="modal" data-bs-target="#creatertaskModal">Add More</button>
+                                <button className="btn btn-soft-info w-100" data-bs-toggle="modal" data-bs-target="#creatertaskModal" onClick={()=> addContent(x._id)}>Add More</button>
                             </div>
                         </div>
                                 )
                             })
                         }
-
                         {/* <!--end tasks-list--> */}
                     </div>
                     {/* <!--end task-board--> */}
@@ -1147,18 +360,24 @@ setBoardNameArr([...boardNameArr, taskBoard])
                                         <div className="row g-3">
                                             <div className="col-lg-12">
                                                 <label htmlFor="projectName" className="form-label">Project Name</label>
-                                                <input type="text" className="form-control" id="projectName" placeholder="Enter project name" />
+                                                <input type="text" className="form-control" id="projectName" placeholder="Enter project name" onChange={(e)=> setInnerData((data)=> {
+                                                return {...data , projectname : e.target.value}
+                                            })} />
                                             </div>
                                             {/* <!--end col--> */}
                                             <div className="col-lg-12">
                                                 <label htmlFor="sub-tasks" className="form-label">Task Title</label>
-                                                <input type="text" className="form-control" id="sub-tasks" placeholder="Task title" />
+                                                <input type="text" className="form-control" id="sub-tasks" placeholder="Task title" onChange={(e)=> setInnerData((data)=> {
+                                                return {...data , tasktitle : e.target.value}
+                                            })} />
                                             </div>
                                             {/* <!--end col--> */}
                                             <div className="col-lg-12">
                                                 <label htmlFor="task-description" className="form-label">Task
                                                     Description</label>
-                                                <textarea className="form-control" id="task-description" rows="3" placeholder="Task description"></textarea>
+                                                <textarea className="form-control" id="task-description" rows="3" placeholder="Task description" onChange={(e)=> setInnerData((data)=> {
+                                                return {...data , taskdescription : e.target.value}
+                                            })}></textarea>
                                             </div>
                                             {/* <!--end col--> */}
                                             <div className="col-lg-12">
@@ -1172,7 +391,7 @@ setBoardNameArr([...boardNameArr, taskBoard])
                                                     <ul className="list-unstyled vstack gap-2 mb-0">
                                                         <li>
                                                             <div className="form-check d-flex align-items-center">
-                                                                <input className="form-check-input me-3" type="checkbox" value="" id="anna-adame" />
+                                                                <input className="form-check-input me-3" type="checkbox" value="anna-adame" id="anna-adame" />
                                                                 <label className="form-check-label d-flex align-items-center" htmlFor="anna-adame">
                                                                     <span className="flex-shrink-0">
                                                                         <img src="/assets/images/users/avatar-1.jpg" alt="" className="avatar-xxs rounded-circle" />
@@ -1185,7 +404,7 @@ setBoardNameArr([...boardNameArr, taskBoard])
                                                         </li>
                                                         <li>
                                                             <div className="form-check d-flex align-items-center">
-                                                                <input className="form-check-input me-3" type="checkbox" value="" id="frank-hook" />
+                                                                <input className="form-check-input me-3" type="checkbox" value="frank-hook" id="frank-hook" />
                                                                 <label className="form-check-label d-flex align-items-center" htmlFor="frank-hook">
                                                                     <span className="flex-shrink-0">
                                                                         <img src="/assets/images/users/avatar-3.jpg" alt="" className="avatar-xxs rounded-circle" />
@@ -1198,7 +417,7 @@ setBoardNameArr([...boardNameArr, taskBoard])
                                                         </li>
                                                         <li>
                                                             <div className="form-check d-flex align-items-center">
-                                                                <input className="form-check-input me-3" type="checkbox" value="" id="alexis-clarke" />
+                                                                <input className="form-check-input me-3" type="checkbox" value="alexis-clarke" id="alexis-clarke" />
                                                                 <label className="form-check-label d-flex align-items-center" htmlFor="alexis-clarke">
                                                                     <span className="flex-shrink-0">
                                                                         <img src="/assets/images/users/avatar-6.jpg" alt="" className="avatar-xxs rounded-circle" />
@@ -1211,7 +430,7 @@ setBoardNameArr([...boardNameArr, taskBoard])
                                                         </li>
                                                         <li>
                                                             <div className="form-check d-flex align-items-center">
-                                                                <input className="form-check-input me-3" type="checkbox" value="" id="herbert-stokes" />
+                                                                <input className="form-check-input me-3" type="checkbox" value="herbert-stokes" id="herbert-stokes" />
                                                                 <label className="form-check-label d-flex align-items-center" htmlFor="herbert-stokes">
                                                                     <span className="flex-shrink-0">
                                                                         <img src="/assets/images/users/avatar-2.jpg" alt="" className="avatar-xxs rounded-circle" />
@@ -1224,7 +443,7 @@ setBoardNameArr([...boardNameArr, taskBoard])
                                                         </li>
                                                         <li>
                                                             <div className="form-check d-flex align-items-center">
-                                                                <input className="form-check-input me-3" type="checkbox" value="" id="michael-morris" />
+                                                                <input className="form-check-input me-3" type="checkbox" value="michael-morris" id="michael-morris" />
                                                                 <label className="form-check-label d-flex align-items-center" htmlFor="michael-morris">
                                                                     <span className="flex-shrink-0">
                                                                         <img src="/assets/images/users/avatar-7.jpg" alt="" className="avatar-xxs rounded-circle" />
@@ -1237,7 +456,7 @@ setBoardNameArr([...boardNameArr, taskBoard])
                                                         </li>
                                                         <li>
                                                             <div className="form-check d-flex align-items-center">
-                                                                <input className="form-check-input me-3" type="checkbox" value="" id="nancy-martino" />
+                                                                <input className="form-check-input me-3" type="checkbox" value="nancy-martino" id="nancy-martino" />
                                                                 <label className="form-check-label d-flex align-items-center" htmlFor="nancy-martino">
                                                                     <span className="flex-shrink-0">
                                                                         <img src="/assets/images/users/avatar-5.jpg" alt="" className="avatar-xxs rounded-circle" />
@@ -1250,7 +469,7 @@ setBoardNameArr([...boardNameArr, taskBoard])
                                                         </li>
                                                         <li>
                                                             <div className="form-check d-flex align-items-center">
-                                                                <input className="form-check-input me-3" type="checkbox" value="" id="thomas-taylor" />
+                                                                <input className="form-check-input me-3" type="checkbox" value="thomas-taylor" id="thomas-taylor" />
                                                                 <label className="form-check-label d-flex align-items-center" htmlFor="thomas-taylor">
                                                                     <span className="flex-shrink-0">
                                                                         <img src="/assets/images/users/avatar-8.jpg" alt="" className="avatar-xxs rounded-circle" />
@@ -1263,7 +482,7 @@ setBoardNameArr([...boardNameArr, taskBoard])
                                                         </li>
                                                         <li>
                                                             <div className="form-check d-flex align-items-center">
-                                                                <input className="form-check-input me-3" type="checkbox" value="" id="tonya-noble" />
+                                                                <input className="form-check-input me-3" type="checkbox" value="tonya-noble" id="tonya-noble" />
                                                                 <label className="form-check-label d-flex align-items-center" htmlFor="tonya-noble">
                                                                     <span className="flex-shrink-0">
                                                                         <img src="/assets/images/users/avatar-10.jpg" alt="" className="avatar-xxs rounded-circle" />
@@ -1280,23 +499,29 @@ setBoardNameArr([...boardNameArr, taskBoard])
                                             {/* <!--end col--> */}
                                             <div className="col-lg-4">
                                                 <label htmlFor="due-date" className="form-label">Due Date</label>
-                                                <input type="text" className="form-control" id="due-date" data-provider="flatpickr" placeholder="Select date" />
+                                                <input type="text" className="form-control" id="due-date" data-provider="flatpickr" placeholder="Select date" onChange={(e)=> setInnerData((data)=> {
+                                                return {...data , duedate : e.target.value}
+                                            })}  />
                                             </div>
                                             {/* <!--end col--> */}
                                             <div className="col-lg-4">
                                                 <label htmlFor="categories" className="form-label">Tags</label>
-                                                <input type="text" className="form-control" id="categories" placeholder="Enter tag" />
+                                                <input type="text" className="form-control" id="categories" placeholder="Enter tag" onChange={(e)=> setInnerData((data)=> {
+                                                return {...data , tags : e.target.value}
+                                            })} />
                                             </div>
                                             {/* <!--end col--> */}
                                             <div className="col-lg-4">
                                                 <label htmlFor="tasks-progress" className="form-label">Tasks Progress</label>
-                                                <input type="text" className="form-control" maxLength="3" id="tasks-progress" placeholder="Enter progress" /> 
+                                                <input type="text" className="form-control" maxLength="3" id="tasks-progress" placeholder="Enter progress" onChange={(e)=> setInnerData((data)=> {
+                                                return {...data , tasksprogress : e.target.value}
+                                            })} /> 
                                             </div>
                                             {/* <!--end col--> */}
                                             <div className="mt-4">
                                                 <div className="hstack gap-2 justify-content-end">
                                                     <button type="button" className="btn btn-light" data-bs-dismiss="modal">Close</button>
-                                                    <button type="button" className="btn btn-success">Add Task</button>
+                                                    <a style={{cursor : "pointer"}} className="btn btn-success" onClick={addInnerData}>Add Task</a>
                                                 </div>
                                             </div>
                                             {/* <!--end col--> */}
@@ -1320,15 +545,15 @@ setBoardNameArr([...boardNameArr, taskBoard])
                                         <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json" trigger="loop" colors="primary:#f7b84b,secondary:#f06548" style={{width: '100px',height:'100px'}}>
                                         </lord-icon>
                                         <div className="mt-4 pt-2 fs-15 mx-4 mx-sm-5">
-                                            <h4>Are you sure ?</h4>
-                                            <p className="text-muted mx-4 mb-0">Are you sure you want to remove this tasks ?
+                                            <h4>Are you sure to remove {project_name} ?</h4>
+                                            <p className="text-muted mx-4 mb-0">Are you sure you want to remove this task ?
                                             </p>
                                         </div>
                                     </div>
                                     <div className="d-flex gap-2 justify-content-center mt-4 mb-2">
                                         <button type="button" className="btn w-sm btn-light" data-bs-dismiss="modal">Close</button>
-                                        <button type="button" className="btn w-sm btn-danger" id="delete-record">Yes, Delete
-                                            It!</button>
+                                        <a style={{cursor : "pointer"}} className="btn w-sm btn-danger" id="delete-record" onClick={deleteCard}>Yes, Delete
+                                            It!</a>
                                     </div>
                                 </div>
                             </div>

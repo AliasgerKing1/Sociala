@@ -27,7 +27,7 @@ checkPass(obj).then(result=> {
     }
     if(result.data.status === 200) {
         localStorage.setItem("Admintoken", result.data.Admintoken);
-        navigate("/admin/setting/auth/setting")
+        navigate("/admin/setting/auth/profile")
     }
 })
     }

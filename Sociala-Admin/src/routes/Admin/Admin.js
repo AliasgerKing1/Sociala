@@ -22,7 +22,7 @@ import Screeno from '../../components/pages/dashboards/Screeno/Screeno';
 import LockScreen from '../../components/pages/Authentication/LockScreen/LockScreen';
 import SettingLayouts from '../../Layouts/SettingLayouts/SettingLayouts';
 import SettingRoutes from './SettingRoutes/SettingRoutes';
-import { Logout } from '../../Services/loginAuthService/loginAuthService';
+import TaskDetails from '../../components/pages/TaskBoard/TaskDetails/TaskDetails';
 
 
 let adminRoutes = [
@@ -89,6 +89,10 @@ let adminRoutes = [
   {
     path : "taskboard",
     element: <TaskBoard />
+  },
+  {
+    path : "taskboard/details",
+    element: <TaskDetails />
   },
   {
     path : "lockscreen",

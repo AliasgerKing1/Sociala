@@ -34,8 +34,8 @@ const Logout = () => {
                   <div className="mt-4 pt-2">
                     <h5>You are Logged Out</h5>
                     <p className="text-muted">
-                      Thank you for using
-                      <span className="fw-semibold"> S_Studio</span> administration Portal
+                      Thank you for Working with
+                      <span className="fw-semibold"> Sar_Studio</span> come back soon
                     </p>
                     <div className="mt-4">
                       <Link

@@ -50,7 +50,7 @@ let state = useSelector(state=>state);
                                     <p className="text-white-75">Owner & Founder</p>
                                     <div className="hstack text-white-50 gap-1">
                                         <div className="me-2"><i className="ri-map-pin-user-line me-1 text-white-75 fs-16 align-middle"></i>Indore, Madhya Pradesh, India</div>
-                                        <div><i className="ri-building-line me-1 text-white-75 fs-16 align-middle"></i> S_Studio
+                                        <div><i className="ri-building-line me-1 text-white-75 fs-16 align-middle"></i> Sar_Studio
                                         </div>
                                     </div>
                                 </div>
@@ -108,7 +108,7 @@ let state = useSelector(state=>state);
                                         </li>
                                     </ul>
                                     <div className="flex-shrink-0">
-                                        <Link to="/admin/setting" className="btn btn-success"><i className="ri-edit-box-line align-bottom"></i> Edit Profile</Link>
+                                        <Link to="/admin/setting/auth/setting" className="btn btn-success"><i className="ri-edit-box-line align-bottom"></i> Edit Profile</Link>
                                     </div>
                                 </div>
                                 {/* <!-- Tab panes --> */}
@@ -135,7 +135,7 @@ let state = useSelector(state=>state);
                                                                 <tbody>
                                                                     <tr>
                                                                         <th className="ps-0" scope="row">Full Name :</th>
-                                                                        <td className="text-muted">Aliasger Barood</td>
+                                                                        <td className="text-muted">{state.data.name}</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <th className="ps-0" scope="row">Mobile :</th>
