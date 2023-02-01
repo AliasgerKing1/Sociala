@@ -12,7 +12,7 @@ import ChooseLayout from "../../../shared/ChooseLayout/ChooseLayout";
 
 
 const Analytics = () => {
-  let state = useSelector(state=>state.userReducer)
+  let state = useSelector(state=>state.UserReducer[0])
 let [usersCount, setUsersCount] = useState();
 let [users, setUsers] = useState([]);
 let [deleteUserId, setDeleteUserId] = useState([]);

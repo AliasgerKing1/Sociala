@@ -1,6 +1,12 @@
 import {createSlice} from "@reduxjs/toolkit";
 
-let initialState = []
+let initialState = [
+   {
+    userName : "Aliasger",
+    _id : "1",
+    image : "1.jpg"
+   }
+]
 
 
 let userReducer = createSlice({
