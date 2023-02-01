@@ -1,14 +1,21 @@
 import './App.css';
 import { useState, useEffect } from "react";
 
-import {Provider} from "react-redux";
-import {configureStore} from "@reduxjs/toolkit"
+import { Provider } from 'react-redux';
+import {combineReducers, configureStore} from "@reduxjs/toolkit"
+
+import UserReducer from './Redux/UserReducer';
 
 import SocialaAdminRoutes from './routes/SocialaAdminRoutes';
 import { getAdminProfile,getUsers } from './Services/AdminService/AdminService';
 import {getPhoto } from "./Services/ProfilePhotoService/ProfilePhotoService";
 
-
+let rootReducer = combineReducers({
+  UserReducer,
+})
+let store = configureStore({
+reducer : rootReducer
+})
 let App = () => {
   let [allData,setAllData] = useState("");
   let [id,setId] = useState("");
@@ -35,16 +42,12 @@ setAllUserData(result.data);
             image : photo,
             allUserData : allUserData,
           }
-    let store = configureStore({
-      preloadedState : obj,
-      reducer : (data)=> {
-        return data;
-      }
-    })
+
   return (
     <Provider store={store}>
  <SocialaAdminRoutes/>
     </Provider>
+
   )
 }
 

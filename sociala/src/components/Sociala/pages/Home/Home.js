@@ -56,7 +56,6 @@ function Home() {
     setNavLink(true);
       }
       let allData = obj.data;
-      console.log(allData)
 
   return (
     <div onLoad={demo}>

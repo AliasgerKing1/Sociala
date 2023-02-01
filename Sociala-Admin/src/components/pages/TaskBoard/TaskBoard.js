@@ -173,7 +173,8 @@ navigate(`/admin/taskboard/details/${id}`)
                                     </div>
                                 </div>
                             </div>
-                            <div data-simplebar className="tasks-wrapper px-3 mx-n3">
+                            {
+                                x.innerData[0].tasktitle ? ( <div data-simplebar className="tasks-wrapper px-3 mx-n3">
                                 <div id="new-task" className="tasks">
                                     <div className="card tasks-box">
                                         <div className="card-body">
@@ -239,7 +240,9 @@ navigate(`/admin/taskboard/details/${id}`)
                                     </div>
                                     {/* <!--end card--> */}
                                 </div>
-                            </div>
+                            </div>) : <div className="tasks-img rounded" style={{backgroundImage: 'url(/assets/images/task.png)', height: '235px', width: "auto", backgroundPosition : 'center',backgroundRepeat : "no-repeat"}}></div>
+                            }
+                           
                             <div className="my-3">
                                 <button className="btn btn-soft-info w-100" data-bs-toggle="modal" data-bs-target="#creatertaskModal" onClick={()=> addContent(x._id)}>Add More</button>
                             </div>

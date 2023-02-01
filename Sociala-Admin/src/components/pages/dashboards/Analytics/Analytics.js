@@ -1,6 +1,6 @@
 import React, { useEffect, useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import {useSelector} from "react-redux"
+import {useSelector,useDispatch} from "react-redux"
 
 import {totalUser,deleteUser } from "../../../../Services/AdminService/AdminService";
 
@@ -12,7 +12,7 @@ import ChooseLayout from "../../../shared/ChooseLayout/ChooseLayout";
 
 
 const Analytics = () => {
-  let state = useSelector(state=>state)
+  let state = useSelector(state=>state.userReducer)
 let [usersCount, setUsersCount] = useState();
 let [users, setUsers] = useState([]);
 let [deleteUserId, setDeleteUserId] = useState([]);
@@ -33,6 +33,7 @@ return preData.filter(item => item != deleteUserId);
 
  })
 } 
+console.log(state)
   return (
     <div>
       {/* <!-- Begin page --> */}

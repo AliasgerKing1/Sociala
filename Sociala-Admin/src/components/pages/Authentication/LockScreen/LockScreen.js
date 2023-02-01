@@ -38,8 +38,8 @@ checkPass(obj).then(result=> {
 <PortalLogo/>
 
 {/* <!-- auth page content --> */}
-<div class="auth-page-content">
-  <div class="container">
+<div className="auth-page-content">
+  <div className="container">
   <PortalTitle/>
     {/* <!-- end row --> */}
 
@@ -59,7 +59,7 @@ checkPass(obj).then(result=> {
                                 <div className="p-2 mt-4">
                                     <form>
                                         <div className="mb-3">
-                                            <label className="form-label" for="userpassword">Password</label>
+                                            <label className="form-label" htmlFor="userpassword">Password</label>
                                             <input type="password" className="form-control" id="userpassword" placeholder="Enter password" onChange={(e)=> setPassword(e.target.value)} />
                                         </div>
                                         <div className="mb-2 mt-4">
@@ -77,8 +77,8 @@ checkPass(obj).then(result=> {
                             {/* <!-- end card body --> */}
                         </div>
                         {/* <!-- end card --> */}
-                        <div class="mt-4 text-center">
-                            <p class="mb-0">Not you ? return <Link to="/admin/analytics" class="fw-semibold text-primary text-decoration-underline"> Dashboard </Link> </p>
+                        <div className="mt-4 text-center">
+                            <p className="mb-0">Not you ? return <Link to="/admin/analytics" className="fw-semibold text-primary text-decoration-underline"> Dashboard </Link> </p>
                         </div>
                     </div>
                 </div>
