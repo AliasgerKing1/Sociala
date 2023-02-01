@@ -5,22 +5,22 @@ function FooterBar() {
   return (
     <div>
          <div className="app-footer border-0 shadow-lg bg-primary-gradiant">
-            <Link to="/home" className="nav-content-bttn nav-center">
+            <Link to="/auth/home" className="nav-content-bttn nav-center">
               <i className="feather-home"></i>
             </Link>
-            <Link to="/video" className="nav-content-bttn">
+            <Link to="/auth/video" className="nav-content-bttn">
               <i className="feather-package"></i>
             </Link>
-            <Link to="/livestream"
+            <Link to="/auth/livestream"
               className="nav-content-bttn"
               data-tab="chats"
             >
               <i className="feather-layout"></i>
             </Link>
-            <Link to="/shop" className="nav-content-bttn">
+            <Link to="/auth/shop" className="nav-content-bttn">
               <i className="feather-layers"></i>
             </Link>
-            <Link to="/setting" className="nav-content-bttn">
+            <Link to="/auth/setting" className="nav-content-bttn">
               <img
                 src="/assets/images/female-profile.png"
                 alt="user"

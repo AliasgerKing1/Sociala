@@ -3,9 +3,9 @@ import { Outlet,useNavigate } from 'react-router-dom'
 const UserLayouts = () => {
   let navigate = useNavigate();
   useEffect(()=> {
-    if(! localStorage.getItem("token")) {
-      navigate("/")
-      }
+    // if(! localStorage.getItem("token")) {
+    //   navigate("/")
+    //   }
   })
 
   return (

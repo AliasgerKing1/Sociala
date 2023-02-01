@@ -1,12 +1,15 @@
 import React, { useEffect, useState, useContext } from 'react';
+
 import AllData from "../../../../Hooks/ProfileHook"
+
+import {addMsg, getMsg} from "../../../../services/PostService/PostService";
+import { getUserProfile } from '../../../../services/profileService/profileService';
+
 import FriendRequest from "../../shared/right/FriendRequest/FriendRequest";
 import Friends from "../../shared/right/Friends/Friends";
 import SuggestedGroup from "../../shared/right/SuggestedGroup/SuggestedGroup";
 import SuggestedPeople from "../../shared/right/SuggestedPeople/SuggestedPeople";
 import Event from "../../shared/right/Event/Event";
-import {addMsg, getMsg} from "../../../../services/PostService/PostService";
-import { getUserProfile } from '../../../../services/profileService/profileService';
 
 import Header from "../../shared/Header/Header";
 import LeftSection from "../../shared/left/LeftSection/LeftSection";
