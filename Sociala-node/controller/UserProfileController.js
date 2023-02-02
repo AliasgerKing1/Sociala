@@ -8,8 +8,12 @@ routes.get("/", (req, res)=> {
   let token = req.headers.header;
   let obj = jwt.decode(token, "Aliasger web");
   User.find({ _id: obj.id }, (error, result) => {
-    res.send(result[0]);
-  });
+    let new_result = result.map((x)=> {
+      x.image = "http://localhost:4000/user_images/" + x.image;
+      return x;
+  })
+  res.send(new_result[0]);
+  })
 }
 })
 

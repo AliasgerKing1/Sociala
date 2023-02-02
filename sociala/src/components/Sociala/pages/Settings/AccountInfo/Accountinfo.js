@@ -1,8 +1,8 @@
-import React, { useEffect, useState,useContext } from 'react';
+import React, { useEffect, useState} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import {useFormik} from "formik"
-import {updateUser,getUserByid} from "../../../../../services/userService/userService";
-import AllData from '../../../../../Hooks/ProfileHook';
+import {updateUsers,getUserByid} from "../../../../../services/userService/userService";
+
+import {useSelector} from "react-redux"
 
 import Header from '../../../shared/Header/Header';
 import LeftSection from '../../../shared/left/LeftSection/LeftSection';
@@ -14,8 +14,7 @@ import FooterBar from '../../../shared/FooterBar/FooterBar';
 
 export const Accountinfo = () => {
     let navigate = useNavigate();
-let obj = useContext(AllData);
-let allData = obj.data;
+    let state = useSelector(state=>state.UserReducer)
 let form = new FormData();
 let Image = (e) => {
     form.append("photo",e.target.files[0]);
@@ -31,16 +30,12 @@ let [user, setUser] = useState({
     bio: "",
     image : ""
 })
-
 let update = () => {
     form.append("data",JSON.stringify(user))
-    updateUser(allData._id, form).then(result=> {
-         let profileData = result.data;
-        return
-        navigate("/auth/setting")
+    updateUsers(state._id, form).then(result=> {
+        navigate("/auth/setting/account/info")
     });
 }
-
 
   return (
     <div>
@@ -76,8 +71,8 @@ let update = () => {
                             <div className="card-body p-lg-5 p-4 w-100 border-0 ">
                             <div className="row justify-content-center">
                                 <div className="col-lg-4 text-center">
-                                    <figure className="avatar ms-auto me-auto mb-0 mt-2 w100"><img src={allData.image} alt="image" className="shadow-sm rounded-3 w-100" /></figure>
-<h2 className="fw-700 font-sm text-grey-900 mt-3">{allData.userName}</h2> 
+                                    <figure className="avatar ms-auto me-auto mb-0 mt-2 w100"><img src={state.image} alt="image" className="shadow-sm rounded-3 w-100" /></figure>
+<h2 className="fw-700 font-sm text-grey-900 mt-3">{state.userName}</h2> 
                                     <h4 className="text-grey-500 fw-500 mb-3 font-xsss mb-4">Brooklyn</h4>    
                                     {/* <!-- <a href="#" className="p-3 alert-primary text-primary font-xsss fw-500 mt-2 rounded-3">Upload New Photo</a> --> */}
                                 </div>

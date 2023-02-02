@@ -153,7 +153,7 @@ navigate(`/admin/taskboard/details/${id}`)
                     
                     <div className="tasks-board mb-3" id="kanbanboard">
                         {
-                            board.map((x,i)=> {
+                            board ? ( board.map((x,i)=> {
                                 let progress = x.innerData[0].tasksprogress;
                                 return(
                                     <div className="tasks-list" key={i}>
@@ -241,14 +241,15 @@ navigate(`/admin/taskboard/details/${id}`)
                                     {/* <!--end card--> */}
                                 </div>
                             </div>) : <div className="tasks-img rounded" style={{backgroundImage: 'url(/assets/images/task.png)', height: '235px', width: "auto", backgroundPosition : 'center',backgroundRepeat : "no-repeat"}}></div>
-                            }
                            
+                            }
                             <div className="my-3">
                                 <button className="btn btn-soft-info w-100" data-bs-toggle="modal" data-bs-target="#creatertaskModal" onClick={()=> addContent(x._id)}>Add More</button>
                             </div>
                         </div>
                                 )
-                            })
+                            })) : ""
+              
                         }
                         {/* <!--end tasks-list--> */}
                     </div>

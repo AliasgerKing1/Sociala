@@ -1,9 +1,12 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 
-import AllData from "../../../../Hooks/ProfileHook"
+import {useDispatch,useSelector} from "react-redux";
+import { getUser } from '../../../../Redux/UserReducer';
+import { getAllUser } from '../../../../Redux/AllUserReducer';
 
 import {addMsg, getMsg} from "../../../../services/PostService/PostService";
 import { getUserProfile } from '../../../../services/profileService/profileService';
+import { getUsers } from "../../../../services/userService/userService";
 
 import FriendRequest from "../../shared/right/FriendRequest/FriendRequest";
 import Friends from "../../shared/right/Friends/Friends";
@@ -20,20 +23,35 @@ import FooterBar from "../../shared/FooterBar/FooterBar";
 
 
 function Home() {
-  let [id,setId] = useState("");
+  let dispatch = useDispatch();
+  let state = useSelector(state=>state.UserReducer)
+  let state2 = useSelector(state=>state.AllUserReducer)
   let [navLink, setNavLink] = useState(false);
-  let obj = useContext(AllData);
+
   useEffect(() => {
     getMsg().then(result=> {
       setAllPost(result.data)
     })
   },[]);
-  useEffect(() => {
+  let getData = () => {
     let token = localStorage.getItem("token")
     getUserProfile(token).then(result=> {
-        setId(result.data._id)
+      dispatch(getUser(result.data))
     })
-    
+  }
+
+  let getAllData = () => {
+    getUsers().then((result) => {
+      dispatch(getAllUser(result.data));
+    });
+  }
+  useEffect(() => {
+if(state.length == 0) {
+getData();
+}
+if(state2.length == 0) {
+  getAllData();
+}
   },[]);
   let [allPost, setAllPost] = useState([]);
   let [msg, setMsg] = useState({
@@ -55,7 +73,6 @@ function Home() {
   let demo = ()=> {
     setNavLink(true);
       }
-      let allData = obj.data;
 
   return (
     <div onLoad={demo}>

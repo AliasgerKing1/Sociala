@@ -91,7 +91,7 @@ let adminRoutes = [
     element: <TaskBoard />
   },
   {
-    path : "taskboard/details",
+    path : "taskboard/details/:id",
     element: <TaskDetails />
   },
   {

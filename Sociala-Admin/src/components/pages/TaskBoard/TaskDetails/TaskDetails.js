@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
 import Header from "../../../shared/Header/Header";
 import Footer from "../../../shared/Footer/Footer";
@@ -7,6 +8,10 @@ import RightMenu from "../../../shared/RightMenu/RightMenu";
 import ChooseLayout from "../../../shared/ChooseLayout/ChooseLayout";
 
 const TaskDetails = () => {
+    let params = useParams();
+    useEffect(()=> {
+        let id = params.id;
+    })
   return (
     <>
     {/* <!-- Begin page --> */}

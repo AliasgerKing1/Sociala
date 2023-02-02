@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 import { useSelector } from "react-redux";
 
-import { getUsers,getAdminProfile } from "../../../Services/AdminService/AdminService";
 
 import Header from "../../shared/Header/Header";
 import Footer from "../../shared/Footer/Footer";
@@ -13,7 +12,8 @@ import ChooseLayout from "../../shared/ChooseLayout/ChooseLayout";
 
 
 const Profile = () => {
-let state = useSelector(state=>state);
+let state = useSelector(state=>state.AdminReducer);
+console.log(state)
   return (
     <>
     {/* <!-- Begin page --> */}
@@ -46,7 +46,7 @@ let state = useSelector(state=>state);
                               
                                         <div className="col" >
                                 <div className="p-2">
-                                    <h3 className="text-white mb-1">{state.data.name}</h3>
+                                    <h3 className="text-white mb-1">{state.name}</h3>
                                     <p className="text-white-75">Owner & Founder</p>
                                     <div className="hstack text-white-50 gap-1">
                                         <div className="me-2"><i className="ri-map-pin-user-line me-1 text-white-75 fs-16 align-middle"></i>Indore, Madhya Pradesh, India</div>
@@ -135,7 +135,7 @@ let state = useSelector(state=>state);
                                                                 <tbody>
                                                                     <tr>
                                                                         <th className="ps-0" scope="row">Full Name :</th>
-                                                                        <td className="text-muted">{state.data.name}</td>
+                                                                        <td className="text-muted">{state.name}</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <th className="ps-0" scope="row">Mobile :</th>

@@ -10,7 +10,7 @@ routes.post("/", (req, res)=> {
         })
 routes.put("/:id", (req, res)=> {
     let id = req.params.id;
-   TaskBoard.updateMany({_id : id},{innerData : req.body}, (error)=> {
+   TaskBoard.updateMany({_id : id},{$push:{innerData : req.body}}, (error)=> {
         let obj = {
             projectname : req.body.projectname,
         tasktitle : req.body.tasktitle,

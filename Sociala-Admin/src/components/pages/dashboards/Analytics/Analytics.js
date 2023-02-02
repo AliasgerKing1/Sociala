@@ -1,8 +1,11 @@
 import React, { useEffect, useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import {useSelector,useDispatch} from "react-redux"
+import {useSelector,useDispatch} from "react-redux";
+import { getUser } from "../../../../Redux/UserReducer";
+import { getAdmin } from "../../../../Redux/AdminReducer";
 
-import {totalUser,deleteUser } from "../../../../Services/AdminService/AdminService";
+import {totalUser,deleteUser,getUsers } from "../../../../Services/AdminService/AdminService";
+import { getAdminProfile } from "../../../../Services/AdminService/AdminService";
 
 import Header from "../../../shared/Header/Header";
 import Footer from "../../../shared/Footer/Footer";
@@ -12,7 +15,9 @@ import ChooseLayout from "../../../shared/ChooseLayout/ChooseLayout";
 
 
 const Analytics = () => {
-  let state = useSelector(state=>state.UserReducer[0])
+  let dispatch = useDispatch();
+  let state = useSelector(state=>state.UserReducer)
+  let state2 = useSelector(state=>state.AdminReducer)
 let [usersCount, setUsersCount] = useState();
 let [users, setUsers] = useState([]);
 let [deleteUserId, setDeleteUserId] = useState([]);
@@ -20,6 +25,24 @@ useEffect(()=> {
 totalUser().then(result=> {
   setUsersCount(result.data.total);
 })
+},[])
+
+let getData = async () => {
+let result = await getUsers();
+dispatch(getUser(result.data))
+}
+
+let getAdminData = async () => {
+  let result = await getAdminProfile();
+  dispatch(getAdmin(result.data))
+}
+useEffect(()=> {
+if(state.length == 0) {
+  getData();
+}
+if(state2.length == 0) {
+  getAdminData();
+}
 },[])
 
 let confirmDelete = (user) => {
@@ -30,10 +53,8 @@ let removeUser = () => {
   setUsers((preData)=> {
 return preData.filter(item => item != deleteUserId);
   })
-
  })
 } 
-console.log(state)
   return (
     <div>
       {/* <!-- Begin page --> */}
@@ -414,7 +435,7 @@ console.log(state)
                     <div className="mx-n3">
                         <ul className="list list-group list-group-flush mb-0">
                         {
-                          state.allUserData.map((u)=> {
+                          state.map((u)=> {
                             return(
                               <li key={u._id} className="list-group-item">
                                 <div className="d-flex align-items-center pagi-list">

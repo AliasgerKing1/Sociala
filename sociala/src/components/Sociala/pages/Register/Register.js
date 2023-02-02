@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 import {AlertDanger} from "../../../../shared/Alerts/Alert"
 import RegisterSchema from '../../../../Schemas/RegisterSchema';
-import { addUser } from '../../../../services/userService/userService';
+import { addUsers } from '../../../../services/userService/userService';
 
 import Submit from '../../shared/AllInputTypes/Submit';
 import Password from '../../shared/AllInputTypes/Password';
@@ -38,7 +38,7 @@ validationSchema : RegisterSchema,
 
 onSubmit : ()=> {
   setShowSpinner(true);
- addUser(values).then(result=> {
+ addUsers(values).then(result=> {
 if(result.data.status == 200) {
   navigate("/")
 }else {

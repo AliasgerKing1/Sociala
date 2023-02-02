@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { Logout } from '../../../Services/loginAuthService/loginAuthService';
 import { Lock } from '../../../Services/LockScreenService/LockScreenService';
 const Header = () => {
-    let state = useSelector(state=>state);
+    let state = useSelector(state=>state.AdminReducer);
     let navigate = useNavigate();
     let logout = () => {
         Logout();
@@ -702,7 +702,7 @@ const Header = () => {
                         <img className="rounded-circle header-profile-user" src={state.image ? (state.image) : ""} alt="Header Avatar" /> 
                             {/* <img className="rounded-circle header-profile-user" src={state.image} alt="Header Avatar" /> */}
                             <span className="text-start ms-xl-2">
-                                <span className="d-none d-xl-inline-block ms-1 fw-medium user-name-text">{state.data.name}</span>
+                                <span className="d-none d-xl-inline-block ms-1 fw-medium user-name-text">{state.name}</span>
                                 <span className="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">Founder</span>
                             </span>
                         </span>

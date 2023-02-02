@@ -11,7 +11,7 @@ import Footer from '../../../shared/Footer/Footer';
 import { AlertDanger } from '../../../../shared/Alerts/Alerts';
 
 const LockScreen = () => {
-    let state = useSelector(state=>state)
+    let state = useSelector(state=>state.AdminReducer)
     let navigate = useNavigate();
     let [password,setPassword] = useState("");
     let [showAlert, setShowAlert] = useState(false);
@@ -54,7 +54,7 @@ checkPass(obj).then(result=> {
                                 </div>
                                 <div className="user-thumb text-center">
                                     <img src={state.image} className="rounded-circle img-thumbnail avatar-lg" alt="thumbnail" />
-                                    <h5 className="font-size-15 mt-3">{state.data.name}</h5>
+                                    <h5 className="font-size-15 mt-3">{state.name}</h5>
                                 </div>
                                 <div className="p-2 mt-4">
                                     <form>

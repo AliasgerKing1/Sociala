@@ -16,4 +16,8 @@ let deleteBoard = (id) => {
   return axios.delete( apiUrl + "/" + id )
 }
 
+let getTaskDetailsById = (id) => {
+  return axios.get(apiUrl + "/details/" + id)
+}
+
 export { addBoard,getBoard,deleteBoard,updateBoard };

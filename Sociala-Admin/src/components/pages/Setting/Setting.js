@@ -13,7 +13,7 @@ import ChooseLayout from "../../shared/ChooseLayout/ChooseLayout";
 
 
 const Setting = () => {
-    let state = useSelector(state=>state);
+    let state = useSelector(state=>state.AdminReducer);
     let [admins, setAdmins] = useState({
         name : "",
         type : "",
@@ -53,7 +53,7 @@ let Image = (e) => {
     form.append("photo",e.target.files[0]);
 }
 let obj = {
-    username : state.data.username,
+    username : state.username,
     image : ""
 }
 let addImg = () => {
@@ -110,7 +110,7 @@ let addImg = () => {
                                             </div>
                                         </div>
                                         <button onClick={addImg} style={{display : "none"}}>hiii</button>
-                                        <h5 className="fs-17 mb-1">{state.data.name}</h5>
+                                        <h5 className="fs-17 mb-1">{state.name}</h5>
                                         <p className="text-muted mb-0">CEO / Founder</p>
                                     </div>
                                 </div>

@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { getUser } from "../../../../services/userService/userService";
+import React, {useState } from "react";
+
+import {useSelector} from "react-redux"
 
 import Header from "../../shared/Header/Header";
 import LeftSection from "../../shared/left/LeftSection/LeftSection";
@@ -12,12 +13,7 @@ import Story from "../../shared/Story/Story";
 const Users = () => {
   let [allUsers, setAllUsers] = useState([]);
   let [navLink4, setNavLink4] = useState(false);
-
-  useEffect(() => {
-    getUser().then((result) => {
-      setAllUsers(result.data);
-    });
-  },[]);
+  let state2 = useSelector(state=>state.AllUserReducer);
   let demo = ()=> {
     setNavLink4(true);
       }
@@ -65,7 +61,7 @@ const Users = () => {
                     </div>
 
                     <div className="row ps-2 pe-1">
-                      {allUsers.map((u, i) => {
+                      {state2.map((u, i) => {
                         return (
                           <div className="col-md-4 col-sm-6 pe-2 ps-2" key={i}>
                             <div className="card d-block border-0 shadow-xss rounded-3 overflow-hidden mb-3">
